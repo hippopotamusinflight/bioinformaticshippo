@@ -27,8 +27,9 @@
   
     
   
-  <meta name="description" content="My experience going through R blogdown install. https://bookdown.org/yihui/blogdown/software-info.html
-Blogdown = static website generator in R, based on Hugo 1.1 installation  install.packages(&#39;blogdown&#39;)	# install blogdown blogdown::install_hugo() # install Hugo macOS installs using homebrew The latest Hugo version is 0.">
+  <meta name="description" content="My experience going through R blogdown install by following Yihui&rsquo;s instructions at.
+https://bookdown.org/yihui/blogdown/software-info.html
+ the documentation there is superb, but I had only beginner knowledge of HTML, CSS, and HUGO, took me a week to get my site published and start blogging, customizations took the longest, documented in Highlights section, hope you find some of it helpful  Blogdown = static website generator in R, based on Hugo">
 
   
   <link rel="alternate" hreflang="en-us" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/">
@@ -195,7 +196,7 @@ Blogdown = static website generator in R, based on Hugo 1.1 installation  instal
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500%7CRoboto:400,400italic,500%7CRoboto+Mono&display=swap">
   
 
   
@@ -239,8 +240,9 @@ Blogdown = static website generator in R, based on Hugo 1.1 installation  instal
   <meta property="og:site_name" content="BioinfoHippo">
   <meta property="og:url" content="/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/">
   <meta property="og:title" content="Full Tutorial | BioinfoHippo">
-  <meta property="og:description" content="My experience going through R blogdown install. https://bookdown.org/yihui/blogdown/software-info.html
-Blogdown = static website generator in R, based on Hugo 1.1 installation  install.packages(&#39;blogdown&#39;)	# install blogdown blogdown::install_hugo() # install Hugo macOS installs using homebrew The latest Hugo version is 0."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="My experience going through R blogdown install by following Yihui&rsquo;s instructions at.
+https://bookdown.org/yihui/blogdown/software-info.html
+ the documentation there is superb, but I had only beginner knowledge of HTML, CSS, and HUGO, took me a week to get my site published and start blogging, customizations took the longest, documented in Highlights section, hope you find some of it helpful  Blogdown = static website generator in R, based on Hugo"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -450,23 +452,6 @@ Blogdown = static website generator in R, based on Hugo 1.1 installation  instal
       
 
       
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
 
       
 
@@ -549,6 +534,8 @@ Blogdown = static website generator in R, based on Hugo 1.1 installation  instal
     <li><a href="#11-installation">1.1 installation</a></li>
     <li><a href="#12-quick-start">1.2 quick start</a>
       <ul>
+        <li><a href="#rstudio-gui-way">RStudio GUI way</a></li>
+        <li><a href="#rstudio-console-way">RStudio Console way</a></li>
         <li><a href="#livereload">LiveReload</a></li>
         <li><a href="#configtoml">config.toml</a></li>
         <li><a href="#content">content/</a></li>
@@ -621,37 +608,41 @@ Blogdown = static website generator in R, based on Hugo 1.1 installation  instal
           <h1>Full Tutorial</h1>
 
           <div class="article-style">
-            <p>My experience going through R blogdown install.
-<a href="https://bookdown.org/yihui/blogdown/software-info.html">https://bookdown.org/yihui/blogdown/software-info.html</a></p>
-<p>Blogdown = static website generator in R, based on Hugo
-<br></p>
+            <p>My experience going through R blogdown install by following Yihui&rsquo;s instructions at.<br>
+<a href="https://bookdown.org/yihui/blogdown/software-info.html">https://bookdown.org/yihui/blogdown/software-info.html</a><br></p>
+<ul>
+<li>the documentation there is superb,</li>
+<li>but I had only beginner knowledge of HTML, CSS, and HUGO,</li>
+<li>took me a week to get my site published and start blogging,</li>
+<li>customizations took the longest, documented in <strong>Highlights</strong> section, hope you find some of it helpful</li>
+</ul>
+<p>Blogdown = static website generator in R, based on Hugo<br></p>
 <h2 id="11-installation">1.1 installation</h2>
-<pre>
-install.packages('blogdown')		      # install blogdown
+<pre><code>install.packages('blogdown')  # install blogdown
 
-blogdown::install_hugo()              # install Hugo
+blogdown::install_hugo()  # install Hugo
 	macOS installs using homebrew
 	The latest Hugo version is 0.71.0
 	Updated 1 tap (homebrew/core).
-	==> New Formulae
+	==&gt; New Formulae
 	...
 	...		
 	Bash completion has been installed to:
 	  /usr/local/etc/bash_completion.d
-	==> Summary
+	==&gt; Summary
 	🍺  /usr/local/Cellar/hugo/0.71.0: 42 files, 74.4MB		
 
 blogdown::update_hugo()
-blogdown::hugo_version()
-</pre>
-<br>
+blogdown::hugo_version()  # [1] ‘0.71.0’
+</code></pre>
 <h2 id="12-quick-start">1.2 quick start</h2>
-<pre>
-File > New Project > New Directory > Website using Blogdown > Create Project
-specify directory name (e.g. blogdown_test)
-creates blogdown_test/
+<h3 id="rstudio-gui-way">RStudio GUI way</h3>
+<pre><code>File &gt; New Project &gt; New Directory &gt; Website using Blogdown 
+&gt; Create Project &gt; specify directory name (e.g. bioinfohippo)
+
+creates bioinfohippo/
                        .Rproj.user/
-                       blogdown_test.Rproj
+                       bioinfohippo.Rproj
                        config.toml
                        content/
                        index.Rmd
@@ -660,7 +651,8 @@ creates blogdown_test/
                        themes/
 
 or type blogdown::new_site() in project directory
-</pre>
+</code></pre>
+<h3 id="rstudio-console-way">RStudio Console way</h3>
 <h3 id="livereload">LiveReload</h3>
 <ul>
 <li>website auto-rebuild when any source file modified and saved</li>

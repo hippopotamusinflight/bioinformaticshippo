@@ -3,7 +3,7 @@ date: "2019-05-05T00:00:00+01:00"
 draft: false
 linktitle: rmarkdowntest2
 menu:
-  r:
+  r_tutorials:
     name: rmarkdowntest2
     weight: 2002
 title: rmarkdowntest2

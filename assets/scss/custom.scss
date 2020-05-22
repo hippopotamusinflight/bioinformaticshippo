@@ -1,0 +1,35 @@
+/* custom scss file */
+
+/* changes navbar font size */
+.dropdown-menu,
+nav#navbar-main li.nav-item {
+  font-size: 17px;
+}
+
+/* custom heading font size, weight
+   from /themes/hugo-academic/assets/scss/academic/_root.scss */
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+h3 {
+  font-weight: 500;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* body font size
+   from /themes/hugo-academic/assets/scss/academic/_root.scss */
+body {
+  font-size: 0.9rem;
+}
+

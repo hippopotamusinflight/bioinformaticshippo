@@ -1069,37 +1069,41 @@ HUGO_VERSION		0.24.1	(or latest)&lt;/p&gt;
       <link>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/</link>
       <pubDate>Wed, 20 May 2020 08:47:00 +0100</pubDate>
       <guid>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/</guid>
-      <description>&lt;p&gt;My experience going through R blogdown install.
-&lt;a href=&#34;https://bookdown.org/yihui/blogdown/software-info.html&#34;&gt;https://bookdown.org/yihui/blogdown/software-info.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Blogdown = static website generator in R, based on Hugo
-&lt;br&gt;&lt;/p&gt;
+      <description>&lt;p&gt;My experience going through R blogdown install by following Yihui&amp;rsquo;s instructions at.&lt;br&gt;
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/software-info.html&#34;&gt;https://bookdown.org/yihui/blogdown/software-info.html&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the documentation there is superb,&lt;/li&gt;
+&lt;li&gt;but I had only beginner knowledge of HTML, CSS, and HUGO,&lt;/li&gt;
+&lt;li&gt;took me a week to get my site published and start blogging,&lt;/li&gt;
+&lt;li&gt;customizations took the longest, documented in &lt;strong&gt;Highlights&lt;/strong&gt; section, hope you find some of it helpful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Blogdown = static website generator in R, based on Hugo&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;11-installation&#34;&gt;1.1 installation&lt;/h2&gt;
-&lt;pre&gt;
-install.packages(&#39;blogdown&#39;)		      # install blogdown
+&lt;pre&gt;&lt;code&gt;install.packages(&#39;blogdown&#39;)  # install blogdown
 
-blogdown::install_hugo()              # install Hugo
+blogdown::install_hugo()  # install Hugo
 	macOS installs using homebrew
 	The latest Hugo version is 0.71.0
 	Updated 1 tap (homebrew/core).
-	==&gt; New Formulae
+	==&amp;gt; New Formulae
 	...
 	...		
 	Bash completion has been installed to:
 	  /usr/local/etc/bash_completion.d
-	==&gt; Summary
+	==&amp;gt; Summary
 	🍺  /usr/local/Cellar/hugo/0.71.0: 42 files, 74.4MB		
 
 blogdown::update_hugo()
-blogdown::hugo_version()
-&lt;/pre&gt;
-&lt;br&gt;
+blogdown::hugo_version()  # [1] ‘0.71.0’
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;12-quick-start&#34;&gt;1.2 quick start&lt;/h2&gt;
-&lt;pre&gt;
-File &gt; New Project &gt; New Directory &gt; Website using Blogdown &gt; Create Project
-specify directory name (e.g. blogdown_test)
-creates blogdown_test/
+&lt;h3 id=&#34;rstudio-gui-way&#34;&gt;RStudio GUI way&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;File &amp;gt; New Project &amp;gt; New Directory &amp;gt; Website using Blogdown 
+&amp;gt; Create Project &amp;gt; specify directory name (e.g. bioinfohippo)
+
+creates bioinfohippo/
                        .Rproj.user/
-                       blogdown_test.Rproj
+                       bioinfohippo.Rproj
                        config.toml
                        content/
                        index.Rmd
@@ -1108,7 +1112,8 @@ creates blogdown_test/
                        themes/
 
 or type blogdown::new_site() in project directory
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rstudio-console-way&#34;&gt;RStudio Console way&lt;/h3&gt;
 &lt;h3 id=&#34;livereload&#34;&gt;LiveReload&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;website auto-rebuild when any source file modified and saved&lt;/li&gt;

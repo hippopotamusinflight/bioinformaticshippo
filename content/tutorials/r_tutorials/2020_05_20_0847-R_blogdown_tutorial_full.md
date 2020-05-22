@@ -12,18 +12,22 @@ type: docs
 weight: 2019052002
 ---
 
-My experience going through R blogdown install.
-https://bookdown.org/yihui/blogdown/software-info.html
+My experience going through R blogdown install by following Yihui's instructions at.<br>
+https://bookdown.org/yihui/blogdown/software-info.html<br>
+- the documentation there is superb, 
+- but I had only beginner knowledge of HTML, CSS, and HUGO,
+- took me a week to get my site published and start blogging,
+- customizations took the longest, documented in **Highlights** section, hope you find some of it helpful
 
-Blogdown = static website generator in R, based on Hugo
-<br>
+Blogdown = static website generator in R, based on Hugo<br>
+
 
 ## 1.1 installation
 
-<pre>
-install.packages('blogdown')		      # install blogdown
+```
+install.packages('blogdown')  # install blogdown
 
-blogdown::install_hugo()              # install Hugo
+blogdown::install_hugo()  # install Hugo
 	macOS installs using homebrew
 	The latest Hugo version is 0.71.0
 	Updated 1 tap (homebrew/core).
@@ -36,18 +40,20 @@ blogdown::install_hugo()              # install Hugo
 	🍺  /usr/local/Cellar/hugo/0.71.0: 42 files, 74.4MB		
 
 blogdown::update_hugo()
-blogdown::hugo_version()
-</pre>
-<br>
+blogdown::hugo_version()  # [1] ‘0.71.0’
+```
+
 
 ## 1.2 quick start
 
-<pre>
-File > New Project > New Directory > Website using Blogdown > Create Project
-specify directory name (e.g. blogdown_test)
-creates blogdown_test/
+### RStudio GUI way
+```
+File > New Project > New Directory > Website using Blogdown 
+> Create Project > specify directory name (e.g. bioinfohippo)
+
+creates bioinfohippo/
                        .Rproj.user/
-                       blogdown_test.Rproj
+                       bioinfohippo.Rproj
                        config.toml
                        content/
                        index.Rmd
@@ -56,7 +62,10 @@ creates blogdown_test/
                        themes/
 
 or type blogdown::new_site() in project directory
-</pre>
+```
+
+### RStudio Console way
+
 
 ### LiveReload
 - website auto-rebuild when any source file modified and saved
