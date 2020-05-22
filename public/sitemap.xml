@@ -3,22 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/courses/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/python/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/example/example1/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
@@ -28,22 +18,22 @@
   </url>
   
   <url>
-    <loc>/tutorials/example/</loc>
+    <loc>/resources/r_resources/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/resources/example/</loc>
+    <loc>/tutorials/r_tutorials/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/resources/r/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>/tutorials/example/example2/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/resources/r/tidyverse/</loc>
+    <loc>/resources/r_resources/tidyverse/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
@@ -53,32 +43,37 @@
   </url>
   
   <url>
-    <loc>/resources/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/python/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/python/</loc>
+    <loc>/resources/python_resources/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/resources/r/set_operations/</loc>
+    <loc>/resources/r_resources/set_operations/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>/contact_separate_nowork/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>/tutorials/example/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/rmarkdown/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_highlights/</loc>
+    <lastmod>2020-05-20T08:47:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/</loc>
+    <lastmod>2020-05-20T08:47:00+01:00</lastmod>
   </url>
   
   <url>
@@ -93,12 +88,42 @@
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2020-05-21T15:14:37-04:00</lastmod>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-05-21T20:35:57-04:00</lastmod>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/ming-han/</loc>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/test/</loc>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/test/</loc>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/third-post/</loc>
+    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
   </url>
   
   <url>
@@ -107,33 +132,13 @@
   </url>
   
   <url>
-    <loc>/author/ming-han/</loc>
-    <lastmod>2020-05-21T15:14:37-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-05-21T20:35:57-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-05-21T20:35:57-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/test/</loc>
-    <lastmod>2020-05-21T20:35:57-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/test/</loc>
-    <lastmod>2020-05-21T20:35:57-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/testing2/</loc>
     <lastmod>2020-05-21T20:35:57-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/</loc>
+    <lastmod>2020-05-20T08:47:00+01:00</lastmod>
   </url>
   
   <url>
@@ -148,11 +153,6 @@
   
   <url>
     <loc>/courses/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   

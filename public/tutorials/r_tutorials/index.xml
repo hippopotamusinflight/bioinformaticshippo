@@ -1,0 +1,1812 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials in .Rmd format | BioinfoHippo</title>
+    <link>/tutorials/r_tutorials/</link>
+      <atom:link href="/tutorials/r_tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <description>Tutorials in .Rmd format</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Tutorials in .Rmd format</title>
+      <link>/tutorials/r_tutorials/</link>
+    </image>
+    
+    <item>
+      <title>Highlights</title>
+      <link>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_highlights/</link>
+      <pubDate>Wed, 20 May 2020 08:47:00 +0100</pubDate>
+      <guid>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_highlights/</guid>
+      <description>&lt;p&gt;My experience going through R blogdown install.
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/software-info.html&#34;&gt;https://bookdown.org/yihui/blogdown/software-info.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Blogdown = static website generator in R, based on Hugo&lt;/p&gt;
+&lt;h2 id=&#34;11-installation&#34;&gt;1.1 installation&lt;/h2&gt;
+&lt;pre&gt;
+install.packages(&#39;blogdown&#39;)		      # install blogdown
+
+blogdown::install_hugo()			        # install Hugo
+	macOS installs using homebrew
+	The latest Hugo version is 0.71.0
+	Updated 1 tap (homebrew/core).
+	==&gt; New Formulae
+	...
+	...		
+	Bash completion has been installed to:
+	  /usr/local/etc/bash_completion.d
+	==&gt; Summary
+	🍺  /usr/local/Cellar/hugo/0.71.0: 42 files, 74.4MB		
+
+blogdown::update_hugo()
+blogdown::hugo_version()
+&lt;/pre&gt;
+&lt;h2 id=&#34;12-quick-start&#34;&gt;1.2 quick start&lt;/h2&gt;
+&lt;pre&gt;
+File &gt; New Project &gt; New Directory &gt; Website using Blogdown &gt; Create Project
+specify directory name (e.g. blogdown_test)
+creates blogdown_test/
+                       .Rproj.user/
+                       blogdown_test.Rproj
+                       config.toml
+                       content/
+                       index.Rmd
+                       resources/
+                       static/
+                       themes/
+
+or type blogdown::new_site() in project directory
+&lt;/pre&gt;
+&lt;h3 id=&#34;livereload&#34;&gt;LiveReload&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;website auto-rebuild when any source file modified and saved&lt;/li&gt;
+&lt;li&gt;use blogdown::serve_site()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;configtoml&#34;&gt;config.toml&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;basic configuration settings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;content&#34;&gt;content/&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;put R Markdown or Markdown source files for posts/ pages&lt;/li&gt;
+&lt;li&gt;can have any directory structure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;public&#34;&gt;public/&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;publishing directory&lt;/li&gt;
+&lt;li&gt;website automatically generated to this directory&lt;/li&gt;
+&lt;li&gt;*.html, *.css, *.js files and images&lt;/li&gt;
+&lt;li&gt;upload this to github pages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;13-rstudio-add-ins&#34;&gt;1.3 RStudio add-ins&lt;/h2&gt;
+&lt;p&gt;Addins &amp;gt;
+Serve Site		calls blogdown::serve_site()
+New Post		calls blogdown::new_post()
+opens dialog box to enter metadata for blog post
+can also generate normal page
+scans categories and tags of existing posts
+opens markdown file for creating new content
+Update Metadata	update YAML metadata of currently opened post
+edit metadata if you closed it
+Insert Image	copies image into project directory
+adds markdown/HTML code to embed the image&lt;/p&gt;
+&lt;h2 id=&#34;check-project--website&#34;&gt;check project = website&lt;/h2&gt;
+&lt;p&gt;Tool &amp;gt; Project Options &amp;gt; Build Tools &amp;gt; Project build tools = Website&lt;/p&gt;
+&lt;p&gt;! uncheck &amp;ldquo;Preview site after building&amp;rdquo;
+and &amp;ldquo;Re-knit current preview when supporting files change&amp;rdquo;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;okay so basically if publishing manually,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;do NOT use serve_site(),&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;instead use build_site() before uploading public/ to github&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;if just previewing before publishing,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;then use serve_site()&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;build-website&#34;&gt;build website&lt;/h2&gt;
+&lt;p&gt;RStudio &amp;gt; Build tab &amp;gt; Build Website (calls blogdown::build_site())&lt;/p&gt;
+&lt;p&gt;if publishing public/ files manually (yes)
+every time before publishing website&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;restart R session&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;click Build Website&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(instead of publishing public/ continuously with blogdown::serve_site(),
+blogdown::serve_site() calls blogdown::build_site(local = TRUE),
+we want blogdown::build_site(local = FALSE))&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;      ==&amp;gt; rmarkdown::render_site(encoding = &#39;UTF-8&#39;)
+
+      Rendering content/post/2015-07-23-r-rmarkdown.Rmd
+      Building sites … 
+                         | EN  
+      -------------------+-----
+        Pages            | 20  
+        Paginator pages  |  0  
+        Non-page files   |  0  
+        Static files     | 12  
+        Processed images |  0  
+        Aliases          |  0  
+        Sitemaps         |  1  
+        Cleaned          |  0  
+
+      Total in 26 ms
+
+      Output created: public/index.html
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;public/ is default&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;can change it with publishDir = &amp;ldquo;myNewDirectory&amp;rdquo; in config.toml&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;set &amp;ldquo;relativeurls&amp;rdquo; to true in config.toml to view in browser&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;or else website can only be previewed in RStudio viewer&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(CSS and Javascript links won&amp;rsquo;t work)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;14-global-options-that-affect-blogdown&#34;&gt;1.4 global options that affect blogdown&lt;/h2&gt;
+&lt;p&gt;Option 				name			Default	Meaning
+servr.daemon		interactive()	Use a daemonized server?
+blogdown.author						The default author of new posts
+blogdown.ext		.md				Default extension of new posts
+blogdown.subdir		post			A subdirectory under content/
+blogdown.yaml.empty	TRUE			Preserve empty fields in YAML?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;set global options with options(name = value)&lt;/li&gt;
+&lt;li&gt;sets some defaults for e.g. author, ext&lt;/li&gt;
+&lt;li&gt;so when you do New Post, some fields auto populate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;file.edit(&#39;/Users/minghan/Google Drive/RBlogDown/blogdown_test/.Rprofile&amp;rsquo;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;options(servr.daemon = &#39;interactive()&#39;,
+        blogdown.author = &#39;Ming Han&#39;,
+        blogdown.ext = &#39;.Rmd&#39;,
+        blogdown.subdir = &#39;post&#39;,
+        blogdown.yaml.empty = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;or create .Rprofile at home dir (~/)&lt;/li&gt;
+&lt;li&gt;R reads project .Rprofile first, but eventually settles with what&amp;rsquo;s in ~/.Rprofile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;15-rmd-vs-rmarkdown-vs-md&#34;&gt;1.5 .rmd vs .Rmarkdown vs .md&lt;/h2&gt;
+&lt;p&gt;Feature			.Rmd	.Rmarkdown	.md
+Run R code		yes		yes			no
+Bibliography	yes		no			no
+Task list		maybe	yes			yes
+MathJax			yes		maybe		maybe
+HTML widgets	yes		no			no
+^
+|___ most complete, but heavier&lt;/p&gt;
+&lt;p&gt;more info - &lt;a href=&#34;https://bookdown.org/yihui/blogdown/output-format.html&#34;&gt;https://bookdown.org/yihui/blogdown/output-format.html&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.md rendered to HTML by Blackfriday&lt;/li&gt;
+&lt;li&gt;.RMarkdown compiled using rmarkdown and Pandoc
+&lt;ul&gt;
+&lt;li&gt;see Pandoc and bookdown doc for all features (&lt;a href=&#34;https://blogdown-demo.rbind.io&#34;&gt;https://blogdown-demo.rbind.io&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;blogdown supports LaTex render to HTML, but needs &lt;code&gt;$math$&lt;/code&gt; (backticks)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;r-markdown-output-format&#34;&gt;r markdown output format&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;...
+output:
+    blogdown:html_page:
+        toc: true
+        fig_width: 6
+        dev: &amp;quot;svg&amp;quot;				&amp;lt;-- device for plots
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;blogdown:html_page inherits from bookdown::html_document2 inherits from rmarkdown::html_document&lt;/li&gt;
+&lt;li&gt;so check ?markdown::html_document for details&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;setting-blogdownhtml_page-options-globally&#34;&gt;setting blogdown:html_page() options globally&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;create _output.yml file in root directory&lt;/p&gt;
+&lt;p&gt;blogdown::html_page:
+toc: true
+fig_width: 6
+dev: &amp;ldquo;svg&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;make-blogdown-ignore-a-rmd-file-when-compiling&#34;&gt;make blogdown ignore a .Rmd file when compiling&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;rename it to an unknown extension e.g. .Rmdignore&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;16-other-hugo-themes&#34;&gt;1.6 other Hugo themes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io&#34;&gt;http://themes.gohugo.io&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;not all themes work well with blogdown&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install-theme&#34;&gt;install theme&lt;/h2&gt;
+&lt;p&gt;blogdown::install_theme() with github username and repo name&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;OR
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;create new site, pass github repo name to theme in new_site() &amp;lt;&amp;ndash; preferred&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;automatically creates config.toml file&lt;/p&gt;
+&lt;p&gt;blogdown::new_site(theme = &amp;lsquo;gcushen/hugo-academic&amp;rsquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;themes-that-work-well-with-blogdown&#34;&gt;themes that work well with blogdown&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Simple/minimal themes: 	XMin, https://github.com/yihui/hugo-xmin
+no navbars...			Tanka, https://github.com/nanxstats/hugo-tanka
+                        simple-a, https://github.com/AlexFinn/simple-a
+                        ghostwriter, https://github.com/roryg/ghostwriter
+
+                                 ____ pretty good
+                                |
+Sophisticated themes: 	hugo-academic (strongly recommended for users in academia), https://github.com/gcushen/hugo-academic
+                        hugo-tranquilpeak-theme, https://github.com/kakawait/hugo-tranquilpeak-theme
+                        hugo-creative-portfolio-theme, https://github.com/kishaningithub/hugo-creative-portfolio-theme
+                        hugo-universal-theme, https://github.com/devcows/hugo-universal-theme
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;17-recommended-workflow&#34;&gt;1.7 recommended workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;pick a theme&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pick a theme from &lt;a href=&#34;http://themes.gohugo.io&#34;&gt;http://themes.gohugo.io&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;find link to theme repo on github (&lt;a href=&#34;https://github.com/user/repo&#34;&gt;https://github.com/user/repo&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;create new project in RStudio
+blogdown::new_site(theme = &amp;lsquo;user/repo&amp;rsquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;edit options of config.toml to customize&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;edit website&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;preview site with Addins &amp;gt; Serve Site&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(never click knit button)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;upload public/ folder to your github repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;easier with Netlify, continuous deployment instead of manually uploading to github&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;21-static-sites-with-hugo&#34;&gt;2.1 static sites with Hugo&lt;/h2&gt;
+&lt;p&gt;static sites&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML files&lt;/li&gt;
+&lt;li&gt;same content no matter who visits the page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;dynamic sites&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;server side language that sends different content to different users&lt;/li&gt;
+&lt;li&gt;e.g. PHP&lt;/li&gt;
+&lt;li&gt;e.g. web forum, user login, server fetches user data from a database
+renders different content for different users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;static site generators&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo, Jekyll, Hexo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;advantage of Hugo&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;easy install&lt;/li&gt;
+&lt;li&gt;fast rendering&lt;/li&gt;
+&lt;li&gt;large community&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;blogdown = Hugo with Rmarkdown&lt;/p&gt;
+&lt;h2 id=&#34;blogdown-default-folder-structure&#34;&gt;blogdown default folder structure&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;config.toml
+content/
+static/
+themes/
+layouts/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;22-configuration&#34;&gt;2.2 configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;config.toml&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;sets global configuration for entire site&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo first searches for config.toml (Tom&amp;rsquo;s Obvious Minimal Language),
+then config.yaml (Yet Another Markup Language)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo prefers .toml, but can also use .yaml&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;for blogdown&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use TOML for config file&lt;/li&gt;
+&lt;li&gt;use YAML for data format for metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;221-toml-syntax&#34;&gt;2.2.1 TOML syntax&lt;/h2&gt;
+&lt;p&gt;key = value		char strings in quotes
+boolean in bare lowercase&lt;/p&gt;
+&lt;p&gt;e.g.	title = &amp;ldquo;My Awesome Site&amp;rdquo;
+relativeURLs = true&lt;/p&gt;
+&lt;p&gt;table in TOML&lt;/p&gt;
+&lt;p&gt;e.g.	[social]
+github = &amp;ldquo;&lt;a href=&#34;https://github.com/rstudio/blogdown%22&#34;&gt;https://github.com/rstudio/blogdown&amp;quot;&lt;/a&gt;
+twitter = &amp;ldquo;&lt;a href=&#34;https://twitter.com/rstudio%22&#34;&gt;https://twitter.com/rstudio&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;table used to fill variables in site&amp;rsquo;s template&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;array of tables in TOML&lt;/p&gt;
+&lt;p&gt;e.g.	[[menu.main]]
+name = &amp;ldquo;Blog&amp;rdquo;
+url = &amp;ldquo;/blog/&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    [[menu.main]]
+        name = &amp;quot;Categories&amp;quot;
+        url = &amp;quot;/categories/&amp;quot;
+
+    [[menu.main]]
+        name = &amp;quot;About&amp;quot;
+        url = &amp;quot;/about/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo interprets array of tables as MENU&lt;/li&gt;
+&lt;li&gt;if in config.toml, will generate links to Blog, Categories and About in site&amp;rsquo;s main menu&lt;/li&gt;
+&lt;li&gt;menu names defined here, location and style of menu specified elsewhere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;222-options&#34;&gt;2.2.2 options&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;defaults at &lt;a href=&#34;https://gohugo.io/overview/configuration/&#34;&gt;https://gohugo.io/overview/configuration/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;all can be changed except contentDir, hard-coded to &amp;ldquo;content&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;baseURL				URL for your site
+enableEmoji			true or false, e.g. 😄 in markdown&lt;/p&gt;
+&lt;p&gt;permalinks			rules to generate permanent link&lt;/p&gt;
+&lt;p&gt;e.g.	[permalinks]
+posts = &amp;ldquo;/:year/:month/:day/:title/&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    blogdown recommend using :slug instead of :title
+	
+    [permalinks]
+        posts = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+
+        SLUG:
+            - simply an unique character string used to identify a specific post
+            - slug does not change even if post title changes
+			
+        - post title may change, but want link to post to stay permanent
+        - :slug falls back to :title if field name &amp;quot;slug&amp;quot; not set in YAML metadata of the post
+        - set a fixed :slug, so link to post is fixed, and can update title
+        - e.g. 	slug = &amp;quot;blogdown-love&amp;quot;
+                old title = &amp;quot;I love blogdown&amp;quot;
+                new title = &amp;quot;why blogdown is the best&amp;quot;
+	
+    e.g.
+    [permalinks]
+        post = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+
+        - contents under posts will have new URL structure
+        - content/posts/sample-entry.md with date: 2017-02-27T19:20:00-05:00
+            will render to public/2017/02/sample-entry/index.html at build time
+        - { more for organizing blogs }
+
+https://gohugo.io/content-management/urls/
+permalink config values
+
+    :year			the 4-digit year
+    :month			the 2-digit month
+    :monthname		the name of the month
+    :day			the 2-digit day
+    :weekday		the 1-digit day of the week (Sunday = 0)
+    :weekdayname	the name of the day of the week
+    :yearday		the 1- to 3-digit day of the year
+    :section		the content’s section
+    :sections		the content’s sections hierarchy
+    :title			the content’s title
+    :slug			the content’s slug (or title if no slug is provided in the front matter)
+    :filename		the content’s filename (without extension)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;publishDir			can set other than public/
+theme				directory name under themes/
+ignoreFiles			list of filename pattern (regex) for Hugo to ignore
+specify at least these&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;                    [&amp;quot;\\.Rmd$&amp;quot;,				blogdown will render .Rmd files into .html files, no need for Hugo to build .Rmd files
+                     &amp;quot;\\.Rmarkdown$&amp;quot;,		
+                     &amp;quot;_files$&amp;quot;,				_files and _cache only contains temp files during blogdown .Rmd compilation
+                     &amp;quot;_cache$&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;uglyURLs			Hugo generates &amp;ldquo;clean&amp;rdquo; URLs by default
+for foo.md, generates foo/index.html
+enable uglyURLs to have strict mapping from foo.md to &lt;a href=&#34;http://www.example.com/foo/foo.html&#34;&gt;http://www.example.com/foo/foo.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;hasCJKLanguage		Chinese, Japanese, Korean
+set to true if using those langugages&lt;/p&gt;
+&lt;p&gt;arbitrary options&lt;/p&gt;
+&lt;p&gt;e.g.	[params]
+author = &amp;ldquo;Ming Han&amp;rdquo;
+dateFormat = &amp;ldquo;2018_04_24&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- avoids hard coding Hugo themes,
+- user change theme by editing config file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;23-content&#34;&gt;2.3 content&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;can have arbitrary directory structure in content/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;common one is:&lt;/p&gt;
+&lt;p&gt;├── _index.md
+├── about.md
+├── vitae.md
+├── post/
+│   ├── 2017-01-01-foo.md
+│   ├── 2017-01-02-bar.md
+│   └── &amp;hellip;
+└── &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;231-yaml-metadata&#34;&gt;2.3.1 YAML metadata&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;each page should start with YAML metadata&lt;/p&gt;
+&lt;p&gt;title
+date
+author
+categories
+tags
+etc&amp;hellip;&lt;/p&gt;
+&lt;p&gt;draft = true		posts not rendered with build_site() or hugo_build(), only renders in preview with Addins &amp;gt; Serve Site
+publishdate	=		specify future publish date, again still renders in preview
+weight = 			if 2 posts have same date, use weight to order them
+slug = 				char string as tail of URL&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;232-body&#34;&gt;2.3.2 body&lt;/h2&gt;
+&lt;h2 id=&#34;233-shortcode&#34;&gt;2.3.3 shortcode&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo automatically generates full HTML code based on a shortcode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;e.g. embed twitter card&lt;/p&gt;
+  &lt;blockquote class=&#34;twitter-tweet&#34;&gt;
+    &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Anyone know of an R package for
+      interfacing with Alexa Skills?
+      &lt;a href=&#34;https://twitter.com/thosjleeper&#34;&gt;@thosjleeper&lt;/a&gt;
+      ...
+    &lt;/p&gt;
+    &amp;mdash; Jeff Leek (@jtleek)
+    &lt;a href=&#34;https://twitter.com/jtleek/status/852205086956818432&#34;&gt;
+      April 12, 2017
+    &lt;/a&gt;
+  &lt;/blockquote&gt;
+  &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;
+  &lt;/script&gt;
+&lt;p&gt;becomes&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Anyone know of an R package for interfacing with Alexa Skills? &lt;a href=&#34;https://twitter.com/thosjleeper?ref_src=twsrc%5Etfw&#34;&gt;@thosjleeper&lt;/a&gt; &lt;a href=&#34;https://twitter.com/xieyihui?ref_src=twsrc%5Etfw&#34;&gt;@xieyihui&lt;/a&gt; &lt;a href=&#34;https://twitter.com/drob?ref_src=twsrc%5Etfw&#34;&gt;@drob&lt;/a&gt; &lt;a href=&#34;https://twitter.com/JennyBryan?ref_src=twsrc%5Etfw&#34;&gt;@JennyBryan&lt;/a&gt; &lt;a href=&#34;https://twitter.com/HoloMarkeD?ref_src=twsrc%5Etfw&#34;&gt;@HoloMarkeD&lt;/a&gt; ?&lt;/p&gt;&amp;mdash; Jeff Leek (@jtleek) &lt;a href=&#34;https://twitter.com/jtleek/status/852205086956818432?ref_src=twsrc%5Etfw&#34;&gt;April 12, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+						in .md
+blogdown::shortcode(&amp;lsquo;tweet&amp;rsquo;, &amp;lsquo;852205086956818432&amp;rsquo;)		in .Rmd&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;see &lt;a href=&#34;https://gohugo.io/extras/shortcodes/&#34;&gt;https://gohugo.io/extras/shortcodes/&lt;/a&gt; for more&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;24-themes&#34;&gt;2.4 themes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io&#34;&gt;https://themes.gohugo.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;e.g. hugo-lithium&lt;/p&gt;
+&lt;p&gt;config.toml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;/&amp;quot;												get from github, don&#39;t forget trailing /
+relativeurls = false										optional, true only if viewing website locally (blogdown::serve_site() provides local server to preview site locally)
+languageCode = &amp;quot;en-us&amp;quot;										
+title = &amp;quot;A Hugo website&amp;quot;									
+theme = &amp;quot;hugo-lithium&amp;quot;										directory name of theme
+googleAnalytics = &amp;quot;&amp;quot;										can sign up at https://analytics.google.com to obtain a tracking ID (tracks visits etc...)
+disqusShortname = &amp;quot;&amp;quot;										https://disqus.com, to enable commenting on your site
+ignoreFiles = [&amp;quot;\\.Rmd$&amp;quot;, 
+               &amp;quot;\\.Rmarkdown&amp;quot;, 
+               &amp;quot;_files$&amp;quot;, 
+               &amp;quot;_cache$&amp;quot;]
+
+[permalinks]
+    post = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+
+[[menu.main]]
+    name = &amp;quot;Home&amp;quot;
+    url = &amp;quot;/&amp;quot;
+    weight = 1											set weight to order menu items
+[[menu.main]]
+    name = &amp;quot;About&amp;quot;
+    url = &amp;quot;/about/&amp;quot;
+    weight = 2
+[[menu.main]]
+    name = &amp;quot;GitHub&amp;quot;
+    url = &amp;quot;https://github.com/rstudio/blogdown&amp;quot;
+    weight = 3
+[[menu.main]]
+    name = &amp;quot;CV&amp;quot;
+    url = &amp;quot;/vitae/&amp;quot;										need vitae.md in content/ to generate /vitae/index.html
+    weight = 4
+[[menu.main]]
+    name = &amp;quot;Twitter&amp;quot;
+    url = &amp;quot;https://twitter.com/rstudio&amp;quot;
+    weight = 5
+
+[params]												misc parameters
+    description = &amp;quot;A website built through 
+                   Hugo and blogdown.&amp;quot;
+
+    highlightjsVersion = &amp;quot;9.12.0&amp;quot;						https://highlightjs.org/static/demo/
+    highlightjsCDN = &amp;quot;//cdnjs.cloudflare.com/ajax/libs&amp;quot;
+    highlightjsLang = [&amp;quot;r&amp;quot;, &amp;quot;yaml&amp;quot;]
+    highlightjsTheme = &amp;quot;github&amp;quot;
+
+    MathJaxCDN = &amp;quot;//cdnjs.cloudflare.com/ajax/libs&amp;quot;
+    MathJaxVersion = &amp;quot;2.7.5&amp;quot;
+
+[params.logo]											default image logo.png in static/ is used
+    url = &amp;quot;logo.png&amp;quot;
+    width = 50
+    height = 50
+    alt = &amp;quot;Logo&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;25-templates&#34;&gt;2.5 templates&lt;/h2&gt;
+&lt;p&gt;theme = templates + web assets&lt;/p&gt;
+&lt;p&gt;web assets = CSS, JS files, images, videos&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;assets determine appearance + functionality of website + embedded content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;251-xmin-hugo-theme-example&#34;&gt;2.5.1 XMin Hugo theme example&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;tree view&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  hugo-xmin/
+  ├── LICENSE.md
+  ├── README.md
+  ├── archetypes
+  │   └── default.md
+  ├── layouts								HTML templates
+  │   ├── 404.html
+  │   ├── _default						
+  │   │   ├── list.html					renders a list of pages e.g. blogs
+  │   │   ├── single.html					render a single page
+	
+              {{ partial &amp;quot;header.html&amp;quot; . }}										{{ }} Hugo&#39;s variable and functions
+                  &amp;lt;div class=&amp;quot;article-meta&amp;quot;&amp;gt;
+                      &amp;lt;h1&amp;gt;&amp;lt;span class=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/span&amp;gt;&amp;lt;/h1&amp;gt;			title, author, date all provided in YAML metadata header of a page
+
+                      {{ with .Params.author }}
+                      &amp;lt;h2 class=&amp;quot;author&amp;quot;&amp;gt;{{ . }}&amp;lt;/h2&amp;gt;
+                      {{ end }}
+
+                      {{ if .Params.date }}
+                      &amp;lt;h2 class=&amp;quot;date&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;2006/01/02&amp;quot; }}&amp;lt;/h2&amp;gt;
+                      {{ end }}
+                  &amp;lt;/div&amp;gt;
+
+              &amp;lt;main&amp;gt;
+                  {{ .Content }}
+              &amp;lt;/main&amp;gt;
+
+              {{ partial &amp;quot;footer.html&amp;quot; . }}		
+	
+  │   │   └── terms.html					used to generate full list of categories or tags
+  │   └── partials						HTML fragments reused by other templates via &amp;quot;partial&amp;quot; function
+  │       ├── foot_custom.html
+  │       ├── footer.html
+  │       ├── head_custom.html
+  │       └── header.html
+	
+              &amp;lt;!DOCTYPE html&amp;gt;
+              &amp;lt;html lang=&amp;quot;{{ .Site.LanguageCode }}&amp;quot;&amp;gt;
+                  &amp;lt;head&amp;gt;
+                      &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+                      &amp;lt;title&amp;gt;{{ .Title }} | {{ .Site.Title }}&amp;lt;/title&amp;gt;
+                      &amp;lt;link href=&#39;{{ &amp;quot;/css/style.css&amp;quot; | relURL }}&#39;				link to .css files
+                          rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;
+                      &amp;lt;link href=&#39;{{ &amp;quot;/css/fonts.css&amp;quot; | relURL }}&#39;
+                          rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;
+                      {{ partial &amp;quot;head_custom.html&amp;quot; . }}
+                  &amp;lt;/head&amp;gt;
+
+                  &amp;lt;body&amp;gt;
+                      &amp;lt;nav&amp;gt;
+                          &amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+                              {{ range .Site.Menus.main }}
+                              &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .URL | relURL }}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                              {{ end }}
+                          &amp;lt;/ul&amp;gt;
+                          &amp;lt;hr/&amp;gt;
+                      &amp;lt;/nav&amp;gt;
+                  &amp;lt;/body&amp;gt;
+	
+              - user defines menu in config.toml
+                                                      [[menu.main]]
+                                                          name = &amp;quot;Home&amp;quot;
+                                                          url = &amp;quot;/&amp;quot;
+                                                      [[menu.main]]
+                                                          name = &amp;quot;About&amp;quot;
+                                                          url = &amp;quot;/about/&amp;quot;
+              - menu generated using header.html
+                                                      &amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+                                                          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                                                          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/about/&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                                                      &amp;lt;/ul&amp;gt;					
+	
+  ├── static								assets
+  │   └── css
+  │       ├── fonts.css
+  │       └── style.css
+  └── exampleSite
+      ├── config.toml
+      ├── content
+      │   ├── _index.md
+      │   ├── about.md
+      │   ├── note
+      │   │   ├── 2017-06-13-a-quick-note.md
+      │   │   └── 2017-06-14-another-note.md
+      │   └── post
+      │       ├── 2015-07-23-lorem-ipsum.md
+      │       └── 2016-02-14-hello-markdown.md
+      ├── layouts
+      │   └── partials
+      │       └── foot_custom.html
+      └── public
+          └── ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;252-implement-more-features&#34;&gt;2.5.2 implement more features&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;google analytics&lt;/p&gt;
+&lt;p&gt;{{ template &amp;ldquo;_internal/google_analytics.html&amp;rdquo; . }}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;can add to layouts/partials/foot_custom.html&lt;/li&gt;
+&lt;li&gt;configure googleAnalytics in config.toml&lt;/li&gt;
+&lt;li&gt;preview at &lt;a href=&#34;https://deploy-preview-3--hugo-xmin.netlify.com&#34;&gt;https://deploy-preview-3--hugo-xmin.netlify.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(&lt;a href=&#34;https://github.com/yihui/hugo-xmin/pull/3&#34;&gt;https://github.com/yihui/hugo-xmin/pull/3&lt;/a&gt; for details)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;disqus comments&lt;/p&gt;
+&lt;p&gt;{{ template &amp;ldquo;_internal/disqus.html&amp;rdquo; . }}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;add to foot_custom.html&lt;/li&gt;
+&lt;li&gt;configure disqus shortname in config.toml&lt;/li&gt;
+&lt;li&gt;preview at &lt;a href=&#34;https://deploy-preview-4--hugo-xmin.netlify.com&#34;&gt;https://deploy-preview-4--hugo-xmin.netlify.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(&lt;a href=&#34;https://github.com/yihui/hugo-xmin/pull/4&#34;&gt;https://github.com/yihui/hugo-xmin/pull/4&lt;/a&gt; for details)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;syntax highlighting via highlight.js
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;math expressions through MathJax
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if .Rmd, just add YAML metadata to top of .Rmd file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;output:
+blogdown:html_page:
+toc: true&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;if .md, have to modify single.html template, before content&lt;/p&gt;
+&lt;p&gt;{{ if .Params.toc }}
+{{ .TableOfContents }}
+{{ end }}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yihui/hugo-xmin/pull/7&#34;&gt;https://github.com/yihui/hugo-xmin/pull/7&lt;/a&gt; for an implementation with examples&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;display categories and tags in post
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add pagination
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add github edit button
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;26-custom-layouts&#34;&gt;2.6 custom layouts&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;    your-website/
+    ├── config.toml
+    ├── ...
+    ├── themes/
+    │   └── hugo-xmin/
+    │       ├── ...
+    │       ├── layouts/
+    │       |   ├── ...
+    │       |   └── partials
+    │       |       ├── foot_custom.html
+    │       |       ├── footer.html
+    │       |       ├── head_custom.html
+    │       |       └── header.html
+    |		└── static/
+    |			├── style.css
+    |			└── ...
+    |
+    ├── layouts
+    |	└── partials
+    |		├── foot_custom.html
+    |		└── head_custom.html
+    └── static/
+        ├── style.css
+        └── ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;if customize a theme, future author updates may conflict with your tweaks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;customize-in-2-ways&#34;&gt;customize in 2 ways&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;in config.toml (without touching template files)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use layouts/ to override templates in themes/&lt;/p&gt;
+&lt;p&gt;e.g., the file layouts/partials/foot_custom.html, when provided,
+will override themes/hugo-xmin/layouts/partials/foot_custom.html&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;27-static-files&#34;&gt;2.7 static files&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;static/ stores web assets (images, CSS, JS files)&lt;/li&gt;
+&lt;li&gt;all files in static/ copied to public/ when Hugo renders website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-applications&#34;&gt;2 applications&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;make small changes to .css main file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;e.g. static/style.css will override themes/static/style.css&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    body {
+      font-family: &amp;quot;Comic Sans MS&amp;quot;, cursive, sans-serif;
+    }
+    code {
+      font-family: &amp;quot;Courier New&amp;quot;, Courier, monospace;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;render documents that are not blogdown::html_page()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;e.g. .Rmd file generates PDF,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;putting the .Rmd file in static/, blogdown will generate PDF,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and Hugo will just copy PDF file into public/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;need to write custom &amp;ldquo;build&amp;rdquo; script R/build.R&lt;/p&gt;
+&lt;p&gt;blogdown::build_dir(&amp;ldquo;static&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;more info &lt;a href=&#34;https://bookdown.org/yihui/blogdown/methods.html#methods&#34;&gt;https://bookdown.org/yihui/blogdown/methods.html#methods&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-deployment&#34;&gt;3 deployment&lt;/h2&gt;
+&lt;h2 id=&#34;31-netlify&#34;&gt;3.1 netlify&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;login to Netlify with github username to link Netlify with Github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dealing-with-site-updates&#34;&gt;dealing with site updates&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;host all source files (not just public/) in github repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netlify create new sites from github repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netlify supports Jekyll and Hugo (need to disable Jekyll only if hosting with github)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netlify
+Deploy settings
+repository			https://github.com/username/repo
+branch				master
+build command			hugo
+publish directory		public&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;may need to create environment variable HUGO_VERSION and set to 0.20
+Build environment variables
+HUGO_VERSION		0.24.1	(or latest)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;may take few minutes to deploy on Netlify for first time&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;but later updates are incremental&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;auto-update&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;now update github source repository and&lt;/li&gt;
+&lt;li&gt;Netlify calls Hugo to render website automatically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;domain-name&#34;&gt;domain name&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;custom domain name, need to configure some DNS records, point it to Netlify server&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Full Tutorial</title>
+      <link>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/</link>
+      <pubDate>Wed, 20 May 2020 08:47:00 +0100</pubDate>
+      <guid>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial_full/</guid>
+      <description>&lt;p&gt;My experience going through R blogdown install.
+&lt;a href=&#34;https://bookdown.org/yihui/blogdown/software-info.html&#34;&gt;https://bookdown.org/yihui/blogdown/software-info.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Blogdown = static website generator in R, based on Hugo
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;11-installation&#34;&gt;1.1 installation&lt;/h2&gt;
+&lt;pre&gt;
+install.packages(&#39;blogdown&#39;)		      # install blogdown
+
+blogdown::install_hugo()              # install Hugo
+	macOS installs using homebrew
+	The latest Hugo version is 0.71.0
+	Updated 1 tap (homebrew/core).
+	==&gt; New Formulae
+	...
+	...		
+	Bash completion has been installed to:
+	  /usr/local/etc/bash_completion.d
+	==&gt; Summary
+	🍺  /usr/local/Cellar/hugo/0.71.0: 42 files, 74.4MB		
+
+blogdown::update_hugo()
+blogdown::hugo_version()
+&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;12-quick-start&#34;&gt;1.2 quick start&lt;/h2&gt;
+&lt;pre&gt;
+File &gt; New Project &gt; New Directory &gt; Website using Blogdown &gt; Create Project
+specify directory name (e.g. blogdown_test)
+creates blogdown_test/
+                       .Rproj.user/
+                       blogdown_test.Rproj
+                       config.toml
+                       content/
+                       index.Rmd
+                       resources/
+                       static/
+                       themes/
+
+or type blogdown::new_site() in project directory
+&lt;/pre&gt;
+&lt;h3 id=&#34;livereload&#34;&gt;LiveReload&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;website auto-rebuild when any source file modified and saved&lt;/li&gt;
+&lt;li&gt;use blogdown::serve_site()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;configtoml&#34;&gt;config.toml&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;basic configuration settings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;content&#34;&gt;content/&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;put R Markdown or Markdown source files for posts/ pages&lt;/li&gt;
+&lt;li&gt;can have any directory structure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;public&#34;&gt;public/&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;publishing directory&lt;/li&gt;
+&lt;li&gt;website automatically generated to this directory&lt;/li&gt;
+&lt;li&gt;*.html, *.css, *.js files and images&lt;/li&gt;
+&lt;li&gt;upload this to github pages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;13-rstudio-add-ins&#34;&gt;1.3 RStudio add-ins&lt;/h2&gt;
+&lt;pre&gt;
+Addins &gt;
+Serve Site		calls blogdown::serve_site()
+New Post		calls blogdown::new_post()
+				opens dialog box to enter metadata for blog post
+				can also generate normal page
+				scans categories and tags of existing posts
+				opens markdown file for creating new content
+Update Metadata	update YAML metadata of currently opened post
+				edit metadata if you closed it
+Insert Image	copies image into project directory
+				adds markdown/HTML code to embed the image
+&lt;/pre&gt;
+&lt;h3 id=&#34;check-project--website&#34;&gt;check project = website&lt;/h3&gt;
+&lt;pre&gt;
+Tool &gt; Project Options &gt; Build Tools &gt; Project build tools = Website
+
+! uncheck &#34;Preview site after building&#34;
+	  and &#34;Re-knit current preview when supporting files change&#34;
+&lt;/pre&gt;
+&lt;h3 id=&#34;conclusion&#34;&gt;conclusion:&lt;/h3&gt;
+&lt;p&gt;if publishing manually,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;do NOT use serve_site(),&lt;/li&gt;
+&lt;li&gt;instead use build_site() before uploading public/ to github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;if just previewing before publishing,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;then use serve_site()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;build-website&#34;&gt;build website&lt;/h3&gt;
+&lt;p&gt;RStudio &amp;gt; Build tab &amp;gt; Build Website (calls blogdown::build_site())&lt;/p&gt;
+&lt;p&gt;if publishing public/ files manually (nah, better to use Netlify)
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;every time before publishing website&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;restart R session&lt;/li&gt;
+&lt;li&gt;click Build Website&lt;/li&gt;
+&lt;li&gt;(instead of publishing public/ continuously with blogdown::serve_site(),
+&lt;ul&gt;
+&lt;li&gt;blogdown::serve_site() calls blogdown::build_site(local = TRUE),&lt;/li&gt;
+&lt;li&gt;we want blogdown::build_site(local = FALSE))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+			==&gt; rmarkdown::render_site(encoding = &#39;UTF-8&#39;)
+
+			Rendering content/post/2015-07-23-r-rmarkdown.Rmd
+			Building sites … 
+							   | EN  
+			-------------------+-----
+			  Pages            | 20  
+			  Paginator pages  |  0  
+			  Non-page files   |  0  
+			  Static files     | 12  
+			  Processed images |  0  
+			  Aliases          |  0  
+			  Sitemaps         |  1  
+			  Cleaned          |  0  
+
+			Total in 26 ms
+
+			Output created: public/index.html
+&lt;/pre&gt;
+&lt;p&gt;public/ is default&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;can change it with publishDir = &amp;ldquo;myNewDirectory&amp;rdquo; in config.toml
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;set &amp;ldquo;relativeurls&amp;rdquo; to true in config.toml to view in browser&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;or else website can only be previewed in RStudio viewer&lt;/li&gt;
+&lt;li&gt;(CSS and Javascript links won&amp;rsquo;t work)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;14-global-options-that-affect-blogdown&#34;&gt;1.4 global options that affect blogdown&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Option&lt;/th&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;Default	Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;servr.daemon&lt;/td&gt;
+&lt;td&gt;interactive()&lt;/td&gt;
+&lt;td&gt;Use a daemonized server?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;blogdown.author&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The default author of new posts&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;blogdown.ext&lt;/td&gt;
+&lt;td&gt;.md&lt;/td&gt;
+&lt;td&gt;Default extension of new posts&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;blogdown.subdir&lt;/td&gt;
+&lt;td&gt;post&lt;/td&gt;
+&lt;td&gt;A subdirectory under content/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;blogdown.yaml.empty&lt;/td&gt;
+&lt;td&gt;TRUE&lt;/td&gt;
+&lt;td&gt;Preserve empty fields in YAML?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;set global options with options(name = value)&lt;/li&gt;
+&lt;li&gt;sets some defaults for e.g. author, ext&lt;/li&gt;
+&lt;li&gt;so when you do New Post, some fields auto populate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+file.edit(&#39;/Users/minghan/Google Drive/RBlogDown/blogdown_test/.Rprofile&#39;)
+	
+	options(servr.daemon = &#39;interactive()&#39;,
+			blogdown.author = &#39;Ming Han&#39;,
+			blogdown.ext = &#39;.Rmd&#39;,
+			blogdown.subdir = &#39;post&#39;,
+			blogdown.yaml.empty = TRUE)
+&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;or create .Rprofile at home dir (~/)&lt;/li&gt;
+&lt;li&gt;R reads project .Rprofile first, but eventually settles with what&amp;rsquo;s in ~/.Rprofile
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;15-rmd-vs-rmarkdown-vs-md&#34;&gt;1.5 .rmd vs .Rmarkdown vs .md&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Feature&lt;/th&gt;
+&lt;th&gt;.Rmd&lt;/th&gt;
+&lt;th&gt;.Rmarkdown&lt;/th&gt;
+&lt;th&gt;.md&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Run R code&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bibliography&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Task list&lt;/td&gt;
+&lt;td&gt;maybe&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MathJax&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;maybe&lt;/td&gt;
+&lt;td&gt;maybe&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HTML widgets&lt;/td&gt;
+&lt;td&gt;yes&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;td&gt;no&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;.Rmd most complete, but heavier&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;more info at &lt;a href=&#34;https://bookdown.org/yihui/blogdown/output-format.html&#34;&gt;https://bookdown.org/yihui/blogdown/output-format.html&lt;/a&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;.md rendered to HTML by Blackfriday&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;.RMarkdown compiled using rmarkdown and Pandoc&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;see Pandoc and bookdown doc for all features (&lt;a href=&#34;https://blogdown-demo.rbind.io&#34;&gt;https://blogdown-demo.rbind.io&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;blogdown supports LaTex render to HTML, but needs &lt;code&gt;$math$&lt;/code&gt; (backticks)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;r-markdown-output-format&#34;&gt;r markdown output format&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;...
+output:
+    blogdown:html_page:
+        toc: true
+        fig_width: 6
+        dev: &amp;quot;svg&amp;quot;				&amp;lt;-- device for plots
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;blogdown:html_page inherits from bookdown::html_document2 inherits from rmarkdown::html_document&lt;/li&gt;
+&lt;li&gt;so check ?markdown::html_document for details&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;setting-blogdownhtml_page-options-globally&#34;&gt;setting blogdown:html_page() options globally&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;create _output.yml file in root directory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+	blogdown::html_page:
+	  toc: true
+	  fig_width: 6
+	  dev: &#34;svg&#34;
+&lt;/pre&gt;
+&lt;h3 id=&#34;make-blogdown-ignore-a-rmd-file-when-compiling&#34;&gt;make blogdown ignore a .Rmd file when compiling&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rename it to an unknown extension e.g. .Rmdignore&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;16-other-hugo-themes&#34;&gt;1.6 other Hugo themes&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://themes.gohugo.io&#34;&gt;http://themes.gohugo.io&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;not all themes work well with blogdown&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;install-theme&#34;&gt;install theme&lt;/h3&gt;
+&lt;pre&gt;
+blogdown::install_theme() with github username and repo name
+	
+	OR
+	
+create new site, pass github repo name to theme in new_site() &lt;-- preferred
+- automatically creates config.toml file
+
+	blogdown::new_site(theme = &#39;gcushen/hugo-academic&#39;)
+&lt;/pre&gt;
+&lt;h3 id=&#34;themes-that-work-well-with-blogdown&#34;&gt;themes that work well with blogdown&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Simple/minimal themes: 	XMin, https://github.com/yihui/hugo-xmin
+no navbars...			Tanka, https://github.com/nanxstats/hugo-tanka
+                        simple-a, https://github.com/AlexFinn/simple-a
+                        ghostwriter, https://github.com/roryg/ghostwriter
+
+                                 ____ pretty good
+                                |
+Sophisticated themes: 	hugo-academic (strongly recommended for users in academia), https://github.com/gcushen/hugo-academic
+                        hugo-tranquilpeak-theme, https://github.com/kakawait/hugo-tranquilpeak-theme
+                        hugo-creative-portfolio-theme, https://github.com/kishaningithub/hugo-creative-portfolio-theme
+                        hugo-universal-theme, https://github.com/devcows/hugo-universal-theme
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;17-recommended-workflow&#34;&gt;1.7 recommended workflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;pick a theme&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;pick a theme from &lt;a href=&#34;http://themes.gohugo.io&#34;&gt;http://themes.gohugo.io&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;find link to theme repo on github (&lt;a href=&#34;https://github.com/user/repo&#34;&gt;https://github.com/user/repo&lt;/a&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;create new project in RStudio
+blogdown::new_site(theme = &amp;lsquo;user/repo&amp;rsquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;edit options of config.toml to customize&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;edit website&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;preview site with Addins &amp;gt; Serve Site&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(never click knit button)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;upload public/ folder to your github repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;easier with Netlify, continuous deployment instead of manually uploading to github&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;21-static-sites-with-hugo&#34;&gt;2.1 static sites with Hugo&lt;/h2&gt;
+&lt;p&gt;static sites&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML files&lt;/li&gt;
+&lt;li&gt;same content no matter who visits the page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;dynamic sites&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;server side language that sends different content to different users&lt;/li&gt;
+&lt;li&gt;e.g. PHP&lt;/li&gt;
+&lt;li&gt;e.g. web forum, user login, server fetches user data from a database
+renders different content for different users&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;static site generators&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo, Jekyll, Hexo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;advantage of Hugo&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;easy install&lt;/li&gt;
+&lt;li&gt;fast rendering&lt;/li&gt;
+&lt;li&gt;large community&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;blogdown = Hugo with Rmarkdown&lt;/p&gt;
+&lt;h3 id=&#34;blogdown-default-folder-structure&#34;&gt;blogdown default folder structure&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;config.toml
+content/
+static/
+themes/
+layouts/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;22-configuration&#34;&gt;2.2 configuration&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;config.toml&lt;/li&gt;
+&lt;li&gt;sets global configuration for entire site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hugo&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;first searches for config.toml (Tom&amp;rsquo;s Obvious Minimal Language),&lt;/li&gt;
+&lt;li&gt;then config.yaml (Yet Another Markup Language)&lt;/li&gt;
+&lt;li&gt;Hugo prefers .toml, but can also use .yaml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;for blogdown&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;use TOML for config file&lt;/li&gt;
+&lt;li&gt;use YAML for data format for metadata&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;221-toml-syntax&#34;&gt;2.2.1 TOML syntax&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;argument&lt;/th&gt;
+&lt;th&gt;style&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;key = value&lt;/td&gt;
+&lt;td&gt;char strings in quotes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;td&gt;in bare lowercase&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;e.g.  title = &amp;ldquo;My Awesome Site&amp;rdquo;
+relativeURLs = true&lt;/p&gt;
+&lt;p&gt;table in TOML
+e.g.	[social]
+github = &amp;ldquo;&lt;a href=&#34;https://github.com/rstudio/blogdown%22&#34;&gt;https://github.com/rstudio/blogdown&amp;quot;&lt;/a&gt;
+twitter = &amp;ldquo;&lt;a href=&#34;https://twitter.com/rstudio%22&#34;&gt;https://twitter.com/rstudio&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;table-used-to-fill-variables-in-sites-template&#34;&gt;table used to fill variables in site&amp;rsquo;s template&lt;/h3&gt;
+&lt;p&gt;array of tables in TOML&lt;/p&gt;
+&lt;p&gt;e.g.	[[menu.main]]
+name = &amp;ldquo;Blog&amp;rdquo;
+url = &amp;ldquo;/blog/&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    [[menu.main]]
+        name = &amp;quot;Categories&amp;quot;
+        url = &amp;quot;/categories/&amp;quot;
+
+    [[menu.main]]
+        name = &amp;quot;About&amp;quot;
+        url = &amp;quot;/about/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugo interprets array of tables as MENU&lt;/li&gt;
+&lt;li&gt;if in config.toml, will generate links to Blog, Categories and About in site&amp;rsquo;s main menu&lt;/li&gt;
+&lt;li&gt;menu names defined here, location and style of menu specified elsewhere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;222-options&#34;&gt;2.2.2 options&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;defaults at &lt;a href=&#34;https://gohugo.io/overview/configuration/&#34;&gt;https://gohugo.io/overview/configuration/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;all can be changed except contentDir, hard-coded to &amp;ldquo;content&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;baseURL				URL for your site
+enableEmoji			true or false, e.g. 😄 in markdown&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;permalinks&#34;&gt;permalinks&lt;/h3&gt;
+&lt;p&gt;rules to generate permanent link&lt;/p&gt;
+&lt;p&gt;e.g.
+[permalinks]
+posts = &amp;ldquo;/:year/:month/:day/:title/&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;blogdown recommend using :slug instead of :title
+
+[permalinks]
+    posts = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+
+    SLUG:
+        - simply an unique character string used to identify a specific post
+        - slug does not change even if post title changes
+		
+    - post title may change, but want link to post to stay permanent
+    - :slug falls back to :title if field name &amp;quot;slug&amp;quot; not set in YAML metadata of the post
+    - set a fixed :slug, so link to post is fixed, and can update title
+    - e.g. 	slug = &amp;quot;blogdown-love&amp;quot;
+            old title = &amp;quot;I love blogdown&amp;quot;
+            new title = &amp;quot;why blogdown is the best&amp;quot;
+	
+e.g.
+[permalinks]
+    post = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+
+    - contents under posts will have new URL structure
+    - content/posts/sample-entry.md with date: 2017-02-27T19:20:00-05:00
+        will render to public/2017/02/sample-entry/index.html at build time
+    - { more for organizing blogs }
+
+https://gohugo.io/content-management/urls/
+permalink config values
+
+    :year			the 4-digit year
+    :month			the 2-digit month
+    :monthname		the name of the month
+    :day			the 2-digit day
+    :weekday		the 1-digit day of the week (Sunday = 0)
+    :weekdayname	the name of the day of the week
+    :yearday		the 1- to 3-digit day of the year
+    :section		the content’s section
+    :sections		the content’s sections hierarchy
+    :title			the content’s title
+    :slug			the content’s slug (or title if no slug is provided in the front matter)
+    :filename		the content’s filename (without extension)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;
+publishDir      can set other than public/
+theme           directory name under themes/
+ignoreFiles			list of filename pattern (regex) for Hugo to ignore
+                specify at least these
+						[&#34;\\.Rmd$&#34;,				blogdown will render .Rmd files into .html files, no need for Hugo to build .Rmd files
+						 &#34;\\.Rmarkdown$&#34;,		
+						 &#34;_files$&#34;,				_files and _cache only contains temp files during blogdown .Rmd compilation
+						 &#34;_cache$&#34;]
+
+uglyURLs			Hugo generates &#34;clean&#34; URLs by default
+						for foo.md, generates foo/index.html
+					enable uglyURLs to have strict mapping from foo.md to http://www.example.com/foo/foo.html
+
+hasCJKLanguage		Chinese, Japanese, Korean
+					set to true if using those langugages
+
+arbitrary options
+
+e.g.	[params]
+			author = &#34;Ming Han&#34;
+			dateFormat = &#34;2018_04_24&#34;
+
+	- avoids hard coding Hugo themes,
+	- user change theme by editing config file
+&lt;/pre&gt;
+&lt;h2 id=&#34;23-content&#34;&gt;2.3 content&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;can have arbitrary directory structure in content/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;common one is:&lt;/p&gt;
+&lt;p&gt;├── _index.md
+├── about.md
+├── vitae.md
+├── post/
+│   ├── 2017-01-01-foo.md
+│   ├── 2017-01-02-bar.md
+│   └── &amp;hellip;
+└── &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;231-yaml-metadata&#34;&gt;2.3.1 YAML metadata&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;each page should start with YAML metadata&lt;/p&gt;
+&lt;p&gt;title
+date
+author
+categories
+tags
+etc&amp;hellip;&lt;/p&gt;
+&lt;p&gt;draft = true		posts not rendered with build_site() or hugo_build(), only renders in preview with Addins &amp;gt; Serve Site
+publishdate	=		specify future publish date, again still renders in preview
+weight = 			if 2 posts have same date, use weight to order them
+slug = 				char string as tail of URL&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;232-body&#34;&gt;2.3.2 body&lt;/h2&gt;
+&lt;h2 id=&#34;233-shortcode&#34;&gt;2.3.3 shortcode&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo automatically generates full HTML code based on a shortcode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;e.g. embed twitter card&lt;/p&gt;
+  &lt;blockquote class=&#34;twitter-tweet&#34;&gt;
+    &lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Anyone know of an R package for
+      interfacing with Alexa Skills?
+      &lt;a href=&#34;https://twitter.com/thosjleeper&#34;&gt;@thosjleeper&lt;/a&gt;
+      ...
+    &lt;/p&gt;
+    &amp;mdash; Jeff Leek (@jtleek)
+    &lt;a href=&#34;https://twitter.com/jtleek/status/852205086956818432&#34;&gt;
+      April 12, 2017
+    &lt;/a&gt;
+  &lt;/blockquote&gt;
+  &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;
+  &lt;/script&gt;
+&lt;p&gt;becomes&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Anyone know of an R package for interfacing with Alexa Skills? &lt;a href=&#34;https://twitter.com/thosjleeper?ref_src=twsrc%5Etfw&#34;&gt;@thosjleeper&lt;/a&gt; &lt;a href=&#34;https://twitter.com/xieyihui?ref_src=twsrc%5Etfw&#34;&gt;@xieyihui&lt;/a&gt; &lt;a href=&#34;https://twitter.com/drob?ref_src=twsrc%5Etfw&#34;&gt;@drob&lt;/a&gt; &lt;a href=&#34;https://twitter.com/JennyBryan?ref_src=twsrc%5Etfw&#34;&gt;@JennyBryan&lt;/a&gt; &lt;a href=&#34;https://twitter.com/HoloMarkeD?ref_src=twsrc%5Etfw&#34;&gt;@HoloMarkeD&lt;/a&gt; ?&lt;/p&gt;&amp;mdash; Jeff Leek (@jtleek) &lt;a href=&#34;https://twitter.com/jtleek/status/852205086956818432?ref_src=twsrc%5Etfw&#34;&gt;April 12, 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+						in .md
+blogdown::shortcode(&amp;lsquo;tweet&amp;rsquo;, &amp;lsquo;852205086956818432&amp;rsquo;)		in .Rmd&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;see &lt;a href=&#34;https://gohugo.io/extras/shortcodes/&#34;&gt;https://gohugo.io/extras/shortcodes/&lt;/a&gt; for more&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;24-themes&#34;&gt;2.4 themes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://themes.gohugo.io&#34;&gt;https://themes.gohugo.io&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;e.g. hugo-lithium&lt;/p&gt;
+&lt;p&gt;config.toml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;baseurl = &amp;quot;/&amp;quot;												get from github, don&#39;t forget trailing /
+relativeurls = false										optional, true only if viewing website locally (blogdown::serve_site() provides local server to preview site locally)
+languageCode = &amp;quot;en-us&amp;quot;										
+title = &amp;quot;A Hugo website&amp;quot;									
+theme = &amp;quot;hugo-lithium&amp;quot;										directory name of theme
+googleAnalytics = &amp;quot;&amp;quot;										can sign up at https://analytics.google.com to obtain a tracking ID (tracks visits etc...)
+disqusShortname = &amp;quot;&amp;quot;										https://disqus.com, to enable commenting on your site
+ignoreFiles = [&amp;quot;\\.Rmd$&amp;quot;, 
+               &amp;quot;\\.Rmarkdown&amp;quot;, 
+               &amp;quot;_files$&amp;quot;, 
+               &amp;quot;_cache$&amp;quot;]
+
+[permalinks]
+    post = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+
+[[menu.main]]
+    name = &amp;quot;Home&amp;quot;
+    url = &amp;quot;/&amp;quot;
+    weight = 1											set weight to order menu items
+[[menu.main]]
+    name = &amp;quot;About&amp;quot;
+    url = &amp;quot;/about/&amp;quot;
+    weight = 2
+[[menu.main]]
+    name = &amp;quot;GitHub&amp;quot;
+    url = &amp;quot;https://github.com/rstudio/blogdown&amp;quot;
+    weight = 3
+[[menu.main]]
+    name = &amp;quot;CV&amp;quot;
+    url = &amp;quot;/vitae/&amp;quot;										need vitae.md in content/ to generate /vitae/index.html
+    weight = 4
+[[menu.main]]
+    name = &amp;quot;Twitter&amp;quot;
+    url = &amp;quot;https://twitter.com/rstudio&amp;quot;
+    weight = 5
+
+[params]												misc parameters
+    description = &amp;quot;A website built through 
+                   Hugo and blogdown.&amp;quot;
+
+    highlightjsVersion = &amp;quot;9.12.0&amp;quot;						https://highlightjs.org/static/demo/
+    highlightjsCDN = &amp;quot;//cdnjs.cloudflare.com/ajax/libs&amp;quot;
+    highlightjsLang = [&amp;quot;r&amp;quot;, &amp;quot;yaml&amp;quot;]
+    highlightjsTheme = &amp;quot;github&amp;quot;
+
+    MathJaxCDN = &amp;quot;//cdnjs.cloudflare.com/ajax/libs&amp;quot;
+    MathJaxVersion = &amp;quot;2.7.5&amp;quot;
+
+[params.logo]											default image logo.png in static/ is used
+    url = &amp;quot;logo.png&amp;quot;
+    width = 50
+    height = 50
+    alt = &amp;quot;Logo&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;25-templates&#34;&gt;2.5 templates&lt;/h2&gt;
+&lt;p&gt;theme = templates + web assets&lt;/p&gt;
+&lt;p&gt;web assets = CSS, JS files, images, videos&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;assets determine appearance + functionality of website + embedded content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;251-xmin-hugo-theme-example&#34;&gt;2.5.1 XMin Hugo theme example&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;tree view&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  hugo-xmin/
+  ├── LICENSE.md
+  ├── README.md
+  ├── archetypes
+  │   └── default.md
+  ├── layouts								HTML templates
+  │   ├── 404.html
+  │   ├── _default						
+  │   │   ├── list.html					renders a list of pages e.g. blogs
+  │   │   ├── single.html					render a single page
+	
+              {{ partial &amp;quot;header.html&amp;quot; . }}										{{ }} Hugo&#39;s variable and functions
+                  &amp;lt;div class=&amp;quot;article-meta&amp;quot;&amp;gt;
+                      &amp;lt;h1&amp;gt;&amp;lt;span class=&amp;quot;title&amp;quot;&amp;gt;{{ .Title }}&amp;lt;/span&amp;gt;&amp;lt;/h1&amp;gt;			title, author, date all provided in YAML metadata header of a page
+
+                      {{ with .Params.author }}
+                      &amp;lt;h2 class=&amp;quot;author&amp;quot;&amp;gt;{{ . }}&amp;lt;/h2&amp;gt;
+                      {{ end }}
+
+                      {{ if .Params.date }}
+                      &amp;lt;h2 class=&amp;quot;date&amp;quot;&amp;gt;{{ .Date.Format &amp;quot;2006/01/02&amp;quot; }}&amp;lt;/h2&amp;gt;
+                      {{ end }}
+                  &amp;lt;/div&amp;gt;
+
+              &amp;lt;main&amp;gt;
+                  {{ .Content }}
+              &amp;lt;/main&amp;gt;
+
+              {{ partial &amp;quot;footer.html&amp;quot; . }}		
+	
+  │   │   └── terms.html					used to generate full list of categories or tags
+  │   └── partials						HTML fragments reused by other templates via &amp;quot;partial&amp;quot; function
+  │       ├── foot_custom.html
+  │       ├── footer.html
+  │       ├── head_custom.html
+  │       └── header.html
+	
+              &amp;lt;!DOCTYPE html&amp;gt;
+              &amp;lt;html lang=&amp;quot;{{ .Site.LanguageCode }}&amp;quot;&amp;gt;
+                  &amp;lt;head&amp;gt;
+                      &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+                      &amp;lt;title&amp;gt;{{ .Title }} | {{ .Site.Title }}&amp;lt;/title&amp;gt;
+                      &amp;lt;link href=&#39;{{ &amp;quot;/css/style.css&amp;quot; | relURL }}&#39;				link to .css files
+                          rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;
+                      &amp;lt;link href=&#39;{{ &amp;quot;/css/fonts.css&amp;quot; | relURL }}&#39;
+                          rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;
+                      {{ partial &amp;quot;head_custom.html&amp;quot; . }}
+                  &amp;lt;/head&amp;gt;
+
+                  &amp;lt;body&amp;gt;
+                      &amp;lt;nav&amp;gt;
+                          &amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+                              {{ range .Site.Menus.main }}
+                              &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;{{ .URL | relURL }}&amp;quot;&amp;gt;{{ .Name }}&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                              {{ end }}
+                          &amp;lt;/ul&amp;gt;
+                          &amp;lt;hr/&amp;gt;
+                      &amp;lt;/nav&amp;gt;
+                  &amp;lt;/body&amp;gt;
+	
+              - user defines menu in config.toml
+                                                      [[menu.main]]
+                                                          name = &amp;quot;Home&amp;quot;
+                                                          url = &amp;quot;/&amp;quot;
+                                                      [[menu.main]]
+                                                          name = &amp;quot;About&amp;quot;
+                                                          url = &amp;quot;/about/&amp;quot;
+              - menu generated using header.html
+                                                      &amp;lt;ul class=&amp;quot;menu&amp;quot;&amp;gt;
+                                                          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                                                          &amp;lt;li&amp;gt;&amp;lt;a href=&amp;quot;/about/&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+                                                      &amp;lt;/ul&amp;gt;					
+	
+  ├── static								assets
+  │   └── css
+  │       ├── fonts.css
+  │       └── style.css
+  └── exampleSite
+      ├── config.toml
+      ├── content
+      │   ├── _index.md
+      │   ├── about.md
+      │   ├── note
+      │   │   ├── 2017-06-13-a-quick-note.md
+      │   │   └── 2017-06-14-another-note.md
+      │   └── post
+      │       ├── 2015-07-23-lorem-ipsum.md
+      │       └── 2016-02-14-hello-markdown.md
+      ├── layouts
+      │   └── partials
+      │       └── foot_custom.html
+      └── public
+          └── ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;252-implement-more-features&#34;&gt;2.5.2 implement more features&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;google analytics&lt;/p&gt;
+&lt;p&gt;{{ template &amp;ldquo;_internal/google_analytics.html&amp;rdquo; . }}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;can add to layouts/partials/foot_custom.html&lt;/li&gt;
+&lt;li&gt;configure googleAnalytics in config.toml&lt;/li&gt;
+&lt;li&gt;preview at &lt;a href=&#34;https://deploy-preview-3--hugo-xmin.netlify.com&#34;&gt;https://deploy-preview-3--hugo-xmin.netlify.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(&lt;a href=&#34;https://github.com/yihui/hugo-xmin/pull/3&#34;&gt;https://github.com/yihui/hugo-xmin/pull/3&lt;/a&gt; for details)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;disqus comments&lt;/p&gt;
+&lt;p&gt;{{ template &amp;ldquo;_internal/disqus.html&amp;rdquo; . }}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;add to foot_custom.html&lt;/li&gt;
+&lt;li&gt;configure disqus shortname in config.toml&lt;/li&gt;
+&lt;li&gt;preview at &lt;a href=&#34;https://deploy-preview-4--hugo-xmin.netlify.com&#34;&gt;https://deploy-preview-4--hugo-xmin.netlify.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(&lt;a href=&#34;https://github.com/yihui/hugo-xmin/pull/4&#34;&gt;https://github.com/yihui/hugo-xmin/pull/4&lt;/a&gt; for details)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;syntax highlighting via highlight.js
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;math expressions through MathJax
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;table of contents&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if .Rmd, just add YAML metadata to top of .Rmd file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;output:
+blogdown:html_page:
+toc: true&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;if .md, have to modify single.html template, before content&lt;/p&gt;
+&lt;p&gt;{{ if .Params.toc }}
+{{ .TableOfContents }}
+{{ end }}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/yihui/hugo-xmin/pull/7&#34;&gt;https://github.com/yihui/hugo-xmin/pull/7&lt;/a&gt; for an implementation with examples&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;display categories and tags in post
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add pagination
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;add github edit button
+&amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;26-custom-layouts&#34;&gt;2.6 custom layouts&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;    your-website/
+    ├── config.toml
+    ├── ...
+    ├── themes/
+    │   └── hugo-xmin/
+    │       ├── ...
+    │       ├── layouts/
+    │       |   ├── ...
+    │       |   └── partials
+    │       |       ├── foot_custom.html
+    │       |       ├── footer.html
+    │       |       ├── head_custom.html
+    │       |       └── header.html
+    |		└── static/
+    |			├── style.css
+    |			└── ...
+    |
+    ├── layouts
+    |	└── partials
+    |		├── foot_custom.html
+    |		└── head_custom.html
+    └── static/
+        ├── style.css
+        └── ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;if customize a theme, future author updates may conflict with your tweaks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;customize-in-2-ways&#34;&gt;customize in 2 ways&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;in config.toml (without touching template files)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;use layouts/ to override templates in themes/&lt;/p&gt;
+&lt;p&gt;e.g., the file layouts/partials/foot_custom.html, when provided,
+will override themes/hugo-xmin/layouts/partials/foot_custom.html&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;27-static-files&#34;&gt;2.7 static files&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;static/ stores web assets (images, CSS, JS files)&lt;/li&gt;
+&lt;li&gt;all files in static/ copied to public/ when Hugo renders website&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-applications&#34;&gt;2 applications&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;make small changes to .css main file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;e.g. static/style.css will override themes/static/style.css&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    body {
+      font-family: &amp;quot;Comic Sans MS&amp;quot;, cursive, sans-serif;
+    }
+    code {
+      font-family: &amp;quot;Courier New&amp;quot;, Courier, monospace;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;render documents that are not blogdown::html_page()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;e.g. .Rmd file generates PDF,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;putting the .Rmd file in static/, blogdown will generate PDF,&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;and Hugo will just copy PDF file into public/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;need to write custom &amp;ldquo;build&amp;rdquo; script R/build.R&lt;/p&gt;
+&lt;p&gt;blogdown::build_dir(&amp;ldquo;static&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;more info &lt;a href=&#34;https://bookdown.org/yihui/blogdown/methods.html#methods&#34;&gt;https://bookdown.org/yihui/blogdown/methods.html#methods&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-deployment&#34;&gt;3 deployment&lt;/h2&gt;
+&lt;h2 id=&#34;31-netlify&#34;&gt;3.1 netlify&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;login to Netlify with github username to link Netlify with Github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dealing-with-site-updates&#34;&gt;dealing with site updates&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;host all source files (not just public/) in github repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netlify create new sites from github repo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netlify supports Jekyll and Hugo (need to disable Jekyll only if hosting with github)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netlify
+Deploy settings
+repository			https://github.com/username/repo
+branch				master
+build command			hugo
+publish directory		public&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;may need to create environment variable HUGO_VERSION and set to 0.20
+Build environment variables
+HUGO_VERSION		0.24.1	(or latest)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;may take few minutes to deploy on Netlify for first time&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;but later updates are incremental&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;auto-update&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;now update github source repository and&lt;/li&gt;
+&lt;li&gt;Netlify calls Hugo to render website automatically&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;domain-name&#34;&gt;domain name&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;custom domain name, need to configure some DNS records, point it to Netlify server&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

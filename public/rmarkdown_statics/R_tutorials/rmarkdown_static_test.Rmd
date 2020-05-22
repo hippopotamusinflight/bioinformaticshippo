@@ -1,0 +1,35 @@
+---
+date: "2019-05-05T00:00:00+01:00"
+draft: false
+linktitle: rmarkdowntest2
+menu:
+  r:
+    name: rmarkdowntest2
+    weight: 2002
+title: rmarkdowntest2
+# toc: true
+# type: docs
+weight: 2002
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: true
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+
+## goodbye
+- either you have floating TOC and use .md, 
+- or TOC at the top with .Rmd... 
+- can't have both...
+
+### hello
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+iris %>% head()
+```
+

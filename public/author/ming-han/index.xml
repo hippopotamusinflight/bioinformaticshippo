@@ -5,12 +5,24 @@
     <link>/author/ming-han/</link>
       <atom:link href="/author/ming-han/index.xml" rel="self" type="application/rss+xml" />
     <description>Ming Han</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Thu, 21 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Fri, 22 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/author/ming-han/avatar_hu41b30a879669bcc2a6a02f0f55b311b5_1099246_270x270_fill_lanczos_center_2.png</url>
       <title>Ming Han</title>
       <link>/author/ming-han/</link>
     </image>
+    
+    <item>
+      <title>third post</title>
+      <link>/post/third-post/</link>
+      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/third-post/</guid>
+      <description>
+
+
+
+</description>
+    </item>
     
     <item>
       <title>firstpost</title>
