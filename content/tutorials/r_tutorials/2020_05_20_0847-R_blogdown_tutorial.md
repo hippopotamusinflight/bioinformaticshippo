@@ -5,11 +5,11 @@ linktitle: Blogdown Tutorial
 menu:
   r_tutorials:
     parent: R Blogdown
-    weight: 2
+    weight: 3
 title: Blogdown Tutorial
 toc: true
 type: docs
-weight: 2019052002
+weight: 2020052003
 ---
 
 My experience going through R blogdown install by following Yihui's instructions at:<br>
@@ -440,7 +440,7 @@ etc etc
 ```
 
 not sure where to find these...
-- author
+- author (edit: found it in /content/home/about.md)
 - publishDir (can set other than public/)
 - theme (directory name under themes/)
 - uglyURLs

@@ -1,5 +1,10 @@
 /* custom scss file */
 
+/* add smooth scrolling to blog post .md sidebar nav */
+html {
+	scroll-behavior: smooth;
+}
+
 /* changes navbar font size */
 .dropdown-menu,
 nav#navbar-main li.nav-item {

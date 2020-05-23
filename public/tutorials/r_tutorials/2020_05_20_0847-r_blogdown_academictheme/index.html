@@ -1,0 +1,1241 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Ming Han">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="My implementation/customizations of R blogdown with Academic theme from gcushen
+ Academic theme documentation https://sourcethemes.com/academic/ Academic theme GitHub repo https://github.com/gcushen/hugo-academic  initialize project New Project &gt; New Directory &gt; Website using Blogdown &gt;">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="../../../js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500%7CRoboto:400,400italic,500%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../../css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="../../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="BioinfoHippo">
+  <meta property="og:url" content="/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/">
+  <meta property="og:title" content="Academic Theme | BioinfoHippo">
+  <meta property="og:description" content="My implementation/customizations of R blogdown with Academic theme from gcushen
+ Academic theme documentation https://sourcethemes.com/academic/ Academic theme GitHub repo https://github.com/gcushen/hugo-academic  initialize project New Project &gt; New Directory &gt; Website using Blogdown &gt;"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-05-20T08:47:00&#43;01:00">
+    
+    <meta property="article:modified_time" content="2020-05-20T08:47:00&#43;01:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Academic Theme | BioinfoHippo</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="../../../">BioinfoHippo</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="../../../">BioinfoHippo</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../resources/"><span>Resources</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="../../../tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../tutorials/r_tutorials/">Tutorials in .Rmd</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_highlights/">R Blogdown</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_highlights/">Useful Stuff</a>
+      </li>
+      
+      <li class="active">
+        <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/">Academic Theme</a>
+      </li>
+      
+      <li >
+        <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial/">Blogdown Tutorial</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#initialize-project">initialize project</a></li>
+    <li><a href="#serve_site-and-view-in-browser">serve_site() and view in browser</a></li>
+    <li><a href="#push-repo-to-github">push repo to GitHub</a></li>
+    <li><a href="#netlify">Netlify</a></li>
+    <li><a href="#continuous-deployment">continuous deployment</a></li>
+    <li><a href="#customizations">customizations</a>
+      <ul>
+        <li><a href="#add-module-to-navbar">add module to navbar</a></li>
+        <li><a href="#add-sections-into-module">add sections into module</a></li>
+        <li><a href="#removed-modules-not-needed">removed modules not needed</a></li>
+        <li><a href="#edit-biography">edit Biography</a></li>
+        <li><a href="#edit-contact-info">edit contact info</a></li>
+        <li><a href="#get-posts-on-its-own-page">get posts on its own page</a></li>
+        <li><a href="#first-blog-post">first blog post</a></li>
+        <li><a href="#setting-share-options">setting share options</a></li>
+        <li><a href="#setting-blogdownhtml_page-options-globally">setting blogdown:html_page() options globally</a></li>
+        <li><a href="#edit-rprofile-to-set-default-blog-settings">edit .Rprofile to set default blog settings</a></li>
+        <li><a href="#customize-font">customize font</a></li>
+        <li><a href="#customscss">custom.scss</a></li>
+        <li><a href="#open-external-link-in-new-tab">open external link in new tab</a></li>
+        <li><a href="#addins--insert-image">Addins &gt; Insert Image</a></li>
+        <li><a href="#toc-numbering-in-rmd">toc numbering in .Rmd</a></li>
+        <li><a href="#floating-toc-for-blog-posts">floating toc for blog posts</a></li>
+        <li><a href="#reference-inline-figure-images">reference inline figure, images</a></li>
+        <li><a href="#reference-internal-pages">reference internal pages</a></li>
+        <li><a href="#collapsible-docs-sidebar-nav">collapsible docs sidebar nav</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>Academic Theme</h1>
+
+          <div class="article-style">
+            <p>My implementation/customizations of R blogdown with <strong>Academic theme</strong> from gcushen</p>
+<ul>
+<li>Academic theme documentation 
+<a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">https://sourcethemes.com/academic/</a></li>
+<li>Academic theme GitHub repo 
+<a href="https://github.com/gcushen/hugo-academic" target="_blank" rel="noopener">https://github.com/gcushen/hugo-academic</a></li>
+</ul>
+<h2 id="initialize-project">initialize project</h2>
+<p>New Project &gt; New Directory &gt; Website using Blogdown &gt;</p>
+<ul>
+<li>Directory name = bioinfohippo</li>
+<li>Hugo theme = gcushen/hugo-academic &gt; |Create Project|</li>
+</ul>
+<pre><code>/config.toml
+
+	title = &quot;bioinfohippo&quot;
+	copyright = &quot;Ming Han &amp;copy `{year}`&quot;
+	theme = &quot;hugo-academic&quot;
+</code></pre>
+<h2 id="serve_site-and-view-in-browser">serve_site() and view in browser</h2>
+<ul>
+<li>first edit config.toml</li>
+</ul>
+<pre><code>     vim config.toml
+     
+     	relativeurls = true
+     	ignoreFiles = [&quot;\\.ipynb$&quot;, &quot;.ipynb_checkpoints$&quot;, &quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]
+</code></pre>
+<ul>
+<li>serve_site()</li>
+</ul>
+<pre><code>    blogdown::serve_site()
+   
+    	Rendering content/post/2015-07-23-r-rmarkdown.Rmd
+    	Building sites … 
+    					   | EN  
+    	-------------------+-----
+    	  Pages            | 91  
+    	  Paginator pages  |  0  
+    	  Non-page files   | 22  
+    	  Static files     |  8  
+    	  Processed images | 47  
+    	  Aliases          | 20  
+    	  Sitemaps         |  1  
+    	  Cleaned          |  0  
+   
+    	Total in 692 ms
+    	To stop the server, run servr::daemon_stop(1) or restart your R session
+    	Serving the directory /Users/minghan/Google Drive/RBlogDown/bioinfohippo at      http://127.0.0.1:4321
+</code></pre>
+<h2 id="push-repo-to-github">push repo to GitHub</h2>
+<ul>
+<li>first setup GitHub repo</li>
+<li>then push repo to GitHub</li>
+</ul>
+<pre><code>      git init
+      Initialized empty Git repository in /projectdir/.git
+      
+      git config --global user.name 'John Doe'
+      git config --global user.email 'jd@email.com'
+      
+      vim .gitignore
+      
+           .Rhistory
+           .Rprofile
+           /.Rproj.user/
+           projectdir.Rproj
+      
+      git add .
+      git status
+      git commit -m 'website initial commit'
+      
+      git remote add origin https://github.com/username/repo.git
+      git push -u origin master
+      ...
+      ...
+       * [new branch]      master -&gt; master
+      Branch 'master' set up to track remote branch 'master' from 'origin'.
+</code></pre>
+<h2 id="netlify">Netlify</h2>
+<ul>
+<li>Netlify &gt; Sign up with your GitHub account &gt; authenticate &gt; new site &gt; GitHub &gt; authenticate &gt; Install Netlify (Only select repositories) &gt; default settings</li>
+<li>e.g. <a href="https://app.netlify.com/sites/dazzling-shaw-b2244d/overview">https://app.netlify.com/sites/dazzling-shaw-b2244d/overview</a></li>
+<li><strong>need to set HUGO_VERSION = &ldquo;0.69.2&rdquo;</strong></li>
+</ul>
+<h2 id="continuous-deployment">continuous deployment</h2>
+<ul>
+<li>now everytime you <code>git push -u origin master</code>,</li>
+<li>Netlify will be notified and build your site using Hugo</li>
+</ul>
+<hr>
+<h2 id="customizations">customizations</h2>
+<h3 id="add-module-to-navbar">add module to navbar</h3>
+<ul>
+<li>e.g. Resources module</li>
+<li>aiming for this website structure</li>
+</ul>
+<img src="../../../tutorials/r_tutorials/2020_05_20_0847-R_blogdown_AcademicTheme_files/ss 2020-05-23 at 08.40.48.png" alt="aiming for this website structure" width="70%"/>
+<ul>
+<li>courses module from Academic theme has the structure I need, so I just tweaked it</li>
+</ul>
+<pre><code>cp -R /content/courses /content/resources
+vim /content/resources/_index.md
+	
+	title: Bioinformatics Resources
+
+vim /config/_default/menus.toml
+
+	[[main]]
+	  name = &quot;Resources&quot;
+	  url = &quot;resources/&quot;
+	  weight = 25
+</code></pre>
+<h3 id="add-sections-into-module">add sections into module</h3>
+<ul>
+<li>e.g. R</li>
+<li>just copied <code>example</code> as <code>r</code> and edit its contents</li>
+</ul>
+<pre><code>cp -R /content/resources/example /content/resources/r
+vim /content/resources/r/_index.md
+
+	linktitle: r
+	...
+	weight: 2
+</code></pre>
+<h3 id="removed-modules-not-needed">removed modules not needed</h3>
+<ul>
+<li>e.g. Demo, Projects, Publications</li>
+<li>didn&rsquo;t delete their directories in case I want to use those modules later</li>
+<li>first edited menus.toml</li>
+</ul>
+<pre><code>vim /config/_default/menus.toml
+  ...
+  delete below ...
+  [[main]]
+    name = &quot;Projects&quot;
+    url = &quot;projects/&quot;
+    weight = ...
+  ...
+</code></pre>
+<ul>
+<li>then disable in their respective .md so they don&rsquo;t show up in scrolling main page</li>
+</ul>
+<pre><code>vim /content/home/demo.md        active = false
+vim /content/home/experience.md  active = false
+vim /content/home/skills.md      active = false
+...
+...
+</code></pre>
+<h3 id="edit-biography">edit Biography</h3>
+<ul>
+<li>first copy the /admin dir and edit the copy</li>
+</ul>
+<pre><code>    cp -R /content/authors/admin/ /content/authors/johndoe/
+</code></pre>
+<ul>
+<li>then edit about.md</li>
+</ul>
+<pre><code>    vim /content/home/about.md
+    
+    	author = &quot;johndoe&quot;
+</code></pre>
+<ul>
+<li>then edit johndoe/_index.md</li>
+</ul>
+<pre><code>    vim /content/authors/johndoe/_index.md
+    
+    	(edited a bunch of stuff)
+</code></pre>
+<ul>
+<li>then replace avatar.jpg with your own avatar.jpg</li>
+</ul>
+<pre><code>    /content/authors/johnjoe/avatar.jpg
+</code></pre>
+<h3 id="edit-contact-info">edit contact info</h3>
+<ul>
+<li>all stored in <code>/config/_default/params.toml</code></li>
+<li>remove phones by setting to &quot;&rdquo;</li>
+<li>remove address by setting to {}</li>
+<li>remove map by setting to []</li>
+</ul>
+<h3 id="get-posts-on-its-own-page">get posts on its own page</h3>
+<ul>
+<li>changing from widget on homepage to its own page,</li>
+<li>by editing <code>menus.toml</code></li>
+</ul>
+<pre><code>    vim /config/_default/menus.toml
+
+	    changed from url = &quot;#post&quot; to url = &quot;post/&quot;
+</code></pre>
+<h3 id="first-blog-post">first blog post</h3>
+<pre><code>Addins &gt; New Post
+
+	Title = firstpost
+	Author = John Doe
+	Categories = test
+	Tags = test
+	Archetype = post
+	Format = .Rmd			 &gt; Done
+
+  ## some heading
+	### some heading
+	```{r}
+	library(tidyverse)
+	iris %&gt;% head()
+	```
+</code></pre>
+<ul>
+<li>set <code>authors: [&quot;minghan&quot;]</code> for author info to appear at end of blog</li>
+<li>set <code>toc: true</code> to display table of contents at beginning of blog</li>
+</ul>
+<h3 id="setting-share-options">setting share options</h3>
+<ul>
+<li>each social platform can be enabled or disabled in <code>page_sharer.toml</code></li>
+</ul>
+<pre><code>    vim /themes/hugo-academic/data/page_sharer.toml
+    
+        [[buttons]]
+          id = &quot;twitter&quot;
+          url = &quot;https://twitter.com/intent/tweet?url={url}&amp;text={title}&quot;
+          title = &quot;Twitter&quot;
+          icon_pack = &quot;fab&quot;
+          icon = &quot;twitter&quot;
+          enable = true    &gt; set to false to disable
+</code></pre>
+<h3 id="setting-blogdownhtml_page-options-globally">setting blogdown:html_page() options globally</h3>
+<ul>
+<li>create _output.yml file in root directory</li>
+</ul>
+<pre><code>    vim /_output.yml
+    
+        blogdown::html_page:
+          toc: true
+          fig_width: 6
+          dev: &quot;svg&quot;
+</code></pre>
+<h3 id="edit-rprofile-to-set-default-blog-settings">edit .Rprofile to set default blog settings</h3>
+<ul>
+<li>this will give some default values when you click Addins &gt; New Post</li>
+</ul>
+<pre><code>file.edit('/Users/minghan/Google Drive/RBlogDown/bioinfohippo/.Rprofile')
+	
+	options(servr.daemon = 'interactive()',
+			blogdown.author = 'Ming Han',
+			blogdown.ext = '.Rmd',
+			blogdown.subdir = 'post',
+			blogdown.yaml.empty = TRUE)
+</code></pre>
+<h3 id="customize-font">customize font</h3>
+<ul>
+<li>make /data/fonts/ dir if it doesn&rsquo;t exist</li>
+<li>copy minimal.toml to /data/fonts/ as my_font_set.toml</li>
+<li>changed font sizes 700 to 500</li>
+<li>set customized font in params.toml</li>
+</ul>
+<pre><code>    mkdir /data/fonts/
+    cp /themes/hugo-academic/data/fonts/minimal.toml /data/fonts/my_font_set.toml
+    vim /data/fonts/my_font_set.toml
+    	
+    	google_fonts = &quot;Montserrat:400,500|Roboto:400,400italic,500|Roboto+Mono&quot;
+    	
+    vim config/_default/params.toml
+    	
+    	font = &quot;my_font_set&quot;
+</code></pre>
+<h3 id="customscss">custom.scss</h3>
+<ul>
+<li>make custom.scss if it doesn&rsquo;t exist</li>
+<li>change navbar font size, heading font size/weight etc</li>
+</ul>
+<pre><code>    vim /assets/scss/custom.scss
+    
+    	/* custom scss file */
+    
+    	https://github.com/gcushen/hugo-academic/issues/1151
+    	/* changes navbar font size */
+    	.dropdown-menu,
+    	nav#navbar-main li.nav-item {
+    	  font-size: 16px;
+    	  font-weight: bold;
+    	}
+    
+    	/* custom heading font size, weight
+    	   from /themes/hugo-academic/assets/scss/academic/_root.scss */
+    	h2 {
+    	  font-weight: 500;
+    	  margin-top: 1rem;
+    	  font-size: 1.5rem;
+    	}
+    	h3 {
+    	  font-weight: 500;
+    	  margin-top: 1.5rem;
+    	  font-size: 1.25rem;
+    	}
+    
+    	/* body font size
+    	   from /themes/hugo-academic/assets/scss/academic/_root.scss */
+    	body {
+    	  font-size: 0.9rem;
+    	}
+</code></pre>
+<h3 id="open-external-link-in-new-tab">open external link in new tab</h3>
+<ul>
+<li>
+<a href="https://discourse.gohugo.io/t/how-to-open-link-in-new-tab-with-hugos-new-goldmark-markdown-renderer-in-v0-62-0/22540" target="_blank" rel="noopener">https://discourse.gohugo.io/t/how-to-open-link-in-new-tab-with-hugos-new-goldmark-markdown-renderer-in-v0-62-0/22540</a></li>
+<li>
+<a href="https://agrimprasad.com/post/hugo-goldmark-markdown/" target="_blank" rel="noopener">https://agrimprasad.com/post/hugo-goldmark-markdown/</a></li>
+<li>as of Hugo v0.62.0, need &ldquo;render-hooks&rdquo; to open external links in new tab</li>
+<li>create render-link.html if does not exist</li>
+</ul>
+<pre><code>    vim /themes/hugo-academic/layouts/_default/_markup/render-link.html (already existed in     Academic theme)
+    
+    	{{/* A Hugo Markdown render hook to parse links, opening external links in new tabs.     */}}
+    	&lt;a href=&quot;{{ .Destination | safeURL }}&quot;{{ with .Title}} title=&quot;{{ . }}&quot;{{ end }}{{ if     strings.HasPrefix .Destination &quot;http&quot; }} target=&quot;_blank&quot; rel=&quot;noopener&quot;{{ end }}&gt;{{ .Text     | safeHTML }}&lt;/a&gt;
+</code></pre>
+<ul>
+<li>in .md file insert</li>
+</ul>
+<pre><code>    [https://some/website/](https://some/website/)
+</code></pre>
+<ul>
+<li>internal links should still open in same tab,</li>
+<li>as long as it doesn&rsquo;t have &ldquo;http&rdquo; prefix</li>
+</ul>
+<h3 id="addins--insert-image">Addins &gt; Insert Image</h3>
+<ul>
+<li>nice GUI to insert image into .md files</li>
+<li>Addins &gt; Insert Image &gt; Image/Browse &gt; Width &gt; Alternative text &gt; Target file path &gt; Done</li>
+<li>Target file path defaults to /static/dir/to/your/markdown/page/</li>
+<li>inserts HTML code into your .md or .Rmd file
+<ul>
+<li>img src path will ignore /static (this is what you want)</li>
+<li>may need to change path manually, sometimes blogdown&rsquo;s Addins &gt; Insert Image misses the top directory</li>
+<li>example:</li>
+</ul>
+</li>
+</ul>
+<pre><code>    blogdown will insert this HTML code:
+    &lt;img src=&quot;/to/your/markdown/page/exampleimage.png&quot; alt=&quot;some text&quot; width=&quot;70%&quot;/&gt;
+    
+    should be:
+    &lt;img src=&quot;/dir/to/your/markdown/page/exampleimage.png&quot; alt=&quot;some text&quot; width=&quot;70%&quot;/&gt;
+</code></pre>
+<h3 id="toc-numbering-in-rmd">toc numbering in .Rmd</h3>
+<ul>
+<li>
+<a href="https://dadascience.design/post/r-some-tricks-when-working-with-blogdown-hugo-working-draft/#custom-toc-numbering-css" target="_blank" rel="noopener">https://dadascience.design/post/r-some-tricks-when-working-with-blogdown-hugo-working-draft/#custom-toc-numbering-css</a></li>
+</ul>
+<pre><code>    output:
+        blogdown::html_page:
+            number_sections: true
+            toc: TRUE
+</code></pre>
+<ul>
+<li>still have to figure out how to do this for .md files</li>
+</ul>
+<h3 id="floating-toc-for-blog-posts">floating toc for blog posts</h3>
+<ul>
+<li>.md files only, still can&rsquo;t for .Rmd files</li>
+<li>
+<a href="http://www.ericfong.ca/post/floatingtoc/" target="_blank" rel="noopener">http://www.ericfong.ca/post/floatingtoc/</a></li>
+<li>first make /layouts/_default/single.html if does not exist</li>
+</ul>
+<pre><code>    mkdir /layouts/_default
+    vim /layouts/_default/single.html
+    	
+    	&lt;!-- custom sidebar nav for posts --&gt;
+    	{{- define &quot;main&quot; -}}
+    	{{ if .Params.toc }}
+    	&lt;div class=&quot;container-fluid docs&quot;&gt;
+    		&lt;div class=&quot;row flex-xl-nowrap&quot;&gt;
+    		  &lt;div class=&quot;d-none d-xl-block col-xl-2 docs-toc&quot;&gt;
+    			&lt;ul class=&quot;nav toc-top&quot;&gt;
+    			  &lt;li&gt;&lt;a href=&quot;#&quot; id=&quot;back_to_top&quot; class=&quot;docs-toc-title&quot;&gt;{{ i18n &quot;on_this_page&quot;     }}&lt;/a&gt;&lt;/li&gt;
+    			&lt;/ul&gt;
+    			{{ .TableOfContents }}
+    			{{ partial &quot;docs_toc_foot&quot; . }}
+    		  &lt;/div&gt;
+    		  &lt;main class=&quot;col-12 col-md-0 col-xl-10 py-md-3 pl-md-5 docs-content&quot; role=&quot;main&quot;&gt;
+    	{{ end }}
+    			&lt;article class=&quot;article&quot;&gt;
+    				{{ partial &quot;page_header&quot; . }}
+    				&lt;div class=&quot;article-container&quot;&gt;
+    				  &lt;div class=&quot;article-style&quot;&gt;
+    					{{ .Content }}
+    				  &lt;/div&gt;
+    				  {{ partial &quot;page_footer&quot; . }}
+    				&lt;/div&gt;
+    			&lt;/article&gt;
+    	  {{ if .Params.toc }}
+    		  &lt;/main&gt;
+    		&lt;/div&gt;
+    	  &lt;/div&gt;
+    	  {{ end }}
+    	{{- end -}}
+</code></pre>
+<ul>
+<li>then edit custom.scss for smooth scrolling</li>
+</ul>
+<pre><code>    vim /assets/scss/custom.scss
+    
+    	html {
+    		scroll-behavior: smooth;
+    	}
+</code></pre>
+<h3 id="reference-inline-figure-images">reference inline figure, images</h3>
+<pre>
+    See Figure \@ref(fig:pie) for example:
+    
+    ```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
+    some code...
+    ```
+</pre>
+<h3 id="reference-internal-pages">reference internal pages</h3>
+<h3 id="collapsible-docs-sidebar-nav">collapsible docs sidebar nav</h3>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Previous</div>
+    <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_highlights/" rel="next">Useful Stuff</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial/" rel="prev">Blogdown Tutorial</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on May 20, 2020</p>
+
+          
+
+
+
+
+
+  
+  
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/r_tutorials/2020_05_20_0847-R_blogdown_AcademicTheme.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="../../../privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="../../../terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    Ming Han © 2020
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../../js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
