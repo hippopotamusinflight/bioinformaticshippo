@@ -1,15 +1,29 @@
 /* custom scss file */
+/* -------------------------------------------------- */
+
+
+/* Numbering suffix in TOC (does not seem to do anything) */
+.toc-section-number:after{
+    content: ". "
+}
+/* Numbering suffix in Body/Content */
+.header-section-number:after{
+    content: ". "
+}
+
 
 /* add smooth scrolling to blog post .md sidebar nav */
 html {
 	scroll-behavior: smooth;
 }
 
+
 /* changes navbar font size */
 .dropdown-menu,
 nav#navbar-main li.nav-item {
   font-size: 17px;
 }
+
 
 /* custom heading font size, weight
    from /themes/hugo-academic/assets/scss/academic/_root.scss */
@@ -32,9 +46,9 @@ h4, h5, h6 {
   font-size: 1rem;
 }
 
+
 /* body font size
    from /themes/hugo-academic/assets/scss/academic/_root.scss */
 body {
   font-size: 0.9rem;
 }
-
