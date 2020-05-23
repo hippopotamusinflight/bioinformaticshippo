@@ -45,7 +45,8 @@ weight: 2020052001
 - in /R/ dir
     - `build.R` r script to tell blogdown to build whatever is in static dir<br>
 - in /themes/hugo-academic/ dir (shouldn't really touch this)
-    - `/assets/scss/academic/_docs.scss` looks interesting, might have something to do with setting docs content like toc?<br>
+    - `assets/scss/academic/_docs.scss` looks interesting, might have something to do with setting docs content like toc?<br>
+    - `data/page_sharer.toml` enabling disabling share in blog posts
 - in // dir
     - `` <br>
 

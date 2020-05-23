@@ -14,9 +14,9 @@
     
     <item>
       <title>Useful Stuff</title>
-      <link>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_highlights/</link>
+      <link>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/</link>
       <pubDate>Wed, 20 May 2020 08:47:00 +0100</pubDate>
-      <guid>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_highlights/</guid>
+      <guid>/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;some useful commands for building and maintaining a blogdown site&lt;/li&gt;
 &lt;li&gt;also some markdown quirks I&amp;rsquo;m finding along the way&lt;/li&gt;
@@ -71,7 +71,8 @@
 &lt;/li&gt;
 &lt;li&gt;in /themes/hugo-academic/ dir (shouldn&amp;rsquo;t really touch this)
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/assets/scss/academic/_docs.scss&lt;/code&gt; looks interesting, might have something to do with setting docs content like toc?&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;assets/scss/academic/_docs.scss&lt;/code&gt; looks interesting, might have something to do with setting docs content like toc?&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;data/page_sharer.toml&lt;/code&gt; enabling disabling share in blog posts&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;in // dir

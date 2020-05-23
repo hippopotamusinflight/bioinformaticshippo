@@ -27,10 +27,11 @@
   
     
   
-  <meta name="description" content="Bioinformatician">
+  <meta name="description" content="some useful commands for building and maintaining a blogdown site also some markdown quirks I&rsquo;m finding along the way  useful commands blogdown::serve_site() to serve site on localhost
+servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refresh) Addins &gt; New Post">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../tutorials/r_tutorials/">
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">
 
   
 
@@ -44,7 +45,7 @@
   
   
   
-  <script src="../../js/mathjax-config.js"></script>
+  <script src="../../../js/mathjax-config.js"></script>
   
 
   
@@ -201,7 +202,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.css">
+  <link rel="stylesheet" href="../../../css/academic.css">
 
   
 
@@ -215,14 +216,12 @@
   
 
   
-  <link rel="alternate" href="../../tutorials/r_tutorials/index.xml" type="application/rss+xml" title="BioinfoHippo">
-  
 
-  <link rel="manifest" href="../../index.webmanifest">
-  <link rel="icon" type="image/png" href="../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+  <link rel="manifest" href="../../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../tutorials/r_tutorials/">
+  <link rel="canonical" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">
 
   
   
@@ -238,29 +237,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/tutorials/r_tutorials/">
-  <meta property="og:title" content="Tutorials in .Rmd format | BioinfoHippo">
-  <meta property="og:description" content="Bioinformatician"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">
+  <meta property="og:title" content="Useful Stuff | BioinfoHippo">
+  <meta property="og:description" content="some useful commands for building and maintaining a blogdown site also some markdown quirks I&rsquo;m finding along the way  useful commands blogdown::serve_site() to serve site on localhost
+servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refresh) Addins &gt; New Post"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2018-09-09T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2020-05-20T08:47:00&#43;01:00">
+    
+    <meta property="article:modified_time" content="2020-05-20T08:47:00&#43;01:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>Tutorials in .Rmd format | BioinfoHippo</title>
+
+
+  <title>Useful Stuff | BioinfoHippo</title>
 
 </head>
 
@@ -311,7 +316,7 @@
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="../../">BioinfoHippo</a>
+      <a class="navbar-brand" href="../../../">BioinfoHippo</a>
     </div>
     
 
@@ -324,7 +329,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="../../">BioinfoHippo</a>
+      <a class="navbar-brand" href="../../../">BioinfoHippo</a>
     </div>
     
 
@@ -352,7 +357,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../post/"><span>Posts</span></a>
+          <a class="nav-link " href="../../../post/"><span>Posts</span></a>
         </li>
 
         
@@ -374,7 +379,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../resources/"><span>Resources</span></a>
+          <a class="nav-link " href="../../../resources/"><span>Resources</span></a>
         </li>
 
         
@@ -396,7 +401,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link  active" href="../../tutorials/"><span>Tutorials</span></a>
+          <a class="nav-link  active" href="../../../tutorials/"><span>Tutorials</span></a>
         </li>
 
         
@@ -425,7 +430,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+          <a class="nav-link " href="../../../#contact"><span>Contact</span></a>
         </li>
 
         
@@ -489,25 +494,25 @@
   
   
   
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="../../tutorials/r_tutorials/">Tutorials in .Rmd</a>
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../tutorials/r_tutorials/">Tutorials in .Rmd</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">R Blogdown</a>
+    <a class="docs-toc-link" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">R Blogdown</a>
     <ul class="nav docs-sidenav">
       
-      <li >
-        <a href="../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">Useful Stuff</a>
+      <li class="active">
+        <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">Useful Stuff</a>
       </li>
       
       <li >
-        <a href="../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/">Academic Theme</a>
+        <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/">Academic Theme</a>
       </li>
       
       <li >
-        <a href="../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial/">Blogdown Tutorial</a>
+        <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_tutorial/">Blogdown Tutorial</a>
       </li>
       
     </ul>
@@ -526,7 +531,14 @@
         <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
       </ul>
 
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#useful-commands">useful commands</a></li>
+    <li><a href="#useful-customization-files">useful customization files</a></li>
+    <li><a href="#markdown-quirks">markdown quirks</a></li>
+    <li><a href="#things-to-figure-out">things to figure out</a></li>
+  </ul>
+</nav>
 
       
     </div>
@@ -537,11 +549,94 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>Tutorials in .Rmd format</h1>
+          <h1>Useful Stuff</h1>
 
           <div class="article-style">
-            <p>
-<a href="../../rmarkdown_statics/R_tutorials/rmarkdown_static_test.html">rmarkdown test</a></p>
+            <ul>
+<li>some useful commands for building and maintaining a blogdown site</li>
+<li>also some markdown quirks I&rsquo;m finding along the way</li>
+</ul>
+<h2 id="useful-commands">useful commands</h2>
+<p><code>blogdown::serve_site()</code> to serve site on localhost<br>
+<code>servr::daemon_stop(1)</code> to stop server (sometimes serve_site() doesn&rsquo;t refresh)
+<code>Addins &gt; New Post</code><br>
+<code>Addins &gt; Insert Image</code><br></p>
+<hr>
+<h2 id="useful-customization-files">useful customization files</h2>
+<ul>
+<li>in root dir
+<ul>
+<li><code>/.gitignore</code> <br></li>
+<li><code>/.Rprofile</code> defaults for Addins &gt; New Post<br></li>
+<li><code>/_output.yml</code> site wide blogdown:html_page settings<br></li>
+<li><code>/config.toml</code> title, baseurl, copyright, relativeurls, theme, enableEmoji, ignoreFiles, permalinks, markup, etc<br></li>
+</ul>
+</li>
+<li>in /assets/ dir
+<ul>
+<li><code>/scss/custom.scss</code> top navbar font size, heading font size, body font size, smooth scrolling<br></li>
+</ul>
+</li>
+<li>in /config/_default/ dir
+<ul>
+<li><code>menus.toml</code> links for top navbar<br></li>
+<li><code>params.toml</code> theme within academic, day_night, font=&quot;my_font_set&rdquo;, font_size, site_type, math=true, diagram=true, contact details, social, region settings, reading_time, disqus comments, search, maps, google analytics<br></li>
+</ul>
+</li>
+<li>in /content/ dir
+<ul>
+<li><code>authors/johndoe/_index</code> authors: johndoe, bio, email, etc<br></li>
+<li><code>home/...</code> all sorts of widget md files for scrolling homepage<br></li>
+</ul>
+</li>
+<li>in /data/ dir
+<ul>
+<li><code>fonts/my_font_set</code> set custom font, font size, etc<br></li>
+</ul>
+</li>
+<li>in /layouts/_default/ dir
+<ul>
+<li><code>single.html</code> table of content on sidebar for .md blog posts<br></li>
+</ul>
+</li>
+<li>in /R/ dir
+<ul>
+<li><code>build.R</code> r script to tell blogdown to build whatever is in static dir<br></li>
+</ul>
+</li>
+<li>in /themes/hugo-academic/ dir (shouldn&rsquo;t really touch this)
+<ul>
+<li><code>assets/scss/academic/_docs.scss</code> looks interesting, might have something to do with setting docs content like toc?<br></li>
+<li><code>data/page_sharer.toml</code> enabling disabling share in blog posts</li>
+</ul>
+</li>
+<li>in // dir
+<ul>
+<li>`` <br></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="markdown-quirks">markdown quirks</h2>
+<p><strong>lining up content in quote blocks</strong></p>
+<ul>
+<li>use space (•) instead of tabs (\t)</li>
+<li>e.g.</li>
+</ul>
+<pre><code>this is some code•••••••••••••••••••••# comment1••••more text
+this is some more code••••••••••••••••# comment2••••more text
+this is some more and more code•••••••# comment3•••••••more text
+</code></pre>
+<p>**</p>
+<hr>
+<h2 id="things-to-figure-out">things to figure out</h2>
+<ul>
+<li>create alternative to &ldquo;home&rdquo; scrolling page</li>
+<li>breadcrumbs navigation</li>
+<li>floating toc for .Rmd</li>
+<li>getting rid of spacing between intro sentence and subsequent bullet lists</li>
+<li></li>
+</ul>
 
           </div>
 
@@ -555,6 +650,12 @@
 <div class="post-nav">
   
   
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_academictheme/" rel="prev">Academic Theme</a>
+  </div>
+  
 </div>
 
           </div>
@@ -562,7 +663,7 @@
         </div>
 
         <div class="body-footer">
-          <p>Last updated on Sep 9, 2018</p>
+          <p>Last updated on May 20, 2020</p>
 
           
 
@@ -574,7 +675,7 @@
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/r_tutorials/_index.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/r_tutorials/2020_05_20_0847-R_blogdown_usefulStuff.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>
@@ -592,11 +693,11 @@
   
   <p class="powered-by">
     
-      <a href="../../privacy/">Privacy Policy</a>
+      <a href="../../../privacy/">Privacy Policy</a>
     
     
        &middot; 
-      <a href="../../terms/">Terms</a>
+      <a href="../../../terms/">Terms</a>
     
   </p>
   
@@ -737,7 +838,7 @@
     
     
     
-    <script src="../../js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+    <script src="../../../js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
 
     
 
