@@ -23,21 +23,18 @@ New Project > New Directory > Website using Blogdown >
 - Directory name = bioinfohippo
 - Hugo theme = gcushen/hugo-academic > |Create Project|
 
-```
-/config.toml
-
-	title = "bioinfohippo"
-	copyright = "Ming Han &copy `{year}`"
-	theme = "hugo-academic"
-```
-
 ## serve_site() and view in browser
 - first edit config.toml
+- (baseurl allows sharing to prepend baseurl to post to share)
 ```
-     vim config.toml
+    vim config.toml
      
-     	relativeurls = true
-     	ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+        title = "bioinfohippo"
+        baseurl = "url/to/your/site/"
+        copyright = "John Doe &copy `{year}`"
+        theme = "hugo-academic"
+        relativeurls = true
+        ignoreFiles = ["\\.ipynb$", ".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 ```
 - serve_site()
 ```

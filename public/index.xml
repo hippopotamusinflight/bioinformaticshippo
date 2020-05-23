@@ -322,20 +322,19 @@ this is some more and more code•••••••# comment3••••••
 &lt;li&gt;Directory name = bioinfohippo&lt;/li&gt;
 &lt;li&gt;Hugo theme = gcushen/hugo-academic &amp;gt; |Create Project|&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;/config.toml
-
-	title = &amp;quot;bioinfohippo&amp;quot;
-	copyright = &amp;quot;Ming Han &amp;amp;copy `{year}`&amp;quot;
-	theme = &amp;quot;hugo-academic&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;serve_site-and-view-in-browser&#34;&gt;serve_site() and view in browser&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;first edit config.toml&lt;/li&gt;
+&lt;li&gt;(baseurl allows sharing to prepend baseurl to post to share)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;     vim config.toml
+&lt;pre&gt;&lt;code&gt;    vim config.toml
      
-     	relativeurls = true
-     	ignoreFiles = [&amp;quot;\\.ipynb$&amp;quot;, &amp;quot;.ipynb_checkpoints$&amp;quot;, &amp;quot;\\.Rmd$&amp;quot;, &amp;quot;\\.Rmarkdown$&amp;quot;, &amp;quot;_files$&amp;quot;, &amp;quot;_cache$&amp;quot;]
+        title = &amp;quot;bioinfohippo&amp;quot;
+        baseurl = &amp;quot;url/to/your/site/&amp;quot;
+        copyright = &amp;quot;John Doe &amp;amp;copy `{year}`&amp;quot;
+        theme = &amp;quot;hugo-academic&amp;quot;
+        relativeurls = true
+        ignoreFiles = [&amp;quot;\\.ipynb$&amp;quot;, &amp;quot;.ipynb_checkpoints$&amp;quot;, &amp;quot;\\.Rmd$&amp;quot;, &amp;quot;\\.Rmarkdown$&amp;quot;, &amp;quot;_files$&amp;quot;, &amp;quot;_cache$&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;serve_site()&lt;/li&gt;

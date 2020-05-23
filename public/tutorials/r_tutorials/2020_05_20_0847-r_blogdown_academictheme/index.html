@@ -589,20 +589,19 @@
 <li>Directory name = bioinfohippo</li>
 <li>Hugo theme = gcushen/hugo-academic &gt; |Create Project|</li>
 </ul>
-<pre><code>/config.toml
-
-	title = &quot;bioinfohippo&quot;
-	copyright = &quot;Ming Han &amp;copy `{year}`&quot;
-	theme = &quot;hugo-academic&quot;
-</code></pre>
 <h2 id="serve_site-and-view-in-browser">serve_site() and view in browser</h2>
 <ul>
 <li>first edit config.toml</li>
+<li>(baseurl allows sharing to prepend baseurl to post to share)</li>
 </ul>
-<pre><code>     vim config.toml
+<pre><code>    vim config.toml
      
-     	relativeurls = true
-     	ignoreFiles = [&quot;\\.ipynb$&quot;, &quot;.ipynb_checkpoints$&quot;, &quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]
+        title = &quot;bioinfohippo&quot;
+        baseurl = &quot;url/to/your/site/&quot;
+        copyright = &quot;John Doe &amp;copy `{year}`&quot;
+        theme = &quot;hugo-academic&quot;
+        relativeurls = true
+        ignoreFiles = [&quot;\\.ipynb$&quot;, &quot;.ipynb_checkpoints$&quot;, &quot;\\.Rmd$&quot;, &quot;\\.Rmarkdown$&quot;, &quot;_files$&quot;, &quot;_cache$&quot;]
 </code></pre>
 <ul>
 <li>serve_site()</li>
