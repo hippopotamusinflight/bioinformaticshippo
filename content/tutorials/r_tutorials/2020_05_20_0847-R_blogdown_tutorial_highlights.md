@@ -12,6 +12,10 @@ type: docs
 weight: 2019052001
 ---
 
+`blogdown::serve_site()` to serve site on localhost
+`servr::daemon_stop(25)` to stop server (sometimes serve_site() doesn't refresh)
+
+
 My experience going through R blogdown install.
 https://bookdown.org/yihui/blogdown/software-info.html
 
