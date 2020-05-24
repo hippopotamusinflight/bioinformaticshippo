@@ -557,6 +557,7 @@
         <li><a href="#toc-numbering-in-rmd">toc numbering in .Rmd</a></li>
         <li><a href="#floating-toc-for-blog-posts">floating toc for blog posts</a></li>
         <li><a href="#reference-inline-figure-images">reference inline figure, images</a></li>
+        <li><a href="#share-manual-baseurl">share manual baseurl</a></li>
         <li><a href="#reference-internal-pages">reference internal pages</a></li>
         <li><a href="#collapsible-docs-sidebar-nav">collapsible docs sidebar nav</a></li>
       </ul>
@@ -988,6 +989,23 @@ vim /content/home/skills.md      active = false
     some code...
     ```
 </pre>
+<h3 id="share-manual-baseurl">share manual baseurl</h3>
+<ul>
+<li>
+<a href="https://github.com/gcushen/hugo-academic/issues/1116" target="_blank" rel="noopener">https://github.com/gcushen/hugo-academic/issues/1116</a></li>
+<li>baseurl not prepending {url} in <code>page_sharer.html</code></li>
+<li>manually add baseurl before each {url} in <code>page_sharer.html</code></li>
+</ul>
+<pre><code>    vim /themes/hugo-academic/data/page_sharer.html
+    
+        [[buttons]]
+          id = &quot;twitter&quot;
+          url = &quot;https://twitter.com/intent/tweet?url=http://yourbaseurl.com/{url}&amp;text={title}&quot;
+          title = &quot;Twitter&quot;
+          icon_pack = &quot;fab&quot;
+          icon = &quot;twitter&quot;
+          enable = true
+</code></pre>
 <h3 id="reference-internal-pages">reference internal pages</h3>
 <h3 id="collapsible-docs-sidebar-nav">collapsible docs sidebar nav</h3>
 

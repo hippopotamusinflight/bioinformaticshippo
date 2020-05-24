@@ -51,6 +51,10 @@ weight: 2020052001
     - `` <br>
 
 
+---
+## academic theme quirks
+- docs: docs page with parent/child will always appear after docs without parent/child
+- docs: without assigning weight, left navbar will put them alphabetically, after those with weights
 
 
 

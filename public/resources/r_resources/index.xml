@@ -1,43 +1,398 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>RMarkdown Docs | BioinfoHippo</title>
+    <title>Tutorials in .Rmd format | BioinfoHippo</title>
     <link>/resources/r_resources/</link>
       <atom:link href="/resources/r_resources/index.xml" rel="self" type="application/rss+xml" />
-    <description>RMarkdown Docs</description>
+    <description>Tutorials in .Rmd format</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>RMarkdown Docs</title>
+      <title>Tutorials in .Rmd format</title>
       <link>/resources/r_resources/</link>
     </image>
     
     <item>
-      <title>Tidyverse</title>
-      <link>/resources/r_resources/tidyverse/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/tidyverse/</guid>
-      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-&lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-&lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+      <title>tidyverse dplyr</title>
+      <link>/resources/r_resources/tidyverse_dplyr/</link>
+      <pubDate>Fri, 22 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/tidyverse_dplyr/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;filter&#34;&gt;filter()&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;filter(.data, TRUE, .preserve = FALSE)&lt;/li&gt;
+&lt;li&gt;selects rows where condition is TRUE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% filter(between(Sepal.Length, 4, 4.3)) %&amp;gt;% head()
+iris %&amp;gt;% filter(Petal.Length &amp;gt; 6 &amp;amp; Petal.Width &amp;lt; 2)
+iris %&amp;gt;% filter(xor(Petal.Length &amp;lt; 6, Petal.Width &amp;gt; 2)) %&amp;gt;% head()
+iris %&amp;gt;% filter(Petal.Length %in% c(4.4, 4.3)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;scoped-filter-variants&#34;&gt;scoped filter variants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;filtering across multiple columns, dynamic selection of columns&lt;/li&gt;
+&lt;li&gt;returns all columns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris_numerics = iris[,!colnames(iris)==&amp;quot;Species&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;filter_all&#34;&gt;filter_all()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;filter_all(.tbl, .vars_predicate, .preserve = FALSE)&lt;/li&gt;
+&lt;li&gt;considering all columns, for each row&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# all_vars (if all cols have values &amp;gt; 0.3, keep that row)
+iris_numerics %&amp;gt;% filter_all(all_vars(. &amp;gt; 0.3)) %&amp;gt;% head()
+# any_vars (if any cols have values &amp;gt; 0.3, keep that row)
+iris_numerics %&amp;gt;% filter_all(any_vars(. &amp;gt; 4)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;filter_if&#34;&gt;filter_if&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;filter_if(.tbl, .predicate, .vars_predicate, .preserve = FALSE)&lt;/li&gt;
+&lt;li&gt;consider only columns matching .predicate when filtering with .vars_predicate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# is.numeric as .predicate
+iris %&amp;gt;% filter_if(~ is.numeric(.), all_vars(. &amp;gt; 2)) %&amp;gt;% head()
+
+# selects cols whose 2 &amp;lt; mean &amp;lt; 4 (cols Sepal.Width and Petal.Length)
+# all_vars (select rows where both Sepal.Width and Petal.Length have to be &amp;lt; 3)
+iris_numerics %&amp;gt;% filter_if(~ mean(.) &amp;gt; 2  &amp;amp; mean(.) &amp;lt; 4, all_vars(. &amp;lt; 3)) %&amp;gt;% head()
+
+# any_vars (any have to be &amp;lt; 3)
+iris_numerics %&amp;gt;% filter_if(~ mean(.) &amp;gt; 2  &amp;amp; mean(.) &amp;lt; 4, any_vars(. &amp;lt; 3)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;filter_at&#34;&gt;filter_at&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;filter_at(.tbl, .vars, .vars_predicate, .preserve = FALSE)&lt;/li&gt;
+&lt;li&gt;selects cols with vars() specification (regex)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# all_vars (all cols containing &amp;quot;tal&amp;quot;, those cols - values must be even)
+iris_numerics %&amp;gt;% filter_at(vars(contains(&amp;quot;tal&amp;quot;)), all_vars(((. * 10) %% 2) == 0)) %&amp;gt;% head()
+
+# select cols with str_which and regex, those cols - values must be even
+get_names = iris_numerics %&amp;gt;% names() %&amp;gt;% str_subset(., &amp;quot;^P&amp;quot;)
+iris_numerics %&amp;gt;% filter_at(vars(get_names), all_vars(((. * 10) %% 2) == 0)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;select&#34;&gt;select()&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;select(.data, COLNAMES)&lt;/li&gt;
+&lt;li&gt;subset cols by colnames&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;get_names = iris_numerics %&amp;gt;% names() %&amp;gt;% str_subset(., &amp;quot;^p&amp;quot;)
+iris %&amp;gt;% select(get_names) %&amp;gt;% head()
+
+# drop cols
+iris %&amp;gt;% select(-Species) %&amp;gt;% head()
+
+# rearrange columns
+iris %&amp;gt;% select(Species, everything()) %&amp;gt;% head() # everything()
+iris %&amp;gt;% select(-Sepal.Length, Sepal.Length) %&amp;gt;% head() # move with -name
+
+# rename group of variables
+get_names = iris_numerics %&amp;gt;% names() %&amp;gt;% str_subset(., &amp;quot;^[:lower:]&amp;quot;)
+iris %&amp;gt;% select(obs = get_names) %&amp;gt;% head()
+
+# rename multiple variables
+vars &amp;lt;- c(var1 = &amp;quot;Sepal.Length&amp;quot;, var2 =&amp;quot;Sepal.Width&amp;quot;)
+iris %&amp;gt;% select(vars) %&amp;gt;% head() # not sure why use !!!var or !!var...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;scoped-select-variants&#34;&gt;scoped select variants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;all selects some columns, and change colnames&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;select_all&#34;&gt;select_all&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;select_all(.tbl, .funs = list(), &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;changes all columns, takes func as argument&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# toupper, changes colnames to UPPERCASE
+iris %&amp;gt;% select_all(toupper) %&amp;gt;% head()
+
+# regex replace colnames
+iris %&amp;gt;% select_all(., ~ str_replace(., &amp;quot;t&amp;quot;, &amp;quot;weeee&amp;quot;)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;select_if&#34;&gt;select_if&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;select_if(.tbl, .predicate, .funs = list(), &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;select_if, uses logical statements, then do something&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# select by datatype
+iris %&amp;gt;% select_if(is.numeric) %&amp;gt;% head()
+
+# multiple ifs
+iris %&amp;gt;% select_if(~is.numeric(.) &amp;amp; mean(.) &amp;gt; 5) %&amp;gt;% head() # need ~ since mean(.) &amp;gt; 5 not a function
+
+# n_distinct()
+iris %&amp;gt;% select_if(~n_distinct(.) &amp;lt; 10, toupper) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;select_at&#34;&gt;select_at&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;select_at(.tbl, .vars, .funs = list(), &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;select columns with .vars, then do something&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# select vars without &amp;quot;ar&amp;quot; OR starts_with &amp;quot;c&amp;quot;, then convert to UPPERCASE
+select_at(mtcars, vars(-contains(&amp;quot;ar&amp;quot;), starts_with(&amp;quot;c&amp;quot;)), toupper) %&amp;gt;% head()
+
+# vars positional
+select_at(mtcars, vars(-(1:3)), toupper) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;custom-function&#34;&gt;custom function&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;is_whole &amp;lt;- function(x) all(floor(x) == x)
+select_if(mtcars, is_whole, toupper) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;rename&#34;&gt;rename&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;rename(.data, c(&amp;ldquo;new_col1&amp;rdquo; = old_col1, &amp;ldquo;new_col2&amp;rdquo; = old_col2))&lt;/li&gt;
+&lt;li&gt;rename specific column(s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% rename(&amp;quot;new_col1&amp;quot; = Sepal.Length, &amp;quot;new_col2&amp;quot; = Sepal.Width) %&amp;gt;% head
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;scoped-rename-variants&#34;&gt;scoped rename() variants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;select() drops variables not in selection; rename() retains them&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rename_all&#34;&gt;rename_all&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;same as select_all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% rename_all(., ~ str_replace(., &amp;quot;t&amp;quot;, &amp;quot;weeee&amp;quot;)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rename_if&#34;&gt;rename_if&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rename_if(.tbl, .predicate, .funs = list(), &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% rename_if(~n_distinct(.) &amp;lt; 10, toupper) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rename_at&#34;&gt;rename_at&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;rename_at(.tbl, .vars, .funs = list(), &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;rename_at(mtcars, vars(-(1:3)), toupper) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;mutate&#34;&gt;mutate&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;mutate(.data, new_col = func(old_col))&lt;/li&gt;
+&lt;li&gt;compute new columns, keeps others&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% mutate(sepal10 = Sepal.Length*10) %&amp;gt;% head()
+iris %&amp;gt;% mutate(Sepal.Length = Sepal.Length*10) %&amp;gt;% head() # mutate in-place
+iris %&amp;gt;% mutate(Sepal.Length = Sepal.Length*10, 
+                Sepal.Width = Sepal.Width*10) %&amp;gt;% head() # mutate multiple cols in-place
+iris %&amp;gt;% mutate(Sepal.Length = NULL, 
+                Sepal.Width = Sepal.Width*10) %&amp;gt;% head() # mutate and remove cols
+
+# grouped mutates with group_by()
+# without group_by()
+iris %&amp;gt;% mutate(Sepal.Length_mean = mean(Sepal.Length)) %&amp;gt;% head()
+# with group_by(), new col has grouped calculations
+iris %&amp;gt;% group_by(Species) %&amp;gt;% mutate(Sepal.Length_mean = mean(Sepal.Length)) %&amp;gt;% head()
+
+# check group_by() output
+i = 1 # setosa
+iris %&amp;gt;% group_by(Species) %&amp;gt;% 
+  mutate(Sepal.Length_mean = mean(Sepal.Length)) %&amp;gt;% 
+  filter(Species == iris %&amp;gt;% select(Species) %&amp;gt;% unique() %&amp;gt;% .[i,]) %&amp;gt;% head() # with group_by()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;scoped-mutate-variants&#34;&gt;scoped mutate() variants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;all mutates in-place, unless name given with list())&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# user-defined function
+scale2 = function(x, na.rm = TRUE){
+  return(x - mean(x, na.rm = na.rm)/sd(x, na.rm = na.rm))
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;mutate_all&#34;&gt;mutate_all&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mutate_all(.tbl, .funs, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris_numerics %&amp;gt;% mutate_all(as.integer) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;mutate_if&#34;&gt;mutate_if&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mutate_if(.tbl, .predicate, .funs, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;get cols by predicate function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% mutate_if(is.numeric, scale2, na.rm = TRUE) %&amp;gt;% head()
+
+# transforming variable type (is. to as.)
+iris %&amp;gt;% mutate_if(is.double, as.integer) %&amp;gt;% head() %&amp;gt;% as_tibble()
+
+# mutates in-addition instead of in-place 
+iris %&amp;gt;% mutate_if(is.double, list(&amp;quot;int&amp;quot; = as.integer)) %&amp;gt;% head() %&amp;gt;% as_tibble()
+
+# mutates with expression-function
+iris %&amp;gt;% mutate_if(~n_distinct(.) == 2, as.factor) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;mutate_at&#34;&gt;mutate_at&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;mutate_at(.tbl, .vars, .funs, &amp;hellip;, .cols = NULL)&lt;/li&gt;
+&lt;li&gt;get cols by vars()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% mutate_at(vars(iris %&amp;gt;% names() %&amp;gt;% str_subset(., &amp;quot;^Sep&amp;quot;)), scale2) %&amp;gt;% summarize(mean(Sepal.Length))
+
+# mutates in-addition instead of in-place with list()
+iris %&amp;gt;% mutate_at(vars(iris %&amp;gt;% names() %&amp;gt;% str_subset(., &amp;quot;^Sep&amp;quot;)), list(scale = scale2)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;multiple-transformations&#34;&gt;multiple transformations&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# new variables created for each transformation
+iris %&amp;gt;% mutate_if(is.numeric, list(scale = scale2, log = log)) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;transmute&#34;&gt;transmute&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;compute new columns, drops all others&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% transmute(sepal10 = Sepal.Length*10) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;arrange&#34;&gt;arrange&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ordering by multiple cols&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;iris %&amp;gt;% arrange(Sepal.Length, Sepal.Width) %&amp;gt;% head()
+iris %&amp;gt;% arrange(desc(Sepal.Length), Sepal.Width) %&amp;gt;% head() 
+
+# group_by() is ignored
+iris %&amp;gt;% group_by(Species) %&amp;gt;% arrange(Sepal.Length) %&amp;gt;% print(n=40)
+# unless specifically asked
+iris %&amp;gt;% arrange(Sepal.Length, .by_group = TRUE) %&amp;gt;% head(50) # even then doesn&#39;t work...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;count&#34;&gt;count&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# count is short-hand for group_by() + tally()
+iris %&amp;gt;% group_by(Species) %&amp;gt;% tally()
+iris %&amp;gt;% count(Species)
+
+# change name of new col
+iris %&amp;gt;% count(Species, name = &amp;quot;count_Species&amp;quot;)
+
+# multi-level count (e.g. by Species and by homeworld)
+starwars %&amp;gt;% count(species, homeworld, sort = TRUE, name = &amp;quot;n_by_Species_by_homeworld&amp;quot;)
+
+# add_count short for group_by() + add_tally(), puts a few col with #rows of entire dataframe
+mtcars %&amp;gt;% add_count(cyl, name = &amp;quot;count_num_by_cyl&amp;quot;) %&amp;gt;% select(count_num_by_cyl, everything()) %&amp;gt;% head(10)
+
+# combine add_count with filter, to filter based on counts of each class of a feature
+mtcars %&amp;gt;% add_count(cyl, name = &amp;quot;count_num_by_cyl&amp;quot;) %&amp;gt;% filter(count_num_by_cyl == 7) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>Set Operations</title>
-      <link>/resources/r_resources/set_operations/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/set_operations/</guid>
+      <title>tidyverse purr</title>
+      <link>/resources/r_resources/tidyverse_purr/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/tidyverse_purr/</guid>
+      <description>&lt;!--
+0. replace ?????? with parent page name e.g. R Blogdown
+1. replace ????? with dir in /content/subdir/ e.g. r_tutorials
+2. replace ???? with YYYY-MM-DD e.g. 2020-05-20
+3. replace ??? with page name e.g. Useful Stuff
+4. replace ?? with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(tidyverse)
+# library(repurrsive)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://jennybc.github.io/purrr-tutorial/ls00_inspect-explore.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jennybc.github.io/purrr-tutorial/ls00_inspect-explore.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>apply functions</title>
+      <link>/resources/r_resources/apply_functions/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/apply_functions/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace apply functions with page name e.g. dplyr
+4. replace ww with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;apply-functions&#34;&gt;apply functions&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://stackoverflow.com/questions/3505701/grouping-functions-tapply-by-aggregate-and-the-apply-family&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stackoverflow.com/questions/3505701/grouping-functions-tapply-by-aggregate-and-the-apply-family&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;apply-generic&#34;&gt;apply (generic)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;works with matrices or higher dimensional (use sapply for vectors, lists)&lt;/li&gt;
+&lt;li&gt;acts on a column or row, or individual elements, depending on FUN&lt;/li&gt;
+&lt;li&gt;outputs vector or matrix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;mat = matrix(1:9, 3, 3); mat
+apply(mat, 1, sum)
+apply(mat, 2, sum)
+
+# apply to rows and columns
+apply(mat, 1, function(x) x*10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;lapply-list-apply&#34;&gt;lapply (list apply)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;apply function to each element of a list&lt;/li&gt;
+&lt;li&gt;returns a list&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;x = list(1:10)
+lapply(x, sqrt)
+lapply(mat, function(x) (x+2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sapply-simple-lapply&#34;&gt;sapply (simple lapply)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;same as lapply,&lt;/li&gt;
+&lt;li&gt;but returns a vector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;x = list(1:10)
+sapply(x, sqrt)
+sapply(x, function(x) (x+2)) # custom function with sapply
+
+# matrix input coersed to vector output
+sapply(mat, function(x) (x+2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tapply-tagged-apply&#34;&gt;tapply (tagged apply)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;apply to subset of a vector&lt;/li&gt;
+&lt;li&gt;subset defined by a factor (or some other vector)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;x = 1:20; x
+y = factor(rep(letters[1:5], each = 4)); y
+tapply(x, y, sum)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;mapply-multi-input-apply&#34;&gt;mapply (multi-input apply)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;multiple input, can be several datatypes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;x = letters[seq(1:10)]
+y = 2:11
+z = rep(seq(0,1),10)
+myFunc = function(x,y,z){
+  return(paste0(x,y,z))
+}
+mapply(myFunc, x, y, z) %&amp;gt;% unname()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rapply-recursive-apply&#34;&gt;rapply (recursive apply)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;# ???
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;vapply-verified-apply&#34;&gt;vapply (verified apply)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;specifies output datatype for faster compute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;x = list(a = 1, b = 1:3, c = 1:100)
+y_int = vapply(x, FUN = length, FUN.VALUE = 0L)
+class(y_int)
+y_num = vapply(x, FUN = length, FUN.VALUE = 0.0)
+class(y_num)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>set operations</title>
+      <link>/resources/r_resources/setoperations/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/setoperations/</guid>
       <description>&lt;h2 id=&#34;set-ops-vectors&#34;&gt;set ops (vectors)&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;x &amp;lt;- LETTERS[1:8]; x      # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot;
 y &amp;lt;- LETTERS[5:10]; y     # &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot; &amp;quot;I&amp;quot; &amp;quot;J&amp;quot;
@@ -83,6 +438,254 @@ setequal(x,x)             # TRUE
     </item>
     
     <item>
+      <title>generate numbers</title>
+      <link>/resources/r_resources/generate_data/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/generate_data/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-2020-05-23 e.g. 2020-05-20
+3. replace generate numbers with page name e.g. dplyr
+4. replace 1010 with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://www.cookbook-r.com/Numbers/Generating_random_numbers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.cookbook-r.com/Numbers/Generating_random_numbers/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;library(tidyverse)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;seq&#34;&gt;seq()&lt;/h3&gt;
+&lt;p&gt;seq(from, to, by)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;seq(1, 10, by = pi)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rep&#34;&gt;rep()&lt;/h3&gt;
+&lt;p&gt;rep(sequence, each, times, len)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2)
+rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2, times = 4)
+rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2, times = 4, len = 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;runif&#34;&gt;runif()&lt;/h3&gt;
+&lt;p&gt;runif(elements, min, max)&lt;br&gt;
+returns floats by default&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;set.seed(420)
+runif(5, 1, 10)
+# use floor, ceiling or round to get integers
+runif(5, 1, 10) %&amp;gt;% floor()
+runif(5, 1, 10) %&amp;gt;% ceiling()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sample&#34;&gt;sample()&lt;/h3&gt;
+&lt;p&gt;sample(range, elements, replace?)&lt;br&gt;
+can set with or without replacement&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;set.seed(420)
+sample(1:100, 5, replace = TRUE)
+sample(1:100, 5, replace = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;normal-functions&#34;&gt;normal functions&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://seankross.com/notes/dpqr/&#34;&gt;http://seankross.com/notes/dpqr/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dnorm&#34;&gt;dnorm&lt;/h4&gt;
+&lt;p&gt;dnorm(x, mean = 0, sd = 1, log = FALSE)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;probability density for the normal distribution&lt;/li&gt;
+&lt;li&gt;value = height of PDF of normal distribution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;dnorm(0, mean = 0, sd = 1) # default values, dnorm = 0.3989423
+zscores = seq(-3,3,by=0.1)
+dvalues = dnorm(zscores)
+plot(dvalues, # Plot where y = values and x = index of the value in the vector
+     xaxt = &amp;quot;n&amp;quot;, # Don&#39;t label the x-axis
+     type = &amp;quot;l&amp;quot;, # Make it a line plot
+     main = &amp;quot;pdf of the Standard Normal&amp;quot;,
+     xlab= &amp;quot;Z-score&amp;quot;) 
+
+# These commands label the x-axis
+axis(1, at=which(dvalues == dnorm(0)), labels=c(0))
+axis(1, at=which(dvalues == dnorm(1)), labels=c(-1, 1))
+axis(1, at=which(dvalues == dnorm(2)), labels=c(-2, 2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;pnorm&#34;&gt;pnorm&lt;/h4&gt;
+&lt;p&gt;pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;probability distribution&lt;/li&gt;
+&lt;li&gt;inverse of qnorm (given zscore, what&amp;rsquo;s the cumulative probability)&lt;/li&gt;
+&lt;li&gt;value = integral (area) from -inf to q of PDF of normal distribution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;pnorm(0, 0, 1) # default args, pnorm = 0.5
+pnorm(2, 5, 3) # 0.1586553
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;qnorm&#34;&gt;qnorm&lt;/h4&gt;
+&lt;p&gt;qnorm(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;quantile function&lt;/li&gt;
+&lt;li&gt;inverse of pnorm (given quantile, what&amp;rsquo;s the zscore?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;qnorm(0.5) # 0
+qnorm(0.99) # 2.326348 (zscore of 99th quantile of normal distribution)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;rnorm&#34;&gt;rnorm&lt;/h4&gt;
+&lt;p&gt;rnorm(n, mean = 0, sd = 1)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;random deviates&lt;/li&gt;
+&lt;li&gt;generates a vector of normally distributed random numbers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rnorm(5, mean = 0, sd = 1) # 1.15572257  0.36096234  0.01558131  0.57173629 -0.85518190
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>files and directories</title>
+      <link>/resources/r_resources/files_dirs/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/files_dirs/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace files and directories with page name e.g. dplyr
+4. replace 1020 with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://theautomatic.net/2018/07/11/manipulate-files-r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://theautomatic.net/2018/07/11/manipulate-files-r/&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://astrostatistics.psu.edu/su07/R/html/base/html/files.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://astrostatistics.psu.edu/su07/R/html/base/html/files.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;get-and-change-working-dir&#34;&gt;get and change working dir&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;getwd()
+setwd(&amp;quot;/path/to/wd/&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;using &amp;ldquo;here&amp;rdquo; package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(here)
+here::here()
+here::set_here()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;check-if-files-dirs-exists&#34;&gt;check if files, dirs exists&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.exists(&amp;quot;test.txt&amp;quot;) # [1] FALSE
+dir.exists(&amp;quot;test_dir&amp;quot;) # [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;create-files-dirs&#34;&gt;create files, dirs&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dir.create(&amp;quot;test_dir&amp;quot;)
+file.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;), overwrite = TRUE)
+file.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+
+# create a whole bunch of files
+file.path(&amp;quot;test_dir&amp;quot;, paste0(&amp;quot;file&amp;quot;, 1:5, &amp;quot;.txt&amp;quot;))
+sapply(file.path(&amp;quot;test_dir&amp;quot;, paste0(&amp;quot;file&amp;quot;, 1:5, &amp;quot;.txt&amp;quot;)), file.create)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;edit-file&#34;&gt;edit file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.edit(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;delete-files&#34;&gt;delete files&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.remove(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
+dir.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;to_be_removed&amp;quot;))
+unlink(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;to_be_removed&amp;quot;), recursive = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;copy-files-dirs&#34;&gt;copy files, dirs&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dir.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;))
+file.copy(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;), file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;), overwrite = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;symlink&#34;&gt;symlink&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.symlink(from, to)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;list-files-in-dir&#34;&gt;list files in dir&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;list.files(file.path(&amp;quot;test_dir&amp;quot;))
+list.files(file.path(&amp;quot;test_dir&amp;quot;), recursive = TRUE) # lists files in inner_dir
+list.files(file.path(&amp;quot;test_dir&amp;quot;), recursive = TRUE, full.names = TRUE) # get full path, starting from current dir
+
+# use pattern to subset list.files() results
+list.files(file.path(&amp;quot;test_dir&amp;quot;), pattern = &amp;quot;.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-file-info&#34;&gt;get file info&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.info(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
+#                   size isdir mode               mtime               ctime               atime uid gid   uname grname
+# test_dir/test.txt    0 FALSE  644 2020-05-04 17:46:56 2020-05-04 17:46:56 2020-05-04 17:52:52 501  20 minghan  staff
+
+file.mtime(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;)) # [1] &amp;quot;2020-05-04 17:46:56 EDT&amp;quot;
+# file.ctime(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;)) # no such function...
+file.info(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))$ctime # [1] &amp;quot;2020-05-04 17:46:56 EDT&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-file-basename&#34;&gt;get file basename&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;basename(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-dir-name-of-a-file&#34;&gt;get dir name of a file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dirname(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-file-extension&#34;&gt;get file extension&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(tools)
+file_ext(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;open-a-gui-window-to-select-file&#34;&gt;open a GUI window to select file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# file.choose()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;move-a-file&#34;&gt;move a file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# install.packages(&amp;quot;filesstrings&amp;quot;)
+library(filesstrings)
+file.move(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;file1.txt&amp;quot;), file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>flow controls</title>
+      <link>/resources/r_resources/flow_controls/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/flow_controls/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace flow controls with page name e.g. dplyr
+4. replace 1040 with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;next-statement&#34;&gt;next statement&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;skip 1 iteration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;x &amp;lt;- 1:5
+for (val in x) {
+  if (val == 3){
+    next
+  }
+print(val)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;break-statement&#34;&gt;break statement&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;halt entire loop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;x &amp;lt;- 1:5
+for (val in x) {
+  if (val == 3){
+    break
+  }
+print(val)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;invisible-warning&#34;&gt;invisible(), warning()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;R equivalent of python&amp;rsquo;s pass statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;my_func  &amp;lt;- function(x){
+  invisible()
+}
+my_func(100)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;foo = function(){
+  # write this tomorrow
+  warning(&amp;quot;You ran foo and I havent written it yet&amp;quot;)
+}
+foo()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
       <title>rmarkdowntest</title>
       <link>/resources/r_resources/rmarkdown/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
@@ -117,6 +720,371 @@ iris %&amp;gt;% head()&lt;/code&gt;&lt;/pre&gt;
 ## 6          5.4         3.9          1.7         0.4  setosa&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>dataframe reshape</title>
+      <link>/resources/r_resources/dataframe_reshaping/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/dataframe_reshaping/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace dataframe reshape with page name e.g. dplyr
+4. replace  with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(tidyverse)
+library(knitr)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;data-reshaping&#34;&gt;data reshaping&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://tidyr.tidyverse.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://tidyr.tidyverse.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;tidying data&lt;/li&gt;
+&lt;li&gt;make data &amp;ldquo;one case per row&amp;rdquo;, &amp;ldquo;one feature per column&amp;rdquo;, &amp;ldquo;one value per cell&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;data reshaping terminology&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;tidyr&lt;/td&gt;
+&lt;td&gt;gather&lt;/td&gt;
+&lt;td&gt;spread&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;reshape(2)&lt;/td&gt;
+&lt;td&gt;melt&lt;/td&gt;
+&lt;td&gt;cast&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;spreadsheets&lt;/td&gt;
+&lt;td&gt;unpivot&lt;/td&gt;
+&lt;td&gt;pivot&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;databases&lt;/td&gt;
+&lt;td&gt;fold&lt;/td&gt;
+&lt;td&gt;unfold&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+- simple transpose doesn&#39;t work  
+- some contents are correct, some are not  
+&lt;br&gt;
+- `gather()` - moves columns into rows
+- `spread()` - moves rows into columns
+&lt;h3 id=&#34;untidy-data&#34;&gt;untidy data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;seps &amp;lt;- read_csv(&amp;quot;http://www.mm-c.me/mdsi/hospitals93to98.csv&amp;quot;)
+seps %&amp;gt;% dim()
+seps %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+problems:  
+- PatientDays and Separations are together
+- years are colnames
+&lt;h4 id=&#34;step1---gather&#34;&gt;step1 - gather()&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;push data in columns to rows&lt;/li&gt;
+&lt;li&gt;gather(data, key, value, key_range, na.rm, convert)&lt;br&gt;
+key = name of new &amp;ldquo;naming&amp;rdquo; variable (year)&lt;br&gt;
+value = name of new &amp;ldquo;result&amp;rdquo; variable (value)&lt;br&gt;
+convert = if TRUE, converts what looks like numeric to numeric, char to char&lt;br&gt;
+&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;gather() moves colnames into a &amp;ldquo;key&amp;rdquo; column, gathers col values into a single &amp;ldquo;values&amp;rdquo; column&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;inprog &amp;lt;- seps %&amp;gt;% gather(., key=year, value=value, FY1993:FY1998); inprog %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;step2---spread&#34;&gt;step2 - spread()&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;spread value of a value column (value) across new columns&lt;/li&gt;
+&lt;li&gt;long to wide&lt;/li&gt;
+&lt;li&gt;spread(data, key, value, fill = NA, convert = FALSE, drop = TRUE, sep = NULL)&lt;br&gt;
+key = column you want to split apart (Field)&lt;br&gt;
+value = column you want to use to populate the new columns (value)&lt;br&gt;
+fill = if combinations doesn&amp;rsquo;t exist&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rearrag &amp;lt;- spread(inprog, key = Field, value = value); rearrag %&amp;gt;% head()
+# every row is a unique combination of col values
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;separate&#34;&gt;separate()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;separate(data, col, into, sep)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rearrag %&amp;gt;% separate(., col = year, into = c(&amp;quot;leader&amp;quot;, &amp;quot;year&amp;quot;), sep = 2) %&amp;gt;% head()
+rearrag %&amp;gt;% separate(., col = year, into = c(&amp;quot;leader&amp;quot;, &amp;quot;year&amp;quot;), sep = &amp;quot;19&amp;quot;) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;whatever is in sep will be gone, so need preceded-by and followed-by stringR syntax&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# https://stackoverflow.com/questions/9756360/split-character-data-into-numbers-and-letters
+# (?&amp;lt;=[A-Za-z]) means preceded by a letter
+# (?=[0-9]) means followed by a number
+# the middle is where you want to separate
+rearrag %&amp;gt;% separate(., col = year, into = c(&amp;quot;leader&amp;quot;, &amp;quot;year&amp;quot;), sep = &amp;quot;(?&amp;lt;=[A-Za-z])(?=[0-9])&amp;quot;) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;unite&#34;&gt;unite()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;unite(data, cols, col, sep)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;sep_d = rearrag %&amp;gt;% separate(., col = year, into = c(&amp;quot;leader&amp;quot;, &amp;quot;year&amp;quot;), sep = &amp;quot;(?&amp;lt;=[A-Za-z])(?=[0-9])&amp;quot;)
+sep_d %&amp;gt;% unite(., leader, year, col = year, sep = &amp;quot;&amp;quot;) %&amp;gt;% head()
+
+# unite 3 columns
+sep_d2 = sep_d %&amp;gt;% separate(., col = year, into = c(&amp;quot;century&amp;quot;, &amp;quot;year&amp;quot;), sep = &amp;quot;(?&amp;lt;=19)(?=9)&amp;quot;); sep_d2 %&amp;gt;% head()
+sep_d2 %&amp;gt;% unite(., leader, century, year, col = year, sep = &amp;quot;_&amp;quot;) %&amp;gt;% head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>error handling</title>
+      <link>/resources/r_resources/error_handling/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/error_handling/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace error handling with page name e.g. dplyr
+4. replace  with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;stderr-messages&#34;&gt;stderr messages&lt;/h2&gt;
+&lt;h3 id=&#34;stop&#34;&gt;stop()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;halts execution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;logit &amp;lt;- function(x){
+  if( any(x &amp;lt; 0 | x &amp;gt; 1) ){
+    stop(&#39;x not between 0 and 1&#39;)
+  }
+  log(x / (1 - x) )
+}
+logit(0.4)
+# error message without stop(): NaNs produced[1] NaN
+# error message with stop(): Error in logit(-1) : x not between 0 and 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;warning&#34;&gt;warning()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;still allows function to execute,&lt;/li&gt;
+&lt;li&gt;but throws a warning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# using ifelse() + warning
+# output NA and warning
+logit &amp;lt;- function(x){
+  x = ifelse( any(x &amp;lt; 0 | x &amp;gt; 1), NA, x )
+  if(any(is.na(x))){
+    warning(&#39;x not between 0 and 1&#39;)
+  }
+  log(x / (1 - x) )
+}
+logit(-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;print-paste-cat-message-warning-stop&#34;&gt;print(), paste(), cat(), message(), warning(), stop()&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://stackoverflow.com/questions/36699272/why-is-message-a-better-choice-than-print-in-r-for-writing-a-package&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stackoverflow.com/questions/36699272/why-is-message-a-better-choice-than-print-in-r-for-writing-a-package&lt;/a&gt;&lt;br&gt;
+&lt;code&gt;print()&lt;/code&gt;, &lt;code&gt;cat()&lt;/code&gt; sends output to stdout&lt;br&gt;
+&lt;code&gt;message()&lt;/code&gt;, &lt;code&gt;warning()&lt;/code&gt;, &lt;code&gt;stop()&lt;/code&gt; sends output to stderr&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;print()&lt;/code&gt; - cannot concatenate, prints [ x ] if multiple elements printed; but prints newline automatically&lt;br&gt;
+&lt;code&gt;paste()&lt;/code&gt; - allows concatenate&lt;br&gt;
+&lt;code&gt;cat()&lt;/code&gt; - allows concatenate, no [ x ]; but needs to specify newline manually&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;message()&lt;/code&gt; - allows concat, no [ x ]; also needs to specify newline manually; but can be used with tryCatch()&lt;br&gt;
+&lt;code&gt;warning()&lt;/code&gt; - have problems when building packages, use message() instead&lt;br&gt;
+&lt;code&gt;stop()&lt;/code&gt; -&lt;/p&gt;
+&lt;h2 id=&#34;exceptions-handling&#34;&gt;exceptions handling&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://adv-r.had.co.nz/Exceptions-Debugging.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://adv-r.had.co.nz/Exceptions-Debugging.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;try&#34;&gt;try()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;allows execution to continue after error&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;f1 &amp;lt;- function(x) {
+  log(x)
+  return(c(log(x),10))
+}
+# f1(&amp;quot;x&amp;quot;)
+# Error in log(x) : non-numeric argument to mathematical function
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;f1 &amp;lt;- function(x) {
+  t &amp;lt;- try({            # capture try() as a variable (if failure, returns an invisible &amp;quot;try-error&amp;quot; object)
+    a &amp;lt;- 1              # multiple expressions in try({})
+    b &amp;lt;- a + x
+    log(b)
+    }, silent = TRUE)
+  
+  return(c(t,class(t),10))       # return try() results and outside results
+}
+f1(&amp;quot;x&amp;quot;)
+f1(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;trycatch&#34;&gt;tryCatch()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;take different actions depend on warnings,&lt;/li&gt;
+&lt;li&gt;by mapping conditions to &amp;ldquo;handlers&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;built-in handlers = error, warning, message, interrupt&lt;/li&gt;
+&lt;li&gt;catch-all handler = condition&lt;/li&gt;
+&lt;li&gt;handlers return a value, or create a more informative error message&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;tryCatch(message(&amp;quot;hello\n&amp;quot;), message=function(e){cat(&amp;quot;goodbye\n&amp;quot;)})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;withcallinghandlers&#34;&gt;withCallingHandlers()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>sweep</title>
+      <link>/resources/r_resources/sweep/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/sweep/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace sweep with page name e.g. dplyr
+4. replace  with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://bioinfomagician.wordpress.com/2014/08/12/my-favorite-commands-part3-sweep-function-in-r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://bioinfomagician.wordpress.com/2014/08/12/my-favorite-commands-part3-sweep-function-in-r/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sweep&#34;&gt;sweep()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;apply different values to data in different col/rows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;data &amp;lt;- matrix(seq(1,12),ncol=4,nrow=3,byrow=TRUE)
+data
+sweep(data, 2, c(3, 4, 5, 6), &amp;quot;-&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;standardize gene expression using sweep&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;(normalized expression - median expression)/median absolute deviation
+&lt;ul&gt;
+&lt;li&gt;similar to zscore standardization ((x - mean)/sd)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;need to subtract different median expression (different for each gene),
+&lt;ul&gt;
+&lt;li&gt;and divide different MAD (different for each gene),&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sweep()&lt;/code&gt; can help&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;standardize &amp;lt;- function(z) {
+  rowmed &amp;lt;- apply(z, 1, median)
+  rowmad &amp;lt;- apply(z, 1, mad)  # median absolute deviation
+  rv &amp;lt;- sweep(z, 1, rowmed,&amp;quot;-&amp;quot;)  #subtracting median expression
+  rv &amp;lt;- sweep(rv, 1, rowmad, &amp;quot;/&amp;quot;)  # dividing by median absolute deviation
+  return(rv)
+}
+data &amp;lt;- data.frame(data)
+colnames(data) &amp;lt;- c(&amp;quot;sample1&amp;quot;,&amp;quot;sample2&amp;quot;,&amp;quot;sample3&amp;quot;,&amp;quot;sample4&amp;quot;)
+rownames(data) &amp;lt;- c(&amp;quot;gene1&amp;quot;,&amp;quot;gene2&amp;quot;,&amp;quot;gene3&amp;quot;)
+
+data[1,] %&amp;gt;% class()
+data[1,] %&amp;gt;% as.matrix() %&amp;gt;% median()
+data[1,] %&amp;gt;% as.matrix() %&amp;gt;% mad()
+((data[1,1]) - (data[1,] %&amp;gt;% as.matrix() %&amp;gt;% median()))/data[1,] %&amp;gt;% as.matrix() %&amp;gt;% mad()
+
+print(data)
+print(standardize(data))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>with by which</title>
+      <link>/resources/r_resources/with_by_which/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/with_by_which/</guid>
+      <description>&lt;!--
+1. replace r_resource with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace with by which with page name e.g. dplyr
+4. replace  with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;library(tidyverse)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.statmethods.net/stats/withby.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.statmethods.net/stats/withby.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;both with() and by() derives from DATA and BY from SAS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;with&#34;&gt;with()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;with(dataset, expression)&lt;/li&gt;
+&lt;li&gt;with() applies an expression to a dataset&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;data1 &amp;lt;- iris[,4:5] %&amp;gt;% filter(Species != &amp;quot;setosa&amp;quot;)
+with(data1, t.test(Petal.Width ~ Species))
+
+# or you have to create 2 vectors
+versi &amp;lt;- data1 %&amp;gt;% filter(Species == &amp;quot;versicolor&amp;quot;) %&amp;gt;% select(-Species)
+verg &amp;lt;- data1 %&amp;gt;% filter(Species == &amp;quot;virginica&amp;quot;) %&amp;gt;% select(-Species)
+t.test(versi, verg)
+
+# actually t.test() has formula interface...
+t.test(Petal.Width ~ Species, data = data1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;so&amp;hellip; what&amp;rsquo;s the point of with()?&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://stackoverflow.com/questions/42283479/when-to-use-with-function-and-why-is-it-good&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://stackoverflow.com/questions/42283479/when-to-use-with-function-and-why-is-it-good&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;some old functions doesn&amp;rsquo;t have a &amp;ldquo;data&amp;rdquo; argument,&lt;/li&gt;
+&lt;li&gt;need to retype dataframe name each time to get columns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# without with(), we would be stuck here:
+z = mean(mtcars$cyl + mtcars$disp + mtcars$wt); z
+
+# using with(), we can clean this up:
+z = with(mtcars, mean(cyl + disp + wt)); z
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;tidyverse functions all have &amp;ldquo;data&amp;rdquo; argument, so with() is not needed as much&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;do not use attach()&lt;/strong&gt;, if you update colnames, sometimes old colnames attached to GlobalEnv might not sync&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;by&#34;&gt;by()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;by(data, factorlist, function)&lt;/li&gt;
+&lt;li&gt;by() applies a function to each level of a factor(s)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;iris[,5] %&amp;gt;% class()
+by(iris, iris$Species, function(x) mean(x$Petal.Length))
+by(iris, iris$Species, function(x) mean(x$Petal.Length * 10 + 2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;which&#34;&gt;which()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;find index of TRUE in vector&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;which(letters == &amp;quot;g&amp;quot;)
+which(letters[1:5] != &amp;quot;b&amp;quot;)
+which(letters[1:5] != &amp;quot;b&amp;quot; &amp;amp; letters[1:5] != &amp;quot;a&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
 </description>
     </item>
     

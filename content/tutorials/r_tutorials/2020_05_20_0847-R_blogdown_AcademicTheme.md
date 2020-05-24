@@ -405,6 +405,22 @@ file.edit('/Users/minghan/Google Drive/RBlogDown/bioinfohippo/.Rprofile')
     ```
 </pre>
 
+### share manual baseurl
+- [https://github.com/gcushen/hugo-academic/issues/1116](https://github.com/gcushen/hugo-academic/issues/1116)
+- baseurl not prepending {url} in `page_sharer.html`
+- manually add baseurl before each {url} in `page_sharer.html`
+```
+    vim /themes/hugo-academic/data/page_sharer.html
+    
+        [[buttons]]
+          id = "twitter"
+          url = "https://twitter.com/intent/tweet?url=http://yourbaseurl.com/{url}&text={title}"
+          title = "Twitter"
+          icon_pack = "fab"
+          icon = "twitter"
+          enable = true
+```
+
 ### reference internal pages
 
 ### collapsible docs sidebar nav

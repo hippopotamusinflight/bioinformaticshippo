@@ -1,8 +1,6 @@
-# /public/
 *.ign
 .Rhistory
 .Rprofile
 /.Rproj.user/
 bioinfohippo.Rproj
-
-.Rproj.user
+.DS_Store

@@ -82,6 +82,12 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
+&lt;h2 id=&#34;academic-theme-quirks&#34;&gt;academic theme quirks&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;docs: docs page with parent/child will always appear after docs without parent/child&lt;/li&gt;
+&lt;li&gt;docs: without assigning weight, left navbar will put them alphabetically, after those with weights&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;markdown-quirks&#34;&gt;markdown quirks&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;lining up content in quote blocks&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -522,6 +528,23 @@ vim /content/home/skills.md      active = false
     some code...
     ```
 &lt;/pre&gt;
+&lt;h3 id=&#34;share-manual-baseurl&#34;&gt;share manual baseurl&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues/1116&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/gcushen/hugo-academic/issues/1116&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;baseurl not prepending {url} in &lt;code&gt;page_sharer.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;manually add baseurl before each {url} in &lt;code&gt;page_sharer.html&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;    vim /themes/hugo-academic/data/page_sharer.html
+    
+        [[buttons]]
+          id = &amp;quot;twitter&amp;quot;
+          url = &amp;quot;https://twitter.com/intent/tweet?url=http://yourbaseurl.com/{url}&amp;amp;text={title}&amp;quot;
+          title = &amp;quot;Twitter&amp;quot;
+          icon_pack = &amp;quot;fab&amp;quot;
+          icon = &amp;quot;twitter&amp;quot;
+          enable = true
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;reference-internal-pages&#34;&gt;reference internal pages&lt;/h3&gt;
 &lt;h3 id=&#34;collapsible-docs-sidebar-nav&#34;&gt;collapsible docs sidebar nav&lt;/h3&gt;
 </description>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Resources | BioinfoHippo</title>
+    <link>/resources/docker_resources/</link>
+      <atom:link href="/resources/docker_resources/index.xml" rel="self" type="application/rss+xml" />
+    <description>Docker Resources</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Docker Resources</title>
+      <link>/resources/docker_resources/</link>
+    </image>
+    
+    <item>
+      <title>using image</title>
+      <link>/resources/docker_resources/using_image/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/docker_resources/using_image/</guid>
+      <description>&lt;!--
+1. replace docker_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace using image with page name e.g. dplyr
+4. replace 10 with weight e.g. 20
+--&gt;
+&lt;h2 id=&#34;example&#34;&gt;example&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;$ docker run -it -v /dir:/gatk/dir -rm gatk4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;commands&#34;&gt;commands&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker run -it                     # creates interactive shell in container
+$ docker run -v /dir:/gatk/dir       # mount volume
+
+$ docker pull [IMAGE]                # pull an image from a registry
+$ docker images                      # lists docker images pulled
+$ docker run --rm [IMAGE]            # removes a container automatically after it exits (auto clean up)
+$ docker ps                          # list docker processes still running
+$ exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+# instructions for editing and maintaining website
+
+
+## adding docs to /content/resources/ or /content/tutorials/
+
+newdoc = "content/.../.md"
+file.copy(c("content/docs_template.ign"), newdoc)
+file.edit(newdoc)
+file.remove(newdoc)
+
+OR
+
+newdoc = ".../.md"    # for path - skip /content/
+blogdown::new_content(newdoc, kind = "docs", open = interactive())
+
+
+## making new blog posts
+
+blogdown::new_post("???", kind = "post/", open = interactive(), author = "Ming Han", categories = "????", tags = "????", date = Sys.Date(), slug = "?????", ext = getOption("blogdown.ext", ".Rmd"))

@@ -33,11 +33,6 @@
   </url>
   
   <url>
-    <loc>/resources/r_resources/tidyverse/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
@@ -48,8 +43,43 @@
   </url>
   
   <url>
-    <loc>/resources/r_resources/set_operations/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>/resources/linux_resources/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/docker_resources/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/sysadmin/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/docker_resources/using_image/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/permissions/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/networking/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/tidyverse_dplyr/</loc>
+    <lastmod>2020-05-22T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/tidyverse_purr/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -57,8 +87,33 @@
   </url>
   
   <url>
+    <loc>/resources/r_resources/apply_functions/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/setoperations/</loc>
+    <lastmod>2020-05-20T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutorials/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/generate_data/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/files_dirs/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/flow_controls/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -92,53 +147,93 @@
   </url>
   
   <url>
+    <loc>/resources/</loc>
+    <lastmod>2020-05-24T17:18:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/testing_new_content_func2/</loc>
+    <lastmod>2020-05-24T17:18:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/testing_new_content_func/</loc>
+    <lastmod>2020-05-24T17:13:21-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/author/ming-han/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/tag/test/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
     <loc>/category/test/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/third-post/</loc>
-    <lastmod>2020-05-22T12:43:47-04:00</lastmod>
+    <loc>/post/testing_new_post/</loc>
+    <lastmod>2020-05-24T16:34:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/awk/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/dataframe_reshaping/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/error_handling/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/rename/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/sweep/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/with_by_which/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>/post/firstpost/</loc>
     <lastmod>2020-05-21T15:14:37-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/testing2/</loc>
-    <lastmod>2020-05-21T20:35:57-04:00</lastmod>
   </url>
   
   <url>
@@ -149,11 +244,6 @@
   <url>
     <loc>/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>

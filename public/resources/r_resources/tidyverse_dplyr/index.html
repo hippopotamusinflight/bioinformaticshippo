@@ -1,0 +1,1121 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Ming Han">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="iris %&gt;% head()  filter()  filter(.data, TRUE, .preserve = FALSE) selects rows where condition is TRUE  iris %&gt;% filter(between(Sepal.Length, 4, 4.3)) %&gt;% head() iris %&gt;% filter(Petal.Length &gt; 6 &amp; Petal.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../../resources/r_resources/tidyverse_dplyr/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  <script src="../../../js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500%7CRoboto:400,400italic,500%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="../../../css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="../../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="../../../resources/r_resources/tidyverse_dplyr/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="BioinfoHippo">
+  <meta property="og:url" content="/resources/r_resources/tidyverse_dplyr/">
+  <meta property="og:title" content="tidyverse dplyr | BioinfoHippo">
+  <meta property="og:description" content="iris %&gt;% head()  filter()  filter(.data, TRUE, .preserve = FALSE) selects rows where condition is TRUE  iris %&gt;% filter(between(Sepal.Length, 4, 4.3)) %&gt;% head() iris %&gt;% filter(Petal.Length &gt; 6 &amp; Petal."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-05-22T00:00:00&#43;01:00">
+    
+    <meta property="article:modified_time" content="2020-05-22T00:00:00&#43;01:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>tidyverse dplyr | BioinfoHippo</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="../../../">BioinfoHippo</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="../../../">BioinfoHippo</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../post/"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link  active" href="../../../resources/"><span>Resources</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="../../../#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+
+  
+  
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/">Tutorials in .Rmd format</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="../../../resources/r_resources/tidyverse_dplyr/">tidyverse dplyr</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/tidyverse_purr/">tidyverse purr</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/apply_functions/">apply functions</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/setoperations/">set operations</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/generate_data/">generate numbers</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/files_dirs/">files and directories</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/flow_controls/">flow controls</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/rmarkdown/">rmarkdowntest</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/dataframe_reshaping/">dataframe reshape</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/error_handling/">error handling</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/sweep/">sweep</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/with_by_which/">with by which</a>
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#filter">filter()</a></li>
+    <li><a href="#scoped-filter-variants">scoped filter variants</a>
+      <ul>
+        <li><a href="#filter_all">filter_all()</a></li>
+        <li><a href="#filter_if">filter_if</a></li>
+        <li><a href="#filter_at">filter_at</a></li>
+      </ul>
+    </li>
+    <li><a href="#select">select()</a></li>
+    <li><a href="#scoped-select-variants">scoped select variants</a>
+      <ul>
+        <li><a href="#select_all">select_all</a></li>
+        <li><a href="#select_if">select_if</a></li>
+        <li><a href="#select_at">select_at</a></li>
+        <li><a href="#custom-function">custom function</a></li>
+      </ul>
+    </li>
+    <li><a href="#rename">rename</a></li>
+    <li><a href="#scoped-rename-variants">scoped rename() variants</a>
+      <ul>
+        <li><a href="#rename_all">rename_all</a></li>
+        <li><a href="#rename_if">rename_if</a></li>
+        <li><a href="#rename_at">rename_at</a></li>
+      </ul>
+    </li>
+    <li><a href="#mutate">mutate</a></li>
+    <li><a href="#scoped-mutate-variants">scoped mutate() variants</a>
+      <ul>
+        <li><a href="#mutate_all">mutate_all</a></li>
+        <li><a href="#mutate_if">mutate_if</a></li>
+        <li><a href="#mutate_at">mutate_at</a></li>
+        <li><a href="#multiple-transformations">multiple transformations</a></li>
+      </ul>
+    </li>
+    <li><a href="#transmute">transmute</a></li>
+    <li><a href="#arrange">arrange</a></li>
+    <li><a href="#count">count</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>tidyverse dplyr</h1>
+
+          <div class="article-style">
+            <pre><code class="language-{r,">iris %&gt;% head()
+</code></pre>
+<h2 id="filter">filter()</h2>
+<ul>
+<li>filter(.data, TRUE, .preserve = FALSE)</li>
+<li>selects rows where condition is TRUE</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% filter(between(Sepal.Length, 4, 4.3)) %&gt;% head()
+iris %&gt;% filter(Petal.Length &gt; 6 &amp; Petal.Width &lt; 2)
+iris %&gt;% filter(xor(Petal.Length &lt; 6, Petal.Width &gt; 2)) %&gt;% head()
+iris %&gt;% filter(Petal.Length %in% c(4.4, 4.3)) %&gt;% head()
+</code></pre>
+<h2 id="scoped-filter-variants">scoped filter variants</h2>
+<ul>
+<li>filtering across multiple columns, dynamic selection of columns</li>
+<li>returns all columns</li>
+</ul>
+<pre><code class="language-{r,">iris_numerics = iris[,!colnames(iris)==&quot;Species&quot;]
+</code></pre>
+<h3 id="filter_all">filter_all()</h3>
+<ul>
+<li>filter_all(.tbl, .vars_predicate, .preserve = FALSE)</li>
+<li>considering all columns, for each row</li>
+</ul>
+<pre><code class="language-{r,"># all_vars (if all cols have values &gt; 0.3, keep that row)
+iris_numerics %&gt;% filter_all(all_vars(. &gt; 0.3)) %&gt;% head()
+# any_vars (if any cols have values &gt; 0.3, keep that row)
+iris_numerics %&gt;% filter_all(any_vars(. &gt; 4)) %&gt;% head()
+</code></pre>
+<h3 id="filter_if">filter_if</h3>
+<ul>
+<li>filter_if(.tbl, .predicate, .vars_predicate, .preserve = FALSE)</li>
+<li>consider only columns matching .predicate when filtering with .vars_predicate</li>
+</ul>
+<pre><code class="language-{r,"># is.numeric as .predicate
+iris %&gt;% filter_if(~ is.numeric(.), all_vars(. &gt; 2)) %&gt;% head()
+
+# selects cols whose 2 &lt; mean &lt; 4 (cols Sepal.Width and Petal.Length)
+# all_vars (select rows where both Sepal.Width and Petal.Length have to be &lt; 3)
+iris_numerics %&gt;% filter_if(~ mean(.) &gt; 2  &amp; mean(.) &lt; 4, all_vars(. &lt; 3)) %&gt;% head()
+
+# any_vars (any have to be &lt; 3)
+iris_numerics %&gt;% filter_if(~ mean(.) &gt; 2  &amp; mean(.) &lt; 4, any_vars(. &lt; 3)) %&gt;% head()
+</code></pre>
+<h3 id="filter_at">filter_at</h3>
+<ul>
+<li>filter_at(.tbl, .vars, .vars_predicate, .preserve = FALSE)</li>
+<li>selects cols with vars() specification (regex)</li>
+</ul>
+<pre><code class="language-{r,"># all_vars (all cols containing &quot;tal&quot;, those cols - values must be even)
+iris_numerics %&gt;% filter_at(vars(contains(&quot;tal&quot;)), all_vars(((. * 10) %% 2) == 0)) %&gt;% head()
+
+# select cols with str_which and regex, those cols - values must be even
+get_names = iris_numerics %&gt;% names() %&gt;% str_subset(., &quot;^P&quot;)
+iris_numerics %&gt;% filter_at(vars(get_names), all_vars(((. * 10) %% 2) == 0)) %&gt;% head()
+</code></pre>
+<h2 id="select">select()</h2>
+<ul>
+<li>select(.data, COLNAMES)</li>
+<li>subset cols by colnames</li>
+</ul>
+<pre><code class="language-{r,">get_names = iris_numerics %&gt;% names() %&gt;% str_subset(., &quot;^p&quot;)
+iris %&gt;% select(get_names) %&gt;% head()
+
+# drop cols
+iris %&gt;% select(-Species) %&gt;% head()
+
+# rearrange columns
+iris %&gt;% select(Species, everything()) %&gt;% head() # everything()
+iris %&gt;% select(-Sepal.Length, Sepal.Length) %&gt;% head() # move with -name
+
+# rename group of variables
+get_names = iris_numerics %&gt;% names() %&gt;% str_subset(., &quot;^[:lower:]&quot;)
+iris %&gt;% select(obs = get_names) %&gt;% head()
+
+# rename multiple variables
+vars &lt;- c(var1 = &quot;Sepal.Length&quot;, var2 =&quot;Sepal.Width&quot;)
+iris %&gt;% select(vars) %&gt;% head() # not sure why use !!!var or !!var...
+</code></pre>
+<h2 id="scoped-select-variants">scoped select variants</h2>
+<ul>
+<li>all selects some columns, and change colnames</li>
+</ul>
+<h3 id="select_all">select_all</h3>
+<ul>
+<li>select_all(.tbl, .funs = list(), &hellip;)</li>
+<li>changes all columns, takes func as argument</li>
+</ul>
+<pre><code class="language-{r,"># toupper, changes colnames to UPPERCASE
+iris %&gt;% select_all(toupper) %&gt;% head()
+
+# regex replace colnames
+iris %&gt;% select_all(., ~ str_replace(., &quot;t&quot;, &quot;weeee&quot;)) %&gt;% head()
+</code></pre>
+<h3 id="select_if">select_if</h3>
+<ul>
+<li>select_if(.tbl, .predicate, .funs = list(), &hellip;)</li>
+<li>select_if, uses logical statements, then do something</li>
+</ul>
+<pre><code class="language-{r,"># select by datatype
+iris %&gt;% select_if(is.numeric) %&gt;% head()
+
+# multiple ifs
+iris %&gt;% select_if(~is.numeric(.) &amp; mean(.) &gt; 5) %&gt;% head() # need ~ since mean(.) &gt; 5 not a function
+
+# n_distinct()
+iris %&gt;% select_if(~n_distinct(.) &lt; 10, toupper) %&gt;% head()
+</code></pre>
+<h3 id="select_at">select_at</h3>
+<ul>
+<li>select_at(.tbl, .vars, .funs = list(), &hellip;)</li>
+<li>select columns with .vars, then do something</li>
+</ul>
+<pre><code class="language-{r,"># select vars without &quot;ar&quot; OR starts_with &quot;c&quot;, then convert to UPPERCASE
+select_at(mtcars, vars(-contains(&quot;ar&quot;), starts_with(&quot;c&quot;)), toupper) %&gt;% head()
+
+# vars positional
+select_at(mtcars, vars(-(1:3)), toupper) %&gt;% head()
+</code></pre>
+<h3 id="custom-function">custom function</h3>
+<pre><code class="language-{r,">is_whole &lt;- function(x) all(floor(x) == x)
+select_if(mtcars, is_whole, toupper) %&gt;% head()
+</code></pre>
+<h2 id="rename">rename</h2>
+<ul>
+<li>rename(.data, c(&ldquo;new_col1&rdquo; = old_col1, &ldquo;new_col2&rdquo; = old_col2))</li>
+<li>rename specific column(s)</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% rename(&quot;new_col1&quot; = Sepal.Length, &quot;new_col2&quot; = Sepal.Width) %&gt;% head
+</code></pre>
+<h2 id="scoped-rename-variants">scoped rename() variants</h2>
+<ul>
+<li>select() drops variables not in selection; rename() retains them</li>
+</ul>
+<h3 id="rename_all">rename_all</h3>
+<ul>
+<li>same as select_all</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% rename_all(., ~ str_replace(., &quot;t&quot;, &quot;weeee&quot;)) %&gt;% head()
+</code></pre>
+<h3 id="rename_if">rename_if</h3>
+<ul>
+<li>rename_if(.tbl, .predicate, .funs = list(), &hellip;)</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% rename_if(~n_distinct(.) &lt; 10, toupper) %&gt;% head()
+</code></pre>
+<h3 id="rename_at">rename_at</h3>
+<ul>
+<li>rename_at(.tbl, .vars, .funs = list(), &hellip;)</li>
+</ul>
+<pre><code class="language-{r,">rename_at(mtcars, vars(-(1:3)), toupper) %&gt;% head()
+</code></pre>
+<h2 id="mutate">mutate</h2>
+<ul>
+<li>mutate(.data, new_col = func(old_col))</li>
+<li>compute new columns, keeps others</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% mutate(sepal10 = Sepal.Length*10) %&gt;% head()
+iris %&gt;% mutate(Sepal.Length = Sepal.Length*10) %&gt;% head() # mutate in-place
+iris %&gt;% mutate(Sepal.Length = Sepal.Length*10, 
+                Sepal.Width = Sepal.Width*10) %&gt;% head() # mutate multiple cols in-place
+iris %&gt;% mutate(Sepal.Length = NULL, 
+                Sepal.Width = Sepal.Width*10) %&gt;% head() # mutate and remove cols
+
+# grouped mutates with group_by()
+# without group_by()
+iris %&gt;% mutate(Sepal.Length_mean = mean(Sepal.Length)) %&gt;% head()
+# with group_by(), new col has grouped calculations
+iris %&gt;% group_by(Species) %&gt;% mutate(Sepal.Length_mean = mean(Sepal.Length)) %&gt;% head()
+
+# check group_by() output
+i = 1 # setosa
+iris %&gt;% group_by(Species) %&gt;% 
+  mutate(Sepal.Length_mean = mean(Sepal.Length)) %&gt;% 
+  filter(Species == iris %&gt;% select(Species) %&gt;% unique() %&gt;% .[i,]) %&gt;% head() # with group_by()
+</code></pre>
+<h2 id="scoped-mutate-variants">scoped mutate() variants</h2>
+<ul>
+<li>all mutates in-place, unless name given with list())</li>
+</ul>
+<pre><code class="language-{r,"># user-defined function
+scale2 = function(x, na.rm = TRUE){
+  return(x - mean(x, na.rm = na.rm)/sd(x, na.rm = na.rm))
+}
+</code></pre>
+<h3 id="mutate_all">mutate_all</h3>
+<ul>
+<li>mutate_all(.tbl, .funs, &hellip;)</li>
+</ul>
+<pre><code class="language-{r,">iris_numerics %&gt;% mutate_all(as.integer) %&gt;% head()
+</code></pre>
+<h3 id="mutate_if">mutate_if</h3>
+<ul>
+<li>mutate_if(.tbl, .predicate, .funs, &hellip;)</li>
+<li>get cols by predicate function</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% mutate_if(is.numeric, scale2, na.rm = TRUE) %&gt;% head()
+
+# transforming variable type (is. to as.)
+iris %&gt;% mutate_if(is.double, as.integer) %&gt;% head() %&gt;% as_tibble()
+
+# mutates in-addition instead of in-place 
+iris %&gt;% mutate_if(is.double, list(&quot;int&quot; = as.integer)) %&gt;% head() %&gt;% as_tibble()
+
+# mutates with expression-function
+iris %&gt;% mutate_if(~n_distinct(.) == 2, as.factor) %&gt;% head()
+</code></pre>
+<h3 id="mutate_at">mutate_at</h3>
+<ul>
+<li>mutate_at(.tbl, .vars, .funs, &hellip;, .cols = NULL)</li>
+<li>get cols by vars()</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% mutate_at(vars(iris %&gt;% names() %&gt;% str_subset(., &quot;^Sep&quot;)), scale2) %&gt;% summarize(mean(Sepal.Length))
+
+# mutates in-addition instead of in-place with list()
+iris %&gt;% mutate_at(vars(iris %&gt;% names() %&gt;% str_subset(., &quot;^Sep&quot;)), list(scale = scale2)) %&gt;% head()
+</code></pre>
+<h3 id="multiple-transformations">multiple transformations</h3>
+<pre><code class="language-{r,"># new variables created for each transformation
+iris %&gt;% mutate_if(is.numeric, list(scale = scale2, log = log)) %&gt;% head()
+</code></pre>
+<h2 id="transmute">transmute</h2>
+<ul>
+<li>compute new columns, drops all others</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% transmute(sepal10 = Sepal.Length*10) %&gt;% head()
+</code></pre>
+<h2 id="arrange">arrange</h2>
+<ul>
+<li>ordering by multiple cols</li>
+</ul>
+<pre><code class="language-{r,">iris %&gt;% arrange(Sepal.Length, Sepal.Width) %&gt;% head()
+iris %&gt;% arrange(desc(Sepal.Length), Sepal.Width) %&gt;% head() 
+
+# group_by() is ignored
+iris %&gt;% group_by(Species) %&gt;% arrange(Sepal.Length) %&gt;% print(n=40)
+# unless specifically asked
+iris %&gt;% arrange(Sepal.Length, .by_group = TRUE) %&gt;% head(50) # even then doesn't work...
+</code></pre>
+<h2 id="count">count</h2>
+<pre><code class="language-{r,"># count is short-hand for group_by() + tally()
+iris %&gt;% group_by(Species) %&gt;% tally()
+iris %&gt;% count(Species)
+
+# change name of new col
+iris %&gt;% count(Species, name = &quot;count_Species&quot;)
+
+# multi-level count (e.g. by Species and by homeworld)
+starwars %&gt;% count(species, homeworld, sort = TRUE, name = &quot;n_by_Species_by_homeworld&quot;)
+
+# add_count short for group_by() + add_tally(), puts a few col with #rows of entire dataframe
+mtcars %&gt;% add_count(cyl, name = &quot;count_num_by_cyl&quot;) %&gt;% select(count_num_by_cyl, everything()) %&gt;% head(10)
+
+# combine add_count with filter, to filter based on counts of each class of a feature
+mtcars %&gt;% add_count(cyl, name = &quot;count_num_by_cyl&quot;) %&gt;% filter(count_num_by_cyl == 7) %&gt;% head()
+</code></pre>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="../../../resources/r_resources/tidyverse_purr/" rel="prev">tidyverse purr</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Last updated on May 22, 2020</p>
+
+          
+
+
+
+
+
+  
+  
+
+<p class="edit-page">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/resources/r_resources/tidyverse_dplyr.md">
+    <i class="fas fa-pen pr-2"></i>Edit this page
+  </a>
+</p>
+
+
+
+
+          
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="../../../privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="../../../terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    Ming Han © 2020
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="../../../js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
