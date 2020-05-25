@@ -5,11 +5,11 @@ linktitle: generate numbers
 menu:
   r_resources:
     name: generate numbers
-    weight: 1010
+    weight:
 title: generate numbers
 toc: true
 type: docs
-weight: 1010
+weight:
 ---
 
 <!--

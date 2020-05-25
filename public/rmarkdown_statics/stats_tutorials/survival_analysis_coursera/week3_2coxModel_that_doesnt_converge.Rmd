@@ -1,0 +1,92 @@
+---
+title: "week3_2coxModel_that_doesnt_converge"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### run with these predictors
+- age, gender, copd, quintile, and ethnic group
+- quintile is 5 socioeconomic categories (1 = most affluent, 5 = poorest),
+    - nationally weighted by population, meaning that 20% of England's population live in areas of each quintile
+```{r}
+library(survival)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+g %>% head()
+g$gender <- as.factor(g$gender)
+g$ethnicgroup <- as.factor(g$ethnicgroup)
+g$copd <- as.factor(g$copd)
+
+cox_convg <- coxph(Surv(fu_time, death) ~ age + gender + copd + quintile + ethnicgroup, data = g)
+summary(cox_convg)
+```
+
+### running with quintiles as categorical leads to non-convergence
+```{r}
+g$quintile <- factor(g$quintile)
+
+cox_nonconvg <- coxph(Surv(fu_time, death) ~ age + gender + copd + quintile + ethnicgroup, data = g)
+"Loglik converged before variable  4,5,6,7,8 ; coefficient may be infinite."
+summary(cox_nonconvg)
+```
+
+### quintile CIs infinitely wide
+
+#### table quintile
+```{r}
+table(g$quintile, exclude = NULL)
+```
+
+- quintile 0 is where postal code was missing, couldn't find socioeconomic status from national file
+- regardless there's only 4 in that group,
+    - but sometimes 4 is even enough for convergence,
+    - problem is deeper
+
+#### table quintile with death
+```{r}
+round(prop.table(table(g$quintile, g$death),1)*100,1)
+```
+
+- real problem is that quintile=0 is the reference group
+- and none of the 4 patients were dead
+- model had no reference group to compare to
+
+### solutions
+
+#### change reference category
+- R sets lowest category as reference by default
+- in terms of socioeconomic status, usually interest in effect of lower status vs higher status {lower should be reference}
+- so let's set quintile = 1 as reference
+
+#### combine categories
+- quintile = 0 are not NAs
+- they don't have postal code, might be from overseas, homeless, new immigrants
+- but quintile = 0 group so small, combining it with NA and creating a new group shouldn't impact results
+
+#### exclude patients
+- if only 4/1000 patients, might be better to just exclude these
+
+#### dropping variable
+- if a lot of patients had quintile = 0, doesn't make sense to drop all patients,
+- better to drop that variable
+
+
+### EOF

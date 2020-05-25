@@ -333,10 +333,11 @@ file.edit('/Users/minghan/Google Drive/RBlogDown/bioinfohippo/.Rprofile')
     - example:
 ```
     blogdown will insert this HTML code:
-    <img src="/to/your/markdown/page/exampleimage.png" alt="some text" width="70%"/>
+    <img src="/r_tutorials/blogdown/AcademicTheme/exampleimage.png" alt="some text" width="70%"/>
     
     should be:
-    <img src="/dir/to/your/markdown/page/exampleimage.png" alt="some text" width="70%"/>
+    <img src="/tutorials/r_tutorials/blogdown/AcademicTheme/exampleimage.png" alt="some text" width="70%"/>
+    (don't forget first /)
 ```
 
 ### toc numbering in .Rmd

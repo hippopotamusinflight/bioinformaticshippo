@@ -218,8 +218,8 @@ servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refre
   
 
   <link rel="manifest" href="../../../index.webmanifest">
-  <link rel="icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="../../../tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">
 
@@ -240,8 +240,8 @@ servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refre
   <meta property="og:url" content="/tutorials/r_tutorials/2020_05_20_0847-r_blogdown_usefulstuff/">
   <meta property="og:title" content="Useful Stuff | BioinfoHippo">
   <meta property="og:description" content="some useful commands for building and maintaining a blogdown site also some markdown quirks I&rsquo;m finding along the way  useful commands blogdown::serve_site() to serve site on localhost
-servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refresh) Addins &gt; New Post"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refresh) Addins &gt; New Post"><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-05-20T08:47:00&#43;01:00">
@@ -597,6 +597,7 @@ servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refre
 </li>
 <li>in /layouts/_default/ dir
 <ul>
+<li><strong>do not do below</strong>, blogdown stopped rendering new blog posts after</li>
 <li><code>single.html</code> table of content on sidebar for .md blog posts<br></li>
 </ul>
 </li>
@@ -634,7 +635,14 @@ servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refre
 this is some more code••••••••••••••••# comment2••••more text
 this is some more and more code•••••••# comment3•••••••more text
 </code></pre>
-<p>**</p>
+<p><strong>insert image to .Rmd files in /static/ dir</strong></p>
+<ul>
+<li>has to do it manually (unlike in docs or posts)</li>
+<li>image has to be in same dir as .Rmd file</li>
+<li><code>&lt;img src=&quot;image1.png&quot; alt=&quot;some text&quot; width=&quot;70%&quot;/&gt;</code></li>
+<li><code>![some text](image1.png){width=200px}</code> no quotes, must have extension</li>
+<li>these can be inline with bullet points to indent images</li>
+</ul>
 <hr>
 <h2 id="things-to-figure-out">things to figure out</h2>
 <ul>

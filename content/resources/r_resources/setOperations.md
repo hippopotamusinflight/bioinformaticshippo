@@ -5,11 +5,11 @@ linktitle: set operations
 menu:
   r_resources:
     name: set operations
-    weight: 1000
+    weight: 
 title: set operations
 toc: true
 type: docs
-weight: 1000
+weight: 
 ---
 
 ## set ops (vectors)

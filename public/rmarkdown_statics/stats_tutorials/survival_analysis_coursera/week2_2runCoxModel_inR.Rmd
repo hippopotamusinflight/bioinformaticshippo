@@ -1,0 +1,90 @@
+---
+title: "week2_2runCoxModel_inR"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r, results="hold"}
+library(survival)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+g$fu_time %>% typeof()
+g$death %>% typeof()
+```
+
+### run simple Cox model
+```{r}
+cox <- coxph(Surv(fu_time, death) ~ age, data = g)
+summary(cox)
+```
+
+- coef = log hazard ratio
+- exp(coef) = hazard ratio
+    - HR of 1.06 means for every 1 year increase in age, 6% increase in risk of death
+    - older people have higher risk of death vs younger people (as expected)
+    - fitted age as continuous variable using linear model, so 6% HR is constant
+- se is small (only 1 predictor used, lots of patients)
+- p-value is tiny (highly statistically significant predictor of risk of death)
+- concordance
+    - similar to c-statistic in logistic regression
+    - fraction of pairs of patients in a sample where patient with higher survival time was predicted to have higher risk of death (i.e. the model was correct)
+    - values > 0.5 is better than chance
+- R^2 (didn't output this for me...)
+    - proportion of variation in the outcome explained by the model
+- with only 1 predictor (age), neither concordance nor R^2 are very high
+- Likelihood ratio test/ Wald test/ Score test
+    - null hypothesis testing
+    - at small p-value, null is rejected
+    - i.e. **model with age in it, is significantly better than null model**
+
+### practice: ethnic groups
+```{r}
+library(survminer)
+
+g$ethnicgroup <- factor(g$ethnicgroup)
+
+cox_ethnicity <- coxph(Surv(fu_time, death) ~ ethnicgroup, data =g)
+summary(cox_ethnicity)
+
+```
+
+- large standard errors, large CIs...
+- hazard ratio, need to know reference ethnicity, which is ethnicgroup1 (white)
+    - group2 (black) not significantly different hazard
+    - group3 (indian) significantly different hazard
+    - group9 not significant
+
+#### 43 had missing ethnicities
+- make an unknown ethnicity group and rerun
+```{r}
+g$ethnicgroup %>% levels()
+levels(g$ethnicgroup) <- c(levels(g$ethnicgroup), "8")
+g$ethnicgroup[is.na(g$ethnicgroup)] <- "8"
+
+cox_ethnicity_noNAs <- coxph(Surv(fu_time, death) ~ ethnicgroup, data = g)
+summary(cox_ethnicity_noNAs)
+```
+
+- found that including NA ethnicities as a group did not change results by much
+- but if including multiple predictors, NAs will add up, will affect results,
+- better to try recoding NAs or impute, and compare results before and after
+
+
+### EOF

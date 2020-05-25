@@ -1,0 +1,146 @@
+---
+title: "week4_6practice_answers"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### get data
+```{r, results="hide"}
+library(survival)
+library(survminer)
+library(car)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+```
+
+### predictors from paper
+- had: age, gender, ethnicgroup, ihd, stroke, valvular_disease, pvd, copd, pneumonia, hypertension, cancer, metastatic_cancer, senile, dementia, mental_health, prior_dnas, los, cabg
+- should have also had: renal_disease, cancer, combined senility and dementia
+- shouldn't have had: cabg
+<br><br>
+- cox model output, should check SE, should be < 1, even better if < 0.1
+
+#### prep predictors
+```{r, results="hide"}
+# combine senile and dementia into cog_imp, if either senile or dementia = 1, cog_imp = 1
+g$cog_imp <- ifelse(g$senile == 1 | g$dementia == 1, 1, 0)
+# g$cog_imp %>% table()
+
+# get new df for paper predictors only
+g_paper <- g %>% select(c(age, gender, ethnicgroup, ihd, valvular_disease, pvd, stroke, copd, pneumonia, hypertension, renal_disease, cancer, metastatic_cancer, mental_health, cog_imp, los, prior_dnas))
+
+# convert binaries variables to factors
+# g_paper %>% str()
+g_paper <- g_paper %>% mutate_if(~ n_distinct(.) == 2, as.factor)
+
+# deal with ethnicity NAs
+g_paper$ethnicgroup <- as.factor(g_paper$ethnicgroup)
+levels(g_paper$ethnicgroup) <- c(levels(g_paper$ethnicgroup), "8")
+g_paper$ethnicgroup[is.na(g_paper$ethnicgroup)] <- "8"
+# table(g_paper$ethnicgroup, exclude = NULL)
+
+# attach the outcomes
+g_paper$fu_time <- g$fu_time
+g_paper$death <- g$death
+
+g_paper %>% str()
+```
+
+#### continous variables
+- check if relationship with outcome is linear
+- plots variable (x) vs **Martingale residuals** (y) { why not plot variable vs fu_time ??? }
+- do this before cox modeling
+```{r}
+ggcoxfunctional(Surv(fu_time, death) ~ age + log(age) + sqrt(age), data = g_paper)
+
+ggcoxfunctional(Surv(fu_time, death) ~ los + sqrt(los), data = g_paper) 
+# can't log(los), it has some zeros, log(0) = -Inf
+
+ggcoxfunctional(Surv(fu_time, death) ~ prior_dnas + sqrt(prior_dnas), data = g_paper)
+# can't log(prior_dnas) neither, same problem
+# prior_dnas has a lot of zeros, values are not normally distributed { does it matter??? }
+```
+
+#### cox model
+```{r}
+cox_paper <- coxph(Surv(fu_time, death) ~ ., data = g_paper)
+# summary(cox_paper)
+
+HR_allVars <- summary(cox_paper)$coefficients %>%
+  as.data.frame() %>% 
+  rownames_to_column("vars") %>%
+  filter(`Pr(>|z|)` < 0.05) %>%
+  select(vars, "HR_allVars" = `exp(coef)`)
+HR_allVars
+```
+
+- SE are all low enough, would be better if < 0.1 {with larger sample size}
+
+### backward elimination
+
+#### drop variables with p-value > 0.05
+```{r}
+# get names of only significant variables
+sigVars <- summary(cox_paper)$coefficients %>%
+  as.data.frame() %>% 
+  rownames_to_column("vars") %>%
+  filter(`Pr(>|z|)` < 0.05) %>%
+  select(vars) %>%
+  unlist() %>% unname()
+sigVars
+```
+
+#### new cox model with significant variables only
+- <span style="color:Tomato">somehow course had age, gender, valvular, pneumonia, mets and cog_imp as significant</span>
+    - clearly wrong since output from first cox model is the same...
+```{r}
+g_paper %>% str()
+cox_sigVars <- coxph(Surv(fu_time, death) ~ age + gender + valvular_disease + pneumonia + metastatic_cancer + cog_imp, data = g_paper)
+HR_sigVars <- summary(cox_sigVars)$coefficients %>%
+  as.data.frame() %>%
+  rownames_to_column("vars") %>%
+  select(vars, "HR_sigVars" = `exp(coef)`)
+HR_sigVars
+```
+
+#### compare HR of original cox model and model with only significant vars
+```{r}
+inner_join(HR_allVars, HR_sigVars, by = "vars")
+```
+
+- only metastatic_cancer HR had dramatic change (8.98 to 12.20)
+    - should we add back variables to try to get metastatic_cancer HR back to 8.98?
+    - depends on how results is going to be used,
+    - if you only care about finding significant predictors, then HR doesn't really matter
+    - { then course notes goes on to look at cog_imp while talking about metastatic_cancer... }
+- { skipped assumptions testing, no new info }
+
+### why final model differ from report
+1. data similar, not the same
+    - data here is simulated from same distribution as original, not same data
+2. some variables omitted
+3. logistic regression vs survival analysis (different outcomes)
+    - logistic regression used mortality within 1 year of admission as outcome
+    - survival analysis follow-up period much longer than 1 year
+4. size of dataset of original paper much bigger (80,000 vs 1000)
+    - smaller dataset = less power to detect significant relations
+
+### EOF

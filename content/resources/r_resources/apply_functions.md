@@ -5,11 +5,11 @@ linktitle: apply functions
 menu:
   r_resources:
     name: apply functions
-    weight: 990
+    weight: 
 title: apply functions
 toc: true
 type: docs
-weight: 990
+weight: 
 ---
 
 <!--

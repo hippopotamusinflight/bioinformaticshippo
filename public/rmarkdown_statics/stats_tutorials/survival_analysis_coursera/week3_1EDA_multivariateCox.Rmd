@@ -1,0 +1,125 @@
+---
+title: "week3_1EDA_multivariateCox"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### intro
+- multiple predictors have their own issues {collinearity?}
+- run descriptive stats on age, gender, prior_dnas, ethnic group, COPD
+
+```{r, results="hold"}
+library(survival)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+# g %>% head()
+g$gender <- as.factor(g$gender)
+g$prior_dnas <- as.factor(g$prior_dnas)
+g$ethnicgroup <- as.factor(g$ethnicgroup)
+g$copd <- as.factor(g$copd)
+```
+#### age
+```{r}
+summary(g$age)
+```
+
+- nice continuous variable without any NAs
+
+#### gender
+```{r}
+table(g$gender, exclude = NULL)
+```
+
+- nice binary variable with a lot of people in each category
+
+#### copd
+```{r}
+table(g$copd, exclude = NULL)
+```
+
+- having copd is a lot less than not having copd
+- there's usually under-recording of comorbidities for various reasons (e.g. not diagnosed)
+
+#### ethnic group
+```{r}
+table(g$ethnicgroup, exclude = NULL)
+levels(g$ethnicgroup) <- c(levels(g$ethnicgroup),"8")
+g$ethnicgroup[is.na(g$ethnicgroup)] <- "8"
+table(g$ethnicgroup, exclude = NULL)
+```
+
+- turn NAs into another category so can include those patients in analysis
+
+#### dealing with prior_dnas
+```{r}
+table(g$prior_dnas, exclude = NULL)
+```
+
+- option1 = pretend it's continuous, assume linear relationship with outcome
+    - preferred for ordinal variables with lots of categories
+    - but need to check relation is indeed linear with outcome
+- option2 = use existing categories
+    - categorising loses information
+    - fitting categorical variable with small categories will cause issues (more later)
+- option3 = combine some small categories
+    - if relation is non-linear, and have small categories, then option3 is best
+    - assessing linearity is made harder by the small categories too
+
+### multivariate cox
+```{r}
+# try model with prior_dnas as continuous var
+g$prior_dnas <- as.integer(g$prior_dnas)
+
+cox_multi <- coxph(Surv(fu_time, death) ~ age + gender + copd + prior_dnas + ethnicgroup, data = g)
+summary(cox_multi)
+```
+
+- gender1 = "male"
+- ethnicity1 = "white"
+- changing reference category covered later
+
+#### interpretation
+- **age**, 1.06411 (6%) increase in risk of mortality for every year you age
+- **females** (gender2) has 0.77473 (22%) lower risk of mortality following hospital admission for heart failure vs males
+- **prior_dnas** is a significant predictor of risk of mortality,
+    - every 1 more missed visits = 1.18614 (18.6%) increase in risk
+- **ethnicgroup9** has 1.4966 (49.7%) increase in risk compared to ethnicgroup1,
+    - but results not significant, {probably because small group}
+- each of the predictors is ADJUSTED for the other predictors {so results would change if you omitted some predictors}
+<br><br>
+
+### trying survfit() different prior_dnas groupings
+- looking at width of CI for each category will tell you if you have enough patients in each to get significant results
+```{r}
+library(car) # need recode from car package, not from dplyr
+table(g$prior_dnas, exclude = NULL)
+g$prior_dnas <- factor(g$prior_dnas)
+g$prior_dnas %>% levels()
+g <- g %>% mutate(prior_dnas4groups = recode(prior_dnas,"c('4','5','6','7','8','9','10')='4'"))
+table(g$prior_dnas4groups, exclude = NULL)
+
+cox_prior_dnas4groups <- coxph(Surv(fu_time, death) ~ age + gender + copd + prior_dnas4groups + ethnicgroup, data = g)
+summary(cox_prior_dnas4groups)
+```
+
+- looks like prior_dnas4groups4 has 2.196314 risk compared to reference group
+
+
+#### EOF

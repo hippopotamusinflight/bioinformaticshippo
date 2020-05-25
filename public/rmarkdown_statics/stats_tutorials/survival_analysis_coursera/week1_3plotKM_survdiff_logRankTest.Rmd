@@ -1,0 +1,140 @@
+---
+title: "week1_3plotKM_survdiff_logRankTest"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### what is heart failure
+- causes include: coronary heart disease, high blood pressure, arrythmia, alcoholism
+- symptoms: shortness of breath, tiredness, swollen ankles
+- high mortality and morbidity
+- high rate of hospital admission
+- readmission high, within 1-4 days of discharge
+- hospital admin database gives us data to work with
+
+```{r}
+library(survival)
+```
+
+### run survfit() and KMplot
+```{r, results="hold"}
+# read in data
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+
+# set variable types
+g[,"fu_time"] %>% typeof()
+fu_time <- g[,"fu_time"]; fu_time %>% head(20)
+g[,"death"] %>% typeof()
+death <- g[,"death"]; death %>% head(20)
+```
+
+```{r, out.height="50%", out.width="50%"}
+# survfit
+km_fit <- survfit(Surv(fu_time, death) ~ 1) 
+# ~ 1 plots KM estimated probability of survival over time for ALL patients, no comparisons made
+plot(km_fit)
+```
+
+#### interpret the function
+- survfit()
+    - fits simple survival model,
+    - no predictor given, model has only the intercept (i.e. ~ 1)
+- Surv()
+    - 2 arguments: follow-up time of each patient + if they died
+    - death = 1, people who died by the end of their follow-up period
+    - death = 0, people still alive by end of their follow-up period, censored
+- survfit() produces KM estimates of "the probabilty of survival over time",
+    - used by plot to produce KM curve
+
+#### table of survival estimates
+```{r}
+summary(km_fit, times = c(1:7, 30, 60, 90*(1:10)))
+```
+
+- t=1, survival probability is high (99%)
+- t=900, survival probability is low (38%)
+- { longer you stay in hospital the lower your survival prob?  
+or is this just natural decrease in surv prob over time??? }
+<br><br>
+- see week1_4 for calculating survfit() output by hand
+
+### run survfit() with groups
+```{r, out.height="50%", out.width="50%"}
+g[,"gender"] %>% typeof()
+gender <- as.factor(g[,"gender"])
+km_gender_fit <- survfit(Surv(fu_time, death) ~ gender)
+plot(km_gender_fit)
+```
+
+#### compare survival using logRankTest
+```{r}
+survdiff(Surv(fu_time, death) ~ gender, rho = 0)
+```
+
+- rho = 0 is default
+- yields log-rank (aka Mantel-Haenszel) test
+- **log-rank test does NOT have proportional hazard assumption**
+- { is log-rank test non-parametric? }
+<br><br>
+- Observed = weighted observed number of events in each group
+- Expected = weighted expected number of events in each group
+
+```{r}
+# explore log-rank test
+?survdiff
+# tests if there's a difference btw 2 or more survival curves,
+# using rho family of tests
+
+g %>% filter(gender == 1) %>% summarise(., mean(fu_time)) # 460.8942
+g %>% filter(gender == 2) %>% summarise(., mean(fu_time)) # 472.0841
+```
+
+### log-rank test details
+- https://en.wikipedia.org/wiki/Logrank_test  
+- compares survival distributions of 2 samples
+- nonparametric
+- good when data is right skewed and censored
+- **logrank test statistic**
+    - compares estimates of hazard function of 2 groups at EACH time point
+    - constructed by computing O and E number of events in one group at each time point,
+        - then sum to obtain overall summary across all-time points where there was an event
+    - <span style="color:Tomato">more details needed...</span>
+- **null hypothesis**
+    - 2 groups have identical hazard functions (survival curves)
+    - H0: h_1(t) = h_2(t)
+- assumptions
+    - censoring is unrelated to hazard
+    - survival probability same regardless of when subject was recruited (early vs later in study)
+
+### exercise: compare survival of age groups
+- age_65+ vs otherwise
+```{r, out.height="50%", out.width="50%"}
+age_65plus <- ifelse(g[,"age"] >= 65, 1, 0)
+table(age_65plus)
+# table(g[, "age"], age_65plus)
+
+km_age65plus_fit <- survfit(Surv(fu_time, death) ~ age_65plus)
+plot(km_age65plus_fit)
+survdiff(Surv(fu_time, death) ~ age_65plus, rho=0)
+```
+
+### EOF

@@ -1,0 +1,54 @@
+---
+title: "week4_1three_types_of_Cox_residuals"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### 3 types of residuals to check model fit
+- residuals
+    - key tool to assess model fit
+    - calculated for each data point (e.g. patient)
+    - actual value vs model-predicted value
+    - calculation of residuals a little different from linear or logistic regression (mainly due to censoring)
+
+#### Schoenfeld residual
+- Cox doesn't care about what shape of the hazard function is (i.e. risk of death over time)
+- all that matters is if two hazard functions are parallel, or "proportional"
+- Schoenfeld residual tests this
+- example: hazard function for males vs females
+    - if residuals for gender does not correlate with follow-up time since hospital admission, good news,
+    - i.e. residuals are indepenent of time, proportional assumption valid
+
+#### Martingale residual
+- tests whether continuous predictor (e.g. age), has linear relation with outcome (time of death),
+- or if transforming the continuous variable will make relationship linear (e.g. age^2, log(age))
+- Martingale has mean of 0, range -inf to 1
+    - MR of 1 = patients died earlier than predicted
+    - MR of -50 = patients died later than predicted
+- valid assumption should see a straight line near 0
+
+#### Deviance residual
+- normalized transformation of Martingale residuals
+- mean 0, sd 1
+- used to spot influential points
+- data points that have large effect on model coefficients (HRs)
+- (similar to how outliers in linear regression can change line of best fit dramatically)
+
+### EOF

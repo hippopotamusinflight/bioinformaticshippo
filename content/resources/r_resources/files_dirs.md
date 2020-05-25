@@ -5,11 +5,11 @@ linktitle: files and directories
 menu:
   r_resources:
     name: files and directories
-    weight: 1020
+    weight: 
 title: files and directories
 toc: true
 type: docs
-weight: 1020
+weight: 
 ---
 
 <!--

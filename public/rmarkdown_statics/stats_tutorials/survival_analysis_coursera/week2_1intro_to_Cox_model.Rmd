@@ -1,0 +1,68 @@
+---
+title: "week2_1intro_to_Cox_model"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### intro
+- KM and log rank test can only use 1 predictor
+- Cox is a type of regression, can take multiple predictors
+- Cox proportional hazard model (aka Cox regression)
+
+### model assumes proportional hazards
+
+#### hazard
+- hazard = risk of death (or outcome of interest) at a given moment in time
+<br><br>
+- e.g. chemotherapy clinical trial
+- hazard not going to be same as time goes on
+- hazard function/ rate = how hazard changes over time
+- e.g. if logarithmic, then 2% die on first day, 1% die on second day etc... and plateaus out
+
+#### proportional
+- e.g. young vs elderly, 2 groups with different hazard functions
+```{r, echo=FALSE, fig.cap="hazard ratio", out.width='50%', out.height='50%', fig.align='center'}
+knitr::include_graphics("/Users/minghan/Google Drive/Coursera_survival_analysis/images/ss 2020-05-14 at 19.43.47.png")
+```
+
+- how to summarize the relation between 2 hazard functions
+- i.e. how much more likely are elderly more likely to die vs young?
+- hazards are proportional here, can summarize relation with 1 number
+- for every time point, you can multiply hazard of young by (e.g. 2), and get hazard for the elderly
+- hazard ratio
+<br><br>
+- proportional hazards assumption must be met (will show how to test assumption later)
+
+### hazard function and risk set
+- hazard function h(t) = probability of event happening at time t, given it has not happened
+- e.g. h(t) = probability of dying at time t, having survived up to time t
+- no easy way to compute h(t) by hand...
+- details see http://data.princeton.edu/wws509/notes/c7s1.html
+
+#### risk set
+- number of subjects at risk changes over time
+- risk set at time t = set of patients at time t at risk of experiencing event
+- survival analysis methods different by how they define the risk set (e.g. handle censored subjects)
+
+### hazard
+- KM plot and log-rank test give you p-value, no effect size
+- hazard ratio = effect size, how likely one group will die vs another
+
+
+### EOF

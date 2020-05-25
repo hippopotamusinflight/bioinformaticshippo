@@ -1,0 +1,70 @@
+---
+title: "week4_4choosing_predictors"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### methods of predictor selection
+- forward selection (bad)
+- stepwise selection (bad)
+- backwards elimination
+- prior domain knowledge
+
+### backwards elimination steps
+1. fit model with all chosen predictors
+2. store coefficients for that model
+3. remove all predictors whose p-value is above threshold (e.g. 0.05)
+4. fit new_model with predictors that are left
+5. compare coefficients of predictors before and after
+6. if
+    a) coefficients aren't that different, you have final model
+        - go ahead and check residuals and assumptions
+    b) coefficients for a predictor changed a lot
+        - then need to find variable(s) removed that is/are correlated with this predictor
+        - { isn't it bad if 2 predictors are correlated ??? }
+        - need to find correlated variable by trial and error,
+            - add back removed variables one at a time,
+            - until affected predictor's coefficient back to original value
+            - keep that removed variable in model
+
+### example: blood pressure
+- original model
+    - blood pressure (HR=1.30, p=0.0002)
+    - cholesterol (HR=1.05, p=0.155)
+- cholesterol removed
+    - blood pressure (HR=1.50)
+    - you judge that HR 1.3 to 1.5 is big enough change (more below)
+- add cholesterol back
+    - blood pressure HR back to 1.30
+- conclude there's correlation between blood pressure and cholesterol, need to keep both in model
+- (reason why stepwise procedure is so unreliable, {will miss these correlations})
+<br><br>
+- how to judge if a variable's HR change was big enough to warrant adding predictors back?
+    - arbitrary
+    - usually HR change > 0.05 is viewed as big enough
+    - e.g. HR 1.30 -> 1.34 not enough
+    - depends on how results is going to be used:
+        - people invited into a national screening programme, based on their estimated risk of developing disease,
+            - using coefficient of 1.30 instead of 1.50 greatly affects number of people invited
+        - epidemiological study of risk factors
+            - 1.30 and 1.50 not that different,
+            - all we do in finding risk factors is to say "these ARE significant risk factors, these are not", HR is secondary importance {p-value more important}
+
+### EOF

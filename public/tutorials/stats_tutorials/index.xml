@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics Tutorials | BioinfoHippo</title>
+    <link>/tutorials/stats_tutorials/</link>
+      <atom:link href="/tutorials/stats_tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <description>Statistics Tutorials</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png</url>
+      <title>Statistics Tutorials</title>
+      <link>/tutorials/stats_tutorials/</link>
+    </image>
+    
+    <item>
+      <title>Useful Stuff</title>
+      <link>/tutorials/stats_tutorials/survival_analysis_useful_stuff/</link>
+      <pubDate>Sun, 24 May 2020 19:45:46 -0400</pubDate>
+      <guid>/tutorials/stats_tutorials/survival_analysis_useful_stuff/</guid>
+      <description>&lt;!--
+1. replace dirdir with page dir (e.g. r_resources)
+2. replace ww with weight, or leave blank to sort pages alphabetically
+--&gt;
+&lt;p&gt;This is a Coursera course offered by Imperial College London on Survival Analysis.&lt;/p&gt;
+&lt;h2 id=&#34;survival-package-commands&#34;&gt;survival package commands&lt;/h2&gt;
+&lt;h2 id=&#34;survminer-commands&#34;&gt;survminer commands&lt;/h2&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Rmd notes</title>
+      <link>/tutorials/stats_tutorials/survival_analysis_coursera_week1/</link>
+      <pubDate>Sun, 24 May 2020 19:51:21 -0400</pubDate>
+      <guid>/tutorials/stats_tutorials/survival_analysis_coursera_week1/</guid>
+      <description>&lt;!--
+1. replace dirdir with page dir (e.g. r_resources)
+2. replace ww with weight, or leave blank to sort pages alphabetically
+
+[???](/rmarkdown_statics/stats_tutorials/survival_analysis_coursera/???)&lt;br&gt;
+--&gt;
+&lt;p&gt;
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_1KMplot_logRankTest.html&#34;&gt;week1_1KMplot_logRankTest.html&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_2case_study.html&#34;&gt;week1_2case_study.html&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/???&#34;&gt;???&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

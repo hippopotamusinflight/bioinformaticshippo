@@ -1,0 +1,56 @@
+---
+title: "week1_2case_study"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+## case study csv
+```{r case_study_csv}
+g <- read.csv("GMPH_1K_final_2.csv", header = TRUE, sep = ",")
+g %>% dim()
+# g %>% names()
+```
+<br>
+- data is simulated, based on hospital admin data
+- emergency admission for heart failure (ICD10 code I50)
+
+## variables
+```
+    "los"                   length of hospital stay
+    "gender"                1=male; 2=female
+    "cabg"                  previous heart bypass
+    "crt"                   cardiac resynchronisation device - a treatment for heart failure
+    "defib"                 defibrillator implanted
+    "diabetes"              any type
+    "ihd"                   ischaemic heart disease
+    "mental_health"         any
+    "copd"                  chronic obstructive lung disease
+    "pvd"                   peripheral vascular disease
+    "valvular_disease"      heart valve disease
+    "prior_appts_attended"  num of outpatient appointments last year
+    "prior_dnas"            num of outpatient appointments missed last year
+    "pci"                   percutaneous coronary intervention
+    "stroke"                any history
+    "quintile"              socio-economic status (1=affluent to 5=poor)
+    "ethnicgroup"           1=white; 2=black; 3=indian; 8=not known; 9=other
+    "fu_time"               follow-up time (days since admission to hospital)
+```
+
+## EOF

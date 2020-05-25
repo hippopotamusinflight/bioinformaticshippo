@@ -41,6 +41,7 @@ weight: 2020052001
 - in /data/ dir
     - `fonts/my_font_set` set custom font, font size, etc<br>
 - in /layouts/_default/ dir
+	- **do not do below**, blogdown stopped rendering new blog posts after
     - `single.html` table of content on sidebar for .md blog posts<br>
 - in /R/ dir
     - `build.R` r script to tell blogdown to build whatever is in static dir<br>
@@ -70,7 +71,13 @@ this is some more code••••••••••••••••# comment2
 this is some more and more code•••••••# comment3•••••••more text
 ```
 
-**
+**insert image to .Rmd files in /static/ dir**
+- has to do it manually (unlike in docs or posts)
+- image has to be in same dir as .Rmd file
+- `<img src="image1.png" alt="some text" width="70%"/>`
+- `![some text](image1.png){width=200px}` no quotes, must have extension
+- these can be inline with bullet points to indent images
+
 
 ---
 ## things to figure out

@@ -218,8 +218,8 @@ apply (generic)  works with matrices or higher dimensional (use sapply for vecto
   
 
   <link rel="manifest" href="../../../index.webmanifest">
-  <link rel="icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="../../../resources/r_resources/apply_functions/">
 
@@ -240,8 +240,8 @@ apply (generic)  works with matrices or higher dimensional (use sapply for vecto
   <meta property="og:url" content="/resources/r_resources/apply_functions/">
   <meta property="og:title" content="apply functions | BioinfoHippo">
   <meta property="og:description" content="knitr::opts_chunk$set(echo = TRUE) knitr::opts_chunk$set(message = FALSE) knitr::opts_chunk$set(warning = FALSE) library(tidyverse) library(ggplot2)  apply functions  https://stackoverflow.com/questions/3505701/grouping-functions-tapply-by-aggregate-and-the-apply-family
-apply (generic)  works with matrices or higher dimensional (use sapply for vectors, lists) acts on a column or row, or individual elements, depending on FUN outputs vector or matrix  mat = matrix(1:9, 3, 3); mat apply(mat, 1, sum) apply(mat, 2, sum) # apply to rows and columns apply(mat, 1, function(x) x*10)  lapply (list apply)  apply function to each element of a list returns a list  x = list(1:10) lapply(x, sqrt) lapply(mat, function(x) (x&#43;2))  sapply (simple lapply)  same as lapply, but returns a vector  x = list(1:10) sapply(x, sqrt) sapply(x, function(x) (x&#43;2)) # custom function with sapply # matrix input coersed to vector output sapply(mat, function(x) (x&#43;2))  tapply (tagged apply)  apply to subset of a vector subset defined by a factor (or some other vector)  x = 1:20; x y = factor(rep(letters[1:5], each = 4)); y tapply(x, y, sum)  mapply (multi-input apply)  multiple input, can be several datatypes  x = letters[seq(1:10)] y = 2:11 z = rep(seq(0,1),10) myFunc = function(x,y,z){ return(paste0(x,y,z)) } mapply(myFunc, x, y, z) %&gt;% unname()  rapply (recursive apply) # ?"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+apply (generic)  works with matrices or higher dimensional (use sapply for vectors, lists) acts on a column or row, or individual elements, depending on FUN outputs vector or matrix  mat = matrix(1:9, 3, 3); mat apply(mat, 1, sum) apply(mat, 2, sum) # apply to rows and columns apply(mat, 1, function(x) x*10)  lapply (list apply)  apply function to each element of a list returns a list  x = list(1:10) lapply(x, sqrt) lapply(mat, function(x) (x&#43;2))  sapply (simple lapply)  same as lapply, but returns a vector  x = list(1:10) sapply(x, sqrt) sapply(x, function(x) (x&#43;2)) # custom function with sapply # matrix input coersed to vector output sapply(mat, function(x) (x&#43;2))  tapply (tagged apply)  apply to subset of a vector subset defined by a factor (or some other vector)  x = 1:20; x y = factor(rep(letters[1:5], each = 4)); y tapply(x, y, sum)  mapply (multi-input apply)  multiple input, can be several datatypes  x = letters[seq(1:10)] y = 2:11 z = rep(seq(0,1),10) myFunc = function(x,y,z){ return(paste0(x,y,z)) } mapply(myFunc, x, y, z) %&gt;% unname()  rapply (recursive apply) # ?"><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-05-23T00:00:00&#43;01:00">
@@ -500,6 +500,11 @@ apply (generic)  works with matrices or higher dimensional (use sapply for vecto
   </div>
   
   <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/r_resources/rmarkdown/">Rmarkdown</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="../../../resources/r_resources/tidyverse_dplyr/">tidyverse dplyr</a>
 
   </div>
@@ -515,12 +520,12 @@ apply (generic)  works with matrices or higher dimensional (use sapply for vecto
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/r_resources/setoperations/">set operations</a>
+    <a class="docs-toc-link" href="../../../resources/r_resources/dataframe_reshaping/">dataframe reshape</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/r_resources/generate_data/">generate numbers</a>
+    <a class="docs-toc-link" href="../../../resources/r_resources/error_handling/">error handling</a>
 
   </div>
   
@@ -535,17 +540,12 @@ apply (generic)  works with matrices or higher dimensional (use sapply for vecto
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/r_resources/rmarkdown/">rmarkdowntest</a>
+    <a class="docs-toc-link" href="../../../resources/r_resources/generate_data/">generate numbers</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/r_resources/dataframe_reshaping/">dataframe reshape</a>
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/r_resources/error_handling/">error handling</a>
+    <a class="docs-toc-link" href="../../../resources/r_resources/setoperations/">set operations</a>
 
   </div>
   
@@ -706,7 +706,7 @@ class(y_num)
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../resources/r_resources/setoperations/" rel="prev">set operations</a>
+    <a href="../../../resources/r_resources/dataframe_reshaping/" rel="prev">dataframe reshape</a>
   </div>
   
 </div>

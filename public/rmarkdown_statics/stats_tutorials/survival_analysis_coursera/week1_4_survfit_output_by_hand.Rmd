@@ -1,0 +1,166 @@
+---
+title: "week1_4_survfit_output_by_hand"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### calculate survival estimates by hand (try t=0 to t=7)
+```{r, results="hold"}
+library(survival)
+
+# read in data
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+
+# set variable types
+g[,"fu_time"] %>% typeof()
+fu_time <- g[,"fu_time"]; fu_time %>% head(20)
+g[,"death"] %>% typeof()
+death <- g[,"death"]; death %>% head(20)
+```
+
+#### survfit() conf.type options
+- similar results if large samples
+
+```{r}
+km_fit <- survfit(Surv(fu_time, death) ~ 1) # conf.type = "log" default
+summary(km_fit, times = c(1:7))
+```
+
+```{r}
+km_fit_plain <- survfit(Surv(fu_time, death) ~ 1, conf.type = "plain")
+summary(km_fit_plain, times = c(1:7))
+```
+
+```{r}
+km_fit_loglog <- survfit(Surv(fu_time, death) ~ 1, conf.type = "log-log")
+summary(km_fit_loglog, times = c(1:7))
+```
+
+#### calculate columns of summary.survfit() by hand, Greenwood's plain method
+```{r}
+g %>% filter(death == 1) %>% select(fu_time) %>% table() %>% head(8)
+```
+
+- seems at t=0, 3 people died already
+- but Surv() lumped t=0 and t=1 deaths together (3+9=12)
+
+```{r, results="hide"}
+# get KM surv estimate vectors for the first few t's
+len = 8
+
+t_vec = seq(0,len-1); t_vec
+
+# deaths (death == 1)
+events = g %>% filter(death == 1) %>% select(fu_time) %>% table() %>% head(len) %>% as.numeric(); events
+
+# censored subjects (death == 0)
+censored = g %>% filter(death == 0) %>% select(fu_time) %>% table() %>% head(len) %>% as.numeric(); censored
+
+# n.risk = people still alive (didn't die or lost-to-follow-up)
+# n.risk[t+1] = n.risk[t] - (death[t] + censored[t]),
+# e.g. n.risk[t=2] = 1000 - (3 + 5) = 992
+n.risk <- integer(length = len)
+n.risk[1] <- 1000
+for (t in 2:length(n.risk)){
+  n.risk[t] <-  n.risk[t-1] - (events[t-1]+censored[t-1])
+}; 
+# n.risk
+
+# proP_surv = proportion survived PAST time t
+# proP_surv[t] = (n.risk[t] - death[t])/n.risk[t]
+proP_surv <- numeric(length = len)
+proP_surv[1] <- 1
+
+# just to make the numbers match, somehow there were deaths + censored at t=0
+# merged deaths/censored @ t=0 and t=1
+n.event = c(0, (events[1]+events[2]), events[3:len])
+n.cens = c(0, (censored[1]+censored[2]), censored[3:len])
+
+for (t in 1:length(proP_surv)){
+  proP_surv[t] <- (n.risk[t] - n.event[t])/n.risk[t]
+};
+# proP_surv
+
+# S_t = probabilty of surviving PAST time t (aka cumulative survival probability)
+# S_t[t] = S_t[t-1]*proP_surv[t]
+S_t <- numeric(length = len)
+S_t[1] <- 1
+for (t in 2:length(S_t)){
+  S_t[t] = S_t[t-1]*proP_surv[t]
+};
+# S_t
+
+# estimate SE of survival probability estimate
+# http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_Survival/BS704_Survival4.html
+# https://www.lexjansen.com/pharmasug/2014/SP/PharmaSUG-2014-SP10.pdf
+# SE at specific time, thus "point estimates"
+# population method is the "Greenwoods" formula
+# SE(S_t) = S_t*sqrt(sum(D_t/N_t*(N_t - D_t)))
+# N_t = n.risk
+# D_t = n.event
+# S_t = survival probability
+
+e_sum = numeric(length = len); e_sum
+e_sum[1] <- 0
+for (t in 2:length(e_sum)){
+  e_sum[t] = e_sum[t-1] + n.event[t]/(n.risk[t]*(n.risk[t]-n.event[t]))
+}; 
+e_sum
+
+# SE = S_t[t]*sqrt(e_sum[t])
+SE <- numeric(length = len); SE
+SE[1] <- NA
+for (t in 2:length(SE)){
+  SE[t] <- S_t[t]*sqrt(e_sum[t])
+};
+# SE just a litte bit off from result of survfit()...
+# SE
+
+# 95% LCI
+LCI <- numeric(length = len); LCI
+LCI[1] <- NA
+for (t in 2:length(LCI)){
+  LCI[t] <- S_t[t] - 1.96*SE[t]
+};
+# LCI
+
+# 95% UCI
+UCI <- numeric(length = len); UCI
+UCI[1] <- NA
+for (t in 2:length(UCI)){
+  UCI[t] <- S_t[t] + 1.96*SE[t]
+};
+# UCI
+
+km_table <- data.frame(t_vec, n.risk, events, censored, n.cens, n.event,
+                       proP_surv, S_t, e_sum, SE, LCI, UCI); 
+km_table_rounded <- 
+  km_table %>% 
+  mutate_at(vars(e_sum, SE), funs(round(., 5))) %>% 
+  mutate_at(vars(-c(e_sum, SE)), funs(round(., 3)))
+```
+
+```{r echo=FALSE, results="asis"}
+knitr::kable(km_table_rounded)
+```
+
+### EOF

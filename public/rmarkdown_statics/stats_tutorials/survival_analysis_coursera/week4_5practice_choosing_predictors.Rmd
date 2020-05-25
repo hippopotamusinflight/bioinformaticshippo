@@ -1,0 +1,299 @@
+---
+title: "week4_5practice_choosing_predictors"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### get data
+```{r, results="hide"}
+library(survival)
+library(car)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+# g %>% head()
+g$gender <- as.factor(g$gender)
+g$copd <- as.factor(g$copd)
+g$ethnicgroup <- as.factor(g$ethnicgroup)
+levels(g$ethnicgroup) <- c(levels(g$ethnicgroup), "8")
+g$ethnicgroup[is.na(g$ethnicgroup)] <- "8"
+table(g$ethnicgroup, exclude = NULL)
+
+# set quintile 0 to NAs, coxph will ignore these patients
+g <- g %>% mutate(quintile = recode(quintile, "c('0')=NA"))
+table(g$quintile, exclude = NULL)
+g$quintile <- as.factor(g$quintile)
+g %>% names()
+```
+
+### option1, using apriori variables
+- https://www.ncbi.nlm.nih.gov/books/NBK513479/  
+- Objective 1: what are the main patient, primary care and hospital factors associated with variation in readmission and mortality rates?
+- Table 6: Odds ratios with 95% CIs for possible patient, trust and primary care predictors of mortality within 1 year
+of admission for HF and COPD patients
+- paper used logistic regression with outcome = death within 1 year of follow-up, but interesting to see if significant predictors apply to Cox regression
+- significant predictors = age, gender (male = ref), ethnicgroup (white = ref), ihd, stroke, valvular_disease, pvd, copd, pneumonia, hypertension, cancer, metastatic_cancer, senile, dementia, mental health, prior_dnas, los (0 nights = ref), cabg
+<br><br>
+- use age, los and prior_dnas as continuous for this exercise
+
+```{r, results="hide"}
+# check class of each column
+g %>% dim() # [1] 1000   31
+g %>% str()
+
+# get new df for selected variables
+g1 <- g %>% select(c(age, gender, ethnicgroup, ihd, stroke, valvular_disease, pvd, copd, pneumonia, hypertension, cancer, metastatic_cancer, senile, dementia, mental_health, prior_dnas, los, cabg, fu_time))
+g1 %>% dim() # [1] 1000   21
+
+# convert all categorical variables to factors
+g1 <- g1 %>% mutate_if(~ n_distinct(.) == 2, as.factor)
+g1$ethnicgroup <- as.factor(g1$ethnicgroup)
+
+# attach death on its own, since previous mutate_if() affects it
+g1$death <- g$death
+g1 %>% str()
+
+# run cox model on apriori variables
+cox <- coxph(Surv(fu_time, death) ~ ., data = g1)
+summary(cox)
+```
+
+### option2, include all available predictors
+```{r, results="hide"}
+g %>% str()
+g2 <- g %>% select(-c(id, death))
+g2 <- g2 %>% mutate_if(~n_distinct(.) == 2, as.factor)
+g2$death <- g$death
+g2 %>% str()
+g2$prior_dnas %>% table(., exclude = NULL)
+g2$ethnicgroup %>% table(., exclude = NULL)
+g2$quintile %>% table(., exclude = NULL)
+
+# only 3 patients had crt=1, model could not converge, remove crt
+g2$crt %>% table(., exclude = NULL)
+g2 <- g2 %>% select(-crt)
+
+# fit model2 with all available predictors
+cox2 <- coxph(Surv(fu_time, death) ~ ., data = g2)
+cox2_coef_before <- summary(cox2)$coefficients %>%
+  as.data.frame() %>%
+  rownames_to_column(., "predictors") %>%
+  rename("HR_before" = `exp(coef)`)
+cox2_coef_before
+```
+
+### option3, backward elimination
+```{r}
+# get significant variables
+vars_sig <- summary(cox2)$coefficients %>% 
+  as.data.frame() %>%
+  rownames_to_column(., "predictors") %>% 
+  filter(`Pr(>|z|)` < 0.05) %>%
+  select(predictors) %>%
+  unlist() %>% unname()
+vars_sig <- vars_sig %>% gsub('[0-9]+', '', .)
+
+# rerun model with only significant variables
+fmla <- as.formula(paste("Surv(fu_time, death) ~ ", paste(vars_sig, collapse=" + "), sep = ""))
+cox2_vars_sig <- coxph(fmla, data = g2)
+cox2_coef_after <- summary(cox2_vars_sig)$coefficients %>%
+  as.data.frame() %>% 
+  rownames_to_column(., "predictors") %>%
+  rename("HR_after" = `exp(coef)`)
+cox2_coef_after
+
+# compare cox2_before vs cox2_after HRs, see which has > 0.05 difference
+inner_join(cox2_coef_before, cox2_coef_after, by = "predictors") %>%
+  select(predictors, HR_before, HR_after) %>%
+  mutate(HR_diff = HR_after - HR_before) %>%
+  filter(abs(HR_diff) > 0.05)
+
+"          predictors HR_before  HR_after    HR_diff
+1 metastatic_cancer1 8.3178427 10.314927 1.99708467
+2       ethnicgroup8 0.9816789  1.065319 0.08364040
+3       ethnicgroup9 1.4651009  1.533574 0.06847298"
+```
+
+```{r}
+vars_sig
+```
+
+
+- looks like **metastatic_cancer** and **ethnicgroup**'s HR changed > 0.05
+
+#### add non-sig variables back
+```{r, results="hide"}
+# get list of non-significant variables to add back
+vars_sig
+vars_all <- names(g2)
+vars_to_addback <- setdiff(vars_all[!vars_all %in% c("fu_time", "death")], vars_sig); vars_to_addback
+
+i = 1
+for (i in 1:length(vars_to_addback)){
+  bkwd_elim_vars <- c(vars_sig, vars_to_addback[i]); bkwd_elim_vars
+  fmla <- as.formula(paste("Surv(fu_time, death) ~ ", paste(bkwd_elim_vars, collapse=" + "), sep = ""))
+  cox2_bkwd_elim_vars <- coxph(fmla, data = g2)
+  bkwd_elim_HRs <- summary(cox2_bkwd_elim_vars)$coefficients %>%
+    as.data.frame() %>%
+    rownames_to_column(., "predictors") %>%
+    rename("HR_bkwd_elim" = `exp(coef)`) %>%
+    select(predictors, HR_bkwd_elim) %>%
+    filter(predictors %in% c("metastatic_cancer1", "ethnicgroup8", "ethnicgroup9"))
+  print(paste0("added <", vars_to_addback[i], "> back:"))
+  print(paste0("bkwd_elim_HRs are:"))
+  print(bkwd_elim_HRs)
+  print("")
+}
+# [1] "added <cancer> back:"
+# [1] "bkwd_elim_HRs are:"
+#           predictors HR_bkwd_elim
+# 1 metastatic_cancer1     8.583697   <--
+# 2       ethnicgroup8     1.077854
+# 3       ethnicgroup9     1.551762
+
+# [1] "added <renal_disease> back:"
+# [1] "bkwd_elim_HRs are:"
+#           predictors HR_bkwd_elim
+# 1 metastatic_cancer1     9.895061   <--
+# 2       ethnicgroup8     1.050404
+# 3       ethnicgroup9     1.541174
+
+# [1] "added <arrhythmias> back:"
+# [1] "bkwd_elim_HRs are:"
+#           predictors HR_bkwd_elim
+# 1 metastatic_cancer1    10.566096
+# 2       ethnicgroup8     1.027209
+# 3       ethnicgroup9     1.478646   <--
+
+# [1] "added <pneumonia> back:"
+# [1] "bkwd_elim_HRs are:"
+#           predictors HR_bkwd_elim
+# 1 metastatic_cancer1    10.623099
+# 2       ethnicgroup8     1.021901
+# 3       ethnicgroup9     1.473842   <--
+```
+
+- looks like adding "cancer" variable back brought "metastatic_cancer" to HR=8.58 (original HR=8.32)
+    - but ethnicgroup HR's did not change
+- if bring "arrhythmias" or "pneumonia" back, "ethnicgroup9" HR goes to 1.47 (original HR=1.47)
+    - but now "metastatic_cancer" HR=10.62 again
+- so how to deal with this when multiple variable's HR changes after removing non-significant variables??
+<br><br>
+- seems like in final model, adding back "cancer", "pneumonia", "arrhythmias" will get both "metastatic_cancer" and "ethnicgroup" HR's back to original
+
+### final model
+```{r}
+final_vars <- c(vars_sig, "cancer", "pneumonia", "arrhythmias"); final_vars
+fmla <- as.formula(paste("Surv(fu_time, death) ~ ", paste(final_vars, collapse=" + "), sep = ""))
+cox2_final_vars <- coxph(fmla, data = g2)
+summary(cox2_final_vars)
+```
+
+### testing assumptions
+
+#### 1-PH assumption
+- **Schoenfeld residuals**
+
+##### p-value
+```{r}
+zph <- cox.zph(cox2_final_vars, transform = "km", global = TRUE) 
+# defaults to "km" and global = TRUE
+print(zph)
+plot(zph)
+```
+
+```{r, fig.height=10, fig.width=10}
+library(survminer)
+ggcoxzph(zph, var = final_vars,
+         font.main = 10, 
+         font.x = c(10, "plain", "black"), 
+         font.y = c(10, "plain", "black"), 
+         font.tickslab = c(8, "plain", "black"))
+```
+
+- <span style="color:Tomato">ihd had p-value of only 0.0032, should this var be removed?</span>
+    - or should we rely on GLOBAL p-value?
+<br><br>
+- how come for some vars, there's more positive residuals than negatives?
+    - e.g. los, dementia, valvular_disease, metastatic_cancer, prior_dnas, cancer
+- only quintile and ethnicgroup had the opposite problem - more negative residuals than positive...
+
+##### graphically with KM plot
+- only works well for binary vars
+```{r}
+km_fit <- survfit(Surv(fu_time, death) ~ gender, data = g2)
+ggsurvplot(km_fit, data = g2)
+```
+
+#### 2-outliers
+
+##### influence of obs on HR (coefficients)
+```{r, fig.height=10, fig.width=10}
+ggcoxdiagnostics(cox2_final_vars, type = "dfbeta",
+                 linear.predictions = FALSE,
+                 ggtheme = theme_bw())
+```
+
+##### distribution of **deviance residuals**
+```{r}
+deviance_res <- residuals(cox2_final_vars, type = "deviance")
+deviance_res_outside1.96SD <- deviance_res[abs(deviance_res) > 1.96]
+deviance_res_outside1.96SD %>% length / deviance_res %>% length
+# [1] 0.06161616
+# not bad, should be < 0.05
+```
+
+```{r}
+ggcoxdiagnostics(cox2_final_vars, type = "deviance",
+                 linear.predictions = FALSE,
+                 ggtheme = theme_bw())
+```
+
+#### 3-linear relation, continuous var <-> outcome
+- **Martingale residuals**
+```{r}
+# g2 %>% select(final_vars) %>% str()
+ggcoxfunctional(Surv(fu_time, death) ~ age + log(age) + sqrt(age), data = g2)
+ggcoxfunctional(Surv(fu_time, death) ~ los + sqrt(los), data = g2) # can't log(los), it has some zeros, log(0) = -Inf
+ggcoxfunctional(Surv(fu_time, death) ~ prior_dnas + sqrt(prior_dnas), data = g2) # can't log(prior_dnas) neither, same problem
+```
+
+- <span style="color:Tomato">why log() and sqrt() ???</span>
+    - to see if after log() or sqrt() the relationship is more linear
+- <span style="color:Tomato">what if you can't log() cuz there's 0's???</span>
+- <span style="color:Tomato">what counts as linear relationship from these graphs...?</span>
+
+---
+### issues encountered
+- choosing vars to include from the paper
+- backward elimination
+    - what if multiple significant var HR changed > 0.05? and adding back non-significant var to restore HR restores either of significant var but not all significant vars???
+        - A: actually in final model if added back important non-significant vars, will correct their respective significant var's HRs
+    - <span style="color:Tomato">but why does adding back non-significant vars affect significant var's HR in the first place???</span>
+        - how are these variables "correlated"???
+        - I thought we don't want correlated variables in the same model???
+- choosing final set of predictors
+- testing proportionality assumptions
+    - ihd had p-value of only 0.0032, should this var be removed? or should we just rely on GLOBAL p-value?
+    - how to interpret graph from Martingale residuals? what counts as linear relationship???
+- why final set of predictors differ from paper
+    - {logistic vs survival analysis; different dataset}
+
+### EOF

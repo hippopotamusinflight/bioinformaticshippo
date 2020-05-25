@@ -7,7 +7,7 @@
     <description>Tutorials in .Rmd format</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png</url>
       <title>Tutorials in .Rmd format</title>
       <link>/tutorials/r_tutorials/</link>
     </image>
@@ -61,6 +61,7 @@
 &lt;/li&gt;
 &lt;li&gt;in /layouts/_default/ dir
 &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;do not do below&lt;/strong&gt;, blogdown stopped rendering new blog posts after&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;single.html&lt;/code&gt; table of content on sidebar for .md blog posts&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -98,7 +99,14 @@
 this is some more code••••••••••••••••# comment2••••more text
 this is some more and more code•••••••# comment3•••••••more text
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;insert image to .Rmd files in /static/ dir&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;has to do it manually (unlike in docs or posts)&lt;/li&gt;
+&lt;li&gt;image has to be in same dir as .Rmd file&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;image1.png&amp;quot; alt=&amp;quot;some text&amp;quot; width=&amp;quot;70%&amp;quot;/&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;![some text](image1.png){width=200px}&lt;/code&gt; no quotes, must have extension&lt;/li&gt;
+&lt;li&gt;these can be inline with bullet points to indent images&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;things-to-figure-out&#34;&gt;things to figure out&lt;/h2&gt;
 &lt;ul&gt;
@@ -453,10 +461,11 @@ vim /content/home/skills.md      active = false
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;    blogdown will insert this HTML code:
-    &amp;lt;img src=&amp;quot;/to/your/markdown/page/exampleimage.png&amp;quot; alt=&amp;quot;some text&amp;quot; width=&amp;quot;70%&amp;quot;/&amp;gt;
+    &amp;lt;img src=&amp;quot;/r_tutorials/blogdown/AcademicTheme/exampleimage.png&amp;quot; alt=&amp;quot;some text&amp;quot; width=&amp;quot;70%&amp;quot;/&amp;gt;
     
     should be:
-    &amp;lt;img src=&amp;quot;/dir/to/your/markdown/page/exampleimage.png&amp;quot; alt=&amp;quot;some text&amp;quot; width=&amp;quot;70%&amp;quot;/&amp;gt;
+    &amp;lt;img src=&amp;quot;/tutorials/r_tutorials/blogdown/AcademicTheme/exampleimage.png&amp;quot; alt=&amp;quot;some text&amp;quot; width=&amp;quot;70%&amp;quot;/&amp;gt;
+    (don&#39;t forget first /)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;toc-numbering-in-rmd&#34;&gt;toc numbering in .Rmd&lt;/h3&gt;
 &lt;ul&gt;

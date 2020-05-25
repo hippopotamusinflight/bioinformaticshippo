@@ -7,10 +7,86 @@
     <description>Tutorials in .Rmd format</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png</url>
       <title>Tutorials in .Rmd format</title>
       <link>/resources/r_resources/</link>
     </image>
+    
+    <item>
+      <title>Rmarkdown</title>
+      <link>/resources/r_resources/rmarkdown/</link>
+      <pubDate>Sun, 24 May 2020 22:33:05 -0400</pubDate>
+      <guid>/resources/r_resources/rmarkdown/</guid>
+      <description>&lt;!--
+1. replace dirdir with page dir (e.g. r_resources)
+2. replace ww with weight, or leave blank to sort pages alphabetically
+--&gt;
+&lt;h2 id=&#34;horizontal-rule&#34;&gt;horizontal rule&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;***
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;r-chunks-options&#34;&gt;R chunks options&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;echo=FALSE         show output only, no code
+include=FALSE      no output, show code
+messages=FALSE     no warnings
+eval=FALSE         don&#39;t run code, no output
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;knitr-results&#34;&gt;KNITR results&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;results=&amp;quot;hide&amp;quot;    no results, run code (similar to include=FALSE)
+results=&amp;quot;hold&amp;quot;    hold results to output at end of chunk
+results=&amp;quot;markup&amp;quot;  latex output
+results=&amp;quot;asis&amp;quot;    for kable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;kable&#34;&gt;kable&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;table &amp;lt;- matrix(1:6, 2, 3)
+knitr::kable(table)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;include_graphics&#34;&gt;include_graphics&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;knitr::include_graphics(&amp;quot;/Users/minghan/Google Drive/Coursera_survival_analysis/images/ss 2020-05-12 at 16.23.53.png&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;html-text-color&#34;&gt;HTML text color&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&#34;color:Tomato&#34;&gt;&lt;strong&gt;some text&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;spaces&#34;&gt;spaces&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;
+write text as is     with space.
+&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;or just indent 4 spaces&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;some-more-html-text-tags&#34;&gt;some more HTML text tags&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Tag          Description
+&amp;lt;b&amp;gt;          Defines bold text
+&amp;lt;em&amp;gt;         Defines emphasized text 
+&amp;lt;i&amp;gt;          Defines italic text
+&amp;lt;small&amp;gt;      Defines smaller text
+&amp;lt;strong&amp;gt;     Defines important text
+&amp;lt;sub&amp;gt;        Defines subscripted text
+&amp;lt;sup&amp;gt;        Defines superscripted text
+&amp;lt;ins&amp;gt;        Defines inserted text
+&amp;lt;del&amp;gt;        Defines deleted text
+&amp;lt;mark&amp;gt;       Defines marked/highlighted text
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;rmarkdown-front-matters&#34;&gt;RMarkdown front matters&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://bookdown.org/yihui/rmarkdown/html-document.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://bookdown.org/yihui/rmarkdown/html-document.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;title: &amp;quot;some title&amp;quot;
+author: &amp;quot;Hippo&amp;quot;
+date: &amp;quot;`r format(Sys.time(), &#39;%Y_%m_%d_%H&#39;)`&amp;quot;
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
     
     <item>
       <title>tidyverse dplyr</title>
@@ -389,341 +465,6 @@ class(y_num)
     </item>
     
     <item>
-      <title>set operations</title>
-      <link>/resources/r_resources/setoperations/</link>
-      <pubDate>Wed, 20 May 2020 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/setoperations/</guid>
-      <description>&lt;h2 id=&#34;set-ops-vectors&#34;&gt;set ops (vectors)&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;x &amp;lt;- LETTERS[1:8]; x      # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot;
-y &amp;lt;- LETTERS[5:10]; y     # &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot; &amp;quot;I&amp;quot; &amp;quot;J&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;setdiff&#34;&gt;setdiff()&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;setdiff(x,y)&lt;/li&gt;
-&lt;li&gt;what&amp;rsquo;s in x, but not in y&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;setdiff(x,y)              # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;union&#34;&gt;union()&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;union(x,y)&lt;/li&gt;
-&lt;li&gt;what&amp;rsquo;s in x, y and both x and y&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;union(x,y)                # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot; &amp;quot;I&amp;quot; &amp;quot;J&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;intersect&#34;&gt;intersect()&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;intersect(x,y)&lt;/li&gt;
-&lt;li&gt;what&amp;rsquo;s in both x and y&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;intersect(x,y)            # &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;setequal&#34;&gt;setequal()&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;setequal(x,y) -&amp;gt; bool&lt;/li&gt;
-&lt;li&gt;check if 2 sets are equal&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;setequal(x,y)             # FALSE
-setequal(x,x)             # TRUE
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;iselement&#34;&gt;is.element()&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;is.element(x,y) -&amp;gt; bool&lt;/li&gt;
-&lt;li&gt;same as x %in% y&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;is.element(&amp;quot;A&amp;quot;, x)        # TRUE
-&amp;quot;A&amp;quot; %in% x                # TRUE
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>generate numbers</title>
-      <link>/resources/r_resources/generate_data/</link>
-      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/generate_data/</guid>
-      <description>&lt;!--
-1. replace r_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-2020-05-23 e.g. 2020-05-20
-3. replace generate numbers with page name e.g. dplyr
-4. replace 1010 with weight e.g. 20
---&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(message = FALSE)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;
-&lt;a href=&#34;http://www.cookbook-r.com/Numbers/Generating_random_numbers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.cookbook-r.com/Numbers/Generating_random_numbers/&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;library(tidyverse)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;seq&#34;&gt;seq()&lt;/h3&gt;
-&lt;p&gt;seq(from, to, by)&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;seq(1, 10, by = pi)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;rep&#34;&gt;rep()&lt;/h3&gt;
-&lt;p&gt;rep(sequence, each, times, len)&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2)
-rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2, times = 4)
-rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2, times = 4, len = 5)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;runif&#34;&gt;runif()&lt;/h3&gt;
-&lt;p&gt;runif(elements, min, max)&lt;br&gt;
-returns floats by default&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;set.seed(420)
-runif(5, 1, 10)
-# use floor, ceiling or round to get integers
-runif(5, 1, 10) %&amp;gt;% floor()
-runif(5, 1, 10) %&amp;gt;% ceiling()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;sample&#34;&gt;sample()&lt;/h3&gt;
-&lt;p&gt;sample(range, elements, replace?)&lt;br&gt;
-can set with or without replacement&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;set.seed(420)
-sample(1:100, 5, replace = TRUE)
-sample(1:100, 5, replace = FALSE)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;normal-functions&#34;&gt;normal functions&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;http://seankross.com/notes/dpqr/&#34;&gt;http://seankross.com/notes/dpqr/&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;dnorm&#34;&gt;dnorm&lt;/h4&gt;
-&lt;p&gt;dnorm(x, mean = 0, sd = 1, log = FALSE)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;probability density for the normal distribution&lt;/li&gt;
-&lt;li&gt;value = height of PDF of normal distribution&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;dnorm(0, mean = 0, sd = 1) # default values, dnorm = 0.3989423
-zscores = seq(-3,3,by=0.1)
-dvalues = dnorm(zscores)
-plot(dvalues, # Plot where y = values and x = index of the value in the vector
-     xaxt = &amp;quot;n&amp;quot;, # Don&#39;t label the x-axis
-     type = &amp;quot;l&amp;quot;, # Make it a line plot
-     main = &amp;quot;pdf of the Standard Normal&amp;quot;,
-     xlab= &amp;quot;Z-score&amp;quot;) 
-
-# These commands label the x-axis
-axis(1, at=which(dvalues == dnorm(0)), labels=c(0))
-axis(1, at=which(dvalues == dnorm(1)), labels=c(-1, 1))
-axis(1, at=which(dvalues == dnorm(2)), labels=c(-2, 2))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;pnorm&#34;&gt;pnorm&lt;/h4&gt;
-&lt;p&gt;pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;probability distribution&lt;/li&gt;
-&lt;li&gt;inverse of qnorm (given zscore, what&amp;rsquo;s the cumulative probability)&lt;/li&gt;
-&lt;li&gt;value = integral (area) from -inf to q of PDF of normal distribution&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;pnorm(0, 0, 1) # default args, pnorm = 0.5
-pnorm(2, 5, 3) # 0.1586553
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;qnorm&#34;&gt;qnorm&lt;/h4&gt;
-&lt;p&gt;qnorm(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;quantile function&lt;/li&gt;
-&lt;li&gt;inverse of pnorm (given quantile, what&amp;rsquo;s the zscore?)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;qnorm(0.5) # 0
-qnorm(0.99) # 2.326348 (zscore of 99th quantile of normal distribution)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;rnorm&#34;&gt;rnorm&lt;/h4&gt;
-&lt;p&gt;rnorm(n, mean = 0, sd = 1)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;random deviates&lt;/li&gt;
-&lt;li&gt;generates a vector of normally distributed random numbers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rnorm(5, mean = 0, sd = 1) # 1.15572257  0.36096234  0.01558131  0.57173629 -0.85518190
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>files and directories</title>
-      <link>/resources/r_resources/files_dirs/</link>
-      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/files_dirs/</guid>
-      <description>&lt;!--
-1. replace r_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace files and directories with page name e.g. dplyr
-4. replace 1020 with weight e.g. 20
---&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(message = FALSE)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;
-&lt;a href=&#34;http://theautomatic.net/2018/07/11/manipulate-files-r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://theautomatic.net/2018/07/11/manipulate-files-r/&lt;/a&gt;&lt;br&gt;
-
-&lt;a href=&#34;https://astrostatistics.psu.edu/su07/R/html/base/html/files.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://astrostatistics.psu.edu/su07/R/html/base/html/files.html&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;get-and-change-working-dir&#34;&gt;get and change working dir&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;getwd()
-setwd(&amp;quot;/path/to/wd/&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;using &amp;ldquo;here&amp;rdquo; package&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(here)
-here::here()
-here::set_here()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;check-if-files-dirs-exists&#34;&gt;check if files, dirs exists&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.exists(&amp;quot;test.txt&amp;quot;) # [1] FALSE
-dir.exists(&amp;quot;test_dir&amp;quot;) # [1] TRUE
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;create-files-dirs&#34;&gt;create files, dirs&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dir.create(&amp;quot;test_dir&amp;quot;)
-file.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;), overwrite = TRUE)
-file.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
-
-# create a whole bunch of files
-file.path(&amp;quot;test_dir&amp;quot;, paste0(&amp;quot;file&amp;quot;, 1:5, &amp;quot;.txt&amp;quot;))
-sapply(file.path(&amp;quot;test_dir&amp;quot;, paste0(&amp;quot;file&amp;quot;, 1:5, &amp;quot;.txt&amp;quot;)), file.create)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;edit-file&#34;&gt;edit file&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.edit(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;delete-files&#34;&gt;delete files&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.remove(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
-dir.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;to_be_removed&amp;quot;))
-unlink(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;to_be_removed&amp;quot;), recursive = TRUE)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;copy-files-dirs&#34;&gt;copy files, dirs&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dir.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;))
-file.copy(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;), file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;), overwrite = TRUE)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;symlink&#34;&gt;symlink&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.symlink(from, to)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;list-files-in-dir&#34;&gt;list files in dir&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;list.files(file.path(&amp;quot;test_dir&amp;quot;))
-list.files(file.path(&amp;quot;test_dir&amp;quot;), recursive = TRUE) # lists files in inner_dir
-list.files(file.path(&amp;quot;test_dir&amp;quot;), recursive = TRUE, full.names = TRUE) # get full path, starting from current dir
-
-# use pattern to subset list.files() results
-list.files(file.path(&amp;quot;test_dir&amp;quot;), pattern = &amp;quot;.csv&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;get-file-info&#34;&gt;get file info&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.info(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
-#                   size isdir mode               mtime               ctime               atime uid gid   uname grname
-# test_dir/test.txt    0 FALSE  644 2020-05-04 17:46:56 2020-05-04 17:46:56 2020-05-04 17:52:52 501  20 minghan  staff
-
-file.mtime(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;)) # [1] &amp;quot;2020-05-04 17:46:56 EDT&amp;quot;
-# file.ctime(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;)) # no such function...
-file.info(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))$ctime # [1] &amp;quot;2020-05-04 17:46:56 EDT&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;get-file-basename&#34;&gt;get file basename&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;basename(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;get-dir-name-of-a-file&#34;&gt;get dir name of a file&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dirname(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;get-file-extension&#34;&gt;get file extension&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(tools)
-file_ext(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;open-a-gui-window-to-select-file&#34;&gt;open a GUI window to select file&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# file.choose()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;move-a-file&#34;&gt;move a file&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# install.packages(&amp;quot;filesstrings&amp;quot;)
-library(filesstrings)
-file.move(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;file1.txt&amp;quot;), file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>flow controls</title>
-      <link>/resources/r_resources/flow_controls/</link>
-      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/flow_controls/</guid>
-      <description>&lt;!--
-1. replace r_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace flow controls with page name e.g. dplyr
-4. replace 1040 with weight e.g. 20
---&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(message = TRUE)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;next-statement&#34;&gt;next statement&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;skip 1 iteration&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;x &amp;lt;- 1:5
-for (val in x) {
-  if (val == 3){
-    next
-  }
-print(val)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;break-statement&#34;&gt;break statement&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;halt entire loop&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;x &amp;lt;- 1:5
-for (val in x) {
-  if (val == 3){
-    break
-  }
-print(val)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;invisible-warning&#34;&gt;invisible(), warning()&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;R equivalent of python&amp;rsquo;s pass statement&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;my_func  &amp;lt;- function(x){
-  invisible()
-}
-my_func(100)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;foo = function(){
-  # write this tomorrow
-  warning(&amp;quot;You ran foo and I havent written it yet&amp;quot;)
-}
-foo()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>rmarkdowntest</title>
-      <link>/resources/r_resources/rmarkdown/</link>
-      <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>/resources/r_resources/rmarkdown/</guid>
-      <description>
-
-&lt;div id=&#34;TOC&#34;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#goodbye&#34;&gt;goodbye&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#hello&#34;&gt;hello&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;div id=&#34;goodbye&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;goodbye&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;either you have floating TOC and use .md,&lt;/li&gt;
-&lt;li&gt;or TOC at the top with .Rmd…&lt;/li&gt;
-&lt;li&gt;can’t have both…&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;hello&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;hello&lt;/h3&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
-iris %&amp;gt;% head()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
       <title>dataframe reshape</title>
       <link>/resources/r_resources/dataframe_reshaping/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
@@ -953,6 +694,254 @@ f1(2)
     </item>
     
     <item>
+      <title>files and directories</title>
+      <link>/resources/r_resources/files_dirs/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/files_dirs/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace files and directories with page name e.g. dplyr
+4. replace 1020 with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://theautomatic.net/2018/07/11/manipulate-files-r/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://theautomatic.net/2018/07/11/manipulate-files-r/&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;https://astrostatistics.psu.edu/su07/R/html/base/html/files.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://astrostatistics.psu.edu/su07/R/html/base/html/files.html&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;get-and-change-working-dir&#34;&gt;get and change working dir&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;getwd()
+setwd(&amp;quot;/path/to/wd/&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;using &amp;ldquo;here&amp;rdquo; package&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(here)
+here::here()
+here::set_here()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;check-if-files-dirs-exists&#34;&gt;check if files, dirs exists&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.exists(&amp;quot;test.txt&amp;quot;) # [1] FALSE
+dir.exists(&amp;quot;test_dir&amp;quot;) # [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;create-files-dirs&#34;&gt;create files, dirs&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dir.create(&amp;quot;test_dir&amp;quot;)
+file.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;), overwrite = TRUE)
+file.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+
+# create a whole bunch of files
+file.path(&amp;quot;test_dir&amp;quot;, paste0(&amp;quot;file&amp;quot;, 1:5, &amp;quot;.txt&amp;quot;))
+sapply(file.path(&amp;quot;test_dir&amp;quot;, paste0(&amp;quot;file&amp;quot;, 1:5, &amp;quot;.txt&amp;quot;)), file.create)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;edit-file&#34;&gt;edit file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.edit(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;delete-files&#34;&gt;delete files&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.remove(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
+dir.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;to_be_removed&amp;quot;))
+unlink(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;to_be_removed&amp;quot;), recursive = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;copy-files-dirs&#34;&gt;copy files, dirs&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dir.create(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;))
+file.copy(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;), file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;), overwrite = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;symlink&#34;&gt;symlink&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.symlink(from, to)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;list-files-in-dir&#34;&gt;list files in dir&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;list.files(file.path(&amp;quot;test_dir&amp;quot;))
+list.files(file.path(&amp;quot;test_dir&amp;quot;), recursive = TRUE) # lists files in inner_dir
+list.files(file.path(&amp;quot;test_dir&amp;quot;), recursive = TRUE, full.names = TRUE) # get full path, starting from current dir
+
+# use pattern to subset list.files() results
+list.files(file.path(&amp;quot;test_dir&amp;quot;), pattern = &amp;quot;.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-file-info&#34;&gt;get file info&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;file.info(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))
+#                   size isdir mode               mtime               ctime               atime uid gid   uname grname
+# test_dir/test.txt    0 FALSE  644 2020-05-04 17:46:56 2020-05-04 17:46:56 2020-05-04 17:52:52 501  20 minghan  staff
+
+file.mtime(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;)) # [1] &amp;quot;2020-05-04 17:46:56 EDT&amp;quot;
+# file.ctime(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;)) # no such function...
+file.info(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.txt&amp;quot;))$ctime # [1] &amp;quot;2020-05-04 17:46:56 EDT&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-file-basename&#34;&gt;get file basename&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;basename(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-dir-name-of-a-file&#34;&gt;get dir name of a file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;dirname(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-file-extension&#34;&gt;get file extension&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;library(tools)
+file_ext(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;test.csv&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;open-a-gui-window-to-select-file&#34;&gt;open a GUI window to select file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# file.choose()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;move-a-file&#34;&gt;move a file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# install.packages(&amp;quot;filesstrings&amp;quot;)
+library(filesstrings)
+file.move(file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;file1.txt&amp;quot;), file.path(&amp;quot;test_dir&amp;quot;, &amp;quot;inner_dir&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>flow controls</title>
+      <link>/resources/r_resources/flow_controls/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/flow_controls/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
+3. replace flow controls with page name e.g. dplyr
+4. replace 1040 with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;next-statement&#34;&gt;next statement&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;skip 1 iteration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;x &amp;lt;- 1:5
+for (val in x) {
+  if (val == 3){
+    next
+  }
+print(val)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;break-statement&#34;&gt;break statement&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;halt entire loop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;x &amp;lt;- 1:5
+for (val in x) {
+  if (val == 3){
+    break
+  }
+print(val)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;invisible-warning&#34;&gt;invisible(), warning()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;R equivalent of python&amp;rsquo;s pass statement&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;my_func  &amp;lt;- function(x){
+  invisible()
+}
+my_func(100)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;foo = function(){
+  # write this tomorrow
+  warning(&amp;quot;You ran foo and I havent written it yet&amp;quot;)
+}
+foo()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>generate numbers</title>
+      <link>/resources/r_resources/generate_data/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/generate_data/</guid>
+      <description>&lt;!--
+1. replace r_resources with dir in /content/subdir/ e.g. r_resources
+2. replace 2020-05-23 with YYYY-MM-2020-05-23 e.g. 2020-05-20
+3. replace generate numbers with page name e.g. dplyr
+4. replace 1010 with weight e.g. 20
+--&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r&#34;&gt;knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://www.cookbook-r.com/Numbers/Generating_random_numbers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.cookbook-r.com/Numbers/Generating_random_numbers/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;library(tidyverse)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;seq&#34;&gt;seq()&lt;/h3&gt;
+&lt;p&gt;seq(from, to, by)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;seq(1, 10, by = pi)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rep&#34;&gt;rep()&lt;/h3&gt;
+&lt;p&gt;rep(sequence, each, times, len)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2)
+rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2, times = 4)
+rep(c(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;), each = 2, times = 4, len = 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;runif&#34;&gt;runif()&lt;/h3&gt;
+&lt;p&gt;runif(elements, min, max)&lt;br&gt;
+returns floats by default&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;set.seed(420)
+runif(5, 1, 10)
+# use floor, ceiling or round to get integers
+runif(5, 1, 10) %&amp;gt;% floor()
+runif(5, 1, 10) %&amp;gt;% ceiling()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sample&#34;&gt;sample()&lt;/h3&gt;
+&lt;p&gt;sample(range, elements, replace?)&lt;br&gt;
+can set with or without replacement&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;set.seed(420)
+sample(1:100, 5, replace = TRUE)
+sample(1:100, 5, replace = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;normal-functions&#34;&gt;normal functions&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;http://seankross.com/notes/dpqr/&#34;&gt;http://seankross.com/notes/dpqr/&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dnorm&#34;&gt;dnorm&lt;/h4&gt;
+&lt;p&gt;dnorm(x, mean = 0, sd = 1, log = FALSE)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;probability density for the normal distribution&lt;/li&gt;
+&lt;li&gt;value = height of PDF of normal distribution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;dnorm(0, mean = 0, sd = 1) # default values, dnorm = 0.3989423
+zscores = seq(-3,3,by=0.1)
+dvalues = dnorm(zscores)
+plot(dvalues, # Plot where y = values and x = index of the value in the vector
+     xaxt = &amp;quot;n&amp;quot;, # Don&#39;t label the x-axis
+     type = &amp;quot;l&amp;quot;, # Make it a line plot
+     main = &amp;quot;pdf of the Standard Normal&amp;quot;,
+     xlab= &amp;quot;Z-score&amp;quot;) 
+
+# These commands label the x-axis
+axis(1, at=which(dvalues == dnorm(0)), labels=c(0))
+axis(1, at=which(dvalues == dnorm(1)), labels=c(-1, 1))
+axis(1, at=which(dvalues == dnorm(2)), labels=c(-2, 2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;pnorm&#34;&gt;pnorm&lt;/h4&gt;
+&lt;p&gt;pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;probability distribution&lt;/li&gt;
+&lt;li&gt;inverse of qnorm (given zscore, what&amp;rsquo;s the cumulative probability)&lt;/li&gt;
+&lt;li&gt;value = integral (area) from -inf to q of PDF of normal distribution&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;pnorm(0, 0, 1) # default args, pnorm = 0.5
+pnorm(2, 5, 3) # 0.1586553
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;qnorm&#34;&gt;qnorm&lt;/h4&gt;
+&lt;p&gt;qnorm(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;quantile function&lt;/li&gt;
+&lt;li&gt;inverse of pnorm (given quantile, what&amp;rsquo;s the zscore?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;qnorm(0.5) # 0
+qnorm(0.99) # 2.326348 (zscore of 99th quantile of normal distribution)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;rnorm&#34;&gt;rnorm&lt;/h4&gt;
+&lt;p&gt;rnorm(n, mean = 0, sd = 1)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;random deviates&lt;/li&gt;
+&lt;li&gt;generates a vector of normally distributed random numbers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;rnorm(5, mean = 0, sd = 1) # 1.15572257  0.36096234  0.01558131  0.57173629 -0.85518190
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
       <title>sweep</title>
       <link>/resources/r_resources/sweep/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
@@ -1085,6 +1074,55 @@ which(letters[1:5] != &amp;quot;b&amp;quot;)
 which(letters[1:5] != &amp;quot;b&amp;quot; &amp;amp; letters[1:5] != &amp;quot;a&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>set operations</title>
+      <link>/resources/r_resources/setoperations/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/r_resources/setoperations/</guid>
+      <description>&lt;h2 id=&#34;set-ops-vectors&#34;&gt;set ops (vectors)&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;x &amp;lt;- LETTERS[1:8]; x      # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot;
+y &amp;lt;- LETTERS[5:10]; y     # &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot; &amp;quot;I&amp;quot; &amp;quot;J&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;setdiff&#34;&gt;setdiff()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;setdiff(x,y)&lt;/li&gt;
+&lt;li&gt;what&amp;rsquo;s in x, but not in y&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;setdiff(x,y)              # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;union&#34;&gt;union()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;union(x,y)&lt;/li&gt;
+&lt;li&gt;what&amp;rsquo;s in x, y and both x and y&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;union(x,y)                # &amp;quot;A&amp;quot; &amp;quot;B&amp;quot; &amp;quot;C&amp;quot; &amp;quot;D&amp;quot; &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot; &amp;quot;I&amp;quot; &amp;quot;J&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;intersect&#34;&gt;intersect()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;intersect(x,y)&lt;/li&gt;
+&lt;li&gt;what&amp;rsquo;s in both x and y&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;intersect(x,y)            # &amp;quot;E&amp;quot; &amp;quot;F&amp;quot; &amp;quot;G&amp;quot; &amp;quot;H&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;setequal&#34;&gt;setequal()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;setequal(x,y) -&amp;gt; bool&lt;/li&gt;
+&lt;li&gt;check if 2 sets are equal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;setequal(x,y)             # FALSE
+setequal(x,x)             # TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;iselement&#34;&gt;is.element()&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;is.element(x,y) -&amp;gt; bool&lt;/li&gt;
+&lt;li&gt;same as x %in% y&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r,&#34;&gt;is.element(&amp;quot;A&amp;quot;, x)        # TRUE
+&amp;quot;A&amp;quot; %in% x                # TRUE
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

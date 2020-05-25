@@ -1,0 +1,128 @@
+---
+title: "week3_3fixing_non_convergence"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = TRUE)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+library(survival)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+# g %>% head()
+g$gender <- as.factor(g$gender)
+g$copd <- as.factor(g$copd)
+g$ethnicgroup <- as.factor(g$ethnicgroup)
+levels(g$ethnicgroup) <- c(levels(g$ethnicgroup), "8")
+g$ethnicgroup[is.na(g$ethnicgroup)] <- "8"
+table(g$ethnicgroup, exclude = NULL)
+```
+
+### different fixes
+- change reference category for quintile from 0 to 1
+- combine categories (combine quintile 0 and 5)
+- drop patients with quintile 0
+- drop quintile variable
+
+#### change reference category
+```{r, warning=TRUE}
+# relevel
+g <- g %>% mutate(quintile_cate = as.factor(g$quintile))
+g$quintile_cate <- relevel(g$quintile_cate, ref = "1") # or ref = 2 for positional
+g$quintile_cate %>% levels()
+
+cox_quintile_relevel <- coxph(Surv(fu_time, death) ~ age + gender + copd + quintile_cate + ethnicgroup, data = g)
+summary(cox_quintile_relevel)
+```
+
+- "Loglik converged before variable  4 ; coefficient may be infinite."
+- still did not converge for quintile_cate0, large SE (1.208e+03) and infinite CI
+
+
+#### combine quintile 0 and 5
+```{r}
+library(car)
+g <- g %>% mutate(quintile_cate_0and5 = recode(quintile_cate, "c('0','5')='5'"))
+table(g$quintile_cate_0and5)
+
+cox_quintile_0and5 <- coxph(Surv(fu_time, death) ~ age + gender + copd + quintile_cate_0and5 + ethnicgroup, data = g)
+summary(cox_quintile_0and5)
+```
+
+- this time model converged,
+- but does it make sense to combine quintile 0 and 5? probably not, these 2 sets of people are quite different
+
+#### drop quintile 0 patients
+```{r}
+# set quintile 0 to NAs, coxph will ignore these patients
+g <- g %>% mutate(quintile_cate_0_NA = recode(quintile_cate, "c('0')=NA"))
+table(g$quintile_cate_0_NA, exclude = NULL)
+
+cox_quintile_0_NA <- coxph(Surv(fu_time, death) ~ age + gender + copd + quintile_cate_0_NA + ethnicgroup, data = g)
+summary(cox_quintile_0_NA)
+```
+
+- without lumping quintile 0 with 5, now quintile 5 HR has gone from 1.0825 to 1.1080
+- seems even adding 4 patients rom quintile 0 changed HR of quintile 5
+
+#### drop quintile variable
+```{r}
+cox_no_quintile <- coxph(Surv(fu_time, death) ~ age + gender + copd + ethnicgroup, data = g)
+summary(cox_no_quintile)
+```
+
+- sometimes dropping the whole variable might be the best/safest options
+- but in this case since only 4 patients with quintile 0, dropping those patients is best
+
+### alternatives to Cox
+- Cox advantages
+    - easy to run
+    - don't need to make assumptions about shape of hazard function (how risk changes over time)
+    - doesn't care about distribution of survival times neither
+    - semi-parametric
+        - it has some parameters (those of the predictors)
+        - but no parameters to describe hazard function for reference patient (age 0, gender 1, copd 0 etc)
+- KM is completely non-parametric
+- sometimes fully parametric models are better at making predictions
+    - makes assumption about shape of hazard function,
+    - has parameters to describe shape
+    - more predictive models = better risk stratification
+- **fully parametric** survival models
+    - Weibull, exponential, log-normal, log-logistic
+
+### Weibull distribution
+- hazard function can be increasing, decreasing or constant over time
+- exponential is a special case of Weibull, simple, has only 1 parameter
+    - hazard function constant when survival time is exponentially distributed
+- log-normal, log-logistic
+    - hazard function increases, then decreases over time
+
+### Bayesian approach
+- handling changes to values of some predictors over time (cox can deal with this),
+- or multiple patient outcomes in same model
+- run survival analysis in a Bayesian framework
+    - mix data and prior beliefs about what is related to what,
+    - and deriving probability that something is true
+- vs frequentist stats
+    - no use of prior knowledge in underlying maths
+    - results completely driven by data
+- most people now use both, and they often give similar results
+
+### EOF

@@ -1,0 +1,156 @@
+---
+title: "week4_2test_Coxmodel_assumptions.Rmd"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### get data
+```{r}
+library(survival)
+library(car)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+# g %>% head()
+g$gender <- as.factor(g$gender)
+g$copd <- as.factor(g$copd)
+g$ethnicgroup <- as.factor(g$ethnicgroup)
+levels(g$ethnicgroup) <- c(levels(g$ethnicgroup), "8")
+g$ethnicgroup[is.na(g$ethnicgroup)] <- "8"
+table(g$ethnicgroup, exclude = NULL)
+
+# set quintile 0 to NAs, coxph will ignore these patients
+g <- g %>% mutate(quintile = recode(quintile, "c('0')=NA"))
+table(g$quintile, exclude = NULL)
+g$quintile <- as.factor(g$quintile)
+```
+
+### test PH assumption
+- e.g. test if hazard is proportional for a given predictor (e.g. gender)
+- test graphically
+    - when you plot the hazards for male vs female,
+    - lines should be approximately parallel
+    - at any time point, you can multiply hazard of male, get hazard of female
+    - then the relationship can be summarized with 1 number, the HR
+    - **hazard functions should definitely NOT cross**
+- test with p-value
+    - using **Schoenfeld** residuals
+    - high p-value is good, means residuals not correlated with time of event, proportional assumption valid
+- should do both graphically and with p-value
+
+```{r, out.height="50%", out.width="50%"}
+cox <- coxph(Surv(fu_time, death) ~ age + gender + copd + quintile + ethnicgroup, data = g)
+
+zph <- cox.zph(cox, transform = "km", global = TRUE) # defaults to "km" and global = TRUE
+print(zph)
+plot(zph)
+
+# run on gender only
+cox_gender <- coxph(Surv(fu_time, death) ~ gender, data = g)
+
+zph_gender <- cox.zph(cox_gender, transform = "km", global = TRUE) # defaults to "km" and global = TRUE
+print(zph_gender)
+plot(zph_gender)
+# residual is different if run gender only, vs multivariate
+```
+
+- pvalue tests null model = if slope for regression line of residuals is 0
+    - i.e. if slope = 0, accept null model, p-value > 0.05
+- pvalue only testing for linear relationship btw residuals and time,
+    - can miss non-linear relationships
+    - should check plots too
+- plots show **scaled** Schoenfeld residuals with time
+<br><br>
+- more later on what to do if PH assumption NOT met
+
+#### survminer ggcoxzph()
+- time is transformed...
+```{r}
+library(survminer)
+ggcoxzph(zph_gender)
+```
+
+#### KM plot
+- to visually check hazard functions
+- only works well for binary variables (e.g. gender)
+```{r, out.height="50%", out.width="50%"}
+km_fit <- survfit(Surv(fu_time, death) ~ gender, data = g)
+plot(km_fit, xlab = "time", ylab = "survival probability")
+```
+
+### deviance residuals
+- normalized transformation of Martingale residuals
+- mean 0, sd 1
+- helps to check for outliers/ influential data points (e.g. patient)
+- either
+    - examine influence of each data point on *coefficient*, or
+    - plot distribution of residuals against *covariate*
+
+#### influence of each obs on regression coefficient
+- using **survminer's ggcoxdiagnostics(... type = "dfbeta")**
+- dfbeta plots estimated changes in regression coefficient on deleting each observation (patient) in turn
+```{r, out.height="50%", out.width="50%"}
+cox <- coxph(Surv(fu_time, death) ~ age, data = g)
+ggcoxdiagnostics(cox, type = "dfbeta",
+                 linear.predictions = FALSE,
+                 ggtheme = theme_bw())
+```
+
+#### distribution of residuals against covariate
+- residuals SHOULD BE normally distributed (mean 0, SD 1)
+    - then only 5% of observations should be 1.96 SD from mean
+    - if > 5% observations 1.96 SD from mean,
+        - then model doesn't fit data as well, and
+        - some observations are outliers
+    - papers report "proportion of standardized residuals outside -1.96 to 1.96 range = e.g. 0.6%"
+        - {shouldn't this be for each covariate? or for all covariates... 
+        - nevermind, if multivariate then one residual per observation for all variables}
+```{r, out.height="50%", out.width="50%"}
+cox <- coxph(Surv(fu_time, death) ~ age, data = g)
+ggcoxdiagnostics(cox, type = "deviance",
+                 linear.predictions = FALSE,
+                 ggtheme = theme_bw())
+```
+
+- residuals = E - O
+- positive values - individuals expected/ predicted survival times > observed survival times
+- negative values - individuals expected/ predicted survival times < observed survival times
+- observations with very small or large residuals are outliers, poorly predicted by the model
+
+### Martingale residuals, linear relation
+- tests whether continuous variables have linear relation with outcome
+- "if you fit age as a single term in the model..." {what if other terms were included in the model?}
+```{r}
+ggcoxfunctional(Surv(fu_time, death) ~ age + log(age) + sqrt(age), data = g)
+# oh okay, age + log(age) + sqrt(age) just plots 3 separate graphs...
+```
+
+- Martingale residuals range from 1 to -inf
+    - MR near 1 = patients Exp death > Obs death
+    - MR large neg = patients Exp death < Obs death
+
+### practice: test PH assumption for COPD
+```{r}
+cox_copd <- coxph(Surv(fu_time, death) ~ copd, data = g)
+zph_copd <- cox.zph(cox_copd, transform = "km", global = TRUE) # defaults to "km" and global = TRUE
+print(zph_copd)
+```
+
+### EOF

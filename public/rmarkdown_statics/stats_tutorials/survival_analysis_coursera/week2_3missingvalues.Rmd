@@ -1,0 +1,105 @@
+---
+title: "week2_3missingvalues"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### are missing values missing at random
+- chances of being missing not related to any particular variable?
+
+#### example 1
+- lifestyle survey
+- age, gender - respondents will answer truthfully
+- weight, smoking, exercise - respondents might lie
+- religion, sexual orientation - respondents may omit
+- long list of questions on diet
+    - respondents get bored and not answer last few pages
+    - last few pages are all questions about vegetables
+    - keen respondents happens to all like vegetables
+    - missing values here are not missing at random
+
+#### example 2
+- retinal damage checkups for diabetes patients
+- eye drops sting a bit during checkup
+- retinal checkup also do blood pressure etc
+- but if patients don't show for retinal checkout, won't have blood pressure values
+- patients most likely to miss appointments are usually those in the poorest condition
+- these missing values also not missing at random
+<br><br>
+- various ways to deal with missing values,
+- choice depend on why values are missing
+
+### handling missing values
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3668100  
+_ http://dept.stat.lsa.umich.edu/~jerrick/courses/stat701/notes/mi.html
+
+### missing data in survival analysis
+- why data are missing - need to get to know data
+    - get to know how data was collected
+    - EDA: tables, histograms
+
+### pattern of missingness
+
+#### MCAR
+- missing completely at random
+- e.g. males just likely to have a missing value as female
+
+#### MAR
+- missing at random
+- missingness can be explained by other variables in dataset
+- e.g. people with higher education less likely to disclose their income
+- can fill in missing value for one variable based on values of another variable
+
+#### NMAR
+- not missing at random
+- missing data depends on a variable that was not captured
+- e.g. missing value depend on disease severity
+
+### methods of handling missing data
+
+#### complete case analysis
+- omit all records with missing values
+- if MCAR, estimates will be unbiased if sample size still large enough
+- if MAR or MNAR, estimates will be biased
+
+#### mean substitution/ imputation
+- replace missing with mean of existing values for that variable
+- adv = does not change mean of variable
+- disadv = artificially decrease variance
+- disadv = makes it difficult to detect correlations btw imputed variable and other variables
+- mean imputation gives biased results, should be avoided
+
+#### multiple imputation
+- assumes MCAR or MAR
+- missing values imputed from a distribution
+- done multiple times to yield multiple complete datasets,
+- each dataset analyzed, results combined
+- adv = yields unbiased results
+
+#### maximum likelihood
+- assumes MCAR or MAR
+- variable assumed to be normally distributed
+- use existing values to calculate mean and variance
+- missing values drawn from existing values' normal distribution
+- repeat until mean and variance of complete data converge with mean and variance of existing values
+
+#### MNAR data need to be handled per-case basis
+
+
+### EOF

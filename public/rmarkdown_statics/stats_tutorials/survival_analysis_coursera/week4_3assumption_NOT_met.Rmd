@@ -1,0 +1,85 @@
+---
+title: "week4_3assumption_NOT_met"
+author: "Hippo"
+date: "`r format(Sys.time(), '%Y_%m_%d_%H')`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+### get data
+```{r}
+library(survival)
+library(car)
+course_dir <- "/Users/minghan/Google Drive/Coursera_survival_analysis"
+g <- read.csv(file.path(course_dir, "GMPH_1K_final_2.csv"), header = TRUE, sep = ",")
+g %>% dim()
+# g %>% head()
+g$gender <- as.factor(g$gender)
+g$copd <- as.factor(g$copd)
+g$ethnicgroup <- as.factor(g$ethnicgroup)
+levels(g$ethnicgroup) <- c(levels(g$ethnicgroup), "8")
+g$ethnicgroup[is.na(g$ethnicgroup)] <- "8"
+table(g$ethnicgroup, exclude = NULL)
+
+# set quintile 0 to NAs, coxph will ignore these patients
+g <- g %>% mutate(quintile = recode(quintile, "c('0')=NA"))
+table(g$quintile, exclude = NULL)
+g$quintile <- as.factor(g$quintile)
+```
+
+### what does NON-PH mean?
+- example: gender
+    - if relation btw male vs female risk of death changes over time,
+        - it could mean that males have higher risk of death early on,
+        - then relation changes, and females have higher risk of death later on
+    - there is **interaction** btw gender and time
+        - { can you have interaction btw variable and OUTCOME??? }
+    - all you need to do is to add an interaction term btw gender and time {...}
+        - { need to find a dataset with actual interaction,
+        - and plot out KM curves with and without interaction and see for myself... }
+- testing if interaction term is statistically significant is another way of testing PH assumption
+    - if interaction term not stat sig, then PH assumption is valid
+    - should get p-value and plots
+- for mathematically reasons, cannot just include follow-up time itself,
+    - need to transform it with tt() time-transform function
+```{r}
+# model with just gender
+cox <- coxph(Surv(fu_time, death) ~ gender, data = g)
+summary(cox)
+
+# model with gender and gender * fu_time
+cox_int <- coxph(Surv(fu_time, death) ~ gender + tt(gender), data = g)
+summary(cox_int)
+```
+
+- p-value of 0.529 for tt(gender) is not statistically significant, good news, 
+- PH assumption is valid, no interaction between variable and time
+- i.e. time does NOT affect gender's impact on risk of death
+
+### scenario 2
+- if p-value is low, but hazards looks proportional for most the the follow-up period
+- can divide survival analysis into **2 time periods**
+    - fit one model without interaction for when PH is valid
+    - fit another model with interaction for when PH is invalid
+
+### scenario 3
+- stratify by variable
+- e.g. separate models for male and females
+- disadvantage = can no longer assess effect of gender on mortality
+
+### EOF

@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tutorials/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
@@ -28,8 +23,8 @@
   </url>
   
   <url>
-    <loc>/tutorials/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
+    <loc>/tutorials/stats_tutorials/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -53,6 +48,16 @@
   </url>
   
   <url>
+    <loc>/resources/r_resources/rmarkdown/</loc>
+    <lastmod>2020-05-24T22:33:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/stats_tutorials/survival_analysis_useful_stuff/</loc>
+    <lastmod>2020-05-24T19:45:46-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/resources/linux_resources/sysadmin/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
@@ -65,6 +70,11 @@
   <url>
     <loc>/resources/linux_resources/permissions/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/stats_tutorials/survival_analysis_coursera_week1/</loc>
+    <lastmod>2020-05-24T19:51:21-04:00</lastmod>
   </url>
   
   <url>
@@ -84,41 +94,6 @@
   
   <url>
     <loc>/contact_separate_nowork/contact/</loc>
-  </url>
-  
-  <url>
-    <loc>/resources/r_resources/apply_functions/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/r_resources/setoperations/</loc>
-    <lastmod>2020-05-20T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/r_resources/generate_data/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/r_resources/files_dirs/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/r_resources/flow_controls/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/r_resources/rmarkdown/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -148,7 +123,12 @@
   
   <url>
     <loc>/resources/</loc>
-    <lastmod>2020-05-24T17:18:05-04:00</lastmod>
+    <lastmod>2020-05-24T22:33:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/</loc>
+    <lastmod>2020-05-24T19:51:21-04:00</lastmod>
   </url>
   
   <url>
@@ -202,6 +182,11 @@
   </url>
   
   <url>
+    <loc>/resources/r_resources/apply_functions/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/resources/linux_resources/awk/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
@@ -213,6 +198,21 @@
   
   <url>
     <loc>/resources/r_resources/error_handling/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/files_dirs/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/flow_controls/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/r_resources/generate_data/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   
@@ -237,8 +237,8 @@
   </url>
   
   <url>
-    <loc>/tutorials/</loc>
-    <lastmod>2020-05-20T08:47:00+01:00</lastmod>
+    <loc>/resources/r_resources/setoperations/</loc>
+    <lastmod>2020-05-20T00:00:00+01:00</lastmod>
   </url>
   
   <url>
