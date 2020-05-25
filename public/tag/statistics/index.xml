@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>statistics | BioinfoHippo</title>
+    <link>/tag/statistics/</link>
+      <atom:link href="/tag/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>statistics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Ming Han © 2020</copyright><lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png</url>
+      <title>statistics</title>
+      <link>/tag/statistics/</link>
+    </image>
+    
+    <item>
+      <title>Standford Statistics Detective Talk</title>
+      <link>/post/standford_stats_detective_talk/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/standford_stats_detective_talk/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#tools-for-stats-detective&#34;&gt;tools for stats detective&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#case-study-1&#34;&gt;case study 1:&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#original-data&#34;&gt;original data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#case-study-2&#34;&gt;case study 2:&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#finding&#34;&gt;finding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#red-flags&#34;&gt;red flags&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#statcheck.io&#34;&gt;statcheck.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#p-hacking&#34;&gt;p hacking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#grim-test&#34;&gt;GRIM test&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#case-study-3&#34;&gt;case study 3:&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#webplotdigitizer&#34;&gt;webplotdigitizer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#repeat-analysis&#34;&gt;repeat analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#results&#34;&gt;results&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#prevent-statistical-errors&#34;&gt;prevent statistical errors&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#check-and-understand-your-data&#34;&gt;check and understand your data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#make-sure-numbers-add-up&#34;&gt;make sure numbers add up&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#eof&#34;&gt;EOF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This was an interesting talk given by Dr. Sainani. Three interesting online tools to check if statistics in a study add up.&lt;/p&gt;
+&lt;div id=&#34;tools-for-stats-detective&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;tools for stats detective&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;statcheck&lt;/li&gt;
+&lt;li&gt;GRIM&lt;/li&gt;
+&lt;li&gt;webplotdigitizer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;case-study-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;case study 1:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Potti et al, 2006, Nature, Genomic signature to guide the use of chemotherapeutics&lt;/li&gt;
+&lt;li&gt;analyzed publicly available data&lt;/li&gt;
+&lt;li&gt;find chemo-sensitive genomic signatures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;original-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;original data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;original public available data published in Lancet 2003, breast cancer cell lines&lt;/li&gt;
+&lt;li&gt;Chang et al, 2003, Lancet, Gene expression profiling for prediction of therapeutic response to docetaxel in patients with breast cancer&lt;/li&gt;
+&lt;li&gt;Potti et al claimed they found genomic signature to tell apart sensitive vs resistant tumours&lt;/li&gt;
+&lt;li&gt;but they actually got sensitive and resistant tumours backwards, mixed up 0/1 binary coding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;case-study-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;case study 2:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Welrle et al, 2015, Marketing Letters, Is it fun or exercise?&lt;/li&gt;
+&lt;li&gt;56 participants&lt;/li&gt;
+&lt;li&gt;randomly assigned walking to exercise vs walking to evaluate music&lt;/li&gt;
+&lt;li&gt;then gave participants buffet lunch&lt;/li&gt;
+&lt;li&gt;wanted to test hypothesis that if participant knew they were walking for exercise, they’d compensate by eating more unhealthy foods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;finding&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;finding&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;separated regular meals vs “hedonic choices” of drinks + desserts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;red-flags&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;red flags&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;missing data points in hedonic choices
+&lt;ul&gt;
+&lt;li&gt;no missing data for total meal, how can there be missing for hedonic foods?&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;numbers in the table doesn’t add up&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;statcheck.io&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;statcheck.io&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;text mines “test-statistic”, “df”, “p-value”&lt;/li&gt;
+&lt;li&gt;makes sure those values are consistent&lt;/li&gt;
+&lt;li&gt;implemented in R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;p-hacking&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;p hacking&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;F statistic doesn’t match p-value reported&lt;/li&gt;
+&lt;li&gt;turns out authors used 1-tail to halve the p-value to get &amp;lt; 0.05&lt;/li&gt;
+&lt;li&gt;{1 tailed p-value only makes sense if you know a priori that e.g. one group should be greater than the other}&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;grim-test&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;GRIM test&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;granularity-related inconsistent mean&lt;/li&gt;
+&lt;li&gt;find impossible mean values given “mean” + “sample size”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;case-study-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;case study 3:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lester et al, 2018, Pediatrics, Breastfeeding changes gene activity that may make babies less reactive to stress&lt;/li&gt;
+&lt;li&gt;author claims to find genetic mechanism that explains how breastfeeding reduces infant stress&lt;/li&gt;
+&lt;li&gt;plot shows correlation btw DNA methylation of glucocorticoid receptor gene (NR3C1) vs cortisol reactivity
+&lt;ul&gt;
+&lt;li&gt;r = 0.41, p &amp;lt; 0.05&lt;/li&gt;
+&lt;li&gt;one influential data point looks like outlier&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;webplotdigitizer&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;webplotdigitizer&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;if no raw data available, can extract raw data from plots,&lt;/li&gt;
+&lt;li&gt;have to mark some axis ticks and some data points&lt;/li&gt;
+&lt;li&gt;gets csv output file&lt;/li&gt;
+&lt;li&gt;re-run analysis to make sure outcome matches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;repeat-analysis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;repeat analysis&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;plotted Loess line
+&lt;ul&gt;
+&lt;li&gt;non-linear line, shows different slope for different parts of graph&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;used Spearman correlation coefficient
+&lt;ul&gt;
+&lt;li&gt;rank based, less influenced by outliers&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;remove influential point, re-analyze&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;results&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Loess line shows no association away from outlier&lt;/li&gt;
+&lt;li&gt;Spearman p-value not significant&lt;/li&gt;
+&lt;li&gt;Pearson p-value not significant after influential point removed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;prevent-statistical-errors&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;prevent statistical errors&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;follow statistical best practices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;check-and-understand-your-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;check and understand your data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;e.g. make sure you know what 1 means, what 0 means&lt;/li&gt;
+&lt;li&gt;cleaning data&lt;/li&gt;
+&lt;li&gt;make new variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;make-sure-numbers-add-up&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;make sure numbers add up&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;eof&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;EOF&lt;/h2&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

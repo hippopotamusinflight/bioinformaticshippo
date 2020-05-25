@@ -14,6 +14,10 @@ newdoc = ".../.md"    # for path - skip /content/
 blogdown::new_content(newdoc, kind = "docs", open = interactive())
 
 
+## adding .Rmd to statics
+- just paste .Rmd file into subdir inside /statics/
+
+
 ## making new blog posts
 
-blogdown::new_post("???", kind = "post/", open = interactive(), author = "Ming Han", categories = "????", tags = "????", date = Sys.Date(), slug = "?????", ext = getOption("blogdown.ext", ".Rmd"))
+blogdown::new_post("", kind = "post/", open = interactive(), author = "Ming Han", categories = c(""), tags = c(""), date = Sys.Date(), slug = "", ext = getOption("blogdown.ext", ".Rmd"))

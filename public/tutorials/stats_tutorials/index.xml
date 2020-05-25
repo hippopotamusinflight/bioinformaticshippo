@@ -13,38 +13,98 @@
     </image>
     
     <item>
-      <title>Useful Stuff</title>
-      <link>/tutorials/stats_tutorials/survival_analysis_useful_stuff/</link>
+      <title>Useful R Functions</title>
+      <link>/tutorials/stats_tutorials/survival_analysis_useful_r_functions/</link>
       <pubDate>Sun, 24 May 2020 19:45:46 -0400</pubDate>
-      <guid>/tutorials/stats_tutorials/survival_analysis_useful_stuff/</guid>
+      <guid>/tutorials/stats_tutorials/survival_analysis_useful_r_functions/</guid>
       <description>&lt;!--
 1. replace dirdir with page dir (e.g. r_resources)
 2. replace ww with weight, or leave blank to sort pages alphabetically
 --&gt;
-&lt;p&gt;This is a Coursera course offered by Imperial College London on Survival Analysis.&lt;/p&gt;
-&lt;h2 id=&#34;survival-package-commands&#34;&gt;survival package commands&lt;/h2&gt;
-&lt;h2 id=&#34;survminer-commands&#34;&gt;survminer commands&lt;/h2&gt;
+&lt;p&gt;This is a Coursera course offered by Imperial College London on Survival Analysis using R.&lt;/p&gt;
+&lt;h2 id=&#34;survival-pkg-commands&#34;&gt;survival pkg commands&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(survival)
+
+fit = survfit(Surv(fu_time, death) ~ gender)
+plot(fit, xlab = &amp;quot;time&amp;quot;, ylab = &amp;quot;survival probability&amp;quot;)
+
+survdiff(Surv(fu_time, death) ~ gender, rho = 0)
+
+# define significant vars as vector
+# use formula as input for coxph()
+fmla &amp;lt;- as.formula(paste(&amp;quot;Surv(fu_time, death) ~ &amp;quot;, paste(vars_sig, collapse=&amp;quot; + &amp;quot;), sep = &amp;quot;&amp;quot;))
+cox_vars_sig &amp;lt;- coxph(fmla, data = g2)
+summary(cox_vars_sig)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;survminer-pkg-commands&#34;&gt;survminer pkg commands&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;pretty graphs for KM plots and residual plots&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(survminer)
+
+fit = coxph(...)
+zph = cox.zph(fit, transform = &amp;quot;km&amp;quot;)
+plot(zph)
+OR
+ggcoxzph(zph) # time transformed Schoenfeld residuals (PH assumption)
+
+# influential data points
+ggcoxdiagnostics(fit, type = &amp;quot;dfbeta&amp;quot;, linear.prediction = FALSE, ggtheme = theme_bw())
+
+# residual vs covariates
+ggcoxdiagnostics(fit, type = &amp;quot;deviance&amp;quot;, linear.prediction = FALSE, ggtheme = theme_bw())
+
+# Martingale residuals (linear relationship btw continuous vars and outcome)
+ggcoxfunctional(Surv(fu_time, death) ~ age + log(age) + sqrt(age), data = g)
+
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
 </description>
     </item>
     
     <item>
       <title>Rmd notes</title>
-      <link>/tutorials/stats_tutorials/survival_analysis_coursera_week1/</link>
+      <link>/tutorials/stats_tutorials/survival_analysis_coursera_rmd_notes/</link>
       <pubDate>Sun, 24 May 2020 19:51:21 -0400</pubDate>
-      <guid>/tutorials/stats_tutorials/survival_analysis_coursera_week1/</guid>
+      <guid>/tutorials/stats_tutorials/survival_analysis_coursera_rmd_notes/</guid>
       <description>&lt;!--
 1. replace dirdir with page dir (e.g. r_resources)
 2. replace ww with weight, or leave blank to sort pages alphabetically
 
-[???](/rmarkdown_statics/stats_tutorials/survival_analysis_coursera/???)&lt;br&gt;
+[](/rmarkdown_statics/stats_tutorials/survival_analysis_coursera/)&lt;br&gt;
 --&gt;
 &lt;p&gt;
-&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_1KMplot_logRankTest.html&#34;&gt;week1_1KMplot_logRankTest.html&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_1KMplot_logRankTest.html&#34;&gt;week1-1 intro, KMplot, log-rank test, life tables, KM by hand&lt;/a&gt;&lt;br&gt;
 
-&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_2case_study.html&#34;&gt;week1_2case_study.html&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_2case_study.html&#34;&gt;week1-2 case study info&lt;/a&gt;&lt;br&gt;
 
-&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/???&#34;&gt;???&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_3plotKM_survdiff_logRankTest.html&#34;&gt;week1-3 KM: survfit(), survdiff()&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week1_4_survfit_output_by_hand.html&#34;&gt;week1-4 survfit() output by hand&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week2_1intro_to_Cox_model.html&#34;&gt;week2-1 intro to Cox&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week2_2runCoxModel_inR.html&#34;&gt;week2-2 Cox: coxph()&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week2_3missingvalues.html&#34;&gt;week2-3 dealing with NAs&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week3_1EDA_multivariateCox.html&#34;&gt;week3-1 EDA, multivariate Cox&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week3_2coxModel_that_doesnt_converge.html&#34;&gt;week3-2 Cox non-convergence&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week3_3fixing_non_convergence.html&#34;&gt;week3-3 fixing non-convergence&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week4_1three_types_of_Cox_residuals.html&#34;&gt;week4-1 Cox residuals: Schoenfeld, Martingale, Deviance&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week4_2test_Coxmodel_assumptions.html&#34;&gt;week4-2 test Cox assumptions: cox.zph(), ggcoxzph(), ggcoxdiagnostics(,type=), ggcoxfunctional()&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week4_3assumption_NOT_met.html&#34;&gt;week4-3 Cox assumptions NOT met&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week4_4choosing_predictors.html&#34;&gt;week4-4 choosing predictors (backward elimination)&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week4_5practice_choosing_predictors.html&#34;&gt;week4-5 choosing predictors (backward elimination) in practice&lt;/a&gt;&lt;br&gt;
+
+&lt;a href=&#34;../../rmarkdown_statics/stats_tutorials/survival_analysis_coursera/week4_6practice_answers.html&#34;&gt;week4-6 final analysis&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
 </description>
     </item>
     

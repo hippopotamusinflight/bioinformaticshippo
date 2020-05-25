@@ -1,0 +1,110 @@
+---
+title: Standford Statistics Detective Talk
+author: Ming Han
+date: '2020-05-25'
+slug: standford_stats_detective_talk
+categories:
+  - statistics
+  - talks
+tags:
+  - statistics
+  - talks
+subtitle: ''
+summary: 'This was an interesting talk given by Dr. Sainani. Three interesting online tools to check if statistics in a study add up.'
+authors: ['minghan']
+lastmod: '2020-05-25T14:05:01-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+This was an interesting talk given by Dr. Sainani. Three interesting online tools to check if statistics in a study add up.
+
+## tools for stats detective
+- statcheck
+- GRIM
+- webplotdigitizer
+
+## case study 1:
+- Potti et al, 2006, Nature, Genomic signature to guide the use of chemotherapeutics
+- analyzed publicly available data
+- find chemo-sensitive genomic signatures
+
+### original data
+- original public available data published in Lancet 2003, breast cancer cell lines
+- Chang et al, 2003, Lancet, Gene expression profiling for prediction of therapeutic response to docetaxel in patients with breast cancer
+- Potti et al claimed they found genomic signature to tell apart sensitive vs resistant tumours
+- but they actually got sensitive and resistant tumours backwards, mixed up 0/1 binary coding
+
+## case study 2:
+- Welrle et al, 2015, Marketing Letters, Is it fun or exercise?
+- 56 participants
+- randomly assigned walking to exercise vs walking to evaluate music
+- then gave participants buffet lunch
+- wanted to test hypothesis that if participant knew they were walking for exercise, they'd compensate by eating more unhealthy foods
+
+### finding
+- separated regular meals vs "hedonic choices" of drinks + desserts
+
+### red flags
+- missing data points in hedonic choices
+    - no missing data for total meal, how can there be missing for hedonic foods?
+- numbers in the table doesn't add up
+
+### statcheck.io
+- text mines "test-statistic", "df", "p-value"
+- makes sure those values are consistent
+- implemented in R
+
+### p hacking
+- F statistic doesn't match p-value reported
+- turns out authors used 1-tail to halve the p-value to get < 0.05
+- {1 tailed p-value only makes sense if you know a priori that e.g. one group should be greater than the other}
+
+### GRIM test
+- granularity-related inconsistent mean
+- find impossible mean values given "mean" + "sample size"
+
+## case study 3:
+- Lester et al, 2018, Pediatrics, Breastfeeding changes gene activity that may make babies less reactive to stress
+- author claims to find genetic mechanism that explains how breastfeeding reduces infant stress
+- plot shows correlation btw DNA methylation of glucocorticoid receptor gene (NR3C1) vs cortisol reactivity
+    - r = 0.41, p < 0.05
+    - one influential data point looks like outlier
+
+### webplotdigitizer
+- if no raw data available, can extract raw data from plots,
+- have to mark some axis ticks and some data points
+- gets csv output file
+- re-run analysis to make sure outcome matches
+
+### repeat analysis
+- plotted Loess line
+    - non-linear line, shows different slope for different parts of graph
+- used Spearman correlation coefficient
+    - rank based, less influenced by outliers
+- remove influential point, re-analyze
+
+### results
+- Loess line shows no association away from outlier
+- Spearman p-value not significant
+- Pearson p-value not significant after influential point removed
+
+***
+## prevent statistical errors
+- follow statistical best practices
+
+### check and understand your data
+- e.g. make sure you know what 1 means, what 0 means
+- cleaning data
+- make new variables
+
+### make sure numbers add up
+
+## EOF

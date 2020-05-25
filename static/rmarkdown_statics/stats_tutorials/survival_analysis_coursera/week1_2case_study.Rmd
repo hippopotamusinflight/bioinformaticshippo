@@ -29,6 +29,7 @@ g %>% dim()
 ```
 <br>
 - data is simulated, based on hospital admin data
+- original paper = [https://www.ncbi.nlm.nih.gov/books/NBK513479/](https://www.ncbi.nlm.nih.gov/books/NBK513479/)
 - emergency admission for heart failure (ICD10 code I50)
 
 ## variables

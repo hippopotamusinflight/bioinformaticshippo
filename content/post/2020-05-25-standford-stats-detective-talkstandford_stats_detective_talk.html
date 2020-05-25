@@ -1,0 +1,192 @@
+---
+title: Standford Statistics Detective Talk
+author: Ming Han
+date: '2020-05-25'
+slug: standford_stats_detective_talk
+categories:
+  - statistics
+  - talks
+tags:
+  - statistics
+  - talks
+subtitle: ''
+summary: 'This was an interesting talk given by Dr. Sainani. Three interesting online tools to check if statistics in a study add up.'
+authors: ['minghan']
+lastmod: '2020-05-25T14:05:01-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#tools-for-stats-detective">tools for stats detective</a></li>
+<li><a href="#case-study-1">case study 1:</a><ul>
+<li><a href="#original-data">original data</a></li>
+</ul></li>
+<li><a href="#case-study-2">case study 2:</a><ul>
+<li><a href="#finding">finding</a></li>
+<li><a href="#red-flags">red flags</a></li>
+<li><a href="#statcheck.io">statcheck.io</a></li>
+<li><a href="#p-hacking">p hacking</a></li>
+<li><a href="#grim-test">GRIM test</a></li>
+</ul></li>
+<li><a href="#case-study-3">case study 3:</a><ul>
+<li><a href="#webplotdigitizer">webplotdigitizer</a></li>
+<li><a href="#repeat-analysis">repeat analysis</a></li>
+<li><a href="#results">results</a></li>
+</ul></li>
+<li><a href="#prevent-statistical-errors">prevent statistical errors</a><ul>
+<li><a href="#check-and-understand-your-data">check and understand your data</a></li>
+<li><a href="#make-sure-numbers-add-up">make sure numbers add up</a></li>
+</ul></li>
+<li><a href="#eof">EOF</a></li>
+</ul>
+</div>
+
+<p>This was an interesting talk given by Dr. Sainani. Three interesting online tools to check if statistics in a study add up.</p>
+<div id="tools-for-stats-detective" class="section level2">
+<h2>tools for stats detective</h2>
+<ul>
+<li>statcheck</li>
+<li>GRIM</li>
+<li>webplotdigitizer</li>
+</ul>
+</div>
+<div id="case-study-1" class="section level2">
+<h2>case study 1:</h2>
+<ul>
+<li>Potti et al, 2006, Nature, Genomic signature to guide the use of chemotherapeutics</li>
+<li>analyzed publicly available data</li>
+<li>find chemo-sensitive genomic signatures</li>
+</ul>
+<div id="original-data" class="section level3">
+<h3>original data</h3>
+<ul>
+<li>original public available data published in Lancet 2003, breast cancer cell lines</li>
+<li>Chang et al, 2003, Lancet, Gene expression profiling for prediction of therapeutic response to docetaxel in patients with breast cancer</li>
+<li>Potti et al claimed they found genomic signature to tell apart sensitive vs resistant tumours</li>
+<li>but they actually got sensitive and resistant tumours backwards, mixed up 0/1 binary coding</li>
+</ul>
+</div>
+</div>
+<div id="case-study-2" class="section level2">
+<h2>case study 2:</h2>
+<ul>
+<li>Welrle et al, 2015, Marketing Letters, Is it fun or exercise?</li>
+<li>56 participants</li>
+<li>randomly assigned walking to exercise vs walking to evaluate music</li>
+<li>then gave participants buffet lunch</li>
+<li>wanted to test hypothesis that if participant knew they were walking for exercise, they’d compensate by eating more unhealthy foods</li>
+</ul>
+<div id="finding" class="section level3">
+<h3>finding</h3>
+<ul>
+<li>separated regular meals vs “hedonic choices” of drinks + desserts</li>
+</ul>
+</div>
+<div id="red-flags" class="section level3">
+<h3>red flags</h3>
+<ul>
+<li>missing data points in hedonic choices
+<ul>
+<li>no missing data for total meal, how can there be missing for hedonic foods?</li>
+</ul></li>
+<li>numbers in the table doesn’t add up</li>
+</ul>
+</div>
+<div id="statcheck.io" class="section level3">
+<h3>statcheck.io</h3>
+<ul>
+<li>text mines “test-statistic”, “df”, “p-value”</li>
+<li>makes sure those values are consistent</li>
+<li>implemented in R</li>
+</ul>
+</div>
+<div id="p-hacking" class="section level3">
+<h3>p hacking</h3>
+<ul>
+<li>F statistic doesn’t match p-value reported</li>
+<li>turns out authors used 1-tail to halve the p-value to get &lt; 0.05</li>
+<li>{1 tailed p-value only makes sense if you know a priori that e.g. one group should be greater than the other}</li>
+</ul>
+</div>
+<div id="grim-test" class="section level3">
+<h3>GRIM test</h3>
+<ul>
+<li>granularity-related inconsistent mean</li>
+<li>find impossible mean values given “mean” + “sample size”</li>
+</ul>
+</div>
+</div>
+<div id="case-study-3" class="section level2">
+<h2>case study 3:</h2>
+<ul>
+<li>Lester et al, 2018, Pediatrics, Breastfeeding changes gene activity that may make babies less reactive to stress</li>
+<li>author claims to find genetic mechanism that explains how breastfeeding reduces infant stress</li>
+<li>plot shows correlation btw DNA methylation of glucocorticoid receptor gene (NR3C1) vs cortisol reactivity
+<ul>
+<li>r = 0.41, p &lt; 0.05</li>
+<li>one influential data point looks like outlier</li>
+</ul></li>
+</ul>
+<div id="webplotdigitizer" class="section level3">
+<h3>webplotdigitizer</h3>
+<ul>
+<li>if no raw data available, can extract raw data from plots,</li>
+<li>have to mark some axis ticks and some data points</li>
+<li>gets csv output file</li>
+<li>re-run analysis to make sure outcome matches</li>
+</ul>
+</div>
+<div id="repeat-analysis" class="section level3">
+<h3>repeat analysis</h3>
+<ul>
+<li>plotted Loess line
+<ul>
+<li>non-linear line, shows different slope for different parts of graph</li>
+</ul></li>
+<li>used Spearman correlation coefficient
+<ul>
+<li>rank based, less influenced by outliers</li>
+</ul></li>
+<li>remove influential point, re-analyze</li>
+</ul>
+</div>
+<div id="results" class="section level3">
+<h3>results</h3>
+<ul>
+<li>Loess line shows no association away from outlier</li>
+<li>Spearman p-value not significant</li>
+<li>Pearson p-value not significant after influential point removed</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="prevent-statistical-errors" class="section level2">
+<h2>prevent statistical errors</h2>
+<ul>
+<li>follow statistical best practices</li>
+</ul>
+<div id="check-and-understand-your-data" class="section level3">
+<h3>check and understand your data</h3>
+<ul>
+<li>e.g. make sure you know what 1 means, what 0 means</li>
+<li>cleaning data</li>
+<li>make new variables</li>
+</ul>
+</div>
+<div id="make-sure-numbers-add-up" class="section level3">
+<h3>make sure numbers add up</h3>
+</div>
+</div>
+<div id="eof" class="section level2">
+<h2>EOF</h2>
+</div>
