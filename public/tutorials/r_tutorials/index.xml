@@ -74,6 +74,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;assets/scss/academic/_docs.scss&lt;/code&gt; looks interesting, might have something to do with setting docs content like toc?&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;data/page_sharer.toml&lt;/code&gt; enabling disabling share in blog posts&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;archetypes/docs.md&lt;/code&gt; change docs template when using &lt;code&gt;blogdown::new_content(path, kind = &amp;quot;docs&amp;quot;, ...)&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;in // dir
@@ -99,7 +100,7 @@
 this is some more code••••••••••••••••# comment2••••more text
 this is some more and more code•••••••# comment3•••••••more text
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;insert image to .Rmd files in /static/ dir&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;insert image to .Rmd page files in /static/ dir&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;has to do it manually (unlike in docs or posts)&lt;/li&gt;
 &lt;li&gt;image has to be in same dir as .Rmd file&lt;/li&gt;
@@ -107,13 +108,34 @@ this is some more and more code•••••••# comment3••••••
 &lt;li&gt;&lt;code&gt;![some text](image1.png){width=200px}&lt;/code&gt; no quotes, must have extension&lt;/li&gt;
 &lt;li&gt;these can be inline with bullet points to indent images&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;insert image to .md page files in /content/ dir&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;image URL is messed up in Hugo or Academic theme&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues/14&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/gcushen/hugo-academic/issues/14&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;after using Addin &amp;gt; Insert Image, have to manually edit image URL&lt;/li&gt;
+&lt;li&gt;image URL is absolute path without /static&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;![sample_image](/resources/docker_resources/_index_files/sample_image.jpeg)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;more quirks
+&lt;ul&gt;
+&lt;li&gt;need front / before subdir of /static (e.g. /resources)&lt;/li&gt;
+&lt;li&gt;image filename cannot have space (e.g. &lt;del&gt;sample image.jpeg&lt;/del&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;things-to-figure-out&#34;&gt;things to figure out&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;create alternative to &amp;ldquo;home&amp;rdquo; scrolling page&lt;/li&gt;
+&lt;li&gt;create alternative to &amp;ldquo;home&amp;rdquo; scrolling page
+&lt;ul&gt;
+&lt;li&gt;(see &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-a-widget-page&#34;&gt;https://sourcethemes.com/academic/docs/managing-content/#create-a-widget-page&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blogdown::new_content(path, kind = “home”, open = interactive())&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;page bundle archetype (blog post as folder with index.html in it) vs uglyUrl&lt;/li&gt;
 &lt;li&gt;breadcrumbs navigation&lt;/li&gt;
 &lt;li&gt;floating toc for .Rmd&lt;/li&gt;
-&lt;li&gt;getting rid of spacing between intro sentence and subsequent bullet lists&lt;/li&gt;
+&lt;li&gt;getting rid of spacing between intro sentence and subsequent bullet lists in .md files (not an issue with .Rmd)&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>

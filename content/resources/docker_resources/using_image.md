@@ -21,7 +21,8 @@ weight: 10
 
 ## example
 ```
-$ docker run -it -v /dir:/gatk/dir -rm gatk4
+$ docker run -it -v ~/some_dir:/gatk/some_dir -rm broadinstitute/gatk4
+(gatk) root@f674e9d906ce:/gatk# 
 ```
 
 ## commands

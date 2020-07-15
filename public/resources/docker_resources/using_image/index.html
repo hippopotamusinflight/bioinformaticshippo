@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="example $ docker run -it -v /dir:/gatk/dir -rm gatk4  commands $ docker run -it # creates interactive shell in container $ docker run -v /dir:/gatk/dir # mount volume $ docker pull [IMAGE] # pull an image from a registry $ docker images # lists docker images pulled $ docker run --rm [IMAGE] # removes a container automatically after it exits (auto clean up) $ docker ps # list docker processes still running $ exit  EOF ">
+  <meta name="description" content="example $ docker run -it -v ~/some_dir:/gatk/some_dir -rm broadinstitute/gatk4 (gatk) root@f674e9d906ce:/gatk#  commands $ docker run -it # creates interactive shell in container $ docker run -v /dir:/gatk/dir # mount volume $ docker pull [IMAGE] # pull an image from a registry $ docker images # lists docker images pulled $ docker run --rm [IMAGE] # removes a container automatically after it exits (auto clean up) $ docker ps # list docker processes still running $ exit  EOF ">
 
   
   <link rel="alternate" hreflang="en-us" href="../../../resources/docker_resources/using_image/">
@@ -238,7 +238,7 @@
   <meta property="og:site_name" content="BioinfoHippo">
   <meta property="og:url" content="/resources/docker_resources/using_image/">
   <meta property="og:title" content="using image | BioinfoHippo">
-  <meta property="og:description" content="example $ docker run -it -v /dir:/gatk/dir -rm gatk4  commands $ docker run -it # creates interactive shell in container $ docker run -v /dir:/gatk/dir # mount volume $ docker pull [IMAGE] # pull an image from a registry $ docker images # lists docker images pulled $ docker run --rm [IMAGE] # removes a container automatically after it exits (auto clean up) $ docker ps # list docker processes still running $ exit  EOF "><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="example $ docker run -it -v ~/some_dir:/gatk/some_dir -rm broadinstitute/gatk4 (gatk) root@f674e9d906ce:/gatk#  commands $ docker run -it # creates interactive shell in container $ docker run -v /dir:/gatk/dir # mount volume $ docker pull [IMAGE] # pull an image from a registry $ docker images # lists docker images pulled $ docker run --rm [IMAGE] # removes a container automatically after it exits (auto clean up) $ docker ps # list docker processes still running $ exit  EOF "><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -540,7 +540,8 @@
 4. replace 10 with weight e.g. 20
 -->
 <h2 id="example">example</h2>
-<pre><code>$ docker run -it -v /dir:/gatk/dir -rm gatk4
+<pre><code>$ docker run -it -v ~/some_dir:/gatk/some_dir -rm broadinstitute/gatk4
+(gatk) root@f674e9d906ce:/gatk# 
 </code></pre>
 <h2 id="commands">commands</h2>
 <pre><code class="language-bash">$ docker run -it                     # creates interactive shell in container

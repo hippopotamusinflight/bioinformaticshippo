@@ -610,6 +610,7 @@ servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refre
 <ul>
 <li><code>assets/scss/academic/_docs.scss</code> looks interesting, might have something to do with setting docs content like toc?<br></li>
 <li><code>data/page_sharer.toml</code> enabling disabling share in blog posts</li>
+<li><code>archetypes/docs.md</code> change docs template when using <code>blogdown::new_content(path, kind = &quot;docs&quot;, ...)</code></li>
 </ul>
 </li>
 <li>in // dir
@@ -635,7 +636,7 @@ servr::daemon_stop(1) to stop server (sometimes serve_site() doesn&rsquo;t refre
 this is some more code••••••••••••••••# comment2••••more text
 this is some more and more code•••••••# comment3•••••••more text
 </code></pre>
-<p><strong>insert image to .Rmd files in /static/ dir</strong></p>
+<p><strong>insert image to .Rmd page files in /static/ dir</strong></p>
 <ul>
 <li>has to do it manually (unlike in docs or posts)</li>
 <li>image has to be in same dir as .Rmd file</li>
@@ -643,13 +644,34 @@ this is some more and more code•••••••# comment3••••••
 <li><code>![some text](image1.png){width=200px}</code> no quotes, must have extension</li>
 <li>these can be inline with bullet points to indent images</li>
 </ul>
+<p><strong>insert image to .md page files in /content/ dir</strong></p>
+<ul>
+<li>image URL is messed up in Hugo or Academic theme</li>
+<li>
+<a href="https://github.com/gcushen/hugo-academic/issues/14" target="_blank" rel="noopener">https://github.com/gcushen/hugo-academic/issues/14</a></li>
+<li>after using Addin &gt; Insert Image, have to manually edit image URL</li>
+<li>image URL is absolute path without /static</li>
+<li><code>![sample_image](/resources/docker_resources/_index_files/sample_image.jpeg)</code></li>
+<li>more quirks
+<ul>
+<li>need front / before subdir of /static (e.g. /resources)</li>
+<li>image filename cannot have space (e.g. <del>sample image.jpeg</del>)</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h2 id="things-to-figure-out">things to figure out</h2>
 <ul>
-<li>create alternative to &ldquo;home&rdquo; scrolling page</li>
+<li>create alternative to &ldquo;home&rdquo; scrolling page
+<ul>
+<li>(see <a href="https://sourcethemes.com/academic/docs/managing-content/#create-a-widget-page">https://sourcethemes.com/academic/docs/managing-content/#create-a-widget-page</a>)</li>
+<li><code>blogdown::new_content(path, kind = “home”, open = interactive())</code></li>
+</ul>
+</li>
+<li>page bundle archetype (blog post as folder with index.html in it) vs uglyUrl</li>
 <li>breadcrumbs navigation</li>
 <li>floating toc for .Rmd</li>
-<li>getting rid of spacing between intro sentence and subsequent bullet lists</li>
+<li>getting rid of spacing between intro sentence and subsequent bullet lists in .md files (not an issue with .Rmd)</li>
 <li></li>
 </ul>
 

@@ -1,23 +1,50 @@
 # instructions for editing and maintaining website
 
+---
+## start editing
+1. open bioinfohippo R project
+2. blogdown::serve_site() to start auto-refreshing on localhost
+(servr::daemon_stop(1) to stop serving)
 
+
+---
+## after editing - push to GitHub
+
+
+
+
+---
 ## adding docs to /content/resources/ or /content/tutorials/
-
-newdoc = "content/.../.md"
-file.copy(c("content/docs_template.ign"), newdoc)
-file.edit(newdoc)
-file.remove(newdoc)
-
-OR
-
-newdoc = ".../.md"    # for path - skip /content/
+newdoc <- ".../.md"    # for path - skip /content/
+(e.g. newdoc <- "tutorials/mySQL_tutorials/mySQL_universalclass_lesson1.md")
 blogdown::new_content(newdoc, kind = "docs", open = interactive())
 
 
-## adding .Rmd to statics
+## adding .Rmd to /statics/
 - just paste .Rmd file into subdir inside /statics/
 
 
+---
 ## making new blog posts
 
 blogdown::new_post("", kind = "post/", open = interactive(), author = "Ming Han", categories = c(""), tags = c(""), date = Sys.Date(), slug = "", ext = getOption("blogdown.ext", ".Rmd"))
+
+
+---
+## insert image into .Rmd files in /static/
+- put image into same dir as .Rmd file in /static/
+![some text](image1.png){width=200px}
+
+## insert image into .md files in /content/
+- Addins > Insert Image
+- cannot have space in filename
+- file path will be static/resources/docker_resources/_index_files/sample_image.jpeg (no need to modify here)
+- this code auto populates, need to get rid of "static"
+![sample_image](/resources/docker_resources/_index_files/sample_image.jpeg)
+
+- if want to specify image width/height,
+- Addins will populate code like this...
+<img src="mySQL_tutorials/mySQL_universalclass_lesson1_files/ERD.png" alt="" width="150px"/>
+- still need to add in "/tutorials/"
+<img src="/tutorials/mySQL_tutorials/mySQL_universalclass_lesson1_files/ERD.png" alt="" width="150px"/>
+

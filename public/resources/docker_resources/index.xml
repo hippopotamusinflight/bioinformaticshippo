@@ -24,7 +24,8 @@
 4. replace 10 with weight e.g. 20
 --&gt;
 &lt;h2 id=&#34;example&#34;&gt;example&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;$ docker run -it -v /dir:/gatk/dir -rm gatk4
+&lt;pre&gt;&lt;code&gt;$ docker run -it -v ~/some_dir:/gatk/some_dir -rm broadinstitute/gatk4
+(gatk) root@f674e9d906ce:/gatk# 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;commands&#34;&gt;commands&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker run -it                     # creates interactive shell in container

@@ -48,6 +48,7 @@ weight: 2020052001
 - in /themes/hugo-academic/ dir (shouldn't really touch this)
     - `assets/scss/academic/_docs.scss` looks interesting, might have something to do with setting docs content like toc?<br>
     - `data/page_sharer.toml` enabling disabling share in blog posts
+	- `archetypes/docs.md` change docs template when using `blogdown::new_content(path, kind = "docs", ...)`
 - in // dir
     - `` <br>
 
@@ -71,20 +72,34 @@ this is some more code••••••••••••••••# comment2
 this is some more and more code•••••••# comment3•••••••more text
 ```
 
-**insert image to .Rmd files in /static/ dir**
+**insert image to .Rmd page files in /static/ dir**
 - has to do it manually (unlike in docs or posts)
 - image has to be in same dir as .Rmd file
 - `<img src="image1.png" alt="some text" width="70%"/>`
 - `![some text](image1.png){width=200px}` no quotes, must have extension
 - these can be inline with bullet points to indent images
 
+**insert image to .md page files in /content/ dir**
+- image URL is messed up in Hugo or Academic theme
+- [https://github.com/gcushen/hugo-academic/issues/14](https://github.com/gcushen/hugo-academic/issues/14)
+- after using Addin > Insert Image, have to manually edit image URL
+- image URL is absolute path without /static
+- `![sample_image](/resources/docker_resources/_index_files/sample_image.jpeg)`
+- more quirks
+	- need front / before subdir of /static (e.g. /resources)
+	- image filename cannot have space (e.g. ~~sample image.jpeg~~)
+
+
 
 ---
 ## things to figure out
-- create alternative to "home" scrolling page
+- create alternative to "home" scrolling page 
+	- (see https://sourcethemes.com/academic/docs/managing-content/#create-a-widget-page)
+	- `blogdown::new_content(path, kind = “home”, open = interactive())`
+- page bundle archetype (blog post as folder with index.html in it) vs uglyUrl
 - breadcrumbs navigation
 - floating toc for .Rmd
-- getting rid of spacing between intro sentence and subsequent bullet lists
+- getting rid of spacing between intro sentence and subsequent bullet lists in .md files (not an issue with .Rmd)
 - 
 
 
