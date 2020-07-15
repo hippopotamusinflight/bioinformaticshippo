@@ -15,7 +15,9 @@ menu:
     weight: 2020071509
 ---
 
-https://www.youtube.com/watch?v=FhbCS6lx2wg&list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO
+[https://www.youtube.com/watch?v=FhbCS6lx2wg&list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO](https://www.youtube.com/watch?v=FhbCS6lx2wg&list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO)
+
+<br>
 
 ## objectives
 1. what is a database

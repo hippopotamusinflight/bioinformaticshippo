@@ -113,6 +113,11 @@
   </url>
   
   <url>
+    <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson3/</loc>
+    <lastmod>2020-07-15T13:22:29-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson2/</loc>
     <lastmod>2020-07-15T11:27:43-04:00</lastmod>
   </url>
@@ -120,6 +125,26 @@
   <url>
     <loc>/resources/r_resources/tidyverse_purr/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/</loc>
+    <lastmod>2020-07-15T15:22:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson4/</loc>
+    <lastmod>2020-07-15T14:40:33-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson5/</loc>
+    <lastmod>2020-07-15T16:10:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson6/</loc>
+    <lastmod>2020-07-15T16:36:06-04:00</lastmod>
   </url>
   
   <url>
@@ -153,7 +178,7 @@
   
   <url>
     <loc>/tutorials/</loc>
-    <lastmod>2020-07-15T11:27:43-04:00</lastmod>
+    <lastmod>2020-07-15T16:36:06-04:00</lastmod>
   </url>
   
   <url>

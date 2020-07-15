@@ -27,11 +27,11 @@
   
     
   
-  <meta name="description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1.">
+  <meta name="description" content="https://www.youtube.com/watch?v=es_t9QXpXY4&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=6
+Customers, Orders example  123 Customers 326 Orders   JOINS natural joins  { old way of INNER join } for each customer, want to see all orders they placed expect to see 326 rows return for all orders,  and have both customers and orders table&rsquo;s columns in it    SELECT * FROM customers, orders WHERE customers.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson6/">
 
   
 
@@ -221,7 +221,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson6/">
 
   
   
@@ -237,16 +237,16 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
-  <meta property="og:title" content="MySQL Universalclass Lesson2 | BioinfoHippo">
-  <meta property="og:description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson6/">
+  <meta property="og:title" content="MySQL Universalclass Lesson6 | BioinfoHippo">
+  <meta property="og:description" content="https://www.youtube.com/watch?v=es_t9QXpXY4&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=6
+Customers, Orders example  123 Customers 326 Orders   JOINS natural joins  { old way of INNER join } for each customer, want to see all orders they placed expect to see 326 rows return for all orders,  and have both customers and orders table&rsquo;s columns in it    SELECT * FROM customers, orders WHERE customers."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-07-15T11:27:43-04:00">
+      <meta property="article:published_time" content="2020-07-15T16:36:06-04:00">
     
-    <meta property="article:modified_time" content="2020-07-15T11:27:43-04:00">
+    <meta property="article:modified_time" content="2020-07-15T16:36:06-04:00">
   
 
   
@@ -265,7 +265,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
 
 
-  <title>MySQL Universalclass Lesson2 | BioinfoHippo</title>
+  <title>MySQL Universalclass Lesson6 | BioinfoHippo</title>
 
 </head>
 
@@ -507,7 +507,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson1/">Lesson1 overview</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">Lesson2 install</a>
       </li>
       
@@ -527,7 +527,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson5/">Lesson5 db struc</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson6/">Lesson6 adv queries</a>
       </li>
       
@@ -549,11 +549,21 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</a>
+    <li><a href="#customers-orders-example">Customers, Orders example</a></li>
+    <li><a href="#joins">JOINS</a>
       <ul>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#linux-ubuntu-920">Linux-Ubuntu (9:20)</a></li>
-        <li><a href="#macosx-1339">macOSX (13:39)</a></li>
+        <li><a href="#natural-joins">natural joins</a></li>
+        <li><a href="#only-show-certain-columns">only show certain columns</a></li>
+        <li><a href="#using-alias">using alias</a></li>
+        <li><a href="#self-join">SELF JOIN</a></li>
+        <li><a href="#explicit-joins">EXPLICIT JOINS</a></li>
+      </ul>
+    </li>
+    <li><a href="#aggregate-function">AGGREGATE function</a></li>
+    <li><a href="#literals">literals</a></li>
+    <li><a href="#subqueries-nested-queries">subqueries (nested queries)</a>
+      <ul>
+        <li><a href="#example">example</a></li>
       </ul>
     </li>
   </ul>
@@ -568,160 +578,272 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>MySQL Universalclass Lesson2</h1>
+          <h1>MySQL Universalclass Lesson6</h1>
 
           <div class="article-style">
             <p>
-<a href="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2</a></p>
+<a href="https://www.youtube.com/watch?v=es_t9QXpXY4&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=6" target="_blank" rel="noopener">https://www.youtube.com/watch?v=es_t9QXpXY4&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=6</a></p>
 <br>
-<h2 id="installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</h2>
-<br>
-<h3 id="windows">Windows</h3>
+<h2 id="customers-orders-example">Customers, Orders example</h2>
 <ul>
-<li>mysql.com</li>
-<li>mysql community edition (GPL) (mysql community server 5.6.26)</li>
-<li>computer needs .net framework 4.0+</li>
-</ul>
-<br>
-<h4 id="mysql-installer">MySQL installer</h4>
-<h5 id="setup-type">setup type</h5>
-<ul>
-<li>developer default</li>
-</ul>
-<pre><code>  mysql server            &lt;-- essential
-  mysql workbench         &lt;-- essential
-  mysql for excel 1.3.4   &lt;-- need pre-installed
-  mysql for visual studio &lt;-- need pre-installed
-  mysql connectors/ python
-  mysql fabric 1.5.4
-  (also installs sample database for practice)
-</code></pre>
-<br>
-<h5 id="type-and-networking">type and networking</h5>
-<pre><code>  config type		    development machine
-  connectivity	    TCP/IP
-  port number		    3306
-  open firewall     port for network acccess (yes)
-  named pipe        (unselected)
-  shared memory     (unselected)
-</code></pre>
-<br>
-<h5 id="accounts-and-roles">accounts and roles</h5>
-<ul>
-<li>mysql root password</li>
-</ul>
-<br>
-<h5 id="mysql-user-accounts">mysql user accounts</h5>
-<ul>
-<li>create later in mySQLworkbench</li>
-</ul>
-<br>
-<h5 id="windows-service">windows service</h5>
-<ul>
-<li>can run mySQL server in the background as a windows service</li>
-</ul>
-<pre><code>  configure mysql server    as windows service
-  windows service name      mysql56
-  run windows service as    standard account
-</code></pre>
-<br>
-<h5 id="apply-server-configuration">apply server configuration</h5>
-<ul>
-<li>execute</li>
-<li>will generate some config files</li>
-</ul>
-<br>
-<h5 id="connect-to-server">connect to server</h5>
-<ul>
-<li>server running on local computer</li>
-<li>enter username and password to connect to server</li>
-<li><code>check</code> to verify connection</li>
-</ul>
-<br>
-<h5 id="apply-server-configuration-1">apply server configuration</h5>
-<ul>
-<li>finishes configuration</li>
+<li>123 Customers</li>
+<li>326 Orders</li>
 </ul>
 <br>
 <hr>
-<h3 id="linux-ubuntu-920">Linux-Ubuntu (9:20)</h3>
+<h2 id="joins">JOINS</h2>
+<br>
+<h3 id="natural-joins">natural joins</h3>
 <ul>
-<li>Ubuntu software center &gt; search &ldquo;mysql&rdquo;&rdquo;</li>
+<li>{ old way of INNER join }</li>
+<li>for each customer, want to see all orders they placed</li>
+<li>expect to see 326 rows return for all orders,
+<ul>
+<li>and have both <strong>customers</strong> and <strong>orders</strong> table&rsquo;s columns in it</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-sql">SELECT *
+FROM customers, orders
+WHERE customers.customernumber = orders.customernumber;
+</code></pre>
+<ul>
+<li>have to use fully qualified table names</li>
+<li>{ since orders have to have a customer, this NATURAL/INNER join is same as LEFT join (with Orders first) }</li>
 </ul>
 <br>
-<hr>
-<h3 id="macosx-1339">macOSX (13:39)</h3>
+<h3 id="only-show-certain-columns">only show certain columns</h3>
 <ul>
-<li>need to download server and workbench separately</li>
+<li>and change column name to be displayed with <code>AS</code></li>
 </ul>
+<pre><code class="language-sql">SELECT orders.ordernumber AS 'Order Number', customers.customername 
+AS 'Customer Name', orders.orderdate AS 'Order Date', orders.shippeddate AS 'Shipped Date'
+FROM customers, orders
+WHERE customers.customernumber = orders.customernumber;
+</code></pre>
 <br>
-<h4 id="mysql-server">mysql server</h4>
+<h3 id="using-alias">using alias</h3>
 <ul>
-<li>mysql community server 5.6.26 (.dmg or .tar)</li>
-<li>install with default settings</li>
-<li>start/stop server
+<li>specify alias in FROM statement</li>
+<li>change all other table name to alias</li>
+</ul>
+<pre><code class="language-sql">SELECT o.ordernumber AS 'Order Number', 
+	   c.customername AS 'Customer Name', 
+       o.orderdate AS 'Order Date', 
+       o.shippeddate AS 'Shipped Date'
+FROM customers c, orders o
+WHERE c.customernumber = o.customernumber;
+</code></pre>
+<br>
+<h3 id="self-join">SELF JOIN</h3>
 <ul>
-<li>system preference &gt; MySQL<br>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/start_mysql_server.png" alt="" width="500px"/>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/mysql_server_config.png" alt="" width="500px"/></li>
+<li>{ why??? }</li>
+<li>relate a table back onto itself</li>
+<li>e.g. have list of employees and some employees are managers
+<ul>
+<li>want to see list of all employees,</li>
+<li>along with name of his/her manager,</li>
+<li>query will have to look back into same employee table</li>
+<li>{ i.e. have to generate 2 employee cols,
+<ul>
+<li>relating employee-to-manager }</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>solution = give table alias name</li>
+<li>{ but below example doesn&rsquo;t really relate employee-to-manager&hellip;? }</li>
+</ul>
+<pre><code class="language-sql">SELECT a.customername, b.customername
+-- FROM customers, customers; 	# not allowed
+FROM customers a, customers b	
+-- can give different alias to same table
+WHERE a.customername = b.customername;
+</code></pre>
+<br>
+<h3 id="explicit-joins">EXPLICIT JOINS</h3>
+<pre><code>  INNER JOIN      only records where id matches btw table1 and table2
+  OUTER JOIN      retain all records (if tables not same size, will have NULLs)
+  LEFT JOIN       retains all records from first table
+  RIGHT JOIN      retains all records from second table
+</code></pre>
+<ul>
+<li>better than SELF JOIN</li>
+<li>replaces WHERE a.customername = b.customername
+<ul>
+<li>with JOIN &hellip; ON &hellip;</li>
 </ul>
 </li>
 </ul>
 <br>
-<h4 id="mysql-workbench">mysql workbench</h4>
+<h4 id="inner-join">INNER JOIN</h4>
+<pre><code class="language-sql">SELECT a.customername, b.customername
+FROM customers a
+INNER JOIN customers b				-- INNER optional
+ON a.customername = b.customername;
+</code></pre>
 <ul>
-<li>download, install, open</li>
+<li>JOIN ON clause more efficient than FROM &hellip; WHERE</li>
+<li>FROM &hellip; WHERE has to create a huge table of
+<ul>
+<li>all combinations of a and b tables,</li>
+<li>then narrow it down to rows where a.customername = b.customername</li>
+</ul>
+</li>
+<li>JOIN ON clause only write to new table if
+- a.customername = b.customername</li>
 </ul>
 <br>
-<h5 id="setup-new-connection">setup new connection</h5>
+<h4 id="left-join">LEFT JOIN</h4>
 <ul>
-<li>MySQL Connections (+)</li>
+<li>want customername in col1, and all their orders in col2</li>
+<li>i.e. want everything from left table (i.e. &ldquo;orders&rdquo; table)</li>
 </ul>
-<pre><code>	connection name      local
-	connection method    standard(TCP/IP)
-	hostname             127.0.0.1
-	port                 3306
-	username             root
-	password             store in keychain
-	default schema       blank
-	
-	test connection
+<pre><code class="language-sql">SELECT r.customername, l.ordernumber, l.orderdate   -- get all columns
+FROM orders l                                       -- alias 'l' for left table
+JOIN customers r                                    -- alias 'r' for right table
+ON l.customernumber = r.customernumber              -- filter rows according to ON 
+-- (customer has to have placed an order to show up)
+ORDER BY r.customername;
 </code></pre>
-<h5 id="open-sql-editor">open SQL editor</h5>
+<br>
+<h4 id="right-join">RIGHT JOIN</h4>
 <ul>
-<li>double click on &ldquo;local&rdquo; server connection</li>
-<li>under &ldquo;Query 1&rdquo;
+<li>want everything from right table (i.e. &ldquo;customers&rdquo; table)</li>
+</ul>
+<pre><code class="language-sql">SELECT r.customername, l.ordernumber, l.orderdate
+FROM orders l
+RIGHT JOIN customers r					- 351 rows / e.g. American Souvenir - Null ordernumber
+ON l.customernumber = r.customernumber
+ORDER BY r.customername;
+</code></pre>
 <ul>
-<li><code>CREATE database brian;</code></li>
-<li>inserted brian schema under SCHEMAS panel</li>
+<li>{ LEFT JOIN
+<ul>
+<li>same result as INNER JOIN since every order has a corresponding customer }</li>
+</ul>
+</li>
+<li>{ RIGHT JOIN
+<ul>
+<li>diff result from INNER JOIN since not every customer placed an order }</li>
 </ul>
 </li>
 </ul>
 <br>
-<h5 id="mysql-program-file-structure">mysql program file structure</h5>
-<pre><code>/usr/local/mysql/
-    bin    scripts
-    data   schemas    does not have permission, only DBMS has access	
+<hr>
+<h2 id="aggregate-function">AGGREGATE function</h2>
+<ul>
+<li>count, sum, average</li>
+</ul>
+<pre><code class="language-sql">SELECT COUNT(*)
+FROM customers;		-- output = 123
+
+SELECT COUNT(*) AS 'Number of Customers'
+FROM customers;		-- output = 123
+
+SELECT COUNT(*) AS 'Number of Order Items'
+FROM orderdetails;	-- output = 2996
+
+SELECT * FROM orderdetails;
+-- composite key with ordernumber + productcode
+
+-- for ordernumber 10100, how many items were ordered?
+SELECT ordernumber, SUM(quantityordered)
+FROM orderdetails
+WHERE ordernumber = 10100;
 </code></pre>
 <br>
-<h5 id="mysql-folder-permissions">mysql folder permissions</h5>
-<pre><code>minghan:mysql$ ls -lA
-total 872
--rw-r--r--   1 _mysql  _mysql  335809 13 Apr 07:46 LICENSE
--rw-r--r--   1 _mysql  _mysql  101807 13 Apr 07:46 LICENSE.router
--rw-r--r--   1 _mysql  _mysql     687 13 Apr 07:46 README
--rw-r--r--   1 _mysql  _mysql     700 13 Apr 07:46 README.router
-drwxr-xr-x  35 _mysql  _mysql    1120 13 Apr 08:34 bin
-drwxr-x---  28 _mysql  _mysql     896  7 Jul 17:08 data
-drwxr-xr-x   6 _mysql  _mysql     192 13 Apr 08:32 docs
-drwxr-xr-x  15 _mysql  _mysql     480 13 Apr 08:32 include
-drwxr-x---   3 _mysql  _mysql      96  5 Jul 20:26 keyring
-drwxr-xr-x  21 _mysql  _mysql     672  5 Jul 20:25 lib
-drwxr-xr-x   4 _mysql  _mysql     128 13 Apr 08:32 man
-drwxrwxr-x   2 _mysql  _mysql      64 13 Apr 08:32 run
-drwxr-xr-x  33 _mysql  _mysql    1056 13 Apr 08:32 share
-drwxr-xr-x   5 _mysql  _mysql     160 13 Apr 08:32 support-files
-drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
+<hr>
+<h2 id="literals">literals</h2>
+<ul>
+<li>force a literal on a column</li>
+</ul>
+<pre><code class="language-sql">-- get num of items ordered for ordernumber 10100
+SELECT ordernumber, 'Total:', SUM(quantityordered)
+FROM orderdetails
+WHERE ordernumber = 10100;
+
+-- do for all customers, using GROUP BY
+SELECT ordernumber, 'Total:', SUM(quantityordered) AS 'Num item ordered'
+FROM orderdetails
+GROUP BY ordernumber;      -- want to compute SELECT ... SUM() for each ordernumber
+
+-- which ordernumber has most num items ordered?
+SELECT ordernumber, 'Total:', SUM(quantityordered) AS 'Num item ordered'
+FROM orderdetails
+GROUP BY ordernumber
+ORDER BY SUM(quantityordered) DESC;
+
+-- get max value in a column {NOT grouped by order number}
+SELECT MAX(quantityordered)		-- MIN() for minimum
+FROM orderdetails;
+
+-- calculations in a separate column
+SELECT *, quantityordered * priceeach AS 'total'
+from orderdetails;
+
+-- for each &quot;product&quot;, how many were ordered
+SELECT productcode, count(quantityordered), sum(priceeach)
+FROM orderdetails
+GROUP BY productcode;
+
+-- for each &quot;product&quot;, sum of price
+SELECT productcode, count(quantityordered), sum(priceeach)
+FROM orderdetails
+GROUP BY productcode;
+
+-- find total number of item ordered for each &quot;order&quot;, total price for each &quot;order&quot;
+-- list order number, 
+-- GROUP by order number -- the sum of units ordered {doesn't matter productcode...}, 
+-- GROUP by order number -- the sum of price num of units * price each unit
+SELECT ordernumber, sum(quantityordered), sum(quantityordered * priceeach) AS 'total'
+FROM orderdetails
+GROUP BY ordernumber;
+</code></pre>
+<br>
+<hr>
+<h2 id="subqueries-nested-queries">subqueries (nested queries)</h2>
+<ul>
+<li>perform a query to get a value,</li>
+<li>use that value to perform another query</li>
+</ul>
+<br>
+<h3 id="example">example</h3>
+<ul>
+<li>get all of people who placed an order,</li>
+<li>where the number of items on their order &gt; average number of items customers ordered</li>
+</ul>
+<pre><code class="language-sql">SELECT AVG(quantityordered)
+FROM orderdetails;
+
+SELECT ordernumber, productcode, quantityordered
+FROM orderdetails
+WHERE quantityordered &gt; 35.1572    -- replace with SELECT AVG()...
+ORDER BY ordernumber;
+
+SELECT ordernumber, productcode, quantityordered
+FROM orderdetails
+WHERE quantityordered &gt;
+	(
+    SELECT AVG(quantityordered)
+    FROM orderdetails      -- you don't need to change DELIMITER???
+	)
+ORDER BY ordernumber;
+
+-- for each customer, how much they paid (need GROUP BY)
+SELECT customernumber, SUM(amount)
+FROM payments
+GROUP BY customernumber;
+
+-- find customers who paid more than the average
+SELECT customernumber, SUM(amount)
+FROM payments
+WHERE amount &gt;
+(						-- mysql doesn't care about indent...
+SELECT AVG(amount)
+FROM payments
+)
+GROUP BY customernumber;
 </code></pre>
 
           </div>
@@ -739,15 +861,9 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/" rel="next">MySQL Universalclass Lesson3</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson5/" rel="next">MySQL Universalclass Lesson5</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Next</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/" rel="prev">MySQL Universalclass Lesson3.5</a>
-  </div>
   
 </div>
 
@@ -768,7 +884,7 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson2.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson6.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>

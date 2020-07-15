@@ -406,7 +406,9 @@ $ chmod 700 &amp;lt;file&amp;gt;         # octal notation
       <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson1/</link>
       <pubDate>Wed, 15 Jul 2020 10:28:51 -0400</pubDate>
       <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson1/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=FhbCS6lx2wg&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&#34;&gt;https://www.youtube.com/watch?v=FhbCS6lx2wg&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=FhbCS6lx2wg&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=FhbCS6lx2wg&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;objectives&#34;&gt;objectives&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;what is a database&lt;/li&gt;
@@ -870,12 +872,293 @@ mtcars %&amp;gt;% add_count(cyl, name = &amp;quot;count_num_by_cyl&amp;quot;) %&
     </item>
     
     <item>
+      <title>MySQL Universalclass Lesson3</title>
+      <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson3/</link>
+      <pubDate>Wed, 15 Jul 2020 13:22:29 -0400</pubDate>
+      <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson3/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=5z4IUrCAv4A&amp;amp;t=1s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=5z4IUrCAv4A&amp;amp;t=1s&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;1-database-design&#34;&gt;1 database design&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;logical-design&#34;&gt;logical design&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;general layout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;physical-design&#34;&gt;physical design&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;which DBMS to use&lt;/li&gt;
+&lt;li&gt;constraints of DBMS, security features&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2-keywords&#34;&gt;2 keywords&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;schema&#34;&gt;schema&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;everything making up a database&lt;/li&gt;
+&lt;li&gt;tables, views, roles, permissions, indexes, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;entity--tables&#34;&gt;entity = tables&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;attribute = column&lt;/li&gt;
+&lt;li&gt;tuple/entry/record = row&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;keys&#34;&gt;keys&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;primary key = attribute that uniquely identifies a record&lt;/li&gt;
+&lt;li&gt;candidate key = attribute that could be selected as a primary key&lt;/li&gt;
+&lt;li&gt;composite key = 2 or more attributes making up a primary key&lt;/li&gt;
+&lt;li&gt;foreign key = attribute providing relationship (links) one table to another table
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;alternate/ secondary key = candidate key not chosen to be primary key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;3-referential-integrity&#34;&gt;3 referential integrity&lt;/h2&gt;
+&lt;img src=&#34;./tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/ERD2.png&#34; alt=&#34;&#34; width=&#34;500px&#34;/&gt;  
+&lt;ul&gt;
+&lt;li&gt;underlined = primary key&lt;/li&gt;
+&lt;li&gt;dotted underline = foreign key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;referential integrity = all foreign keys must have corresponding attribute in related table
+&lt;ul&gt;
+&lt;li&gt;shown in ER diagrams with linking arrows&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;whenever I reference something in table2, it better exist in table2&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;4-db-diagrams&#34;&gt;4 db diagrams&lt;/h2&gt;
+&lt;img src=&#34;./tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/database_diagrams.png&#34; alt=&#34;&#34; width=&#34;600px&#34;/&gt;  
+&lt;ul&gt;
+&lt;li&gt;IDEF1X and Crow&amp;rsquo;s Foot will be used here&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;5-erd&#34;&gt;5 ERD&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MS visio (expensive)&lt;/li&gt;
+&lt;li&gt;Dia (free) &lt;a href=&#34;http://dia-installer.de/&#34;&gt;http://dia-installer.de/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lucidchart (website, education edition) &lt;a href=&#34;https://www.lucidchart.com&#34;&gt;https://www.lucidchart.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;6-notations&#34;&gt;6 notations&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;standard-sn&#34;&gt;standard (SN)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;entity (table) name listed in capital letters&lt;/li&gt;
+&lt;li&gt;attributes (colnames) listed in parenthesis&lt;/li&gt;
+&lt;li&gt;primary key underlined&lt;/li&gt;
+&lt;li&gt;foreign key dotted underlined&lt;/li&gt;
+&lt;li&gt;con: does not have arrows like ERDs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;db-design-language-dbdl&#34;&gt;db design language (DBDL)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;alternate to SN&lt;/li&gt;
+&lt;li&gt;primary key (PK), secondary key (SK), alternate key (AK), foreign key (FK), listed underneath entity listing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;e.g. 
+  STUDENT (student_id, firstname, lastname, program, email)
+      PK student_id
+      AK email
+  CLASS (class_id, name, day, building_id, begintime, endtime)
+      PK class_id
+      FK building_id -&amp;gt; BUILDING       # building_id is a foreign key
+  STUDENT_CLASS (student_id, class_id)
+      PK student_id, class_id
+  BUILDING (building_id, name, address, city, zip)
+      PK building_id
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;7-cardinality&#34;&gt;7 cardinality&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;how tables are related
+&lt;ul&gt;
+&lt;li&gt;how many attributes in one table can be linked to attributes to another table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;1:1, 1:N, N:N&lt;/li&gt;
+&lt;li&gt;try to avoid N:N relationship&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;crows-foot-notation-showing-cardinality&#34;&gt;crow&amp;rsquo;s foot notation showing cardinality&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;  0 or 1              -----------0-1-|
+  exactly 1           -----------1-1-|
+  0 or many           -----------0-&amp;lt;-|
+  at least 1 or many  -----------1-&amp;lt;-|
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;8-normalization&#34;&gt;8 normalization&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;progressively modify db table&lt;/li&gt;
+&lt;li&gt;reduce redundancy and problems&lt;/li&gt;
+&lt;li&gt;prevent update anomalies
+&lt;ul&gt;
+&lt;li&gt;after db made, user can&amp;rsquo;t insert certain records&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;more normalized =
+&lt;ul&gt;
+&lt;li&gt;less problems&lt;/li&gt;
+&lt;li&gt;more tables with less attributes&lt;/li&gt;
+&lt;li&gt;more processing power needed&lt;/li&gt;
+&lt;li&gt;tables more refined&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;normal-form&#34;&gt;normal form&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;3NF is what we want eventually (least repetitive)&lt;/li&gt;
+&lt;li&gt;normalization is progressive, so need 1NF to do 2NF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;1st-normal-form-1nf&#34;&gt;1st normal form (1NF)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;all records have same number of attributes&lt;/li&gt;
+&lt;li&gt;no repeating values&lt;/li&gt;
+&lt;li&gt;e.g. PET_OWNER (ID, Name, Pet1, Pet2, Pet3, Pet4, Pet5)
+&lt;ul&gt;
+&lt;li&gt;this creates a artificial limit - cannot have &amp;gt; 5 pets&lt;/li&gt;
+&lt;li&gt;wastes space - having &amp;lt; 5 pets, rest will be NULL&lt;/li&gt;
+&lt;li&gt;(&lt;strong&gt;drawbacks of 1NF&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;2nd-normal-form-2nf&#34;&gt;2nd normal form (2NF)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;primary key defined&lt;/li&gt;
+&lt;li&gt;can be composite (2+ columns)&lt;/li&gt;
+&lt;li&gt;primary key determines all other attributes
+&lt;img src=&#34;./tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/NF2.png&#34; alt=&#34;&#34; width=&#34;450px&#34;/&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;3rd-normal-form-3nf&#34;&gt;3rd normal form (3NF)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;all non-key attributes depend on primary key,&lt;/li&gt;
+&lt;li&gt;and NOT on other non-key attributes&lt;/li&gt;
+&lt;li&gt;e.g. table in 2NF but NOT in 3NF&lt;br&gt;
+&lt;img src=&#34;./tutorials//mySQL_tutorials/mySQL_universalclass_lesson3_files/NF2_not_NF3.png&#34; alt=&#34;&#34; width=&#34;450px&#34;/&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;manager_name&amp;rdquo; and &amp;ldquo;manager_title&amp;rdquo; does NOT depend on primary key (ID),&lt;/li&gt;
+&lt;li&gt;instead depend on non-key attribute &amp;ldquo;manager_id&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;making-it-3nf&#34;&gt;making it 3NF&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;split EMPLOYEE table into 3 tables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;EMPLOYEE (employee_id, name, address)
+    PK employee_id
+MANAGER (manager_id, name, title)
+    PK manager_id
+EMPLOYEE_MANAGER (employee_id, manager_id)  &amp;lt;-- linking table, need a composite key
+    PK employee_id, manager_id
+    FK employee_id -&amp;gt; EMPLOYEE
+    FK manager_id -&amp;gt; MANAGER
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;example-of-1nf-vs-2nf-vs-3nf&#34;&gt;example of 1NF vs 2NF vs 3NF&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;school keeping track of students enrolled, classes offered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h5 id=&#34;1nf-design&#34;&gt;1NF design&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;in STUDENT table: each student is stored in 1 row&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;in CLASS table: each class is stored in 1 row&lt;br&gt;
+&lt;img src=&#34;./tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/NF_example.png&#34; alt=&#34;&#34; width=&#34;400px&#34;/&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;each student limited to 3 classes&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;question = how to correctly relate STUDENT to CLASS?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;solution = break up STUDENT&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h5 id=&#34;3nf-design&#34;&gt;3NF design&lt;/h5&gt;
+&lt;img src=&#34;./tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/NF3_example.png&#34; alt=&#34;&#34; width=&#34;450px&#34;/&gt;  
+&lt;ul&gt;
+&lt;li&gt;STUDENT table strictly only have info about student&lt;/li&gt;
+&lt;li&gt;CLASS table strictly only have info about classes&lt;/li&gt;
+&lt;li&gt;make a third table STUDENT_CLASS to relate STUDENT to CLASS&lt;/li&gt;
+&lt;li&gt;e.g. STUDENT_CLASS table
+&lt;ul&gt;
+&lt;li&gt;student_id = 20	&amp;mdash;&amp;gt; STUDENT table to look up student name&lt;/li&gt;
+&lt;li&gt;class_id = 3001 &amp;mdash;&amp;gt; CLASS table to get class name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;can now have students taking any number of classes
+&lt;ul&gt;
+&lt;li&gt;(multiple class_id entries for same student_id entry in STUDENT_CLASS table)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;and students can take no class
+&lt;ul&gt;
+&lt;li&gt;(won&amp;rsquo;t be in STUDENT_CLASS table)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;cardinality&#34;&gt;cardinality&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;STUDENT-|-|----0-&amp;lt; STUDENT_CLASS &amp;gt;-0------|-|-CLASS
+       
+       1:N relationship btw STUDENT and STUDENT_CLASS
+       1:N relationship btw CLASS and STUDENT_CLASS
+       
+in 1NF previous, had N:N (many students to many classes) cardinality, not good design
+in 3NF, now have 1 student to many classes, better design
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;4th-normal-form-4nf&#34;&gt;4th normal form (4NF)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;any record should not have &amp;gt; 1 related attribute&lt;/li&gt;
+&lt;li&gt;theoretical best, but causes too many lookups and slow response time&lt;/li&gt;
+&lt;li&gt;have to de-normalize into 3NF&lt;/li&gt;
+&lt;li&gt;e.g. of 4NF: EMPLOYEE table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;  EMPLOYEE_NAME       (emp_id, name)
+  EMPLOYEE_ADDRESS    (emp_id, address)	
+  EMPLOYEE_TELEPHONE  (emp_id, telephone)
+  EMPLOYEE_SALARY     (emp_id, salary)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;to extract a employee&amp;rsquo;s name, address, telephone, salary into a single output
+&lt;ul&gt;
+&lt;li&gt;will require 4 different lookups&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>MySQL Universalclass Lesson2</title>
       <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson2/</link>
       <pubDate>Wed, 15 Jul 2020 11:27:43 -0400</pubDate>
       <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson2/</guid>
       <description>&lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;amp;index=2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;amp;index=2&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;installing-mysql-windows-linux-macosx&#34;&gt;installing mySQL (Windows, Linux, macOSX)&lt;/h2&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;windows&#34;&gt;Windows&lt;/h3&gt;
@@ -1045,6 +1328,726 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://jennybc.github.io/purrr-tutorial/ls00_inspect-explore.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://jennybc.github.io/purrr-tutorial/ls00_inspect-explore.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Universalclass Lesson3.5</title>
+      <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/</link>
+      <pubDate>Wed, 15 Jul 2020 15:22:06 -0400</pubDate>
+      <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/</guid>
+      <description>&lt;h2 id=&#34;import-classicmodels-database&#34;&gt;import classicmodels database&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://www.eclipse.org/birt/documentation/sample-database.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;http://www.eclipse.org/birt/documentation/sample-database.php&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;put ClassicModels-MySQL folder into &lt;code&gt;/usr/local/mysql-8.0.16-macos10.14-x86_64/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;source-sql-scripts&#34;&gt;source .sql scripts&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/create_classicmodels.sql;
+SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/load_classicmodels.sql;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SOURCE&lt;/code&gt; command is not a MySQL statement, but something only handled by the MySQL client&lt;/li&gt;
+&lt;li&gt;MySQL Workbench does not handle this (as it is focused on pure MySQL code)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;mysql-in-terminal&#34;&gt;MySQL in terminal&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;mysql -u root -p             # login
+quit                         # quit
+
+mysql&amp;gt; SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| classicmodels      |
+| company            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| students           |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;ndash; show all databases
+SHOW databases;&lt;/p&gt;
+&lt;p&gt;&amp;ndash; use a database (schema will be bolded)&lt;/p&gt;
+&lt;p&gt;CREATE DATABASE classicmodels;
+USE classicmodels;&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;issues&#34;&gt;issues&lt;/h2&gt;
+&lt;p&gt;create_classicmodels.sql; worked fine
+load_classicmodels.sql; throws error
+Error Code: 1148. The used command is not allowed with this MySQL version&lt;/p&gt;
+&lt;h4 id=&#34;not-a-solution&#34;&gt;NOT a solution&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/18437689/error-1148-the-used-command-is-not-allowed-with-this-mysql-version&#34;&gt;https://stackoverflow.com/questions/18437689/error-1148-the-used-command-is-not-allowed-with-this-mysql-version&lt;/a&gt;
+SHOW VARIABLES LIKE &amp;lsquo;local_infile&amp;rsquo;;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;outputs OFF&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SET GLOBAL local_infile = 1;
+SHOW VARIABLES LIKE &amp;lsquo;local_infile&amp;rsquo;;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;now outputs ON&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ndash; still doesn&amp;rsquo;t work&amp;hellip;
+LOAD DATA LOCAL INFILE &amp;lsquo;../datafiles/customers.txt&amp;rsquo; INTO TABLE Customers
+FIELDS TERMINATED BY &amp;lsquo;,&amp;rsquo; ENCLOSED BY &amp;lsquo;&amp;quot;&amp;rsquo; LINES TERMINATED BY &amp;lsquo;\r\n&amp;rsquo;;&lt;/p&gt;
+&lt;p&gt;&amp;ndash; tried LOAD DATA INFILE, doesn&amp;rsquo;t work&lt;/p&gt;
+&lt;h4 id=&#34;solution&#34;&gt;solution?&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/32737478/how-should-i-tackle-secure-file-priv-in-mysql&#34;&gt;https://stackoverflow.com/questions/32737478/how-should-i-tackle-secure-file-priv-in-mysql&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL server has been started with &amp;ndash;secure-file-priv option which basically limits
+from which directories you can load files using LOAD DATA INFILE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;SHOW VARIABLES LIKE &amp;ldquo;secure_file_priv&amp;rdquo;;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;outputs NULL, no folder??? great&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;solution-1&#34;&gt;solution?&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/10757169/location-of-my-cnf-file-on-macos/10757312&#34;&gt;https://stackoverflow.com/questions/10757169/location-of-my-cnf-file-on-macos/10757312&lt;/a&gt;
+minghan:~$ mysql &amp;ndash;help or mysql &amp;ndash;help | grep my.cnf
+order of preference, my.cnf, $MYSQL_TCP_PORT,
+/etc/my.cnf /etc/mysql/my.cnf /usr/local/mysql/etc/my.cnf ~/.my.cnf&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;import-database-with-gui&#34;&gt;import database with GUI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;could not load using SQL statements&amp;hellip;&lt;/li&gt;
+&lt;li&gt;had to use mysql workbench GUI
+&lt;ul&gt;
+&lt;li&gt;right click on &amp;ldquo;Customers&amp;rdquo; table&lt;/li&gt;
+&lt;li&gt;had to add a fake header, mysql wb cannot read no header&amp;hellip;&lt;/li&gt;
+&lt;li&gt;change datafiles/Customers.txt to .csv file&lt;/li&gt;
+&lt;li&gt;must use latin-1 encoding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;repeat for all tables&amp;hellip;&lt;/li&gt;
+&lt;li&gt;maybe later can figure out how to config my.cnf&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Product.csv had to be edited, changed e.g. 8&amp;rdquo;&amp;rdquo; to 8inches&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Universalclass Lesson4</title>
+      <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson4/</link>
+      <pubDate>Wed, 15 Jul 2020 14:40:33 -0400</pubDate>
+      <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson4/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=zAUzK3yBCZc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=zAUzK3yBCZc&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;start-server-workbench&#34;&gt;start server, workbench&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;start MySQL server from system preferences&lt;/li&gt;
+&lt;li&gt;start MySQL workbench&lt;/li&gt;
+&lt;li&gt;open database (Local instance 3306)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;database-level-commands&#34;&gt;database level commands&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SHOW databases;&lt;/code&gt; (shows all databases, including some MySQL backend dbs)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CREATE database test;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DROP database test;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;USE classicmodels;&lt;/code&gt; (now all commands will go to classicmodels, schema bolded)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SHOW TABLES;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;(cmd+enter to run a line, cmd+shift+enter to run all)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;sql-commands&#34;&gt;SQL commands&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SELECT col FROM table WHERE col=val;&lt;/li&gt;
+&lt;li&gt;INSERT INTO table (col1,col2 &amp;hellip;) VALUES(col1 val, col2 val &amp;hellip;);&lt;/li&gt;
+&lt;li&gt;UPDATE table SET col1=val WHERE col2=val;&lt;/li&gt;
+&lt;li&gt;DESCRIBE table;&lt;/li&gt;
+&lt;li&gt;DELETE col FROM table WHERE col=val;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;select-commands&#34;&gt;SELECT commands&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT customerName, customerNumber, contactLastName, contactFirstName
+FROM Customers;
+
+SELECT *
+FROM Customers
+WHERE customerNumber = 121;
+
+SELECT customerName, phone
+FROM Customers
+WHERE customerNumber = 121;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;describe-a-table&#34;&gt;DESCRIBE a table&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DESCRIBE Customers;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;./tutorials/mySQL_tutorials/mySQL_universalclass_lesson4_files/describe1.png&#34; alt=&#34;&#34; width=&#34;400px&#34;/&gt;  
+&lt;ul&gt;
+&lt;li&gt;CHAR(50) means value has to be 50 char long&lt;/li&gt;
+&lt;li&gt;VARCHAR(50) means value can be 1 to 50 char long&lt;/li&gt;
+&lt;li&gt;Null column can be set to YES or NO
+&lt;ul&gt;
+&lt;li&gt;NO means Null value is not allowed&lt;/li&gt;
+&lt;li&gt;(&lt;code&gt;firstname VARCHAR(50) NOT NULL&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;can use this to see what columns can be Null
+&lt;ul&gt;
+&lt;li&gt;when inserting new entries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;insert-commands&#34;&gt;INSERT commands&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;order matters&lt;/li&gt;
+&lt;li&gt;NULL if record does not have an attribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;-- insert a new customer
+INSERT INTO Customers
+VALUES (2001, &#39;Hometown Baker&#39;, &#39;Smith&#39;, &#39;Bob&#39;, 
+&#39;555-222-1212&#39;, &#39;123 Main St.&#39;, NULL, &#39;Orlando&#39;, &#39;FL&#39;,
+32001, &#39;USA&#39;, 1370, 22000);
+
+SELECT *
+FROM Customers
+WHERE customerNumber = 2001;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;update-commands&#34;&gt;UPDATE commands&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;-- update customer phone number
+UPDATE Customers
+SET phone = &#39;555-555-1212&#39;
+WHERE customerNumber = 2001;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;insert-specifying-columns&#34;&gt;INSERT, specifying columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;INSERT INTO Customers
+-- order does not matter,
+-- but VALUES order have to match
+(
+customerNumber, customerName, contactlastName, contactFirstname, addressLine1, city, phone, country
+)
+VALUES
+(
+2002, &#39;Betty\&#39;s Pancakes&#39;, &#39;Doe&#39;, &#39;Betty&#39;, &#39;222 2nd St.&#39;, &#39;Orlando&#39;, &#39;555-234-1212&#39;, &#39;USA&#39;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;default-is-null&#34;&gt;default is NULL&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;-- values not entered default to NULL
+SELECT *
+FROM Customers
+WHERE customerNumber = 2002;
+
+-- update customer state from Null to &#39;FL&#39;
+UPDATE Customers
+SET state = &#39;FL&#39;
+WHERE customerNumber = 2002;
+
+-- update customer postalCode from Null to 32801
+UPDATE Customers
+SET postalCode = 32801
+WHERE customerNumber = 2002;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;delete-commands&#34;&gt;DELETE commands&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;-- delete record (do SELECT * FROM.. WHERE.. first to double check)
+DELETE
+FROM Customers
+WHERE customerNumber = 2002;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Universalclass Lesson5</title>
+      <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson5/</link>
+      <pubDate>Wed, 15 Jul 2020 16:10:34 -0400</pubDate>
+      <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson5/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=b85eTgUrnFw&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;amp;index=5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=b85eTgUrnFw&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;amp;index=5&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;database-storage-engine&#34;&gt;database storage engine&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;underlying component of db manager&lt;/li&gt;
+&lt;li&gt;creates, reads, updates, deletes (CRUD)&lt;/li&gt;
+&lt;li&gt;importing external files&lt;/li&gt;
+&lt;li&gt;unique file formats for different engines&lt;/li&gt;
+&lt;li&gt;some allow file fragmentation
+&lt;ul&gt;
+&lt;li&gt;if not allow fragmentation,&lt;/li&gt;
+&lt;li&gt;and contiguous disk space cannot be found,&lt;/li&gt;
+&lt;li&gt;cannot add to database&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;responsible for indexing db&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;myisam&#34;&gt;MyISAM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;prior to MySQL v5.5&lt;/li&gt;
+&lt;li&gt;designed for speed&lt;/li&gt;
+&lt;li&gt;does not support referential integrity, or transactions
+&lt;ul&gt;
+&lt;li&gt;i.e. if user wants to reference table1 to table2,&lt;/li&gt;
+&lt;li&gt;MyISAM will not check if record exists in table2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;locks entire table when a record is being modified
+&lt;ul&gt;
+&lt;li&gt;another user cannot even do look ups on that table during update process&lt;/li&gt;
+&lt;li&gt;e.g. MS Access&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;no constraints that allow rolling back of changes
+&lt;ul&gt;
+&lt;li&gt;i.e. no UNDO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;good for tables used for SELECT statements&lt;/li&gt;
+&lt;li&gt;NOT for UPDATE, INSERT, DELETE statements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;archive-storage-engine&#34;&gt;ARCHIVE storage engine&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;stores large amount of data&lt;/li&gt;
+&lt;li&gt;but no index&lt;/li&gt;
+&lt;li&gt;uses little system resources&lt;/li&gt;
+&lt;li&gt;support INSERT and SELECT&lt;/li&gt;
+&lt;li&gt;no DELETE, REPLACE, UPDATE&lt;/li&gt;
+&lt;li&gt;perfect for archiving data, cannot change once created&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;innodb&#34;&gt;InnoDB&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;acquired by Oracle&lt;/li&gt;
+&lt;li&gt;default storage engine for MySQL 5.5+&lt;/li&gt;
+&lt;li&gt;transaction safe storage engine&lt;/li&gt;
+&lt;li&gt;focus on relational integrity&lt;/li&gt;
+&lt;li&gt;supports foreign keys, commits, rollback, crash recovery&lt;/li&gt;
+&lt;li&gt;row-level locking
+&lt;ul&gt;
+&lt;li&gt;other users can query other rows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;handles high data volume&lt;/li&gt;
+&lt;li&gt;use indexes&lt;/li&gt;
+&lt;li&gt;but requires more time and processing power&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;change-storage-engine-with-cnf&#34;&gt;change storage engine with .cnf&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;windows
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\MySQL\MySQL Server 5.6\my.ini&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;linux/macOSX
+&lt;ul&gt;
+&lt;li&gt;/etc/my.cnf&lt;/li&gt;
+&lt;li&gt;/etc/mysql/my.cnf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;change
+&lt;ul&gt;
+&lt;li&gt;default-storage-engine=INNODB&lt;/li&gt;
+&lt;li&gt;OR &amp;ndash; MYISAM&lt;/li&gt;
+&lt;li&gt;OR &amp;ndash; ARCHIVE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;check-table&#34;&gt;CHECK TABLE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;verify table content, constraints met&lt;/li&gt;
+&lt;li&gt;works with MyISAM, ARCHIVE, InnoDB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;USE classicmodels;
+CHECK TABLE Customers;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;repair-table-recover&#34;&gt;REPAIR table (RECOVER)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;repairs corrupted table&lt;/li&gt;
+&lt;li&gt;valid for MyISAM, ARCHIVE, CSV tables&lt;/li&gt;
+&lt;li&gt;not for InnoDB
+&lt;ul&gt;
+&lt;li&gt;have to create &amp;ldquo;dump file&amp;rdquo; and reload&lt;/li&gt;
+&lt;li&gt;future lesson&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;create-tabledatabase&#34;&gt;CREATE TABLE/DATABASE&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;CREATE DATABASE test;
+USE test;
+
+CREATE TABLE testTable
+(
+id INT(4) NOT NULL,                -- gonna be primary key
+firstname VARCHAR(50) NOT NULL,
+lastname VARCHAR(50) NOT NULL,
+telephone VARCHAR(12),
+email VARCHAR(50),
+zipcode VARCHAR(10) NOT NULL,
+PRIMARY KEY (id)
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;drop-tabledatabase&#34;&gt;DROP TABLE/DATABASE&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DROP TABLE testTable;
+DROP DATABASE test;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;alter-table&#34;&gt;ALTER TABLE&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;modify column (add, drop, rename)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE table_name
+ADD column_name datatype;           -- add a column
+
+ALTER TABLE table_name
+DROP column_name;			              -- drop a column
+
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype; -- modify data type
+
+ALTER TABLE table_name
+CHANGE old_name new_name datatype;  -- rename a column
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;examples&#34;&gt;examples&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;USE classicmodels;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;change-column-name&#34;&gt;change column name&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE Customers
+CHANGE contactFirstName customerFirstName VARCHAR(50);
+
+ALTER TABLE Customers
+CHANGE contactLastName customerLastName VARCHAR(50);
+
+SELECT * FROM Customers;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;CAUTION:
+&lt;ul&gt;
+&lt;li&gt;if another table &lt;strong&gt;references&lt;/strong&gt; above columns,&lt;/li&gt;
+&lt;li&gt;will break database&lt;/li&gt;
+&lt;li&gt;try not to change tables once it is made&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;add-column&#34;&gt;ADD COLUMN&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE Customers
+ADD COLUMN myNewColumn VARCHAR(50);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;drop-column&#34;&gt;DROP COLUMN&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;ALTER TABLE Customers
+DROP COLUMN myNewColumn;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;change-data-type-using-modify&#34;&gt;change data type using MODIFY&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;DESCRIBE Customers;
+
+ALTER TABLE Customers
+MODIFY salesRepEmployeeNumber INT(20);    -- if employee number outgrown 20 digits
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;check-table-1&#34;&gt;check table&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;CHECK TABLE Customers;
+-- Table: classimodels.customers
+-- Msg_text: OK
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;if want to repair, cannot repair since it&amp;rsquo;s InnoDB
+&lt;ul&gt;
+&lt;li&gt;have to export into dump file,&lt;/li&gt;
+&lt;li&gt;import again&lt;/li&gt;
+&lt;li&gt;more later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL Universalclass Lesson6</title>
+      <link>/tutorials/mysql_tutorials/mysql_universalclass_lesson6/</link>
+      <pubDate>Wed, 15 Jul 2020 16:36:06 -0400</pubDate>
+      <guid>/tutorials/mysql_tutorials/mysql_universalclass_lesson6/</guid>
+      <description>&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=es_t9QXpXY4&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;amp;index=6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.youtube.com/watch?v=es_t9QXpXY4&amp;amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;amp;index=6&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;customers-orders-example&#34;&gt;Customers, Orders example&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;123 Customers&lt;/li&gt;
+&lt;li&gt;326 Orders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;joins&#34;&gt;JOINS&lt;/h2&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;natural-joins&#34;&gt;natural joins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;{ old way of INNER join }&lt;/li&gt;
+&lt;li&gt;for each customer, want to see all orders they placed&lt;/li&gt;
+&lt;li&gt;expect to see 326 rows return for all orders,
+&lt;ul&gt;
+&lt;li&gt;and have both &lt;strong&gt;customers&lt;/strong&gt; and &lt;strong&gt;orders&lt;/strong&gt; table&amp;rsquo;s columns in it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT *
+FROM customers, orders
+WHERE customers.customernumber = orders.customernumber;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;have to use fully qualified table names&lt;/li&gt;
+&lt;li&gt;{ since orders have to have a customer, this NATURAL/INNER join is same as LEFT join (with Orders first) }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;only-show-certain-columns&#34;&gt;only show certain columns&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;and change column name to be displayed with &lt;code&gt;AS&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT orders.ordernumber AS &#39;Order Number&#39;, customers.customername 
+AS &#39;Customer Name&#39;, orders.orderdate AS &#39;Order Date&#39;, orders.shippeddate AS &#39;Shipped Date&#39;
+FROM customers, orders
+WHERE customers.customernumber = orders.customernumber;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;using-alias&#34;&gt;using alias&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;specify alias in FROM statement&lt;/li&gt;
+&lt;li&gt;change all other table name to alias&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT o.ordernumber AS &#39;Order Number&#39;, 
+	   c.customername AS &#39;Customer Name&#39;, 
+       o.orderdate AS &#39;Order Date&#39;, 
+       o.shippeddate AS &#39;Shipped Date&#39;
+FROM customers c, orders o
+WHERE c.customernumber = o.customernumber;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;self-join&#34;&gt;SELF JOIN&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;{ why??? }&lt;/li&gt;
+&lt;li&gt;relate a table back onto itself&lt;/li&gt;
+&lt;li&gt;e.g. have list of employees and some employees are managers
+&lt;ul&gt;
+&lt;li&gt;want to see list of all employees,&lt;/li&gt;
+&lt;li&gt;along with name of his/her manager,&lt;/li&gt;
+&lt;li&gt;query will have to look back into same employee table&lt;/li&gt;
+&lt;li&gt;{ i.e. have to generate 2 employee cols,
+&lt;ul&gt;
+&lt;li&gt;relating employee-to-manager }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;solution = give table alias name&lt;/li&gt;
+&lt;li&gt;{ but below example doesn&amp;rsquo;t really relate employee-to-manager&amp;hellip;? }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT a.customername, b.customername
+-- FROM customers, customers; 	# not allowed
+FROM customers a, customers b	
+-- can give different alias to same table
+WHERE a.customername = b.customername;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;explicit-joins&#34;&gt;EXPLICIT JOINS&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;  INNER JOIN      only records where id matches btw table1 and table2
+  OUTER JOIN      retain all records (if tables not same size, will have NULLs)
+  LEFT JOIN       retains all records from first table
+  RIGHT JOIN      retains all records from second table
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;better than SELF JOIN&lt;/li&gt;
+&lt;li&gt;replaces WHERE a.customername = b.customername
+&lt;ul&gt;
+&lt;li&gt;with JOIN &amp;hellip; ON &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;inner-join&#34;&gt;INNER JOIN&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT a.customername, b.customername
+FROM customers a
+INNER JOIN customers b				-- INNER optional
+ON a.customername = b.customername;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;JOIN ON clause more efficient than FROM &amp;hellip; WHERE&lt;/li&gt;
+&lt;li&gt;FROM &amp;hellip; WHERE has to create a huge table of
+&lt;ul&gt;
+&lt;li&gt;all combinations of a and b tables,&lt;/li&gt;
+&lt;li&gt;then narrow it down to rows where a.customername = b.customername&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;JOIN ON clause only write to new table if
+- a.customername = b.customername&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;left-join&#34;&gt;LEFT JOIN&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;want customername in col1, and all their orders in col2&lt;/li&gt;
+&lt;li&gt;i.e. want everything from left table (i.e. &amp;ldquo;orders&amp;rdquo; table)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT r.customername, l.ordernumber, l.orderdate   -- get all columns
+FROM orders l                                       -- alias &#39;l&#39; for left table
+JOIN customers r                                    -- alias &#39;r&#39; for right table
+ON l.customernumber = r.customernumber              -- filter rows according to ON 
+-- (customer has to have placed an order to show up)
+ORDER BY r.customername;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;right-join&#34;&gt;RIGHT JOIN&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;want everything from right table (i.e. &amp;ldquo;customers&amp;rdquo; table)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT r.customername, l.ordernumber, l.orderdate
+FROM orders l
+RIGHT JOIN customers r					- 351 rows / e.g. American Souvenir - Null ordernumber
+ON l.customernumber = r.customernumber
+ORDER BY r.customername;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;{ LEFT JOIN
+&lt;ul&gt;
+&lt;li&gt;same result as INNER JOIN since every order has a corresponding customer }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;{ RIGHT JOIN
+&lt;ul&gt;
+&lt;li&gt;diff result from INNER JOIN since not every customer placed an order }&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;aggregate-function&#34;&gt;AGGREGATE function&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;count, sum, average&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT COUNT(*)
+FROM customers;		-- output = 123
+
+SELECT COUNT(*) AS &#39;Number of Customers&#39;
+FROM customers;		-- output = 123
+
+SELECT COUNT(*) AS &#39;Number of Order Items&#39;
+FROM orderdetails;	-- output = 2996
+
+SELECT * FROM orderdetails;
+-- composite key with ordernumber + productcode
+
+-- for ordernumber 10100, how many items were ordered?
+SELECT ordernumber, SUM(quantityordered)
+FROM orderdetails
+WHERE ordernumber = 10100;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;literals&#34;&gt;literals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;force a literal on a column&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;-- get num of items ordered for ordernumber 10100
+SELECT ordernumber, &#39;Total:&#39;, SUM(quantityordered)
+FROM orderdetails
+WHERE ordernumber = 10100;
+
+-- do for all customers, using GROUP BY
+SELECT ordernumber, &#39;Total:&#39;, SUM(quantityordered) AS &#39;Num item ordered&#39;
+FROM orderdetails
+GROUP BY ordernumber;      -- want to compute SELECT ... SUM() for each ordernumber
+
+-- which ordernumber has most num items ordered?
+SELECT ordernumber, &#39;Total:&#39;, SUM(quantityordered) AS &#39;Num item ordered&#39;
+FROM orderdetails
+GROUP BY ordernumber
+ORDER BY SUM(quantityordered) DESC;
+
+-- get max value in a column {NOT grouped by order number}
+SELECT MAX(quantityordered)		-- MIN() for minimum
+FROM orderdetails;
+
+-- calculations in a separate column
+SELECT *, quantityordered * priceeach AS &#39;total&#39;
+from orderdetails;
+
+-- for each &amp;quot;product&amp;quot;, how many were ordered
+SELECT productcode, count(quantityordered), sum(priceeach)
+FROM orderdetails
+GROUP BY productcode;
+
+-- for each &amp;quot;product&amp;quot;, sum of price
+SELECT productcode, count(quantityordered), sum(priceeach)
+FROM orderdetails
+GROUP BY productcode;
+
+-- find total number of item ordered for each &amp;quot;order&amp;quot;, total price for each &amp;quot;order&amp;quot;
+-- list order number, 
+-- GROUP by order number -- the sum of units ordered {doesn&#39;t matter productcode...}, 
+-- GROUP by order number -- the sum of price num of units * price each unit
+SELECT ordernumber, sum(quantityordered), sum(quantityordered * priceeach) AS &#39;total&#39;
+FROM orderdetails
+GROUP BY ordernumber;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;subqueries-nested-queries&#34;&gt;subqueries (nested queries)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;perform a query to get a value,&lt;/li&gt;
+&lt;li&gt;use that value to perform another query&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;example&#34;&gt;example&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;get all of people who placed an order,&lt;/li&gt;
+&lt;li&gt;where the number of items on their order &amp;gt; average number of items customers ordered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;SELECT AVG(quantityordered)
+FROM orderdetails;
+
+SELECT ordernumber, productcode, quantityordered
+FROM orderdetails
+WHERE quantityordered &amp;gt; 35.1572    -- replace with SELECT AVG()...
+ORDER BY ordernumber;
+
+SELECT ordernumber, productcode, quantityordered
+FROM orderdetails
+WHERE quantityordered &amp;gt;
+	(
+    SELECT AVG(quantityordered)
+    FROM orderdetails      -- you don&#39;t need to change DELIMITER???
+	)
+ORDER BY ordernumber;
+
+-- for each customer, how much they paid (need GROUP BY)
+SELECT customernumber, SUM(amount)
+FROM payments
+GROUP BY customernumber;
+
+-- find customers who paid more than the average
+SELECT customernumber, SUM(amount)
+FROM payments
+WHERE amount &amp;gt;
+(						-- mysql doesn&#39;t care about indent...
+SELECT AVG(amount)
+FROM payments
+)
+GROUP BY customernumber;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

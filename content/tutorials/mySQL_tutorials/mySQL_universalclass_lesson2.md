@@ -17,6 +17,8 @@ menu:
 
 [https://www.youtube.com/watch?v=pdNGcrtJdb8&list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&index=2](https://www.youtube.com/watch?v=pdNGcrtJdb8&list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&index=2)
 
+<br>
+
 ## installing mySQL (Windows, Linux, macOSX)
 
 <br>

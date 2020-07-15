@@ -3,14 +3,19 @@
 ---
 ## start editing
 1. open bioinfohippo R project
-2. blogdown::serve_site() to start auto-refreshing on localhost
+2. blogdown::serve_site() (to start auto-refreshing on localhost)
 (servr::daemon_stop(1) to stop serving)
 
 
 ---
 ## after editing - push to GitHub
-
-
+- in Terminal
+1. git status (check current dir status)
+2. git add . (add all files onto stage)
+3. git commit -m "..." (commit changes with comment)
+4. git push -u origin master
+5. git status
+    - should say On branch master, Your branch is up to date with 'origin/master'.
 
 
 ---
@@ -19,7 +24,11 @@ newdoc <- ".../.md"    # for path - skip /content/
 (e.g. newdoc <- "tutorials/mySQL_tutorials/mySQL_universalclass_lesson1.md")
 blogdown::new_content(newdoc, kind = "docs", open = interactive())
 
+## edit docs template
+.../bioinfohippo/themes/hugo-academic/archetypes/docs.md
 
+
+---
 ## adding .Rmd to /statics/
 - just paste .Rmd file into subdir inside /statics/
 

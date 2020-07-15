@@ -27,11 +27,11 @@
   
     
   
-  <meta name="description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1.">
+  <meta name="description" content="https://www.youtube.com/watch?v=b85eTgUrnFw&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=5
+database storage engine  underlying component of db manager creates, reads, updates, deletes (CRUD) importing external files unique file formats for different engines some allow file fragmentation  if not allow fragmentation, and contiguous disk space cannot be found, cannot add to database   responsible for indexing db  MyISAM  prior to MySQL v5.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson5/">
 
   
 
@@ -221,7 +221,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson5/">
 
   
   
@@ -237,16 +237,16 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
-  <meta property="og:title" content="MySQL Universalclass Lesson2 | BioinfoHippo">
-  <meta property="og:description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson5/">
+  <meta property="og:title" content="MySQL Universalclass Lesson5 | BioinfoHippo">
+  <meta property="og:description" content="https://www.youtube.com/watch?v=b85eTgUrnFw&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=5
+database storage engine  underlying component of db manager creates, reads, updates, deletes (CRUD) importing external files unique file formats for different engines some allow file fragmentation  if not allow fragmentation, and contiguous disk space cannot be found, cannot add to database   responsible for indexing db  MyISAM  prior to MySQL v5."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-07-15T11:27:43-04:00">
+      <meta property="article:published_time" content="2020-07-15T16:10:34-04:00">
     
-    <meta property="article:modified_time" content="2020-07-15T11:27:43-04:00">
+    <meta property="article:modified_time" content="2020-07-15T16:10:34-04:00">
   
 
   
@@ -265,7 +265,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
 
 
-  <title>MySQL Universalclass Lesson2 | BioinfoHippo</title>
+  <title>MySQL Universalclass Lesson5 | BioinfoHippo</title>
 
 </head>
 
@@ -507,7 +507,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson1/">Lesson1 overview</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">Lesson2 install</a>
       </li>
       
@@ -523,7 +523,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson4/">Lesson4 basic SQL</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson5/">Lesson5 db struc</a>
       </li>
       
@@ -549,11 +549,21 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</a>
+    <li><a href="#database-storage-engine">database storage engine</a>
       <ul>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#linux-ubuntu-920">Linux-Ubuntu (9:20)</a></li>
-        <li><a href="#macosx-1339">macOSX (13:39)</a></li>
+        <li><a href="#myisam">MyISAM</a></li>
+        <li><a href="#archive-storage-engine">ARCHIVE storage engine</a></li>
+        <li><a href="#innodb">InnoDB</a></li>
+        <li><a href="#change-storage-engine-with-cnf">change storage engine with .cnf</a></li>
+      </ul>
+    </li>
+    <li><a href="#check-table">CHECK TABLE</a></li>
+    <li><a href="#repair-table-recover">REPAIR table (RECOVER)</a></li>
+    <li><a href="#create-tabledatabase">CREATE TABLE/DATABASE</a></li>
+    <li><a href="#drop-tabledatabase">DROP TABLE/DATABASE</a></li>
+    <li><a href="#alter-table">ALTER TABLE</a>
+      <ul>
+        <li><a href="#examples">examples</a></li>
       </ul>
     </li>
   </ul>
@@ -568,161 +578,220 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>MySQL Universalclass Lesson2</h1>
+          <h1>MySQL Universalclass Lesson5</h1>
 
           <div class="article-style">
             <p>
-<a href="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2</a></p>
+<a href="https://www.youtube.com/watch?v=b85eTgUrnFw&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=5" target="_blank" rel="noopener">https://www.youtube.com/watch?v=b85eTgUrnFw&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=5</a></p>
 <br>
-<h2 id="installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</h2>
-<br>
-<h3 id="windows">Windows</h3>
+<h2 id="database-storage-engine">database storage engine</h2>
 <ul>
-<li>mysql.com</li>
-<li>mysql community edition (GPL) (mysql community server 5.6.26)</li>
-<li>computer needs .net framework 4.0+</li>
+<li>underlying component of db manager</li>
+<li>creates, reads, updates, deletes (CRUD)</li>
+<li>importing external files</li>
+<li>unique file formats for different engines</li>
+<li>some allow file fragmentation
+<ul>
+<li>if not allow fragmentation,</li>
+<li>and contiguous disk space cannot be found,</li>
+<li>cannot add to database</li>
+</ul>
+</li>
+<li>responsible for indexing db</li>
 </ul>
 <br>
-<h4 id="mysql-installer">MySQL installer</h4>
-<h5 id="setup-type">setup type</h5>
+<h3 id="myisam">MyISAM</h3>
 <ul>
-<li>developer default</li>
+<li>prior to MySQL v5.5</li>
+<li>designed for speed</li>
+<li>does not support referential integrity, or transactions
+<ul>
+<li>i.e. if user wants to reference table1 to table2,</li>
+<li>MyISAM will not check if record exists in table2</li>
 </ul>
-<pre><code>  mysql server            &lt;-- essential
-  mysql workbench         &lt;-- essential
-  mysql for excel 1.3.4   &lt;-- need pre-installed
-  mysql for visual studio &lt;-- need pre-installed
-  mysql connectors/ python
-  mysql fabric 1.5.4
-  (also installs sample database for practice)
-</code></pre>
-<br>
-<h5 id="type-and-networking">type and networking</h5>
-<pre><code>  config type		    development machine
-  connectivity	    TCP/IP
-  port number		    3306
-  open firewall     port for network acccess (yes)
-  named pipe        (unselected)
-  shared memory     (unselected)
-</code></pre>
-<br>
-<h5 id="accounts-and-roles">accounts and roles</h5>
+</li>
+<li>locks entire table when a record is being modified
 <ul>
-<li>mysql root password</li>
+<li>another user cannot even do look ups on that table during update process</li>
+<li>e.g. MS Access</li>
+</ul>
+</li>
+<li>no constraints that allow rolling back of changes
+<ul>
+<li>i.e. no UNDO</li>
+</ul>
+</li>
+<li>good for tables used for SELECT statements</li>
+<li>NOT for UPDATE, INSERT, DELETE statements</li>
 </ul>
 <br>
-<h5 id="mysql-user-accounts">mysql user accounts</h5>
+<h3 id="archive-storage-engine">ARCHIVE storage engine</h3>
 <ul>
-<li>create later in mySQLworkbench</li>
+<li>stores large amount of data</li>
+<li>but no index</li>
+<li>uses little system resources</li>
+<li>support INSERT and SELECT</li>
+<li>no DELETE, REPLACE, UPDATE</li>
+<li>perfect for archiving data, cannot change once created</li>
 </ul>
 <br>
-<h5 id="windows-service">windows service</h5>
+<h3 id="innodb">InnoDB</h3>
 <ul>
-<li>can run mySQL server in the background as a windows service</li>
+<li>acquired by Oracle</li>
+<li>default storage engine for MySQL 5.5+</li>
+<li>transaction safe storage engine</li>
+<li>focus on relational integrity</li>
+<li>supports foreign keys, commits, rollback, crash recovery</li>
+<li>row-level locking
+<ul>
+<li>other users can query other rows</li>
 </ul>
-<pre><code>  configure mysql server    as windows service
-  windows service name      mysql56
-  run windows service as    standard account
-</code></pre>
-<br>
-<h5 id="apply-server-configuration">apply server configuration</h5>
-<ul>
-<li>execute</li>
-<li>will generate some config files</li>
-</ul>
-<br>
-<h5 id="connect-to-server">connect to server</h5>
-<ul>
-<li>server running on local computer</li>
-<li>enter username and password to connect to server</li>
-<li><code>check</code> to verify connection</li>
+</li>
+<li>handles high data volume</li>
+<li>use indexes</li>
+<li>but requires more time and processing power</li>
 </ul>
 <br>
-<h5 id="apply-server-configuration-1">apply server configuration</h5>
+<h3 id="change-storage-engine-with-cnf">change storage engine with .cnf</h3>
 <ul>
-<li>finishes configuration</li>
+<li>windows
+<ul>
+<li><code>C:\ProgramData\MySQL\MySQL Server 5.6\my.ini</code></li>
 </ul>
-<br>
-<hr>
-<h3 id="linux-ubuntu-920">Linux-Ubuntu (9:20)</h3>
+</li>
+<li>linux/macOSX
 <ul>
-<li>Ubuntu software center &gt; search &ldquo;mysql&rdquo;&rdquo;</li>
+<li>/etc/my.cnf</li>
+<li>/etc/mysql/my.cnf</li>
 </ul>
-<br>
-<hr>
-<h3 id="macosx-1339">macOSX (13:39)</h3>
+</li>
+<li>change
 <ul>
-<li>need to download server and workbench separately</li>
-</ul>
-<br>
-<h4 id="mysql-server">mysql server</h4>
-<ul>
-<li>mysql community server 5.6.26 (.dmg or .tar)</li>
-<li>install with default settings</li>
-<li>start/stop server
-<ul>
-<li>system preference &gt; MySQL<br>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/start_mysql_server.png" alt="" width="500px"/>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/mysql_server_config.png" alt="" width="500px"/></li>
+<li>default-storage-engine=INNODB</li>
+<li>OR &ndash; MYISAM</li>
+<li>OR &ndash; ARCHIVE</li>
 </ul>
 </li>
 </ul>
 <br>
-<h4 id="mysql-workbench">mysql workbench</h4>
+<hr>
+<h2 id="check-table">CHECK TABLE</h2>
 <ul>
-<li>download, install, open</li>
+<li>verify table content, constraints met</li>
+<li>works with MyISAM, ARCHIVE, InnoDB</li>
 </ul>
-<br>
-<h5 id="setup-new-connection">setup new connection</h5>
-<ul>
-<li>MySQL Connections (+)</li>
-</ul>
-<pre><code>	connection name      local
-	connection method    standard(TCP/IP)
-	hostname             127.0.0.1
-	port                 3306
-	username             root
-	password             store in keychain
-	default schema       blank
-	
-	test connection
+<pre><code class="language-sql">USE classicmodels;
+CHECK TABLE Customers;
 </code></pre>
-<h5 id="open-sql-editor">open SQL editor</h5>
+<br>
+<hr>
+<h2 id="repair-table-recover">REPAIR table (RECOVER)</h2>
 <ul>
-<li>double click on &ldquo;local&rdquo; server connection</li>
-<li>under &ldquo;Query 1&rdquo;
+<li>repairs corrupted table</li>
+<li>valid for MyISAM, ARCHIVE, CSV tables</li>
+<li>not for InnoDB
 <ul>
-<li><code>CREATE database brian;</code></li>
-<li>inserted brian schema under SCHEMAS panel</li>
+<li>have to create &ldquo;dump file&rdquo; and reload</li>
+<li>future lesson</li>
 </ul>
 </li>
 </ul>
 <br>
-<h5 id="mysql-program-file-structure">mysql program file structure</h5>
-<pre><code>/usr/local/mysql/
-    bin    scripts
-    data   schemas    does not have permission, only DBMS has access	
+<hr>
+<h2 id="create-tabledatabase">CREATE TABLE/DATABASE</h2>
+<pre><code class="language-sql">CREATE DATABASE test;
+USE test;
+
+CREATE TABLE testTable
+(
+id INT(4) NOT NULL,                -- gonna be primary key
+firstname VARCHAR(50) NOT NULL,
+lastname VARCHAR(50) NOT NULL,
+telephone VARCHAR(12),
+email VARCHAR(50),
+zipcode VARCHAR(10) NOT NULL,
+PRIMARY KEY (id)
+);
 </code></pre>
 <br>
-<h5 id="mysql-folder-permissions">mysql folder permissions</h5>
-<pre><code>minghan:mysql$ ls -lA
-total 872
--rw-r--r--   1 _mysql  _mysql  335809 13 Apr 07:46 LICENSE
--rw-r--r--   1 _mysql  _mysql  101807 13 Apr 07:46 LICENSE.router
--rw-r--r--   1 _mysql  _mysql     687 13 Apr 07:46 README
--rw-r--r--   1 _mysql  _mysql     700 13 Apr 07:46 README.router
-drwxr-xr-x  35 _mysql  _mysql    1120 13 Apr 08:34 bin
-drwxr-x---  28 _mysql  _mysql     896  7 Jul 17:08 data
-drwxr-xr-x   6 _mysql  _mysql     192 13 Apr 08:32 docs
-drwxr-xr-x  15 _mysql  _mysql     480 13 Apr 08:32 include
-drwxr-x---   3 _mysql  _mysql      96  5 Jul 20:26 keyring
-drwxr-xr-x  21 _mysql  _mysql     672  5 Jul 20:25 lib
-drwxr-xr-x   4 _mysql  _mysql     128 13 Apr 08:32 man
-drwxrwxr-x   2 _mysql  _mysql      64 13 Apr 08:32 run
-drwxr-xr-x  33 _mysql  _mysql    1056 13 Apr 08:32 share
-drwxr-xr-x   5 _mysql  _mysql     160 13 Apr 08:32 support-files
-drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
+<hr>
+<h2 id="drop-tabledatabase">DROP TABLE/DATABASE</h2>
+<pre><code class="language-sql">DROP TABLE testTable;
+DROP DATABASE test;
 </code></pre>
+<br>
+<hr>
+<h2 id="alter-table">ALTER TABLE</h2>
+<ul>
+<li>modify column (add, drop, rename)</li>
+</ul>
+<pre><code class="language-sql">ALTER TABLE table_name
+ADD column_name datatype;           -- add a column
+
+ALTER TABLE table_name
+DROP column_name;			              -- drop a column
+
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype; -- modify data type
+
+ALTER TABLE table_name
+CHANGE old_name new_name datatype;  -- rename a column
+</code></pre>
+<br>
+<h3 id="examples">examples</h3>
+<pre><code class="language-sql">USE classicmodels;
+</code></pre>
+<br>
+<h4 id="change-column-name">change column name</h4>
+<pre><code class="language-sql">ALTER TABLE Customers
+CHANGE contactFirstName customerFirstName VARCHAR(50);
+
+ALTER TABLE Customers
+CHANGE contactLastName customerLastName VARCHAR(50);
+
+SELECT * FROM Customers;
+</code></pre>
+<ul>
+<li>CAUTION:
+<ul>
+<li>if another table <strong>references</strong> above columns,</li>
+<li>will break database</li>
+<li>try not to change tables once it is made</li>
+</ul>
+</li>
+</ul>
+<br>
+<h4 id="add-column">ADD COLUMN</h4>
+<pre><code class="language-sql">ALTER TABLE Customers
+ADD COLUMN myNewColumn VARCHAR(50);
+</code></pre>
+<br>
+<h4 id="drop-column">DROP COLUMN</h4>
+<pre><code class="language-sql">ALTER TABLE Customers
+DROP COLUMN myNewColumn;
+</code></pre>
+<br>
+<h4 id="change-data-type-using-modify">change data type using MODIFY</h4>
+<pre><code class="language-sql">DESCRIBE Customers;
+
+ALTER TABLE Customers
+MODIFY salesRepEmployeeNumber INT(20);    -- if employee number outgrown 20 digits
+</code></pre>
+<br>
+<h4 id="check-table-1">check table</h4>
+<pre><code class="language-sql">CHECK TABLE Customers;
+-- Table: classimodels.customers
+-- Msg_text: OK
+</code></pre>
+<ul>
+<li>if want to repair, cannot repair since it&rsquo;s InnoDB
+<ul>
+<li>have to export into dump file,</li>
+<li>import again</li>
+<li>more later</li>
+</ul>
+</li>
+</ul>
 
           </div>
 
@@ -739,14 +808,14 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/" rel="next">MySQL Universalclass Lesson3</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson4/" rel="next">MySQL Universalclass Lesson4</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/" rel="prev">MySQL Universalclass Lesson3.5</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson6/" rel="prev">MySQL Universalclass Lesson6</a>
   </div>
   
 </div>
@@ -768,7 +837,7 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson2.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson5.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>

@@ -27,11 +27,10 @@
   
     
   
-  <meta name="description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1.">
+  <meta name="description" content="import classicmodels database   http://www.eclipse.org/birt/documentation/sample-database.php put ClassicModels-MySQL folder into /usr/local/mysql-8.0.16-macos10.14-x86_64/  source .sql scripts SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/create_classicmodels.sql; SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/load_classicmodels.sql;   SOURCE command is not a MySQL statement, but something only handled by the MySQL client MySQL Workbench does not handle this (as it is focused on pure MySQL code)  MySQL in terminal mysql -u root -p # login quit # quit mysql&gt; SHOW databases; &#43;--------------------&#43; | Database | &#43;--------------------&#43; | classicmodels | | company | | information_schema | | mysql | | performance_schema | | students | | sys | &#43;--------------------&#43; 7 rows in set (0.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/">
 
   
 
@@ -221,7 +220,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/">
 
   
   
@@ -237,16 +236,15 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
-  <meta property="og:title" content="MySQL Universalclass Lesson2 | BioinfoHippo">
-  <meta property="og:description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/">
+  <meta property="og:title" content="MySQL Universalclass Lesson3.5 | BioinfoHippo">
+  <meta property="og:description" content="import classicmodels database   http://www.eclipse.org/birt/documentation/sample-database.php put ClassicModels-MySQL folder into /usr/local/mysql-8.0.16-macos10.14-x86_64/  source .sql scripts SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/create_classicmodels.sql; SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/load_classicmodels.sql;   SOURCE command is not a MySQL statement, but something only handled by the MySQL client MySQL Workbench does not handle this (as it is focused on pure MySQL code)  MySQL in terminal mysql -u root -p # login quit # quit mysql&gt; SHOW databases; &#43;--------------------&#43; | Database | &#43;--------------------&#43; | classicmodels | | company | | information_schema | | mysql | | performance_schema | | students | | sys | &#43;--------------------&#43; 7 rows in set (0."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-07-15T11:27:43-04:00">
+      <meta property="article:published_time" content="2020-07-15T15:22:06-04:00">
     
-    <meta property="article:modified_time" content="2020-07-15T11:27:43-04:00">
+    <meta property="article:modified_time" content="2020-07-15T15:22:06-04:00">
   
 
   
@@ -265,7 +263,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
 
 
-  <title>MySQL Universalclass Lesson2 | BioinfoHippo</title>
+  <title>MySQL Universalclass Lesson3.5 | BioinfoHippo</title>
 
 </head>
 
@@ -507,7 +505,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson1/">Lesson1 overview</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">Lesson2 install</a>
       </li>
       
@@ -515,7 +513,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/">Lesson3 db design</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/">Lesson3.5 import db</a>
       </li>
       
@@ -549,13 +547,15 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</a>
+    <li><a href="#import-classicmodels-database">import classicmodels database</a></li>
+    <li><a href="#source-sql-scripts">source .sql scripts</a></li>
+    <li><a href="#mysql-in-terminal">MySQL in terminal</a></li>
+    <li><a href="#issues">issues</a>
       <ul>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#linux-ubuntu-920">Linux-Ubuntu (9:20)</a></li>
-        <li><a href="#macosx-1339">macOSX (13:39)</a></li>
+        <li></li>
       </ul>
     </li>
+    <li><a href="#import-database-with-gui">import database with GUI</a></li>
   </ul>
 </nav>
 
@@ -568,161 +568,101 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>MySQL Universalclass Lesson2</h1>
+          <h1>MySQL Universalclass Lesson3.5</h1>
 
           <div class="article-style">
-            <p>
-<a href="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2</a></p>
-<br>
-<h2 id="installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</h2>
-<br>
-<h3 id="windows">Windows</h3>
+            <h2 id="import-classicmodels-database">import classicmodels database</h2>
 <ul>
-<li>mysql.com</li>
-<li>mysql community edition (GPL) (mysql community server 5.6.26)</li>
-<li>computer needs .net framework 4.0+</li>
+<li>
+<a href="http://www.eclipse.org/birt/documentation/sample-database.php" target="_blank" rel="noopener">http://www.eclipse.org/birt/documentation/sample-database.php</a></li>
+<li>put ClassicModels-MySQL folder into <code>/usr/local/mysql-8.0.16-macos10.14-x86_64/</code></li>
 </ul>
 <br>
-<h4 id="mysql-installer">MySQL installer</h4>
-<h5 id="setup-type">setup type</h5>
-<ul>
-<li>developer default</li>
-</ul>
-<pre><code>  mysql server            &lt;-- essential
-  mysql workbench         &lt;-- essential
-  mysql for excel 1.3.4   &lt;-- need pre-installed
-  mysql for visual studio &lt;-- need pre-installed
-  mysql connectors/ python
-  mysql fabric 1.5.4
-  (also installs sample database for practice)
+<h2 id="source-sql-scripts">source .sql scripts</h2>
+<pre><code>SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/create_classicmodels.sql;
+SOURCE /usr/local/mysql-8.0.16-macos10.14-x86_64/ClassicModels-MySQL/scripts/load_classicmodels.sql;
 </code></pre>
+<ul>
+<li><code>SOURCE</code> command is not a MySQL statement, but something only handled by the MySQL client</li>
+<li>MySQL Workbench does not handle this (as it is focused on pure MySQL code)</li>
+</ul>
 <br>
-<h5 id="type-and-networking">type and networking</h5>
-<pre><code>  config type		    development machine
-  connectivity	    TCP/IP
-  port number		    3306
-  open firewall     port for network acccess (yes)
-  named pipe        (unselected)
-  shared memory     (unselected)
+<h2 id="mysql-in-terminal">MySQL in terminal</h2>
+<pre><code>mysql -u root -p             # login
+quit                         # quit
+
+mysql&gt; SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| classicmodels      |
+| company            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| students           |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
 </code></pre>
-<br>
-<h5 id="accounts-and-roles">accounts and roles</h5>
-<ul>
-<li>mysql root password</li>
-</ul>
-<br>
-<h5 id="mysql-user-accounts">mysql user accounts</h5>
-<ul>
-<li>create later in mySQLworkbench</li>
-</ul>
-<br>
-<h5 id="windows-service">windows service</h5>
-<ul>
-<li>can run mySQL server in the background as a windows service</li>
-</ul>
-<pre><code>  configure mysql server    as windows service
-  windows service name      mysql56
-  run windows service as    standard account
-</code></pre>
-<br>
-<h5 id="apply-server-configuration">apply server configuration</h5>
-<ul>
-<li>execute</li>
-<li>will generate some config files</li>
-</ul>
-<br>
-<h5 id="connect-to-server">connect to server</h5>
-<ul>
-<li>server running on local computer</li>
-<li>enter username and password to connect to server</li>
-<li><code>check</code> to verify connection</li>
-</ul>
-<br>
-<h5 id="apply-server-configuration-1">apply server configuration</h5>
-<ul>
-<li>finishes configuration</li>
-</ul>
+<p>&ndash; show all databases
+SHOW databases;</p>
+<p>&ndash; use a database (schema will be bolded)</p>
+<p>CREATE DATABASE classicmodels;
+USE classicmodels;</p>
 <br>
 <hr>
-<h3 id="linux-ubuntu-920">Linux-Ubuntu (9:20)</h3>
+<h2 id="issues">issues</h2>
+<p>create_classicmodels.sql; worked fine
+load_classicmodels.sql; throws error
+Error Code: 1148. The used command is not allowed with this MySQL version</p>
+<h4 id="not-a-solution">NOT a solution</h4>
+<p><a href="https://stackoverflow.com/questions/18437689/error-1148-the-used-command-is-not-allowed-with-this-mysql-version">https://stackoverflow.com/questions/18437689/error-1148-the-used-command-is-not-allowed-with-this-mysql-version</a>
+SHOW VARIABLES LIKE &lsquo;local_infile&rsquo;;</p>
 <ul>
-<li>Ubuntu software center &gt; search &ldquo;mysql&rdquo;&rdquo;</li>
+<li>outputs OFF</li>
 </ul>
+<p>SET GLOBAL local_infile = 1;
+SHOW VARIABLES LIKE &lsquo;local_infile&rsquo;;</p>
+<ul>
+<li>now outputs ON</li>
+</ul>
+<p>&ndash; still doesn&rsquo;t work&hellip;
+LOAD DATA LOCAL INFILE &lsquo;../datafiles/customers.txt&rsquo; INTO TABLE Customers
+FIELDS TERMINATED BY &lsquo;,&rsquo; ENCLOSED BY &lsquo;&quot;&rsquo; LINES TERMINATED BY &lsquo;\r\n&rsquo;;</p>
+<p>&ndash; tried LOAD DATA INFILE, doesn&rsquo;t work</p>
+<h4 id="solution">solution?</h4>
+<p><a href="https://stackoverflow.com/questions/32737478/how-should-i-tackle-secure-file-priv-in-mysql">https://stackoverflow.com/questions/32737478/how-should-i-tackle-secure-file-priv-in-mysql</a></p>
+<ul>
+<li>MySQL server has been started with &ndash;secure-file-priv option which basically limits
+from which directories you can load files using LOAD DATA INFILE</li>
+</ul>
+<p>SHOW VARIABLES LIKE &ldquo;secure_file_priv&rdquo;;</p>
+<ul>
+<li>outputs NULL, no folder??? great&hellip;</li>
+</ul>
+<h4 id="solution-1">solution?</h4>
+<p><a href="https://stackoverflow.com/questions/10757169/location-of-my-cnf-file-on-macos/10757312">https://stackoverflow.com/questions/10757169/location-of-my-cnf-file-on-macos/10757312</a>
+minghan:~$ mysql &ndash;help or mysql &ndash;help | grep my.cnf
+order of preference, my.cnf, $MYSQL_TCP_PORT,
+/etc/my.cnf /etc/mysql/my.cnf /usr/local/mysql/etc/my.cnf ~/.my.cnf</p>
 <br>
 <hr>
-<h3 id="macosx-1339">macOSX (13:39)</h3>
+<h2 id="import-database-with-gui">import database with GUI</h2>
 <ul>
-<li>need to download server and workbench separately</li>
-</ul>
-<br>
-<h4 id="mysql-server">mysql server</h4>
+<li>could not load using SQL statements&hellip;</li>
+<li>had to use mysql workbench GUI
 <ul>
-<li>mysql community server 5.6.26 (.dmg or .tar)</li>
-<li>install with default settings</li>
-<li>start/stop server
-<ul>
-<li>system preference &gt; MySQL<br>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/start_mysql_server.png" alt="" width="500px"/>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/mysql_server_config.png" alt="" width="500px"/></li>
+<li>right click on &ldquo;Customers&rdquo; table</li>
+<li>had to add a fake header, mysql wb cannot read no header&hellip;</li>
+<li>change datafiles/Customers.txt to .csv file</li>
+<li>must use latin-1 encoding</li>
 </ul>
 </li>
+<li>repeat for all tables&hellip;</li>
+<li>maybe later can figure out how to config my.cnf&hellip;</li>
+<li>Product.csv had to be edited, changed e.g. 8&rdquo;&rdquo; to 8inches</li>
 </ul>
-<br>
-<h4 id="mysql-workbench">mysql workbench</h4>
-<ul>
-<li>download, install, open</li>
-</ul>
-<br>
-<h5 id="setup-new-connection">setup new connection</h5>
-<ul>
-<li>MySQL Connections (+)</li>
-</ul>
-<pre><code>	connection name      local
-	connection method    standard(TCP/IP)
-	hostname             127.0.0.1
-	port                 3306
-	username             root
-	password             store in keychain
-	default schema       blank
-	
-	test connection
-</code></pre>
-<h5 id="open-sql-editor">open SQL editor</h5>
-<ul>
-<li>double click on &ldquo;local&rdquo; server connection</li>
-<li>under &ldquo;Query 1&rdquo;
-<ul>
-<li><code>CREATE database brian;</code></li>
-<li>inserted brian schema under SCHEMAS panel</li>
-</ul>
-</li>
-</ul>
-<br>
-<h5 id="mysql-program-file-structure">mysql program file structure</h5>
-<pre><code>/usr/local/mysql/
-    bin    scripts
-    data   schemas    does not have permission, only DBMS has access	
-</code></pre>
-<br>
-<h5 id="mysql-folder-permissions">mysql folder permissions</h5>
-<pre><code>minghan:mysql$ ls -lA
-total 872
--rw-r--r--   1 _mysql  _mysql  335809 13 Apr 07:46 LICENSE
--rw-r--r--   1 _mysql  _mysql  101807 13 Apr 07:46 LICENSE.router
--rw-r--r--   1 _mysql  _mysql     687 13 Apr 07:46 README
--rw-r--r--   1 _mysql  _mysql     700 13 Apr 07:46 README.router
-drwxr-xr-x  35 _mysql  _mysql    1120 13 Apr 08:34 bin
-drwxr-x---  28 _mysql  _mysql     896  7 Jul 17:08 data
-drwxr-xr-x   6 _mysql  _mysql     192 13 Apr 08:32 docs
-drwxr-xr-x  15 _mysql  _mysql     480 13 Apr 08:32 include
-drwxr-x---   3 _mysql  _mysql      96  5 Jul 20:26 keyring
-drwxr-xr-x  21 _mysql  _mysql     672  5 Jul 20:25 lib
-drwxr-xr-x   4 _mysql  _mysql     128 13 Apr 08:32 man
-drwxrwxr-x   2 _mysql  _mysql      64 13 Apr 08:32 run
-drwxr-xr-x  33 _mysql  _mysql    1056 13 Apr 08:32 share
-drwxr-xr-x   5 _mysql  _mysql     160 13 Apr 08:32 support-files
-drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
-</code></pre>
 
           </div>
 
@@ -739,14 +679,14 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/" rel="next">MySQL Universalclass Lesson3</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/" rel="next">MySQL Universalclass Lesson2</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/" rel="prev">MySQL Universalclass Lesson3.5</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson4/" rel="prev">MySQL Universalclass Lesson4</a>
   </div>
   
 </div>
@@ -768,7 +708,7 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson2.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson3.5.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>

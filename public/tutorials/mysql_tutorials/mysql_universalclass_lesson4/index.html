@@ -27,11 +27,11 @@
   
     
   
-  <meta name="description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1.">
+  <meta name="description" content="https://www.youtube.com/watch?v=zAUzK3yBCZc
+start server, workbench  start MySQL server from system preferences start MySQL workbench open database (Local instance 3306)   database level commands  SHOW databases; (shows all databases, including some MySQL backend dbs) CREATE database test; DROP database test; USE classicmodels; (now all commands will go to classicmodels, schema bolded) SHOW TABLES; (cmd&#43;enter to run a line, cmd&#43;shift&#43;enter to run all)  SQL commands  SELECT col FROM table WHERE col=val; INSERT INTO table (col1,col2 &hellip;) VALUES(col1 val, col2 val &hellip;); UPDATE table SET col1=val WHERE col2=val; DESCRIBE table; DELETE col FROM table WHERE col=val;  SELECT commands SELECT customerName, customerNumber, contactLastName, contactFirstName FROM Customers; SELECT * FROM Customers WHERE customerNumber = 121; SELECT customerName, phone FROM Customers WHERE customerNumber = 121;  DESCRIBE a table DESCRIBE Customers;   CHAR(50) means value has to be 50 char long VARCHAR(50) means value can be 1 to 50 char long Null column can be set to YES or NO  NO means Null value is not allowed (firstname VARCHAR(50) NOT NULL)   can use this to see what columns can be Null  when inserting new entries    INSERT commands  order matters NULL if record does not have an attribute  -- insert a new customer INSERT INTO Customers VALUES (2001, &#39;Hometown Baker&#39;, &#39;Smith&#39;, &#39;Bob&#39;, &#39;555-222-1212&#39;, &#39;123 Main St.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson4/">
 
   
 
@@ -221,7 +221,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson4/">
 
   
   
@@ -237,16 +237,16 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
-  <meta property="og:title" content="MySQL Universalclass Lesson2 | BioinfoHippo">
-  <meta property="og:description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson4/">
+  <meta property="og:title" content="MySQL Universalclass Lesson4 | BioinfoHippo">
+  <meta property="og:description" content="https://www.youtube.com/watch?v=zAUzK3yBCZc
+start server, workbench  start MySQL server from system preferences start MySQL workbench open database (Local instance 3306)   database level commands  SHOW databases; (shows all databases, including some MySQL backend dbs) CREATE database test; DROP database test; USE classicmodels; (now all commands will go to classicmodels, schema bolded) SHOW TABLES; (cmd&#43;enter to run a line, cmd&#43;shift&#43;enter to run all)  SQL commands  SELECT col FROM table WHERE col=val; INSERT INTO table (col1,col2 &hellip;) VALUES(col1 val, col2 val &hellip;); UPDATE table SET col1=val WHERE col2=val; DESCRIBE table; DELETE col FROM table WHERE col=val;  SELECT commands SELECT customerName, customerNumber, contactLastName, contactFirstName FROM Customers; SELECT * FROM Customers WHERE customerNumber = 121; SELECT customerName, phone FROM Customers WHERE customerNumber = 121;  DESCRIBE a table DESCRIBE Customers;   CHAR(50) means value has to be 50 char long VARCHAR(50) means value can be 1 to 50 char long Null column can be set to YES or NO  NO means Null value is not allowed (firstname VARCHAR(50) NOT NULL)   can use this to see what columns can be Null  when inserting new entries    INSERT commands  order matters NULL if record does not have an attribute  -- insert a new customer INSERT INTO Customers VALUES (2001, &#39;Hometown Baker&#39;, &#39;Smith&#39;, &#39;Bob&#39;, &#39;555-222-1212&#39;, &#39;123 Main St."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-07-15T11:27:43-04:00">
+      <meta property="article:published_time" content="2020-07-15T14:40:33-04:00">
     
-    <meta property="article:modified_time" content="2020-07-15T11:27:43-04:00">
+    <meta property="article:modified_time" content="2020-07-15T14:40:33-04:00">
   
 
   
@@ -265,7 +265,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
 
 
-  <title>MySQL Universalclass Lesson2 | BioinfoHippo</title>
+  <title>MySQL Universalclass Lesson4 | BioinfoHippo</title>
 
 </head>
 
@@ -507,7 +507,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson1/">Lesson1 overview</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">Lesson2 install</a>
       </li>
       
@@ -519,7 +519,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/">Lesson3.5 import db</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson4/">Lesson4 basic SQL</a>
       </li>
       
@@ -549,11 +549,17 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</a>
+    <li><a href="#start-server-workbench">start server, workbench</a></li>
+    <li><a href="#database-level-commands">database level commands</a></li>
+    <li><a href="#sql-commands">SQL commands</a>
       <ul>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#linux-ubuntu-920">Linux-Ubuntu (9:20)</a></li>
-        <li><a href="#macosx-1339">macOSX (13:39)</a></li>
+        <li><a href="#select-commands">SELECT commands</a></li>
+        <li><a href="#describe-a-table">DESCRIBE a table</a></li>
+        <li><a href="#insert-commands">INSERT commands</a></li>
+        <li><a href="#update-commands">UPDATE commands</a></li>
+        <li><a href="#insert-specifying-columns">INSERT, specifying columns</a></li>
+        <li><a href="#default-is-null">default is NULL</a></li>
+        <li><a href="#delete-commands">DELETE commands</a></li>
       </ul>
     </li>
   </ul>
@@ -568,160 +574,129 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>MySQL Universalclass Lesson2</h1>
+          <h1>MySQL Universalclass Lesson4</h1>
 
           <div class="article-style">
             <p>
-<a href="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2</a></p>
-<br>
-<h2 id="installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</h2>
-<br>
-<h3 id="windows">Windows</h3>
+<a href="https://www.youtube.com/watch?v=zAUzK3yBCZc" target="_blank" rel="noopener">https://www.youtube.com/watch?v=zAUzK3yBCZc</a></p>
+<h2 id="start-server-workbench">start server, workbench</h2>
 <ul>
-<li>mysql.com</li>
-<li>mysql community edition (GPL) (mysql community server 5.6.26)</li>
-<li>computer needs .net framework 4.0+</li>
-</ul>
-<br>
-<h4 id="mysql-installer">MySQL installer</h4>
-<h5 id="setup-type">setup type</h5>
-<ul>
-<li>developer default</li>
-</ul>
-<pre><code>  mysql server            &lt;-- essential
-  mysql workbench         &lt;-- essential
-  mysql for excel 1.3.4   &lt;-- need pre-installed
-  mysql for visual studio &lt;-- need pre-installed
-  mysql connectors/ python
-  mysql fabric 1.5.4
-  (also installs sample database for practice)
-</code></pre>
-<br>
-<h5 id="type-and-networking">type and networking</h5>
-<pre><code>  config type		    development machine
-  connectivity	    TCP/IP
-  port number		    3306
-  open firewall     port for network acccess (yes)
-  named pipe        (unselected)
-  shared memory     (unselected)
-</code></pre>
-<br>
-<h5 id="accounts-and-roles">accounts and roles</h5>
-<ul>
-<li>mysql root password</li>
-</ul>
-<br>
-<h5 id="mysql-user-accounts">mysql user accounts</h5>
-<ul>
-<li>create later in mySQLworkbench</li>
-</ul>
-<br>
-<h5 id="windows-service">windows service</h5>
-<ul>
-<li>can run mySQL server in the background as a windows service</li>
-</ul>
-<pre><code>  configure mysql server    as windows service
-  windows service name      mysql56
-  run windows service as    standard account
-</code></pre>
-<br>
-<h5 id="apply-server-configuration">apply server configuration</h5>
-<ul>
-<li>execute</li>
-<li>will generate some config files</li>
-</ul>
-<br>
-<h5 id="connect-to-server">connect to server</h5>
-<ul>
-<li>server running on local computer</li>
-<li>enter username and password to connect to server</li>
-<li><code>check</code> to verify connection</li>
-</ul>
-<br>
-<h5 id="apply-server-configuration-1">apply server configuration</h5>
-<ul>
-<li>finishes configuration</li>
+<li>start MySQL server from system preferences</li>
+<li>start MySQL workbench</li>
+<li>open database (Local instance 3306)</li>
 </ul>
 <br>
 <hr>
-<h3 id="linux-ubuntu-920">Linux-Ubuntu (9:20)</h3>
+<h2 id="database-level-commands">database level commands</h2>
 <ul>
-<li>Ubuntu software center &gt; search &ldquo;mysql&rdquo;&rdquo;</li>
+<li><code>SHOW databases;</code> (shows all databases, including some MySQL backend dbs)</li>
+<li><code>CREATE database test;</code></li>
+<li><code>DROP database test;</code></li>
+<li><code>USE classicmodels;</code> (now all commands will go to classicmodels, schema bolded)</li>
+<li><code>SHOW TABLES;</code></li>
+<li>(cmd+enter to run a line, cmd+shift+enter to run all)</li>
 </ul>
 <br>
-<hr>
-<h3 id="macosx-1339">macOSX (13:39)</h3>
+<h2 id="sql-commands">SQL commands</h2>
 <ul>
-<li>need to download server and workbench separately</li>
+<li>SELECT col FROM table WHERE col=val;</li>
+<li>INSERT INTO table (col1,col2 &hellip;) VALUES(col1 val, col2 val &hellip;);</li>
+<li>UPDATE table SET col1=val WHERE col2=val;</li>
+<li>DESCRIBE table;</li>
+<li>DELETE col FROM table WHERE col=val;</li>
 </ul>
 <br>
-<h4 id="mysql-server">mysql server</h4>
+<h3 id="select-commands">SELECT commands</h3>
+<pre><code class="language-sql">SELECT customerName, customerNumber, contactLastName, contactFirstName
+FROM Customers;
+
+SELECT *
+FROM Customers
+WHERE customerNumber = 121;
+
+SELECT customerName, phone
+FROM Customers
+WHERE customerNumber = 121;
+</code></pre>
+<br>
+<h3 id="describe-a-table">DESCRIBE a table</h3>
+<pre><code class="language-sql">DESCRIBE Customers;
+</code></pre>
+<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson4_files/describe1.png" alt="" width="400px"/>  
 <ul>
-<li>mysql community server 5.6.26 (.dmg or .tar)</li>
-<li>install with default settings</li>
-<li>start/stop server
+<li>CHAR(50) means value has to be 50 char long</li>
+<li>VARCHAR(50) means value can be 1 to 50 char long</li>
+<li>Null column can be set to YES or NO
 <ul>
-<li>system preference &gt; MySQL<br>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/start_mysql_server.png" alt="" width="500px"/>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/mysql_server_config.png" alt="" width="500px"/></li>
+<li>NO means Null value is not allowed</li>
+<li>(<code>firstname VARCHAR(50) NOT NULL</code>)</li>
+</ul>
+</li>
+<li>can use this to see what columns can be Null
+<ul>
+<li>when inserting new entries</li>
 </ul>
 </li>
 </ul>
 <br>
-<h4 id="mysql-workbench">mysql workbench</h4>
+<h3 id="insert-commands">INSERT commands</h3>
 <ul>
-<li>download, install, open</li>
+<li>order matters</li>
+<li>NULL if record does not have an attribute</li>
 </ul>
-<br>
-<h5 id="setup-new-connection">setup new connection</h5>
-<ul>
-<li>MySQL Connections (+)</li>
-</ul>
-<pre><code>	connection name      local
-	connection method    standard(TCP/IP)
-	hostname             127.0.0.1
-	port                 3306
-	username             root
-	password             store in keychain
-	default schema       blank
-	
-	test connection
-</code></pre>
-<h5 id="open-sql-editor">open SQL editor</h5>
-<ul>
-<li>double click on &ldquo;local&rdquo; server connection</li>
-<li>under &ldquo;Query 1&rdquo;
-<ul>
-<li><code>CREATE database brian;</code></li>
-<li>inserted brian schema under SCHEMAS panel</li>
-</ul>
-</li>
-</ul>
-<br>
-<h5 id="mysql-program-file-structure">mysql program file structure</h5>
-<pre><code>/usr/local/mysql/
-    bin    scripts
-    data   schemas    does not have permission, only DBMS has access	
+<pre><code class="language-sql">-- insert a new customer
+INSERT INTO Customers
+VALUES (2001, 'Hometown Baker', 'Smith', 'Bob', 
+'555-222-1212', '123 Main St.', NULL, 'Orlando', 'FL',
+32001, 'USA', 1370, 22000);
+
+SELECT *
+FROM Customers
+WHERE customerNumber = 2001;
 </code></pre>
 <br>
-<h5 id="mysql-folder-permissions">mysql folder permissions</h5>
-<pre><code>minghan:mysql$ ls -lA
-total 872
--rw-r--r--   1 _mysql  _mysql  335809 13 Apr 07:46 LICENSE
--rw-r--r--   1 _mysql  _mysql  101807 13 Apr 07:46 LICENSE.router
--rw-r--r--   1 _mysql  _mysql     687 13 Apr 07:46 README
--rw-r--r--   1 _mysql  _mysql     700 13 Apr 07:46 README.router
-drwxr-xr-x  35 _mysql  _mysql    1120 13 Apr 08:34 bin
-drwxr-x---  28 _mysql  _mysql     896  7 Jul 17:08 data
-drwxr-xr-x   6 _mysql  _mysql     192 13 Apr 08:32 docs
-drwxr-xr-x  15 _mysql  _mysql     480 13 Apr 08:32 include
-drwxr-x---   3 _mysql  _mysql      96  5 Jul 20:26 keyring
-drwxr-xr-x  21 _mysql  _mysql     672  5 Jul 20:25 lib
-drwxr-xr-x   4 _mysql  _mysql     128 13 Apr 08:32 man
-drwxrwxr-x   2 _mysql  _mysql      64 13 Apr 08:32 run
-drwxr-xr-x  33 _mysql  _mysql    1056 13 Apr 08:32 share
-drwxr-xr-x   5 _mysql  _mysql     160 13 Apr 08:32 support-files
-drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
+<h3 id="update-commands">UPDATE commands</h3>
+<pre><code class="language-sql">-- update customer phone number
+UPDATE Customers
+SET phone = '555-555-1212'
+WHERE customerNumber = 2001;
+</code></pre>
+<br>
+<h3 id="insert-specifying-columns">INSERT, specifying columns</h3>
+<pre><code class="language-sql">INSERT INTO Customers
+-- order does not matter,
+-- but VALUES order have to match
+(
+customerNumber, customerName, contactlastName, contactFirstname, addressLine1, city, phone, country
+)
+VALUES
+(
+2002, 'Betty\'s Pancakes', 'Doe', 'Betty', '222 2nd St.', 'Orlando', '555-234-1212', 'USA'
+);
+</code></pre>
+<br>
+<h3 id="default-is-null">default is NULL</h3>
+<pre><code class="language-sql">-- values not entered default to NULL
+SELECT *
+FROM Customers
+WHERE customerNumber = 2002;
+
+-- update customer state from Null to 'FL'
+UPDATE Customers
+SET state = 'FL'
+WHERE customerNumber = 2002;
+
+-- update customer postalCode from Null to 32801
+UPDATE Customers
+SET postalCode = 32801
+WHERE customerNumber = 2002;
+</code></pre>
+<br>
+<h3 id="delete-commands">DELETE commands</h3>
+<pre><code class="language-sql">-- delete record (do SELECT * FROM.. WHERE.. first to double check)
+DELETE
+FROM Customers
+WHERE customerNumber = 2002;
 </code></pre>
 
           </div>
@@ -739,14 +714,14 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/" rel="next">MySQL Universalclass Lesson3</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/" rel="next">MySQL Universalclass Lesson3.5</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/" rel="prev">MySQL Universalclass Lesson3.5</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson5/" rel="prev">MySQL Universalclass Lesson5</a>
   </div>
   
 </div>
@@ -768,7 +743,7 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson2.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson4.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>

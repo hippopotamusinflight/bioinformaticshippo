@@ -27,11 +27,11 @@
   
     
   
-  <meta name="description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1.">
+  <meta name="description" content="https://www.youtube.com/watch?v=5z4IUrCAv4A&amp;t=1s
+1 database design logical design  general layout  physical design  which DBMS to use constraints of DBMS, security features   2 keywords schema  everything making up a database tables, views, roles, permissions, indexes, etc  entity = tables  attribute = column tuple/entry/record = row  keys  primary key = attribute that uniquely identifies a record candidate key = attribute that could be selected as a primary key composite key = 2 or more attributes making up a primary key foreign key = attribute providing relationship (links) one table to another table  alternate/ secondary key = candidate key not chosen to be primary key   3 referential integrity  underlined = primary key dotted underline = foreign key   referential integrity = all foreign keys must have corresponding attribute in related table  shown in ER diagrams with linking arrows &ldquo;whenever I reference something in table2, it better exist in table2&rdquo;     4 db diagrams  IDEF1X and Crow&rsquo;s Foot will be used here   5 ERD  MS visio (expensive) Dia (free) http://dia-installer.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="alternate" hreflang="en-us" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/">
 
   
 
@@ -221,7 +221,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
+  <link rel="canonical" href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/">
 
   
   
@@ -237,16 +237,16 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson2/">
-  <meta property="og:title" content="MySQL Universalclass Lesson2 | BioinfoHippo">
-  <meta property="og:description" content="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2
-installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edition (GPL) (mysql community server 5.6.26) computer needs .net framework 4.0&#43;  MySQL installer setup type  developer default   mysql server &lt;-- essential mysql workbench &lt;-- essential mysql for excel 1."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/tutorials/mysql_tutorials/mysql_universalclass_lesson3/">
+  <meta property="og:title" content="MySQL Universalclass Lesson3 | BioinfoHippo">
+  <meta property="og:description" content="https://www.youtube.com/watch?v=5z4IUrCAv4A&amp;t=1s
+1 database design logical design  general layout  physical design  which DBMS to use constraints of DBMS, security features   2 keywords schema  everything making up a database tables, views, roles, permissions, indexes, etc  entity = tables  attribute = column tuple/entry/record = row  keys  primary key = attribute that uniquely identifies a record candidate key = attribute that could be selected as a primary key composite key = 2 or more attributes making up a primary key foreign key = attribute providing relationship (links) one table to another table  alternate/ secondary key = candidate key not chosen to be primary key   3 referential integrity  underlined = primary key dotted underline = foreign key   referential integrity = all foreign keys must have corresponding attribute in related table  shown in ER diagrams with linking arrows &ldquo;whenever I reference something in table2, it better exist in table2&rdquo;     4 db diagrams  IDEF1X and Crow&rsquo;s Foot will be used here   5 ERD  MS visio (expensive) Dia (free) http://dia-installer."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-07-15T11:27:43-04:00">
+      <meta property="article:published_time" content="2020-07-15T13:22:29-04:00">
     
-    <meta property="article:modified_time" content="2020-07-15T11:27:43-04:00">
+    <meta property="article:modified_time" content="2020-07-15T13:22:29-04:00">
   
 
   
@@ -265,7 +265,7 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
 
 
-  <title>MySQL Universalclass Lesson2 | BioinfoHippo</title>
+  <title>MySQL Universalclass Lesson3 | BioinfoHippo</title>
 
 </head>
 
@@ -507,11 +507,11 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson1/">Lesson1 overview</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/">Lesson2 install</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/">Lesson3 db design</a>
       </li>
       
@@ -549,11 +549,36 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</a>
+    <li><a href="#1-database-design">1 database design</a>
       <ul>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#linux-ubuntu-920">Linux-Ubuntu (9:20)</a></li>
-        <li><a href="#macosx-1339">macOSX (13:39)</a></li>
+        <li><a href="#logical-design">logical design</a></li>
+        <li><a href="#physical-design">physical design</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-keywords">2 keywords</a>
+      <ul>
+        <li><a href="#schema">schema</a></li>
+        <li><a href="#entity--tables">entity = tables</a></li>
+        <li><a href="#keys">keys</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-referential-integrity">3 referential integrity</a></li>
+    <li><a href="#4-db-diagrams">4 db diagrams</a></li>
+    <li><a href="#5-erd">5 ERD</a></li>
+    <li><a href="#6-notations">6 notations</a>
+      <ul>
+        <li><a href="#standard-sn">standard (SN)</a></li>
+        <li><a href="#db-design-language-dbdl">db design language (DBDL)</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-cardinality">7 cardinality</a>
+      <ul>
+        <li><a href="#crows-foot-notation-showing-cardinality">crow&rsquo;s foot notation showing cardinality</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-normalization">8 normalization</a>
+      <ul>
+        <li><a href="#normal-form">normal form</a></li>
       </ul>
     </li>
   </ul>
@@ -568,161 +593,281 @@ installing mySQL (Windows, Linux, macOSX) Windows  mysql.com mysql community edi
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>MySQL Universalclass Lesson2</h1>
+          <h1>MySQL Universalclass Lesson3</h1>
 
           <div class="article-style">
             <p>
-<a href="https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2" target="_blank" rel="noopener">https://www.youtube.com/watch?v=pdNGcrtJdb8&amp;list=PLBlpUqEneF0-xZ1ctyLVqhwJyoQsyfOsO&amp;index=2</a></p>
+<a href="https://www.youtube.com/watch?v=5z4IUrCAv4A&amp;t=1s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=5z4IUrCAv4A&amp;t=1s</a></p>
 <br>
-<h2 id="installing-mysql-windows-linux-macosx">installing mySQL (Windows, Linux, macOSX)</h2>
+<h2 id="1-database-design">1 database design</h2>
 <br>
-<h3 id="windows">Windows</h3>
+<h3 id="logical-design">logical design</h3>
 <ul>
-<li>mysql.com</li>
-<li>mysql community edition (GPL) (mysql community server 5.6.26)</li>
-<li>computer needs .net framework 4.0+</li>
+<li>general layout</li>
 </ul>
 <br>
-<h4 id="mysql-installer">MySQL installer</h4>
-<h5 id="setup-type">setup type</h5>
+<h3 id="physical-design">physical design</h3>
 <ul>
-<li>developer default</li>
-</ul>
-<pre><code>  mysql server            &lt;-- essential
-  mysql workbench         &lt;-- essential
-  mysql for excel 1.3.4   &lt;-- need pre-installed
-  mysql for visual studio &lt;-- need pre-installed
-  mysql connectors/ python
-  mysql fabric 1.5.4
-  (also installs sample database for practice)
-</code></pre>
-<br>
-<h5 id="type-and-networking">type and networking</h5>
-<pre><code>  config type		    development machine
-  connectivity	    TCP/IP
-  port number		    3306
-  open firewall     port for network acccess (yes)
-  named pipe        (unselected)
-  shared memory     (unselected)
-</code></pre>
-<br>
-<h5 id="accounts-and-roles">accounts and roles</h5>
-<ul>
-<li>mysql root password</li>
-</ul>
-<br>
-<h5 id="mysql-user-accounts">mysql user accounts</h5>
-<ul>
-<li>create later in mySQLworkbench</li>
-</ul>
-<br>
-<h5 id="windows-service">windows service</h5>
-<ul>
-<li>can run mySQL server in the background as a windows service</li>
-</ul>
-<pre><code>  configure mysql server    as windows service
-  windows service name      mysql56
-  run windows service as    standard account
-</code></pre>
-<br>
-<h5 id="apply-server-configuration">apply server configuration</h5>
-<ul>
-<li>execute</li>
-<li>will generate some config files</li>
-</ul>
-<br>
-<h5 id="connect-to-server">connect to server</h5>
-<ul>
-<li>server running on local computer</li>
-<li>enter username and password to connect to server</li>
-<li><code>check</code> to verify connection</li>
-</ul>
-<br>
-<h5 id="apply-server-configuration-1">apply server configuration</h5>
-<ul>
-<li>finishes configuration</li>
+<li>which DBMS to use</li>
+<li>constraints of DBMS, security features</li>
 </ul>
 <br>
 <hr>
-<h3 id="linux-ubuntu-920">Linux-Ubuntu (9:20)</h3>
+<h2 id="2-keywords">2 keywords</h2>
+<br>
+<h3 id="schema">schema</h3>
 <ul>
-<li>Ubuntu software center &gt; search &ldquo;mysql&rdquo;&rdquo;</li>
+<li>everything making up a database</li>
+<li>tables, views, roles, permissions, indexes, etc</li>
+</ul>
+<br>
+<h3 id="entity--tables">entity = tables</h3>
+<ul>
+<li>attribute = column</li>
+<li>tuple/entry/record = row</li>
+</ul>
+<br>
+<h3 id="keys">keys</h3>
+<ul>
+<li>primary key = attribute that uniquely identifies a record</li>
+<li>candidate key = attribute that could be selected as a primary key</li>
+<li>composite key = 2 or more attributes making up a primary key</li>
+<li>foreign key = attribute providing relationship (links) one table to another table
+<br><br></li>
+<li>alternate/ secondary key = candidate key not chosen to be primary key</li>
 </ul>
 <br>
 <hr>
-<h3 id="macosx-1339">macOSX (13:39)</h3>
+<h2 id="3-referential-integrity">3 referential integrity</h2>
+<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/ERD2.png" alt="" width="500px"/>  
 <ul>
-<li>need to download server and workbench separately</li>
+<li>underlined = primary key</li>
+<li>dotted underline = foreign key</li>
 </ul>
 <br>
-<h4 id="mysql-server">mysql server</h4>
 <ul>
-<li>mysql community server 5.6.26 (.dmg or .tar)</li>
-<li>install with default settings</li>
-<li>start/stop server
+<li>referential integrity = all foreign keys must have corresponding attribute in related table
 <ul>
-<li>system preference &gt; MySQL<br>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/start_mysql_server.png" alt="" width="500px"/>
-<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson2_files/mysql_server_config.png" alt="" width="500px"/></li>
+<li>shown in ER diagrams with linking arrows</li>
+<li>&ldquo;whenever I reference something in table2, it better exist in table2&rdquo;</li>
 </ul>
 </li>
 </ul>
 <br>
-<h4 id="mysql-workbench">mysql workbench</h4>
+<hr>
+<h2 id="4-db-diagrams">4 db diagrams</h2>
+<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/database_diagrams.png" alt="" width="600px"/>  
 <ul>
-<li>download, install, open</li>
+<li>IDEF1X and Crow&rsquo;s Foot will be used here</li>
 </ul>
 <br>
-<h5 id="setup-new-connection">setup new connection</h5>
+<hr>
+<h2 id="5-erd">5 ERD</h2>
 <ul>
-<li>MySQL Connections (+)</li>
+<li>MS visio (expensive)</li>
+<li>Dia (free) <a href="http://dia-installer.de/">http://dia-installer.de/</a></li>
+<li>Lucidchart (website, education edition) <a href="https://www.lucidchart.com">https://www.lucidchart.com</a></li>
 </ul>
-<pre><code>	connection name      local
-	connection method    standard(TCP/IP)
-	hostname             127.0.0.1
-	port                 3306
-	username             root
-	password             store in keychain
-	default schema       blank
-	
-	test connection
+<br>
+<hr>
+<h2 id="6-notations">6 notations</h2>
+<br>
+<h3 id="standard-sn">standard (SN)</h3>
+<ul>
+<li>entity (table) name listed in capital letters</li>
+<li>attributes (colnames) listed in parenthesis</li>
+<li>primary key underlined</li>
+<li>foreign key dotted underlined</li>
+<li>con: does not have arrows like ERDs</li>
+</ul>
+<br>
+<h3 id="db-design-language-dbdl">db design language (DBDL)</h3>
+<ul>
+<li>alternate to SN</li>
+<li>primary key (PK), secondary key (SK), alternate key (AK), foreign key (FK), listed underneath entity listing</li>
+</ul>
+<pre><code>e.g. 
+  STUDENT (student_id, firstname, lastname, program, email)
+      PK student_id
+      AK email
+  CLASS (class_id, name, day, building_id, begintime, endtime)
+      PK class_id
+      FK building_id -&gt; BUILDING       # building_id is a foreign key
+  STUDENT_CLASS (student_id, class_id)
+      PK student_id, class_id
+  BUILDING (building_id, name, address, city, zip)
+      PK building_id
 </code></pre>
-<h5 id="open-sql-editor">open SQL editor</h5>
+<br>
+<hr>
+<h2 id="7-cardinality">7 cardinality</h2>
 <ul>
-<li>double click on &ldquo;local&rdquo; server connection</li>
-<li>under &ldquo;Query 1&rdquo;
+<li>how tables are related
 <ul>
-<li><code>CREATE database brian;</code></li>
-<li>inserted brian schema under SCHEMAS panel</li>
+<li>how many attributes in one table can be linked to attributes to another table</li>
+</ul>
+</li>
+<li>1:1, 1:N, N:N</li>
+<li>try to avoid N:N relationship</li>
+</ul>
+<br>
+<h3 id="crows-foot-notation-showing-cardinality">crow&rsquo;s foot notation showing cardinality</h3>
+<pre><code>  0 or 1              -----------0-1-|
+  exactly 1           -----------1-1-|
+  0 or many           -----------0-&lt;-|
+  at least 1 or many  -----------1-&lt;-|
+</code></pre>
+<br>
+<hr>
+<h2 id="8-normalization">8 normalization</h2>
+<ul>
+<li>progressively modify db table</li>
+<li>reduce redundancy and problems</li>
+<li>prevent update anomalies
+<ul>
+<li>after db made, user can&rsquo;t insert certain records</li>
+</ul>
+</li>
+<li>more normalized =
+<ul>
+<li>less problems</li>
+<li>more tables with less attributes</li>
+<li>more processing power needed</li>
+<li>tables more refined</li>
 </ul>
 </li>
 </ul>
 <br>
-<h5 id="mysql-program-file-structure">mysql program file structure</h5>
-<pre><code>/usr/local/mysql/
-    bin    scripts
-    data   schemas    does not have permission, only DBMS has access	
+<h3 id="normal-form">normal form</h3>
+<ul>
+<li>3NF is what we want eventually (least repetitive)</li>
+<li>normalization is progressive, so need 1NF to do 2NF</li>
+</ul>
+<br>
+<h4 id="1st-normal-form-1nf">1st normal form (1NF)</h4>
+<ul>
+<li>all records have same number of attributes</li>
+<li>no repeating values</li>
+<li>e.g. PET_OWNER (ID, Name, Pet1, Pet2, Pet3, Pet4, Pet5)
+<ul>
+<li>this creates a artificial limit - cannot have &gt; 5 pets</li>
+<li>wastes space - having &lt; 5 pets, rest will be NULL</li>
+<li>(<strong>drawbacks of 1NF</strong>)</li>
+</ul>
+</li>
+</ul>
+<br>
+<h4 id="2nd-normal-form-2nf">2nd normal form (2NF)</h4>
+<ul>
+<li>primary key defined</li>
+<li>can be composite (2+ columns)</li>
+<li>primary key determines all other attributes
+<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/NF2.png" alt="" width="450px"/></li>
+</ul>
+<br>
+<h4 id="3rd-normal-form-3nf">3rd normal form (3NF)</h4>
+<ul>
+<li>all non-key attributes depend on primary key,</li>
+<li>and NOT on other non-key attributes</li>
+<li>e.g. table in 2NF but NOT in 3NF<br>
+<img src="../../../tutorials//mySQL_tutorials/mySQL_universalclass_lesson3_files/NF2_not_NF3.png" alt="" width="450px"/>
+<ul>
+<li>&ldquo;manager_name&rdquo; and &ldquo;manager_title&rdquo; does NOT depend on primary key (ID),</li>
+<li>instead depend on non-key attribute &ldquo;manager_id&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h5 id="making-it-3nf">making it 3NF</h5>
+<ul>
+<li>split EMPLOYEE table into 3 tables</li>
+</ul>
+<pre><code>EMPLOYEE (employee_id, name, address)
+    PK employee_id
+MANAGER (manager_id, name, title)
+    PK manager_id
+EMPLOYEE_MANAGER (employee_id, manager_id)  &lt;-- linking table, need a composite key
+    PK employee_id, manager_id
+    FK employee_id -&gt; EMPLOYEE
+    FK manager_id -&gt; MANAGER
 </code></pre>
 <br>
-<h5 id="mysql-folder-permissions">mysql folder permissions</h5>
-<pre><code>minghan:mysql$ ls -lA
-total 872
--rw-r--r--   1 _mysql  _mysql  335809 13 Apr 07:46 LICENSE
--rw-r--r--   1 _mysql  _mysql  101807 13 Apr 07:46 LICENSE.router
--rw-r--r--   1 _mysql  _mysql     687 13 Apr 07:46 README
--rw-r--r--   1 _mysql  _mysql     700 13 Apr 07:46 README.router
-drwxr-xr-x  35 _mysql  _mysql    1120 13 Apr 08:34 bin
-drwxr-x---  28 _mysql  _mysql     896  7 Jul 17:08 data
-drwxr-xr-x   6 _mysql  _mysql     192 13 Apr 08:32 docs
-drwxr-xr-x  15 _mysql  _mysql     480 13 Apr 08:32 include
-drwxr-x---   3 _mysql  _mysql      96  5 Jul 20:26 keyring
-drwxr-xr-x  21 _mysql  _mysql     672  5 Jul 20:25 lib
-drwxr-xr-x   4 _mysql  _mysql     128 13 Apr 08:32 man
-drwxrwxr-x   2 _mysql  _mysql      64 13 Apr 08:32 run
-drwxr-xr-x  33 _mysql  _mysql    1056 13 Apr 08:32 share
-drwxr-xr-x   5 _mysql  _mysql     160 13 Apr 08:32 support-files
-drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
+<h4 id="example-of-1nf-vs-2nf-vs-3nf">example of 1NF vs 2NF vs 3NF</h4>
+<ul>
+<li>school keeping track of students enrolled, classes offered</li>
+</ul>
+<br>
+<h5 id="1nf-design">1NF design</h5>
+<ul>
+<li>
+<p>in STUDENT table: each student is stored in 1 row</p>
+</li>
+<li>
+<p>in CLASS table: each class is stored in 1 row<br>
+<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/NF_example.png" alt="" width="400px"/></p>
+</li>
+<li>
+<p>each student limited to 3 classes</p>
+</li>
+<li>
+<p>question = how to correctly relate STUDENT to CLASS?</p>
+</li>
+<li>
+<p>solution = break up STUDENT</p>
+</li>
+</ul>
+<br>
+<h5 id="3nf-design">3NF design</h5>
+<img src="../../../tutorials/mySQL_tutorials/mySQL_universalclass_lesson3_files/NF3_example.png" alt="" width="450px"/>  
+<ul>
+<li>STUDENT table strictly only have info about student</li>
+<li>CLASS table strictly only have info about classes</li>
+<li>make a third table STUDENT_CLASS to relate STUDENT to CLASS</li>
+<li>e.g. STUDENT_CLASS table
+<ul>
+<li>student_id = 20	&mdash;&gt; STUDENT table to look up student name</li>
+<li>class_id = 3001 &mdash;&gt; CLASS table to get class name</li>
+</ul>
+</li>
+<li>can now have students taking any number of classes
+<ul>
+<li>(multiple class_id entries for same student_id entry in STUDENT_CLASS table)</li>
+</ul>
+</li>
+<li>and students can take no class
+<ul>
+<li>(won&rsquo;t be in STUDENT_CLASS table)</li>
+</ul>
+</li>
+</ul>
+<h5 id="cardinality">cardinality</h5>
+<pre><code>STUDENT-|-|----0-&lt; STUDENT_CLASS &gt;-0------|-|-CLASS
+       
+       1:N relationship btw STUDENT and STUDENT_CLASS
+       1:N relationship btw CLASS and STUDENT_CLASS
+       
+in 1NF previous, had N:N (many students to many classes) cardinality, not good design
+in 3NF, now have 1 student to many classes, better design
 </code></pre>
+<br>
+<h4 id="4th-normal-form-4nf">4th normal form (4NF)</h4>
+<ul>
+<li>any record should not have &gt; 1 related attribute</li>
+<li>theoretical best, but causes too many lookups and slow response time</li>
+<li>have to de-normalize into 3NF</li>
+<li>e.g. of 4NF: EMPLOYEE table</li>
+</ul>
+<pre><code>  EMPLOYEE_NAME       (emp_id, name)
+  EMPLOYEE_ADDRESS    (emp_id, address)	
+  EMPLOYEE_TELEPHONE  (emp_id, telephone)
+  EMPLOYEE_SALARY     (emp_id, salary)
+</code></pre>
+<ul>
+<li>to extract a employee&rsquo;s name, address, telephone, salary into a single output
+<ul>
+<li>will require 4 different lookups</li>
+</ul>
+</li>
+</ul>
 
           </div>
 
@@ -739,14 +884,14 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3/" rel="next">MySQL Universalclass Lesson3</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson1/" rel="next">MySQL Universalclass Lesson1</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/" rel="prev">MySQL Universalclass Lesson3.5</a>
+    <a href="../../../tutorials/mysql_tutorials/mysql_universalclass_lesson2/" rel="prev">MySQL Universalclass Lesson2</a>
   </div>
   
 </div>
@@ -768,7 +913,7 @@ drwxr-xr-x   3 _mysql  _mysql      96 13 Apr 08:32 var
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson2.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/tutorials/mySQL_tutorials/mySQL_universalclass_lesson3.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>
