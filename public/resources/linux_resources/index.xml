@@ -13,19 +13,14 @@
     </image>
     
     <item>
-      <title>system admin</title>
+      <title>general sysadmin</title>
       <link>/resources/linux_resources/sysadmin/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
       <guid>/resources/linux_resources/sysadmin/</guid>
-      <description>&lt;!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace system admin with page name e.g. dplyr
-4. replace 10 with weight e.g. 20
---&gt;
-&lt;h2 id=&#34;untar-unzip&#34;&gt;untar unzip&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;untar-unzip&#34;&gt;untar unzip&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ tar -xzf file.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;env-var&#34;&gt;env var&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;set up environment variable PICARD&lt;/li&gt;
@@ -38,6 +33,7 @@ $ source ~/.bash_profile
 $ echo $PICARD
 &amp;gt; /home/&amp;lt;username&amp;gt;/.../build/libs/
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;version&#34;&gt;version&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;get linux version&lt;/li&gt;
@@ -46,98 +42,115 @@ $ echo $PICARD
 or
 $ lsb_release -a
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;disk-space&#34;&gt;disk space&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ df -k /some/dir/    # in numerics
 $ df -h /some/dir/    # in human readable format
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;get-dir-size&#34;&gt;get dir size&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dir1$ du -h          # human readable
 dir1$ du -hs         # only size of dir1, no subdir
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;cd-with-breadcrumbs&#34;&gt;cd with breadcrumbs&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cd dir1/
 $ pushd dir2/
 $ popd               # returns to dir1
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;pwd-with-real-path&#34;&gt;pwd with real path&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ignore symbolic links, prints full path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pwd -P
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;ls-view-dir-file-size-in-mb&#34;&gt;ls view dir file size in MB&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls -lah
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
 </description>
     </item>
     
     <item>
-      <title>permissions</title>
-      <link>/resources/linux_resources/permissions/</link>
+      <title>bash loops</title>
+      <link>/resources/linux_resources/bash_loops/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
-      <guid>/resources/linux_resources/permissions/</guid>
-      <description>&lt;!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace permissions with page name e.g. dplyr
-4. replace 15 with weight e.g. 20
---&gt;
-&lt;h2 id=&#34;syntax&#34;&gt;syntax&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;dir
- |
- drwx     rwx    rwx
-(owner) (group) (other)
-   u       g      o
+      <guid>/resources/linux_resources/bash_loops/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;for-loop1&#34;&gt;for loop1&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;for val in {1..10}; do
+    ...
+done
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;notation&#34;&gt;notation&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ chmod u=rwx &amp;lt;file&amp;gt;       # give owner read, write, execute
-$ chmod 700 &amp;lt;file&amp;gt;         # give owner read, write, execute
-$ chmod 777 &amp;lt;file&amp;gt;         # give owner, group, other read, write, execute
+&lt;br&gt;
+&lt;h2 id=&#34;for-loop2&#34;&gt;for loop2&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;for ((i=1; i&amp;lt;=10; i++)); do
+    ...
+done
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;octal-vs-symbolic&#34;&gt;octal vs symbolic&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ chmod u=rwx &amp;lt;file&amp;gt;       # symbolic notation
-$ chmod 700 &amp;lt;file&amp;gt;         # octal notation
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;octal   binary  symbolic
-  7      111      rwx
-  6      110      rw-
-  5      101      r-x
-  4      100      r--
-  3      011      -wx
-  2      010      -w-
-  1      001      --x
-  0      000      ---
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>networking</title>
-      <link>/resources/linux_resources/networking/</link>
-      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
-      <guid>/resources/linux_resources/networking/</guid>
-      <description>&lt;!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace ssh with page name e.g. dplyr
-4. replace 20 with weight e.g. 20
---&gt;
-&lt;h2 id=&#34;ssh-flags&#34;&gt;ssh flags&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://www.ssh.com/ssh/command&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ssh.com/ssh/command&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-L [bind address]    # port:host:hostport (e.g. 8000:localhost:8888)
--N                   # do not execute remote commands
--f                   # requests ssh to go to background before command executes
--p port              # port to connect to on remote host (e.g. -p 8000)
--q                   # quiet mode
--X                   # enable X11 forwarding
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;lsof&#34;&gt;lsof&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;find open port and kill process&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ lsof -i:8000
-&amp;gt; COMMAND   PID    USER    FD  TYPE  DEVICE               SIZE/OFF  NODE  NAME
-  ssh       71504  minghan 7u  IPv6  0x570e3d71af3c38d9   0t0       TCP   localhost:irdmi (LISTEN)
+&lt;br&gt;
+&lt;h2 id=&#34;iterate-over-user-input&#34;&gt;iterate over user input&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vim test.sh
+for var in &amp;quot;$@&amp;quot;; do
+    echo &amp;quot;$var&amp;quot;
+done
 
-$ kill 71504
+# output
+# bash test.sh 1 2 &#39;3 4&#39;
+# 1
+# 2
+# 3 4
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;iterate-over-files-in-dir&#34;&gt;iterate over files in dir&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;for FILE in something*; do
+    echo ${FILE}
+    ...
+done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>/resources/linux_resources/vim/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/vim/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;navigation&#34;&gt;navigation&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;u              undo
+ctrl+R         redo
+shift+G        go to last line
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;visual-mode-commenting&#34;&gt;visual mode commenting&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim&#34;&gt;https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;comment&#34;&gt;comment&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;go to first line/
+esc/
+ctrl+v/
+down arrow to last line/
+shift+i/
+#/
+esc/
+wait/
+esc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;uncomment&#34;&gt;uncomment&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;go to first line/
+esc/
+ctrl+v/
+down arrow to last line/
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
 </description>
     </item>
@@ -147,18 +160,14 @@ $ kill 71504
       <link>/resources/linux_resources/awk/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
       <guid>/resources/linux_resources/awk/</guid>
-      <description>&lt;!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace awk with page name e.g. dplyr
-4. replace  with weight e.g. 20
---&gt;
+      <description>&lt;br&gt;
 &lt;h2 id=&#34;view-csv&#34;&gt;view CSV&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;view csv in human readable columns when field has quoted commas (e.g. &amp;ldquo;1,2,3&amp;rdquo;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39;!(NR%2){gsub(&amp;quot;,&amp;quot;,&amp;quot;;&amp;quot;)} 1&#39; RS=\&amp;quot; ORS=\&amp;quot; &amp;lt;file.csv&amp;gt; | column -t -s , | less -S
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;-v-flag&#34;&gt;-v flag&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;using variable inside AWK, define variables with -v flag&lt;/li&gt;
@@ -167,6 +176,7 @@ $ kill 71504
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk -F&amp;quot; &amp;quot; -v d1=&amp;quot;$d1&amp;quot; -v d2=&amp;quot;$d2&amp;quot; &#39;$1==d1&amp;quot;-&amp;quot;d2&amp;quot;-2009&amp;quot; {print $1,$2,$3,$4,$5}&#39;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;col-min-max&#34;&gt;col min max&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;put min or max of column into a var&lt;/li&gt;
@@ -186,6 +196,7 @@ echo $max
 &lt;ul&gt;
 &lt;li&gt;but it&amp;rsquo;s slower to sort&lt;/li&gt;
 &lt;/ul&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;define-output-sep&#34;&gt;define output sep&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;change or define output separator&lt;/li&gt;
@@ -194,6 +205,7 @@ echo $max
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39;BEGIN {FS=&amp;quot;\t&amp;quot;; OFS=&amp;quot;,&amp;quot;; print} {$1=$1}1&#39; &amp;lt;file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;rm-dup-in-2-col-both-directions&#34;&gt;rm dup in 2 col, both directions&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;remove dups in 2 rows in either direction&lt;/li&gt;
@@ -202,6 +214,7 @@ echo $max
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39;!a[$1$2]++ &amp;amp;&amp;amp; !a[$2$1]++&#39; &amp;lt;file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;col-order&#34;&gt;col order&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;swap columns&lt;/li&gt;
@@ -210,6 +223,7 @@ echo $max
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39; { t = $1; $1 = $2; $2 = t; print; } &#39; &amp;lt;file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;filter-rows-with-col-regex&#34;&gt;filter rows with col regex&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;filter rows where column value matches regex&lt;/li&gt;
@@ -222,6 +236,7 @@ echo $max
 &lt;li&gt;matches if column 1 starts with &amp;ldquo;chr&amp;rdquo;, ends with 1-9 or 10-99 or X or Y&lt;/li&gt;
 &lt;li&gt;~ specifies for regex match (== specifies comparison match)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;another-regex-comparison&#34;&gt;another regex comparison&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -234,6 +249,7 @@ $ awk &#39;/&#39;$SNP_seed&#39;/ {print}&#39; &amp;lt;input_file&amp;gt; &amp;gt
 or
 $ awk &#39;{ if($11 ~ /&#39;$SNP_seed&#39;/ {print}}&#39; &amp;lt;input_file&amp;gt; &amp;gt;&amp;gt; &amp;lt;output_file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;-f-flag&#34;&gt;-F flag&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;define field separators with -F flag&lt;/li&gt;
@@ -242,6 +258,7 @@ $ awk &#39;{ if($11 ~ /&#39;$SNP_seed&#39;/ {print}}&#39; &amp;lt;input_file&amp
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk -F: &#39;{print $4}&#39; &amp;lt;file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;filter-rows-with-multiple-cols&#34;&gt;filter rows with multiple cols&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;filter rows with multiple comparisons in column values&lt;/li&gt;
@@ -255,18 +272,158 @@ $ awk &#39;{ if($11 ~ /&#39;$SNP_seed&#39;/ {print}}&#39; &amp;lt;input_file&amp
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39;$1==22 &amp;amp;&amp;amp; $2&amp;lt;23966388 &amp;amp;&amp;amp; $3&amp;gt;23966388&#39; &amp;lt;file&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;sub-multiple-cols&#34;&gt;sub multiple cols&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;substitute within multiple columns&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39;{sub(/find1/,replace1,$col1);sub(/find2/,replace2,$col2);print $col1, $col2}&#39; input.txt &amp;gt; output.txt
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;num-cols&#34;&gt;num cols&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;get number of cols in a file&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ awk &#39;{print NF}&#39; &amp;lt;file&amp;gt; | sort -nu | tail -n1
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cat</title>
+      <link>/resources/linux_resources/cat/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/cat/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;view-wc--l-without-filename&#34;&gt;view wc -l without filename&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat &amp;lt;file&amp;gt; | wc -l &amp;gt; output
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;view-hidden-characters-in-file&#34;&gt;view hidden characters in file&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat -A &amp;lt;file&amp;gt;        # view all characters (tab = ^I)
+cat -E &amp;lt;file&amp;gt;        # shows &amp;quot;\n&amp;quot; as &amp;quot;$&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;view-csv-files-with--in-field&#34;&gt;view csv files with &amp;ldquo;,&amp;rdquo; in field&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stefaanlippens.net/pretty-csv.html&#34;&gt;https://www.stefaanlippens.net/pretty-csv.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cat data.csv | perl -pe &#39;s/((?&amp;lt;=,)|(?&amp;lt;=^)),/ ,/g;&#39; | column -t -s, | less -S
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>column</title>
+      <link>/resources/linux_resources/column/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/column/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;comma-separted&#34;&gt;comma separted&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;column -t -s &amp;quot;,&amp;quot; &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;tab-delimited&#34;&gt;tab delimited&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;column -t -s $&#39;\t&#39; &amp;lt;file&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>copy</title>
+      <link>/resources/linux_resources/copy/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/copy/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;copy-except-certain-files&#34;&gt;copy except certain files&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;using extglob&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;shopt -s extglob             # enable extended shell glob
+cp !(excluding*) /dest_dir/
+shopt -u extglob             # disable extended shell glob
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cut</title>
+      <link>/resources/linux_resources/cut/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/cut/</guid>
+      <description>&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cut -b 1-3,5-7 &amp;lt;file&amp;gt;                      # (byte, 1 to 3, 5 to 7)
+cut -c 2,5-7 &amp;lt;file&amp;gt;                        # (character, 2, 5 to 7)
+cut -d &amp;quot; &amp;quot; --complement -f 1 state.txt     # (delimiter = space, everything except field 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>diff and comm</title>
+      <link>/resources/linux_resources/diff_and_comm/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/diff_and_comm/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;diff&#34;&gt;diff&lt;/h2&gt;
+&lt;h3 id=&#34;difference-after-cutsort-2-files&#34;&gt;difference after cut|sort 2 files&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;diff &amp;lt;(cut -f2 fileA | sort) &amp;lt;(sort fileB)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;more-flags&#34;&gt;more flags&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;diff -y -W 120 File_1.txt File_2.txt --suppress-common-lines
+# -y        side by side, in 2 columns
+# -W 120    maximum number of columns to print
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;comm&#34;&gt;comm&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;single output only&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;comm -23 &amp;lt;(sort fileA) &amp;lt;(sort fileB)    # A∩B&#39; (lines in A but not in B)
+comm -13 &amp;lt;(sort fileA) &amp;lt;(sort fileB)    # A&#39;∩B (lines in B but not in A)
+comm -12 &amp;lt;(sort fileA) &amp;lt;(sort fileB)    # A∩B (lines in both A and B)
+
+# 3 columns (fileA_unique   common  fileB_unique)
+# -1     suppress column 1 (lines unique to fileA)
+# -2     suppress column 2 (lines unique to fileB)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>less</title>
+      <link>/resources/linux_resources/less/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/less/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;search&#34;&gt;search&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;/&amp;lt;find&amp;gt;
+n for next
+N for previous
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;go-to&#34;&gt;go to&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;100g     go to the 100th line (or `less +100g bigfile.txt`)
+50p      go to 50% into the file.
+100P     go to the line containing 100th byte.
+
+^f       page down
+^b       page up
+G        go to the end of buffer
+gg       go to the beginning of the buffer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
 </description>
     </item>
@@ -276,28 +433,267 @@ $ awk &#39;{ if($11 ~ /&#39;$SNP_seed&#39;/ {print}}&#39; &amp;lt;input_file&amp
       <link>/resources/linux_resources/rename/</link>
       <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
       <guid>/resources/linux_resources/rename/</guid>
-      <description>&lt;!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace mass renaming with page name e.g. dplyr
-4. replace  with weight e.g. 20
---&gt;
-&lt;h2 id=&#34;find--perl&#34;&gt;find + perl&lt;/h2&gt;
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;find-maxdepth-regex--perl--xargs--mv&#34;&gt;find (maxdepth, regex) + perl + xargs + mv&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;do below without mv first to check io&lt;/li&gt;
-&lt;li&gt;then execute mass rename with mv&lt;/li&gt;
+&lt;li&gt;do below without &lt;code&gt;mv&lt;/code&gt; first to check io&lt;/li&gt;
+&lt;li&gt;then execute mass rename with &lt;code&gt;mv&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;find . -type f | perl -pe &#39;print $_; s/.\/find/.\/replace/&#39; | xargs -n2 mv
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;find . -maxdepth 1 -type f
+-regex &amp;quot;.\/.*something.*\.txt&amp;quot; | 
+perl -pe &#39;print $_; s/.\/find/.\/replace/&#39; | 
+xargs -n2 
+mv
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;find-in-current-folder&#34;&gt;find in current folder&lt;/h2&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;find--exec-mv&#34;&gt;find + exec mv&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;not recursive&lt;/li&gt;
+&lt;li&gt;more efficient, but can&amp;rsquo;t check io&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;find ./ -name &amp;quot;target&amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;find path_A -name &#39;*AAA*&#39; -exec mv -t path_B {} +
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;find-with-regex&#34;&gt;find with regex&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;find . -type f -regex &amp;quot;.\/name_starting_with.*&amp;quot;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>networking</title>
+      <link>/resources/linux_resources/networking/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/networking/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;ssh-flags&#34;&gt;ssh flags&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.ssh.com/ssh/command&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.ssh.com/ssh/command&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-L [bind address]    # port:host:hostport (e.g. 8000:localhost:8888)
+-N                   # do not execute remote commands
+-f                   # requests ssh to go to background before command executes
+-p port              # port to connect to on remote host (e.g. -p 8000)
+-q                   # quiet mode
+-X                   # enable X11 forwarding
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;lsof&#34;&gt;lsof&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;find open port and kill process&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ lsof -i:8000
+&amp;gt; COMMAND   PID    USER    FD  TYPE  DEVICE               SIZE/OFF  NODE  NAME
+  ssh       71504  minghan 7u  IPv6  0x570e3d71af3c38d9   0t0       TCP   localhost:irdmi (LISTEN)
+
+$ kill 71504
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>permissions</title>
+      <link>/resources/linux_resources/permissions/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/permissions/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;syntax&#34;&gt;syntax&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;dir
+ |
+ drwx     rwx    rwx
+(owner) (group) (other)
+   u       g      o
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;notation&#34;&gt;notation&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ chmod u=rwx &amp;lt;file&amp;gt;       # give owner read, write, execute
+$ chmod 700 &amp;lt;file&amp;gt;         # give owner read, write, execute
+$ chmod 777 &amp;lt;file&amp;gt;         # give owner, group, other read, write, execute
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;octal-vs-symbolic&#34;&gt;octal vs symbolic&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ chmod u=rwx &amp;lt;file&amp;gt;       # symbolic notation
+$ chmod 700 &amp;lt;file&amp;gt;         # octal notation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code&gt;octal   binary  symbolic
+  7      111      rwx
+  6      110      rw-
+  5      101      r-x
+  4      100      r--
+  3      011      -wx
+  2      010      -w-
+  1      001      --x
+  0      000      ---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>rm</title>
+      <link>/resources/linux_resources/rm/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/rm/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;remove-directories-only&#34;&gt;remove directories only&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rm -rf ./*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>sed</title>
+      <link>/resources/linux_resources/sed/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/sed/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;extract-lines&#34;&gt;extract lines&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-n&lt;/code&gt; = no stdout&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sed -n &#39;2p&#39; &amp;lt;file&amp;gt;              # print 2nd line
+sed -n &#39;10,33p&#39; &amp;lt;file&amp;gt;          # line 10 up to line 33
+sed -n &#39;1p;3p&#39; &amp;lt;file&amp;gt;           # line 1 AND 3
+sed -n &#39;2,$p&#39; &amp;lt;file&amp;gt;            # line 2 to the END
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;line-findreplace&#34;&gt;line /find/replace/&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sed &#39;s/..$//&#39; &amp;lt;input.txt&amp;gt; &amp;gt; &amp;lt;output.txt&amp;gt;      # delete last 2 characters from each line
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>sort and uniq</title>
+      <link>/resources/linux_resources/sort/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/sort/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;sort-by-column&#34;&gt;sort by column&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort -t &amp;quot;,&amp;quot; -k2,2 -n -r -u &amp;lt;file&amp;gt; 
+# -t      field separator,
+# -k2,2   column 2 only, 
+# -n      numerical sort (or else lexicographical, 10 comes before 1), 
+# -r      reverse, 
+# -u      return first line of duplicated values of column 2 after sorting (need to use with -n if numerical column)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;other-sort-options&#34;&gt;other sort options&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# -k2.1,2.2  sort by field 2 position 1 to field 2 position 2
+# -k3n       sort by field 3 onward
+# -R         scramble list order
+# -f         ignore case
+# -s         &amp;quot;stabilizes sort&amp;quot;, if ignore case, keeps original input order
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;sort--uniq&#34;&gt;sort + uniq&lt;/h2&gt;
+&lt;h3 id=&#34;to-count-unique-lines&#34;&gt;to count unique lines&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort &amp;lt;file&amp;gt; | uniq -ic
+# -i   ignore case
+# -c   count
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;to-print-duplicated-lines-once&#34;&gt;to print duplicated lines ONCE&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort &amp;lt;file&amp;gt; | uniq -d
+# -d   print duplicated lines once
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;to-print-all-duplicated-lines&#34;&gt;to print ALL duplicated lines&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort &amp;lt;file&amp;gt; | uniq -iD
+# -D   print all duplicated lines
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;to-print-number-of-duplicated-items&#34;&gt;to print number of duplicated items&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort &amp;lt;file&amp;gt; | uniq -D | uniq -ic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;to-print-total-number-of-duplicated-lines&#34;&gt;to print TOTAL number of duplicated lines&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort &amp;lt;file&amp;gt; | uniq -idc
+# -d   print duplicated lines once
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;uniq-as-to-first-w-characters&#34;&gt;uniq as to first &amp;ldquo;w&amp;rdquo; characters&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;uniq -w 2 &amp;lt;file&amp;gt;   # if first 2 char same, then line count as duplicate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;to-get-unique-lines-based-on-a-column&#34;&gt;to get unique lines based on a column&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;need AWK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sort -nk3 &amp;lt;file&amp;gt; | awk -F&amp;quot;[. ]&amp;quot; &#39;!a[$2]++&#39;
+# sorts by 3rd column numerically
+# awk removes duplicates based on 2nd column
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>split</title>
+      <link>/resources/linux_resources/split/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/split/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;split-1-billion-lines-per-file&#34;&gt;split 1 billion lines per file&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;split -d -l 1000000000 &amp;lt;input&amp;gt;  &amp;lt;output&amp;gt;
+# -d    output file names to end w/ 1,2,3,...
+# -l    lines in each file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;split-by-size&#34;&gt;split by size&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;split -b 200M &amp;lt;input&amp;gt;  &amp;lt;output&amp;gt;
+# -b    bytes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;csplit-can-use-regex-for-splitting&#34;&gt;csplit can use regex for splitting&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;csplit &amp;lt;input&amp;gt; 4 {1}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>timestamp</title>
+      <link>/resources/linux_resources/timestamp/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/timestamp/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;printf-time&#34;&gt;PRINTF TIME&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;time1=$(date +%s)
+
+code...
+
+time2=$(date +%s)
+secs=$((time2-time1))
+printf &#39;job took %dd:%dh:%dm:%ds\n&#39; $(($secs/86400)) $(($secs%86400/3600)) $(($secs%3600/60)) $(($secs%60))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>watch</title>
+      <link>/resources/linux_resources/watch/</link>
+      <pubDate>Sat, 23 May 2020 00:00:00 +0100</pubDate>
+      <guid>/resources/linux_resources/watch/</guid>
+      <description>&lt;br&gt;
+&lt;h2 id=&#34;continuously-watch-logfile-output&#34;&gt;continuously watch logfile output&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;watch &#39;head -n 2 &amp;lt;logfile&amp;gt;; tail -f &amp;lt;logfile&amp;gt; | grep &amp;lt;keyword or pattern&amp;gt;&#39;
+# beginning 2 lines
+# tail grep certain lines only
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;example&#34;&gt;example&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;watch &#39;grep -E &amp;quot;Epoch|val_accuracy&amp;quot; &amp;lt;logfile&amp;gt; | tail; tail &amp;lt;logfile&amp;gt;&#39;
+# grep &amp;quot;Epoch&amp;quot; or &amp;quot;val_accuracy&amp;quot;, but get latest only with tail
+# also output last lines of logfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;eof&#34;&gt;EOF&lt;/h2&gt;
 </description>
     </item>

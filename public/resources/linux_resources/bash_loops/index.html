@@ -27,10 +27,10 @@
   
     
   
-  <meta name="description" content="ssh flags   https://www.ssh.com/ssh/command  -L [bind address] # port:host:hostport (e.g. 8000:localhost:8888) -N # do not execute remote commands -f # requests ssh to go to background before command executes -p port # port to connect to on remote host (e.">
+  <meta name="description" content="for loop1 for val in {1..10}; do ... done  for loop2 for ((i=1; i&lt;=10; i&#43;&#43;)); do ... done  iterate over user input vim test.sh for var in &quot;$@&quot;; do echo &quot;$var&quot; done # output # bash test.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../../resources/linux_resources/networking/">
+  <link rel="alternate" hreflang="en-us" href="../../../resources/linux_resources/bash_loops/">
 
   
 
@@ -220,7 +220,7 @@
   <link rel="icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="../../../images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="../../../resources/linux_resources/networking/">
+  <link rel="canonical" href="../../../resources/linux_resources/bash_loops/">
 
   
   
@@ -236,9 +236,9 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="BioinfoHippo">
-  <meta property="og:url" content="/resources/linux_resources/networking/">
-  <meta property="og:title" content="networking | BioinfoHippo">
-  <meta property="og:description" content="ssh flags   https://www.ssh.com/ssh/command  -L [bind address] # port:host:hostport (e.g. 8000:localhost:8888) -N # do not execute remote commands -f # requests ssh to go to background before command executes -p port # port to connect to on remote host (e."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/resources/linux_resources/bash_loops/">
+  <meta property="og:title" content="bash loops | BioinfoHippo">
+  <meta property="og:description" content="for loop1 for val in {1..10}; do ... done  for loop2 for ((i=1; i&lt;=10; i&#43;&#43;)); do ... done  iterate over user input vim test.sh for var in &quot;$@&quot;; do echo &quot;$var&quot; done # output # bash test."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -263,7 +263,7 @@
 
 
 
-  <title>networking | BioinfoHippo</title>
+  <title>bash loops | BioinfoHippo</title>
 
 </head>
 
@@ -502,7 +502,7 @@
 
   </div>
   
-  <div class="docs-toc-item">
+  <div class="docs-toc-item active">
     <a class="docs-toc-link" href="../../../resources/linux_resources/bash_loops/">bash loops</a>
 
   </div>
@@ -552,7 +552,7 @@
 
   </div>
   
-  <div class="docs-toc-item active">
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="../../../resources/linux_resources/networking/">networking</a>
 
   </div>
@@ -605,8 +605,10 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#ssh-flags">ssh flags</a></li>
-    <li><a href="#lsof">lsof</a></li>
+    <li><a href="#for-loop1">for loop1</a></li>
+    <li><a href="#for-loop2">for loop2</a></li>
+    <li><a href="#iterate-over-user-input">iterate over user input</a></li>
+    <li><a href="#iterate-over-files-in-dir">iterate over files in dir</a></li>
     <li><a href="#eof">EOF</a></li>
   </ul>
 </nav>
@@ -620,32 +622,40 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>networking</h1>
+          <h1>bash loops</h1>
 
           <div class="article-style">
             <br>
-<h2 id="ssh-flags">ssh flags</h2>
-<ul>
-<li>
-<a href="https://www.ssh.com/ssh/command" target="_blank" rel="noopener">https://www.ssh.com/ssh/command</a></li>
-</ul>
-<pre><code class="language-bash">-L [bind address]    # port:host:hostport (e.g. 8000:localhost:8888)
--N                   # do not execute remote commands
--f                   # requests ssh to go to background before command executes
--p port              # port to connect to on remote host (e.g. -p 8000)
--q                   # quiet mode
--X                   # enable X11 forwarding
+<h2 id="for-loop1">for loop1</h2>
+<pre><code class="language-bash">for val in {1..10}; do
+    ...
+done
 </code></pre>
 <br>
-<h2 id="lsof">lsof</h2>
-<ul>
-<li>find open port and kill process</li>
-</ul>
-<pre><code class="language-bash">$ lsof -i:8000
-&gt; COMMAND   PID    USER    FD  TYPE  DEVICE               SIZE/OFF  NODE  NAME
-  ssh       71504  minghan 7u  IPv6  0x570e3d71af3c38d9   0t0       TCP   localhost:irdmi (LISTEN)
+<h2 id="for-loop2">for loop2</h2>
+<pre><code class="language-bash">for ((i=1; i&lt;=10; i++)); do
+    ...
+done
+</code></pre>
+<br>
+<h2 id="iterate-over-user-input">iterate over user input</h2>
+<pre><code class="language-bash">vim test.sh
+for var in &quot;$@&quot;; do
+    echo &quot;$var&quot;
+done
 
-$ kill 71504
+# output
+# bash test.sh 1 2 '3 4'
+# 1
+# 2
+# 3 4
+</code></pre>
+<br>
+<h2 id="iterate-over-files-in-dir">iterate over files in dir</h2>
+<pre><code class="language-bash">for FILE in something*; do
+    echo ${FILE}
+    ...
+done
 </code></pre>
 <br>
 <h2 id="eof">EOF</h2>
@@ -665,14 +675,14 @@ $ kill 71504
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../resources/linux_resources/rename/" rel="next">mass renaming</a>
+    <a href="../../../resources/linux_resources/sysadmin/" rel="next">general sysadmin</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../resources/linux_resources/permissions/" rel="prev">permissions</a>
+    <a href="../../../resources/linux_resources/vim/" rel="prev">vim</a>
   </div>
   
 </div>
@@ -694,7 +704,7 @@ $ kill 71504
   
 
 <p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/resources/linux_resources/networking.md">
+  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/resources/linux_resources/bash_loops.md">
     <i class="fas fa-pen pr-2"></i>Edit this page
   </a>
 </p>

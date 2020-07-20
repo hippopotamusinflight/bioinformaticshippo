@@ -5,19 +5,14 @@ linktitle: awk
 menu:
   linux_resources:
     name: awk
-    weight: 
+    weight: 100
 title: awk
 toc: true
 type: docs
-weight: 
+weight: 100
 ---
 
-<!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace awk with page name e.g. dplyr
-4. replace  with weight e.g. 20
--->
+<br>
 
 ## view CSV
 - view csv in human readable columns when field has quoted commas (e.g. "1,2,3")
@@ -25,12 +20,16 @@ weight:
 $ awk '!(NR%2){gsub(",",";")} 1' RS=\" ORS=\" <file.csv> | column -t -s , | less -S
 ```
 
+<br>
+
 ## -v flag
 - using variable inside AWK, define variables with -v flag
 - [https://www.unix.com/shell-programming-and-scripting/118704-awk-comparison-variable.html](https://www.unix.com/shell-programming-and-scripting/118704-awk-comparison-variable.html)
 ```bash
 $ awk -F" " -v d1="$d1" -v d2="$d2" '$1==d1"-"d2"-2009" {print $1,$2,$3,$4,$5}'
 ```
+
+<br>
 
 ## col min max
 - put min or max of column into a var
@@ -48,12 +47,16 @@ $ cut -d " " -f1 <file> | sort -n | sed -n '1s/^/min=/p; $s/^/max=/p'
 ```
 - but it's slower to sort
 
+<br>
+
 ## define output sep
 - change or define output separator
 - [https://stackoverflow.com/questions/20844666/setting-the-output-field-separator-in-awk](https://stackoverflow.com/questions/20844666/setting-the-output-field-separator-in-awk)
 ```bash
 $ awk 'BEGIN {FS="\t"; OFS=","; print} {$1=$1}1' <file>
 ```
+
+<br>
 
 ## rm dup in 2 col, both directions
 - remove dups in 2 rows in either direction
@@ -62,12 +65,16 @@ $ awk 'BEGIN {FS="\t"; OFS=","; print} {$1=$1}1' <file>
 $ awk '!a[$1$2]++ && !a[$2$1]++' <file>
 ```
 
+<br>
+
 ## col order
 - swap columns
 - [https://stackoverflow.com/questions/11967776/swap-two-columns-awk-sed-python-perl](https://stackoverflow.com/questions/11967776/swap-two-columns-awk-sed-python-perl)
 ```bash
 $ awk ' { t = $1; $1 = $2; $2 = t; print; } ' <file>
 ```
+
+<br>
 
 ## filter rows with col regex
 - filter rows where column value matches regex
@@ -77,6 +84,8 @@ $ awk '$1~/^chr([1-9]|[1-9][0-9]|[XY])$/' <file.bed>
 ```
 - matches if column 1 starts with "chr", ends with 1-9 or 10-99 or X or Y
 - ~ specifies for regex match (== specifies comparison match)
+
+<br>
 
 ## another regex comparison
 - [https://unix.stackexchange.com/questions/512567/regex-in-if-condition-in-awk](https://unix.stackexchange.com/questions/512567/regex-in-if-condition-in-awk)
@@ -88,12 +97,16 @@ or
 $ awk '{ if($11 ~ /'$SNP_seed'/ {print}}' <input_file> >> <output_file>
 ```
 
+<br>
+
 ## -F flag
 - define field separators with -F flag
 - [https://askubuntu.com/questions/342842/what-does-this-command-mean-awk-f-print-4](https://askubuntu.com/questions/342842/what-does-this-command-mean-awk-f-print-4)
 ```bash
 $ awk -F: '{print $4}' <file>
 ```
+
+<br>
 
 ## filter rows with multiple cols
 - filter rows with multiple comparisons in column values
@@ -106,16 +119,25 @@ $ awk -F "\t" '{ if(($7 == 6) && ($8 >= 11000000 && $8 <= 25000000)) { print } }
 $ awk '$1==22 && $2<23966388 && $3>23966388' <file>
 ```
 
+<br>
+
 ## sub multiple cols
 - substitute within multiple columns
 ```bash
 $ awk '{sub(/find1/,replace1,$col1);sub(/find2/,replace2,$col2);print $col1, $col2}' input.txt > output.txt
 ```
 
+<br>
+
 ## num cols
 - get number of cols in a file
 ```bash
 $ awk '{print NF}' <file> | sort -nu | tail -n1
 ```
+
+
+
+
+<br>
 
 ## EOF

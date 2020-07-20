@@ -538,10 +538,7 @@
           <h1>Basics</h1>
 
           <div class="article-style">
-            <!--
-1. replace dirdir with page dir (e.g. r_resources)
-2. replace 5 with weight, or leave blank to sort pages alphabetically
--->
+            <br>
 <h2 id="setup-git">setup git</h2>
 <ul>
 <li>in a project dir</li>
@@ -551,6 +548,7 @@ git init                                       initialize local git repo, create
 git config --global user.name 'John Doe'
 git config --global user.email 'jdoe@email.com'
 </code></pre>
+<br>
 <h2 id="create-gitignore">create .gitignore</h2>
 <ul>
 <li>make sure you set up .gitignore before <code>git add</code></li>
@@ -561,6 +559,7 @@ git config --global user.email 'jdoe@email.com'
    /dir1
    *.RMarkdown
 </code></pre>
+<br>
 <h2 id="git-add-rm-commit-status">git add, rm, commit, status</h2>
 <pre><code class="language-bash">git add file1 file2                add files to index/staging area before committing
 git add file3 ...
@@ -572,6 +571,7 @@ git status                         check status of working tree (what files adde
 git commit                         commit files in staging area
 git commit -m 'changed something'  to add comment to commit
 </code></pre>
+<br>
 <hr>
 <h2 id="create-branches">create branches</h2>
 <pre><code class="language-bash">git branch somebranch                    add a branch
@@ -585,25 +585,27 @@ git checkout master                      goes into master branch
 git merge somebranch                     while in master branch, merge somebranch
 git merge somebranch -m 'some message'   to write a commit message
 </code></pre>
+<br>
 <hr>
 <h2 id="working-with-github">working with GitHub</h2>
 <ul>
 <li>create new repo on GitHub</li>
 </ul>
-<pre><code class="language-bash">git remote                               to view remote repos
+<pre><code class="language-bash">git remote                               # to view remote repos
 git remote add origin https://github.com/username/repo
 git remote remove origin
 git remote -v
 
-git push -u origin master                to push master to remote repo
-                                         (github login window will open to authenticate for the first time)
+git push -u origin master                # to push master to remote repo
+# github login window will open to authenticate for the first time
 </code></pre>
 <ul>
 <li>reload GitHub page and local repo should be there</li>
 </ul>
-<pre><code class="language-bash">git pull          pulls latest version from remote repo
-git clone         copies a remote repo into current dir
+<pre><code class="language-bash">git pull &lt;url&gt;        # pulls latest version from remote repo
+git clone &lt;url&gt;       # copies a remote repo into current dir
 </code></pre>
+<br>
 <hr>
 <h2 id="git-reset">git reset</h2>
 <ul>
@@ -623,6 +625,7 @@ HEAD is now at 5f98d77 website initial commit
 <li>lesson: add files to .gitignore before initial commit</li>
 <li>lesson: do not delete files on github, do everything with git</li>
 </ul>
+<br>
 <hr>
 <h2 id="misc">misc</h2>
 <ul>

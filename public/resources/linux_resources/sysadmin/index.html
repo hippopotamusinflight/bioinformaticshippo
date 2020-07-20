@@ -237,7 +237,7 @@
   
   <meta property="og:site_name" content="BioinfoHippo">
   <meta property="og:url" content="/resources/linux_resources/sysadmin/">
-  <meta property="og:title" content="system admin | BioinfoHippo">
+  <meta property="og:title" content="general sysadmin | BioinfoHippo">
   <meta property="og:description" content="untar unzip $ tar -xzf file.tar.gz  env var  set up environment variable PICARD so don&rsquo;t need to call full path to PICARD library all the time just use $PICARD  $ vim ~/."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -263,7 +263,7 @@
 
 
 
-  <title>system admin | BioinfoHippo</title>
+  <title>general sysadmin | BioinfoHippo</title>
 
 </head>
 
@@ -498,17 +498,17 @@
   </div>
   
   <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/sysadmin/">system admin</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sysadmin/">general sysadmin</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/permissions/">permissions</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/bash_loops/">bash loops</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/networking/">networking</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/vim/">vim</a>
 
   </div>
   
@@ -518,7 +518,77 @@
   </div>
   
   <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/cat/">cat</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/column/">column</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/copy/">copy</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/cut/">cut</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/diff_and_comm/">diff and comm</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/less/">less</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="../../../resources/linux_resources/rename/">mass renaming</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/networking/">networking</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/permissions/">permissions</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/rm/">rm</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sed/">sed</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sort/">sort and uniq</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/split/">split</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/timestamp/">timestamp</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/watch/">watch</a>
 
   </div>
   
@@ -541,7 +611,8 @@
     <li><a href="#disk-space">disk space</a></li>
     <li><a href="#get-dir-size">get dir size</a></li>
     <li><a href="#cd-with-breadcrumbs">cd with breadcrumbs</a></li>
-    <li><a href="#heading"></a></li>
+    <li><a href="#pwd-with-real-path">pwd with real path</a></li>
+    <li><a href="#ls-view-dir-file-size-in-mb">ls view dir file size in MB</a></li>
     <li><a href="#eof">EOF</a></li>
   </ul>
 </nav>
@@ -555,18 +626,13 @@
       <article class="article">
 
         <div class="docs-article-container">
-          <h1>system admin</h1>
+          <h1>general sysadmin</h1>
 
           <div class="article-style">
-            <!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace system admin with page name e.g. dplyr
-4. replace 10 with weight e.g. 20
--->
-<h2 id="untar-unzip">untar unzip</h2>
+            <h2 id="untar-unzip">untar unzip</h2>
 <pre><code class="language-bash">$ tar -xzf file.tar.gz
 </code></pre>
+<br>
 <h2 id="env-var">env var</h2>
 <ul>
 <li>set up environment variable PICARD</li>
@@ -579,6 +645,7 @@ $ source ~/.bash_profile
 $ echo $PICARD
 &gt; /home/&lt;username&gt;/.../build/libs/
 </code></pre>
+<br>
 <h2 id="version">version</h2>
 <ul>
 <li>get linux version</li>
@@ -587,20 +654,34 @@ $ echo $PICARD
 or
 $ lsb_release -a
 </code></pre>
+<br>
 <h2 id="disk-space">disk space</h2>
 <pre><code class="language-bash">$ df -k /some/dir/    # in numerics
 $ df -h /some/dir/    # in human readable format
 </code></pre>
+<br>
 <h2 id="get-dir-size">get dir size</h2>
 <pre><code class="language-bash">dir1$ du -h          # human readable
 dir1$ du -hs         # only size of dir1, no subdir
 </code></pre>
+<br>
 <h2 id="cd-with-breadcrumbs">cd with breadcrumbs</h2>
 <pre><code class="language-bash">$ cd dir1/
 $ pushd dir2/
 $ popd               # returns to dir1
 </code></pre>
-<h2 id="heading"></h2>
+<br>
+<h2 id="pwd-with-real-path">pwd with real path</h2>
+<ul>
+<li>ignore symbolic links, prints full path</li>
+</ul>
+<pre><code class="language-bash">pwd -P
+</code></pre>
+<br>
+<h2 id="ls-view-dir-file-size-in-mb">ls view dir file size in MB</h2>
+<pre><code class="language-bash">ls -lah
+</code></pre>
+<br>
 <h2 id="eof">EOF</h2>
 
           </div>
@@ -618,7 +699,7 @@ $ popd               # returns to dir1
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../resources/linux_resources/permissions/" rel="prev">permissions</a>
+    <a href="../../../resources/linux_resources/bash_loops/" rel="prev">bash loops</a>
   </div>
   
 </div>

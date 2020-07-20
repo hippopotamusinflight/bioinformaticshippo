@@ -17,10 +17,7 @@
       <link>/resources/git_resources/basics/</link>
       <pubDate>Tue, 26 May 2020 09:55:52 -0400</pubDate>
       <guid>/resources/git_resources/basics/</guid>
-      <description>&lt;!--
-1. replace dirdir with page dir (e.g. r_resources)
-2. replace 5 with weight, or leave blank to sort pages alphabetically
---&gt;
+      <description>&lt;br&gt;
 &lt;h2 id=&#34;setup-git&#34;&gt;setup git&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;in a project dir&lt;/li&gt;
@@ -30,6 +27,7 @@ git init                                       initialize local git repo, create
 git config --global user.name &#39;John Doe&#39;
 git config --global user.email &#39;jdoe@email.com&#39;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;create-gitignore&#34;&gt;create .gitignore&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;make sure you set up .gitignore before &lt;code&gt;git add&lt;/code&gt;&lt;/li&gt;
@@ -40,6 +38,7 @@ git config --global user.email &#39;jdoe@email.com&#39;
    /dir1
    *.RMarkdown
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;git-add-rm-commit-status&#34;&gt;git add, rm, commit, status&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git add file1 file2                add files to index/staging area before committing
 git add file3 ...
@@ -51,6 +50,7 @@ git status                         check status of working tree (what files adde
 git commit                         commit files in staging area
 git commit -m &#39;changed something&#39;  to add comment to commit
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;create-branches&#34;&gt;create branches&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git branch somebranch                    add a branch
@@ -64,25 +64,27 @@ git checkout master                      goes into master branch
 git merge somebranch                     while in master branch, merge somebranch
 git merge somebranch -m &#39;some message&#39;   to write a commit message
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;working-with-github&#34;&gt;working with GitHub&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;create new repo on GitHub&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote                               to view remote repos
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote                               # to view remote repos
 git remote add origin https://github.com/username/repo
 git remote remove origin
 git remote -v
 
-git push -u origin master                to push master to remote repo
-                                         (github login window will open to authenticate for the first time)
+git push -u origin master                # to push master to remote repo
+# github login window will open to authenticate for the first time
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;reload GitHub page and local repo should be there&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git pull          pulls latest version from remote repo
-git clone         copies a remote repo into current dir
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git pull &amp;lt;url&amp;gt;        # pulls latest version from remote repo
+git clone &amp;lt;url&amp;gt;       # copies a remote repo into current dir
 &lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;git-reset&#34;&gt;git reset&lt;/h2&gt;
 &lt;ul&gt;
@@ -102,6 +104,7 @@ HEAD is now at 5f98d77 website initial commit
 &lt;li&gt;lesson: add files to .gitignore before initial commit&lt;/li&gt;
 &lt;li&gt;lesson: do not delete files on github, do everything with git&lt;/li&gt;
 &lt;/ul&gt;
+&lt;br&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;misc&#34;&gt;misc&lt;/h2&gt;
 &lt;ul&gt;

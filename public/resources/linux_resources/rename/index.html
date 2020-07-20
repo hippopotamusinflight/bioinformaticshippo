@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="find &#43; perl  do below without mv first to check io then execute mass rename with mv  find . -type f | perl -pe &#39;print $_; s/.\/find/.\/replace/&#39; | xargs -n2 mv  find in current folder  not recursive  find .">
+  <meta name="description" content="find (maxdepth, regex) &#43; perl &#43; xargs &#43; mv  do below without mv first to check io then execute mass rename with mv  find . -maxdepth 1 -type f -regex &quot;.">
 
   
   <link rel="alternate" hreflang="en-us" href="../../../resources/linux_resources/rename/">
@@ -238,7 +238,7 @@
   <meta property="og:site_name" content="BioinfoHippo">
   <meta property="og:url" content="/resources/linux_resources/rename/">
   <meta property="og:title" content="mass renaming | BioinfoHippo">
-  <meta property="og:description" content="find &#43; perl  do below without mv first to check io then execute mass rename with mv  find . -type f | perl -pe &#39;print $_; s/.\/find/.\/replace/&#39; | xargs -n2 mv  find in current folder  not recursive  find ."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="find (maxdepth, regex) &#43; perl &#43; xargs &#43; mv  do below without mv first to check io then execute mass rename with mv  find . -maxdepth 1 -type f -regex &quot;."><meta property="og:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hubad2defad9b28ccc791e11094fae3b6d_15995_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -498,12 +498,57 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/sysadmin/">system admin</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sysadmin/">general sysadmin</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/permissions/">permissions</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/bash_loops/">bash loops</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/vim/">vim</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/awk/">awk</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/cat/">cat</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/column/">column</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/copy/">copy</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/cut/">cut</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/diff_and_comm/">diff and comm</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/less/">less</a>
+
+  </div>
+  
+  <div class="docs-toc-item active">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/rename/">mass renaming</a>
 
   </div>
   
@@ -513,12 +558,37 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/awk/">awk</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/permissions/">permissions</a>
 
   </div>
   
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/rename/">mass renaming</a>
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/rm/">rm</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sed/">sed</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sort/">sort and uniq</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/split/">split</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/timestamp/">timestamp</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/watch/">watch</a>
 
   </div>
   
@@ -535,9 +605,8 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#find--perl">find + perl</a></li>
-    <li><a href="#find-in-current-folder">find in current folder</a></li>
-    <li><a href="#find-with-regex">find with regex</a></li>
+    <li><a href="#find-maxdepth-regex--perl--xargs--mv">find (maxdepth, regex) + perl + xargs + mv</a></li>
+    <li><a href="#find--exec-mv">find + exec mv</a></li>
     <li><a href="#eof">EOF</a></li>
   </ul>
 </nav>
@@ -554,27 +623,24 @@
           <h1>mass renaming</h1>
 
           <div class="article-style">
-            <!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace mass renaming with page name e.g. dplyr
-4. replace  with weight e.g. 20
--->
-<h2 id="find--perl">find + perl</h2>
+            <br>
+<h2 id="find-maxdepth-regex--perl--xargs--mv">find (maxdepth, regex) + perl + xargs + mv</h2>
 <ul>
-<li>do below without mv first to check io</li>
-<li>then execute mass rename with mv</li>
+<li>do below without <code>mv</code> first to check io</li>
+<li>then execute mass rename with <code>mv</code></li>
 </ul>
-<pre><code class="language-bash">find . -type f | perl -pe 'print $_; s/.\/find/.\/replace/' | xargs -n2 mv
+<pre><code class="language-bash">find . -maxdepth 1 -type f
+-regex &quot;.\/.*something.*\.txt&quot; | 
+perl -pe 'print $_; s/.\/find/.\/replace/' | 
+xargs -n2 
+mv
 </code></pre>
-<h2 id="find-in-current-folder">find in current folder</h2>
+<br>
+<h2 id="find--exec-mv">find + exec mv</h2>
 <ul>
-<li>not recursive</li>
+<li>more efficient, but can&rsquo;t check io</li>
 </ul>
-<pre><code class="language-bash">find ./ -name &quot;target&quot;
-</code></pre>
-<h2 id="find-with-regex">find with regex</h2>
-<pre><code class="language-bash">find . -type f -regex &quot;.\/name_starting_with.*&quot;
+<pre><code class="language-bash">find path_A -name '*AAA*' -exec mv -t path_B {} +
 </code></pre>
 <h2 id="eof">EOF</h2>
 
@@ -593,9 +659,15 @@
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../resources/linux_resources/awk/" rel="next">awk</a>
+    <a href="../../../resources/linux_resources/less/" rel="next">less</a>
   </div>
   
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Next</div>
+    <a href="../../../resources/linux_resources/networking/" rel="prev">networking</a>
+  </div>
   
 </div>
 

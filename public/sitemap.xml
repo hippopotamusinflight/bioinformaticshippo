@@ -88,11 +88,6 @@
   </url>
   
   <url>
-    <loc>/resources/linux_resources/permissions/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson1/</loc>
     <lastmod>2020-07-15T10:28:51-04:00</lastmod>
   </url>
@@ -103,7 +98,7 @@
   </url>
   
   <url>
-    <loc>/resources/linux_resources/networking/</loc>
+    <loc>/resources/linux_resources/bash_loops/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   
@@ -128,6 +123,11 @@
   </url>
   
   <url>
+    <loc>/resources/linux_resources/vim/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson3.5/</loc>
     <lastmod>2020-07-15T15:22:06-04:00</lastmod>
   </url>
@@ -145,6 +145,86 @@
   <url>
     <loc>/tutorials/mysql_tutorials/mysql_universalclass_lesson6/</loc>
     <lastmod>2020-07-15T16:36:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/awk/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/cat/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/column/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/copy/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/cut/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/diff_and_comm/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/less/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/rename/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/networking/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/permissions/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/rm/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/sed/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/sort/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/split/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/timestamp/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/resources/linux_resources/watch/</loc>
+    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -242,11 +322,6 @@
   </url>
   
   <url>
-    <loc>/resources/linux_resources/awk/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/resources/r_resources/dataframe_reshaping/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
@@ -268,11 +343,6 @@
   
   <url>
     <loc>/resources/r_resources/generate_data/</loc>
-    <lastmod>2020-05-23T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/resources/linux_resources/rename/</loc>
     <lastmod>2020-05-23T00:00:00+01:00</lastmod>
   </url>
   

@@ -1,28 +1,23 @@
 ---
 date: "2020-05-23T00:00:00+01:00"
 draft: false
-linktitle: system admin
+linktitle: general sysadmin
 menu:
   linux_resources:
-    name: system admin
+    name: general sysadmin
     weight: 10
-title: system admin
+title: general sysadmin
 toc: true
 type: docs
 weight: 10
 ---
 
-<!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace system admin with page name e.g. dplyr
-4. replace 10 with weight e.g. 20
--->
-
 ## untar unzip
 ```bash
 $ tar -xzf file.tar.gz
 ```
+
+<br>
 
 ## env var
 - set up environment variable PICARD
@@ -36,6 +31,8 @@ $ echo $PICARD
 > /home/<username>/.../build/libs/
 ```
 
+<br>
+
 ## version
 - get linux version
 ```bash
@@ -44,17 +41,23 @@ or
 $ lsb_release -a
 ```
 
+<br>
+
 ## disk space
 ```bash
 $ df -k /some/dir/    # in numerics
 $ df -h /some/dir/    # in human readable format
 ```
 
+<br>
+
 ## get dir size
 ```bash
 dir1$ du -h          # human readable
 dir1$ du -hs         # only size of dir1, no subdir
 ```
+
+<br>
 
 ## cd with breadcrumbs
 ```bash
@@ -63,7 +66,20 @@ $ pushd dir2/
 $ popd               # returns to dir1
 ```
 
-## 
+<br>
+
+## pwd with real path
+- ignore symbolic links, prints full path
+```bash
+pwd -P
+```
+
+<br>
+
+## ls view dir file size in MB
+```bash
+ls -lah
+```
 
 
 
@@ -71,5 +87,7 @@ $ popd               # returns to dir1
 
 
 
+
+<br>
 
 ## EOF

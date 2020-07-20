@@ -498,17 +498,17 @@
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/sysadmin/">system admin</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sysadmin/">general sysadmin</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/permissions/">permissions</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/bash_loops/">bash loops</a>
 
   </div>
   
   <div class="docs-toc-item">
-    <a class="docs-toc-link" href="../../../resources/linux_resources/networking/">networking</a>
+    <a class="docs-toc-link" href="../../../resources/linux_resources/vim/">vim</a>
 
   </div>
   
@@ -518,7 +518,77 @@
   </div>
   
   <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/cat/">cat</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/column/">column</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/copy/">copy</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/cut/">cut</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/diff_and_comm/">diff and comm</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/less/">less</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="../../../resources/linux_resources/rename/">mass renaming</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/networking/">networking</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/permissions/">permissions</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/rm/">rm</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sed/">sed</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/sort/">sort and uniq</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/split/">split</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/timestamp/">timestamp</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="../../../resources/linux_resources/watch/">watch</a>
 
   </div>
   
@@ -563,18 +633,14 @@
           <h1>awk</h1>
 
           <div class="article-style">
-            <!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace awk with page name e.g. dplyr
-4. replace  with weight e.g. 20
--->
+            <br>
 <h2 id="view-csv">view CSV</h2>
 <ul>
 <li>view csv in human readable columns when field has quoted commas (e.g. &ldquo;1,2,3&rdquo;)</li>
 </ul>
 <pre><code class="language-bash">$ awk '!(NR%2){gsub(&quot;,&quot;,&quot;;&quot;)} 1' RS=\&quot; ORS=\&quot; &lt;file.csv&gt; | column -t -s , | less -S
 </code></pre>
+<br>
 <h2 id="-v-flag">-v flag</h2>
 <ul>
 <li>using variable inside AWK, define variables with -v flag</li>
@@ -583,6 +649,7 @@
 </ul>
 <pre><code class="language-bash">$ awk -F&quot; &quot; -v d1=&quot;$d1&quot; -v d2=&quot;$d2&quot; '$1==d1&quot;-&quot;d2&quot;-2009&quot; {print $1,$2,$3,$4,$5}'
 </code></pre>
+<br>
 <h2 id="col-min-max">col min max</h2>
 <ul>
 <li>put min or max of column into a var</li>
@@ -602,6 +669,7 @@ echo $max
 <ul>
 <li>but it&rsquo;s slower to sort</li>
 </ul>
+<br>
 <h2 id="define-output-sep">define output sep</h2>
 <ul>
 <li>change or define output separator</li>
@@ -610,6 +678,7 @@ echo $max
 </ul>
 <pre><code class="language-bash">$ awk 'BEGIN {FS=&quot;\t&quot;; OFS=&quot;,&quot;; print} {$1=$1}1' &lt;file&gt;
 </code></pre>
+<br>
 <h2 id="rm-dup-in-2-col-both-directions">rm dup in 2 col, both directions</h2>
 <ul>
 <li>remove dups in 2 rows in either direction</li>
@@ -618,6 +687,7 @@ echo $max
 </ul>
 <pre><code class="language-bash">$ awk '!a[$1$2]++ &amp;&amp; !a[$2$1]++' &lt;file&gt;
 </code></pre>
+<br>
 <h2 id="col-order">col order</h2>
 <ul>
 <li>swap columns</li>
@@ -626,6 +696,7 @@ echo $max
 </ul>
 <pre><code class="language-bash">$ awk ' { t = $1; $1 = $2; $2 = t; print; } ' &lt;file&gt;
 </code></pre>
+<br>
 <h2 id="filter-rows-with-col-regex">filter rows with col regex</h2>
 <ul>
 <li>filter rows where column value matches regex</li>
@@ -638,6 +709,7 @@ echo $max
 <li>matches if column 1 starts with &ldquo;chr&rdquo;, ends with 1-9 or 10-99 or X or Y</li>
 <li>~ specifies for regex match (== specifies comparison match)</li>
 </ul>
+<br>
 <h2 id="another-regex-comparison">another regex comparison</h2>
 <ul>
 <li>
@@ -650,6 +722,7 @@ $ awk '/'$SNP_seed'/ {print}' &lt;input_file&gt; &gt;&gt; &lt;output_file&gt;
 or
 $ awk '{ if($11 ~ /'$SNP_seed'/ {print}}' &lt;input_file&gt; &gt;&gt; &lt;output_file&gt;
 </code></pre>
+<br>
 <h2 id="-f-flag">-F flag</h2>
 <ul>
 <li>define field separators with -F flag</li>
@@ -658,6 +731,7 @@ $ awk '{ if($11 ~ /'$SNP_seed'/ {print}}' &lt;input_file&gt; &gt;&gt; &lt;output
 </ul>
 <pre><code class="language-bash">$ awk -F: '{print $4}' &lt;file&gt;
 </code></pre>
+<br>
 <h2 id="filter-rows-with-multiple-cols">filter rows with multiple cols</h2>
 <ul>
 <li>filter rows with multiple comparisons in column values</li>
@@ -671,18 +745,21 @@ $ awk '{ if($11 ~ /'$SNP_seed'/ {print}}' &lt;input_file&gt; &gt;&gt; &lt;output
 </ul>
 <pre><code class="language-bash">$ awk '$1==22 &amp;&amp; $2&lt;23966388 &amp;&amp; $3&gt;23966388' &lt;file&gt;
 </code></pre>
+<br>
 <h2 id="sub-multiple-cols">sub multiple cols</h2>
 <ul>
 <li>substitute within multiple columns</li>
 </ul>
 <pre><code class="language-bash">$ awk '{sub(/find1/,replace1,$col1);sub(/find2/,replace2,$col2);print $col1, $col2}' input.txt &gt; output.txt
 </code></pre>
+<br>
 <h2 id="num-cols">num cols</h2>
 <ul>
 <li>get number of cols in a file</li>
 </ul>
 <pre><code class="language-bash">$ awk '{print NF}' &lt;file&gt; | sort -nu | tail -n1
 </code></pre>
+<br>
 <h2 id="eof">EOF</h2>
 
           </div>
@@ -700,14 +777,14 @@ $ awk '{ if($11 ~ /'$SNP_seed'/ {print}}' &lt;input_file&gt; &gt;&gt; &lt;output
   
   <div class="post-nav-item">
     <div class="meta-nav">Previous</div>
-    <a href="../../../resources/linux_resources/networking/" rel="next">networking</a>
+    <a href="../../../resources/linux_resources/vim/" rel="next">vim</a>
   </div>
   
   
   
   <div class="post-nav-item">
     <div class="meta-nav">Next</div>
-    <a href="../../../resources/linux_resources/rename/" rel="prev">mass renaming</a>
+    <a href="../../../resources/linux_resources/cat/" rel="prev">cat</a>
   </div>
   
 </div>

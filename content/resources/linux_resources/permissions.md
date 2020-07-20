@@ -5,19 +5,14 @@ linktitle: permissions
 menu:
   linux_resources:
     name: permissions
-    weight: 15
+    weight: 100
 title: permissions
 toc: true
 type: docs
-weight: 15
+weight: 100
 ---
 
-<!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace permissions with page name e.g. dplyr
-4. replace 15 with weight e.g. 20
--->
+<br>
 
 ## syntax
 ```
@@ -27,6 +22,8 @@ dir
 (owner) (group) (other)
    u       g      o
 ```
+
+<br>
 
 ## notation
 ```bash
@@ -40,6 +37,8 @@ $ chmod 777 <file>         # give owner, group, other read, write, execute
 $ chmod u=rwx <file>       # symbolic notation
 $ chmod 700 <file>         # octal notation
 ```
+
+<br>
 
 ```
 octal   binary  symbolic
@@ -62,6 +61,6 @@ octal   binary  symbolic
 
 
 
-
+<br>
 
 ## EOF

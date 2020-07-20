@@ -15,11 +15,7 @@ menu:
     weight: 5
 ---
 
-<!--
-1. replace dirdir with page dir (e.g. r_resources)
-2. replace 5 with weight, or leave blank to sort pages alphabetically
--->
-
+<br>
 
 ## setup git
 - in a project dir
@@ -30,6 +26,8 @@ git config --global user.name 'John Doe'
 git config --global user.email 'jdoe@email.com'
 ```
 
+<br>
+
 ## create .gitignore
 - make sure you set up .gitignore before `git add`
 ```bash
@@ -39,6 +37,8 @@ vim .gitignore
    /dir1
    *.RMarkdown
 ```
+
+<br>
 
 ## git add, rm, commit, status
 ```bash
@@ -52,6 +52,8 @@ git status                         check status of working tree (what files adde
 git commit                         commit files in staging area
 git commit -m 'changed something'  to add comment to commit
 ```
+
+<br>
 
 ***
 ## create branches
@@ -68,23 +70,27 @@ git merge somebranch                     while in master branch, merge somebranc
 git merge somebranch -m 'some message'   to write a commit message
 ```
 
+<br>
+
 ***
 ## working with GitHub
 - create new repo on GitHub
 ```bash
-git remote                               to view remote repos
+git remote                               # to view remote repos
 git remote add origin https://github.com/username/repo
 git remote remove origin
 git remote -v
 
-git push -u origin master                to push master to remote repo
-                                         (github login window will open to authenticate for the first time)
+git push -u origin master                # to push master to remote repo
+# github login window will open to authenticate for the first time
 ```
 - reload GitHub page and local repo should be there
 ```bash
-git pull          pulls latest version from remote repo
-git clone         copies a remote repo into current dir
+git pull <url>        # pulls latest version from remote repo
+git clone <url>       # copies a remote repo into current dir
 ```
+
+<br>
 
 ***
 ## git reset
@@ -102,6 +108,8 @@ HEAD is now at 5f98d77 website initial commit
 ```
 - lesson: add files to .gitignore before initial commit
 - lesson: do not delete files on github, do everything with git
+
+<br>
 
 ***
 ## misc

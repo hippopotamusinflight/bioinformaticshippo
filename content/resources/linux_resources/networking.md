@@ -5,19 +5,14 @@ linktitle: networking
 menu:
   linux_resources:
     name: networking
-    weight: 20
+    weight: 100
 title: networking
 toc: true
 type: docs
-weight: 20
+weight: 100
 ---
 
-<!--
-1. replace linux_resources with dir in /content/subdir/ e.g. r_resources
-2. replace 2020-05-23 with YYYY-MM-DD e.g. 2020-05-20
-3. replace ssh with page name e.g. dplyr
-4. replace 20 with weight e.g. 20
--->
+<br>
 
 ## ssh flags
 - [https://www.ssh.com/ssh/command](https://www.ssh.com/ssh/command)
@@ -29,6 +24,8 @@ weight: 20
 -q                   # quiet mode
 -X                   # enable X11 forwarding
 ```
+
+<br>
 
 ## lsof
 - find open port and kill process
@@ -45,6 +42,6 @@ $ kill 71504
 
 
 
-
+<br>
 
 ## EOF
